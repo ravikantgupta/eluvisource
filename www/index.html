@@ -283,16 +283,7 @@
     <body onLoad="onLoad()">
         <div data-role="page" data-dom-cache="true" id="mainpage" class="pushnotification">
         
-            <div id="searchBox" class="searchbox">
-                   <form name="serachForm" action="javascript:custom_search();">
-                        <div>
-                            <input id="searchFilter1" type="serach" data-type="search" placeholder="" data-theme="a" />
-                            <ul id="suggestions" data-role="listview" data-inset="true" data-theme="a">
-                                
-                            </ul>
-                        </div>
-                    </form>
-                </div>
+          
             <div data-role="header" id="mainheader" class="mainheader" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
                 
                 <div class="navigation_menu_button1 navigation_menu_button menu-btn">
@@ -318,7 +309,16 @@
             
             <div data-role="content" class="home_content">
                 
-               
+                 <div id="searchBox" class="searchbox">
+                   <form name="serachForm" action="javascript:custom_search();">
+                        <div>
+                            <input id="searchFilter1" type="serach" data-type="search" placeholder="" data-theme="a" />
+                            <ul id="suggestions" data-role="listview" data-inset="true" data-theme="a">
+                                
+                            </ul>
+                        </div>
+                    </form>
+                </div>
                 
                 
                 <div>
