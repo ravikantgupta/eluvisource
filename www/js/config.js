@@ -1,8 +1,8 @@
 var config =  {
 				    "data":[{
-					    "baseurl":"http://eluvy.com/index.php/mofluid118",
+					    "baseurl":"https://eluvy.com/index.php/mofluid118",
 					    "storeid":"1",
-					    "basicurl":"http://eluvy.com/index.php/",
+					    "basicurl":"https://eluvy.com/index.php/",
 					    "app_name" :"Eluvy",
 					  "bundle_id" : "com.eluvy.eluvy",
 					  "google_ios_clientid":"",
