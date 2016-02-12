@@ -1,16 +1,16 @@
 <?xml version='1.0' encoding='utf-8'?>
     <widget xmlns:gap="http://phonegap.com/ns/1.0" 
     xmlns="http://www.w3.org/ns/widgets" 
-    id="com.eluvy.myapp" 
-    version="3.1.1">
+    id="com.eluvy.eluvy" 
+    version="2.0.0">
 
         <name>Eluvy</name>
         <description>
-            Bridge the fine Jewellery.
+            
         </description>
         <author email="rvgupta444@gmail.com"
         href="http://cordova.io">
-           Laminfotech Team
+            Mofluid Team
         </author>
      <gap:plugin name="com.paypal.cordova.mobilesdk" />
     	<gap:plugin name="org.apache.cordova.console" />
@@ -25,9 +25,6 @@
         <gap:plugin name="com.danielcwilson.plugins.googleanalytics"/>
     	<gap:plugin name="nl.x-services.plugins.socialsharing"/>
     	<gap:plugin name="com.telerik.plugins.nativepagetransitions"/>
-		<gap:plugin name="com.moust.cordova.videoplayer" spec="1.0.0" source="pgb" />
-		<gap:plugin name="com.bunkerpalace.cordova.YoutubeVideoPlayer"/>
-		
   	<!--	<gap:plugin name="nl.x-services.plugins.googleplus" source="plugins.cordova.io"/> -->
   		
     	<!--Icons and Splash Screens Configuration for Mofluid Apps-->
@@ -38,19 +35,15 @@
 		<!-- Icons -->
 		<icon src="resource/icon/96x96px_2.png" />
 		<!-- Splash Screens -->
-		<gap:splash src="resource/splash/480x800.jpg" />
+		<gap:splash src="resource/splash/480x800.png" />
 		
 		<!-- ====================== -->
 		<!-- iOS Configuration      -->
 		<!-- ====================== -->
 		<!-- Icons -->
-		<!-- iPhone 5 / iPod Touch (5th Generation) -->
-		<gap:splash src="resource/icon/Default-568h@2x.png" gap:platform="ios" width="640" height="1136" />
 		
-
-		<icon src="icon.png" />
-		 <icon src="resource/icon/57x57.png" gap:platform="ios" width="57" height="57" />
-		<icon src="resource/icon/72x72px_1.png" gap:platform="ios" width="72" height="72" />
+		
+		
 		<icon src="resource/icon/96x96px_2.png" gap:platform="android" width="96" height="96" />
 		<icon src="resource/icon/72x72px_1.png" gap:platform="android" width="72" height="72" />
 		<icon src="resource/icon/48x48px_1.png" gap:platform="android" width="48" height="48" />
@@ -82,7 +75,6 @@
                 <preference name="target-device" value="universal" />
                 <preference name="DisallowOverscroll" value="true" />
           	<preference name="webviewbounce" value="false" />
-          	 <preference name="SplashScreenDelay" value="5000" />
 
         
 
