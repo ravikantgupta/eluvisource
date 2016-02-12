@@ -9,11 +9,10 @@
         
         <script type="text/javascript" src="js/header.js"></script>
         <script type="text/javascript" src="js/mofluid_slider.js"></script>
-    
+        
         
         <script type="text/javascript" langauge="javascript">
             function onLoad(){
-            	
               //  localStorage.clear();
                 
                 if(localStorage.getItem('foo') == 1){
@@ -21,17 +20,10 @@
                       //  $("#new_hide").hide();
                         
                 }
-        
                 document.addEventListener("deviceready", onDeviceReady, false);
-    
-                
-                
             }
-
-            
         
             function onDeviceReady(){
-       
                
                 // fetchStoredetail();
                 if(localStorage.getItem('foo') == 1){
@@ -274,16 +266,12 @@
                                }, 8000);
                 }
                 getFooter();
-                
             }
-		
-			
-     </script>
+                   </script>
     </head>
     <body onLoad="onLoad()">
         <div data-role="page" data-dom-cache="true" id="mainpage" class="pushnotification">
-        
-          
+            
             <div data-role="header" id="mainheader" class="mainheader" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
                 
                 <div class="navigation_menu_button1 navigation_menu_button menu-btn">
@@ -309,10 +297,10 @@
             
             <div data-role="content" class="home_content">
                 
-                 <div id="searchBox" class="searchbox">
+                <div id="searchBox" class="searchbox" style="display:none;">
                    <form name="serachForm" action="javascript:custom_search();">
                         <div>
-                            <input id="searchFilter1" type="serach" data-type="search" placeholder="" data-theme="a" />
+                            <input id="searchFilter" type="serach" data-type="search" placeholder="" data-theme="a" />
                             <ul id="suggestions" data-role="listview" data-inset="true" data-theme="a">
                                 
                             </ul>
@@ -334,14 +322,7 @@
                 <div id="featured_owl"  class="parent" data-role="none">
                 	
                 </div>
-                <div>
-				<script type="text/javascript">
-				
-			 //VideoPlayer.play("file:///android_asset/www/3817574.mp4");
-
-
-				</script>
-				</div>
+                
                 <!-- Slider for Optional Products -->
                 <div class="category_list" style="display:none" id="new_products_outer_div">
                     <div class="heading_text" id="new_products_inner_div"></div>
@@ -356,25 +337,18 @@
             </div>
             
             <nav class="pushy pushy-left">
-			 <div class="colose" style="float:right;"><span onclick="hidenav()" style="cursor:pointer;"><img src="img/close.png" style="margin-top:2px; margin-right:5px;"></span></div>
+			<div class="colose" style="float:right;"><span onclick="hidenav()" style="cursor:pointer;"><img src="img/close.png" style="margin-top:2px; margin-right:5px;"></span></div>
                 <div id="Cate_slide">
                 <center style="margin-top:100px;"><img src="images/spin.gif"></center>
                 </div>
             </nav>
             <!-- Site Overlay -->
             <div class="site-overlay"></div>
-			
         </div>
         <script type="text/javascript" src="js/footer.js"></script>
     </body>
-<script type="text/javascript">
-$('#searchBox').click(
-function (){
-$("#searchFilter").focus();
-});
-</script> 
+    
     <script>
-	
 	 function hidenav()
 	{
 	  
@@ -382,7 +356,6 @@ $("#searchFilter").focus();
 	   jQuery('.site-overlay').click();
 	
 	}
-	
        /*
         function app_local_store_new(){
             setApplicationLogoBanner(localStorage.getItem(config.data[0].storage_key+'_logoban'));
