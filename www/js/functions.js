@@ -906,6 +906,9 @@ function fetchStoredetail() {
      */
                           
 function setApplicationLogoBanner(results) {
+	
+	  
+	  alert('shreeram');
                           
                           var response = JSON.parse(results);
                           console.log("Logo and Banner Function Called : ");
