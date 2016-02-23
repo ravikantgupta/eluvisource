@@ -95,138 +95,7 @@
                   var key = 'storedetails';
                   
                   
-                  db.transaction(function(tx) {
-                                 tx.executeSql('CREATE TABLE IF NOT EXISTS mofluid_cache (key text, data text, timestamp text)');
-                                 tx.executeSql("select * from mofluid_cache where key='storedetails';", [], function(tx, resdata) {
-                                               if (resdata.rows.length > 0) {
-                                               var diff=current_time - resdata.rows.item(0).timestamp;
-                                               
-                                               //if the cache time expire then this code wiil execute
-                                               if (diff > cache_time) {
-                                               //delete the old row of storedetails data if cache time expire
-                                               tx.executeSql("DELETE FROM mofluid_cache WHERE key=?", ["storedetails"],
-                                                             function(tx, result) {
-                                                             
-                                                             });// end deletion
-                                               var store_webservice = config.data[0].baseurl + "?callback=?" + "&store=" + config.data[0].storeid + "&service=storedetails&currency="+app_curr_code+"&theme="+config.data[0].theme;
-                                               $.ajax({
-                                                      url: store_webservice,
-                                                      type: "get",
-                                                      dataType: "jsonp",
-                                                      async: false,
-                                                      beforeSend: function(){
-                                                      console.log("Before Store Webservice");
-                                                      },
-                                                      error: function(){
-                                                      if (config.data[0].platform == 'ios' || config.data[0].platform == 'android') {
-                                                      navigator.notification.alert(locale.message.alert["try_again"], function() {}, config.data[0].app_name, locale.message.button["close"]);
-                                                      }
-                                                      else {
-                                                      alert(locale.message.alert["try_again"])
-                                                      }
-                                                      console.log("Error  on Webservice");
-                                                      },
-                                                      complete: function(){
-                                                      console.log("Complete Webservice");
-                                                      },
-                                                      success: function( response ){
-                                                      db.transaction(function(tx) {
-                                                                     tx.executeSql("INSERT INTO mofluid_cache (key,data,timestamp) VALUES (?,?,?)", ["" + key + "", "" + JSON.stringify(response) + "", "" + current_time + ""], function(tx, res) {}, function(e) {
-                                                                                   console.log("ERROR in insert product: " + e);
-                                                                                   });
-                                                                     });
-                                                      localStorage.setItem(config.data[0].storage_key+'_logoban', JSON.stringify(response));
-                                                      localStorage.setItem('c_time', response.store.cache_setting.cache_time);
-                                                      localStorage.setItem('c_status', response.store.cache_setting.status);
-                                                      
-                                                      localStorage.setItem(config.data[0].storage_key+'google_ios_clientid', response.store.google_ios_clientid);
-                                                      localStorage.setItem(config.data[0].storage_key+'google_login_flag', response.store.google_login_flag);
-                                                      
-                                                      localStorage.setItem(config.data[0].storage_key+'cms_pages', response.store.cms_pages);
-                                                      localStorage.setItem(config.data[0].storage_key+'about_us', response.store.about_us);
-                                                      localStorage.setItem(config.data[0].storage_key+'term_condition', response.store.term_condition);
-                                                      localStorage.setItem(config.data[0].storage_key+'privacy_policy', response.store.privacy_policy);
-                                                      localStorage.setItem(config.data[0].storage_key+'return_privacy_policy', response.store.return_privacy_policy);
-                                                      localStorage.setItem(config.data[0].storage_key+'tax_flag', response.store.tax_flag);
-                                                      setApplicationLogoBanner(JSON.stringify(response));
-                                                      fetchFeaturesProduct();
-                                                      optional_products_slide();
-                                                      
-                                                      }
-                                                      });
-                                               } //End of (if the cache time expire then this code wiil execute) comment
-                                               
-                                               else // if cache time is not expire then this code will be execute
-                                               {
-                                               var response = JSON.parse(resdata.rows.item(0).data);
-                                               localStorage.setItem(config.data[0].storage_key+'_logoban', resdata.rows.item(0).data);
-                                               setApplicationLogoBanner(resdata.rows.item(0).data);
-                                               fetchFeaturesProduct();
-                                               optional_products_slide();
-                                               
-                                               //   printRootCategory(response.categories);
-                                               }//End of (if cache time is not expire then this code will be execute) comment
-                                               }//end of if table is not empty
-                                               else
-                                               {
-                                               var store_webservice = config.data[0].baseurl + "?callback=?" + "&store=" + config.data[0].storeid + "&service=storedetails&currency="+app_curr_code+"&theme="+config.data[0].theme;
-                                               $.ajax({
-                                                      url: store_webservice,
-                                                      type: "get",
-                                                      dataType: "jsonp",
-                                                      async: false,
-                                                      beforeSend: function(){
-                                                      console.log("Before Store Webservice");
-                                                      },
-                                                      error: function(){
-                                                      if (config.data[0].platform == 'ios' || config.data[0].platform == 'android') {
-                                                      navigator.notification.alert(locale.message.alert["try_again"], function() {}, config.data[0].app_name, locale.message.button["close"]);
-                                                      }
-                                                      else {
-                                                      alert(locale.message.alert["try_again"])
-                                                      }
-                                                      console.log("Error  on Webservice");
-                                                      },
-                                                      complete: function(){
-                                                      console.log("Complete Webservice");
-                                                      },
-                                                      success: function( response ){
-                                                      //Insert data of storeDetails if cache table don't have data with the key of storedetails
-                                                      db.transaction(function(tx) {
-                                                                     tx.executeSql("INSERT INTO mofluid_cache (key,data,timestamp) VALUES (?,?,?)", ["" + key + "", "" + JSON.stringify(response) + "", "" + current_time + ""], function(tx, res) {}, function(e) {
-                                                                                   console.log("ERROR in insert product: " + e);
-                                                                                   });
-                                                                     
-                                                                     });
-                                                      localStorage.setItem(config.data[0].storage_key+'_logoban', JSON.stringify(response));
-                                                      localStorage.setItem('c_time', response.store.cache_setting.cache_time);
-                                                      localStorage.setItem('c_status', response.store.cache_setting.status);
-                                                      localStorage.setItem('cache_setting', response.store.cache_setting);
-                                                      localStorage.setItem(config.data[0].storage_key+'google_ios_clientid', response.store.google_ios_clientid);
-                                                      localStorage.setItem(config.data[0].storage_key+'google_login_flag', response.store.google_login_flag);
-                                                      
-                                                      localStorage.setItem(config.data[0].storage_key+'cms_pages', response.store.cms_pages);
-                                                      localStorage.setItem(config.data[0].storage_key+'about_us', response.store.about_us);
-                                                      localStorage.setItem(config.data[0].storage_key+'term_condition', response.store.term_condition);
-                                                      localStorage.setItem(config.data[0].storage_key+'privacy_policy', response.store.privacy_policy);
-                                                      localStorage.setItem(config.data[0].storage_key+'return_privacy_policy', response.store.return_privacy_policy);
-                                                      localStorage.setItem(config.data[0].storage_key+'tax_flag', response.store.tax_flag);
-                                                      
-                                                      //setGoogleAnalytics(response.analytics);
-                                                      //setApplicationFooter(response.store);
-                                                      setApplicationLogoBanner(JSON.stringify(response));
-                                                      fetchFeaturesProduct();
-                                                      optional_products_slide();
-                                                      
-                                                      //    printRootCategory(response.categories);
-                                                      //console.log("Success Webservice");
-                                                      }
-                                                      });
-                                               }//end of the tag if table is empty
-                                               
-                                               });
-                                 
-                                 });
+                  db.transaction(function(tx) {});
                                  localStorage.setItem('foo', 0);
                                  
               }
@@ -317,7 +186,7 @@
                 
                 <div id="newbnr">
                     <div class="item hideit" align="center" id="hideit" value="1"><img src="images/spin.gif"></div>
-                    <div id="banner_sliders" class="" style="text-align:center;width:100%">
+                    <div id="banner_slider" class="" style="text-align:center;width:100%">
 					
                     </div>
                 </div>
@@ -361,6 +230,8 @@
     </body>
     
     <script>
+	
+	
 	 function hidenav()
 	{
 	  
