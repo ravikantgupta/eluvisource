@@ -30,6 +30,8 @@
                    //$("#hideit").remove();
                  var banner_image_slider=localStorage.getItem(config.data[0].storage_key+'_banner_image_slider');
                   $("#banner_slider").html(banner_image_slider);
+				     $("#newbnr").html(banner_image_slider);
+				  
                  /*var owl_banner = $("#banner_slider");
                  owl_banner.owlCarousel({
                                         items : 1, //10 items above 1000px browser width
@@ -309,12 +311,14 @@
                 </div>
                 
                 
-                <div>
+                <div id="newbnr">
                     <div class="item hideit" align="center" id="hideit" value="1"><img src="images/spin.gif"></div>
-                    <div id="banner_slider" class="slider-contaner hslider" style="text-align:center;width:100%">
+                    <div id="banner_slider" class="" style="text-align:center;width:100%">
 					
                     </div>
                 </div>
+				
+				
                 
                 <!-- Slider for Feature Products -->
                 <div class="category_list" style = "display:none" id="feature_products_outer_div">
