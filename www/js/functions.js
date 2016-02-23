@@ -665,7 +665,7 @@ function setApplicationLogoBanner_preview(response) {
     store_data["banner"] = banner_image_slider;
     store_data["store"] = store_response;
     localStorage[config.data[0].storage_key+"_STORE"] = JSON.stringify(store_data); 
-   /* var owl = $("#banner_slider");
+    var owl = $("#banner_slider");
     owl.owlCarousel({
 		   items : 1, //10 items above 1000px browser width
 		   itemsDesktop : [1000,1], //5 items between 1000px and 901px
@@ -675,7 +675,7 @@ function setApplicationLogoBanner_preview(response) {
 		   navigation : true,
 		   pagination: false,
            autoHeight:false
-	});*/
+	});
 	} catch(err) {
 	   console.error(err.message);
 	}
@@ -2877,10 +2877,9 @@ function bad_image(image) {
 function loadLogoBanner() {
     try {
     	   var store = JSON.parse(localStorage[config.data[0].storage_key+"_STORE"]);
-        //$(".navigation_logo").html(store.logo);
+        $(".navigation_logo").html(store.logo);
         $("#banner_slider").html(store.banner);
-		alert('shreeram')
-      /*  var owl = $("#banner_slider");
+        var owl = $("#banner_slider");
         owl.owlCarousel({
 		   items : 1, //10 items above 1000px browser width
 		   itemsDesktop : [1000,1], //5 items between 1000px and 901px
@@ -2889,7 +2888,7 @@ function loadLogoBanner() {
 		   itemsMobile : false,  // itemsMobile disabled - inherit from itemsTablet option
 		   navigation : false,
 		   pagination: false
-	  });*/
+	  });
     }
     catch(err) {
         console.log(store);
