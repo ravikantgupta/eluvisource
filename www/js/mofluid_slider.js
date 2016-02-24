@@ -105,9 +105,10 @@ function setfourBox(data) {
                                         },
                                         success: function(response) {
                                        
-                                       var redata=JSON.stringify(response);
-										   alert(redata);
-											alert(redata.four_boxes.content);
+                                       var resdata=JSON.stringify(response);
+									    var response = JSON.parse(resdata);
+										   alert(response);
+											alert(response.four_boxes.content);
                                         }
                                         });
 	
