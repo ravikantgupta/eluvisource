@@ -244,6 +244,8 @@ function optional_products_slide(){
 }
 
 function new_product_list(results){
+	
+	alert('siya ram');
     var response = JSON.parse(results);
     var featured_pro = "";
     var i = 0;
