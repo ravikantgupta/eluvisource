@@ -107,8 +107,8 @@ function setfourBox(data) {
                                        
                                        var resdata=JSON.stringify(response);
 									    var response = JSON.parse(resdata);
-										   alert(response);
-											alert(response.four_boxes.content);
+										   										
+											 $("#buttombox").html(response.four_boxes.content);
                                         }
                                         });
 	
