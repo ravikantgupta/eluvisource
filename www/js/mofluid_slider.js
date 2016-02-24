@@ -127,10 +127,10 @@ function feature_product_list(results){
                 price_html += '<h4 class="producth4 product_price_color">' + app_curr_symbol + parseFloat(response.products_list[i].price.replace(",", "")).toFixed(2) + '</h4>';
             }
             
-            featured_pro += '<div class="child">\
-            <div class="slider_products" >\
+            featured_pro += '<div class="cate">\
+            <div class="sep" >\
             <div style="display:table;width:100%">\
-            <div class="home_page_product_list_div" style="height:120px;display:table-cell;vertical-align:middle;" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
+            <div class="home_page_product_list_div" style="height:314px;display:table-cell;vertical-align:middle;" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
             <img src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" />\
             </div>\
             </div>\
@@ -144,13 +144,15 @@ function feature_product_list(results){
           //  featured_pro +='<div class="child" >child '+i+'</div>';
             i++;
         }
-        $('#feature_products_inner_div').html(locale.message.text.featured_products);
+		
+		alert(locale.message.text.featured_products);
+       // $('#feature_products_inner_div').html(locale.message.text.featured_products);
         localStorage.setItem(config.data[0].storage_key+'_featured_products_html',featured_pro);
         
         $("#feature_products_outer_div").show();
 		
-        //$("#featured_owl").html(featured_pro);
-        $("#featured_owl").trigger("create");
+        $("#featured_owl").html(featured_pro);
+        //$("#featured_owl").trigger("create");
 		
     } else {
         $('#feature_products_outer_div').hide();
