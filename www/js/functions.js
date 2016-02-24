@@ -929,19 +929,19 @@ function setApplicationLogoBanner(results) {
                           console.log("Images : "+image_len);
                           try {
                           if(image_len <= 0 || image_len == null || image_len == "") {
-                          banner_image_slider += '<div class="item hauto"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>';
+                          banner_image_slider += '<div class="banner"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>';
                           $("#banner_slider").append('<div class="item hauto"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>');
                           }
                           else {
                           for(i=0; i<image_len; i++) {
-                          $("#banner_slider").append('<div class="item hauto"><img onclick="bannerAction(\''+banner_data.image[i].mofluid_image_action+'\')" src="'+banner_data.image[i].mofluid_image_value+'" alt=""  onerror="this.src=\''+ config.data[0].banner+'\'" ></div>');
-                          banner_image_slider += '<div class="item hauto"><img onclick="bannerAction(\''+banner_data.image[i].mofluid_image_action+'\')" src="'+banner_data.image[i].mofluid_image_value+'" alt=""  onerror="this.src=\''+ config.data[0].banner+'\'" ></div>';
+                          $("#banner_slider").append('<div class="banner"><img onclick="bannerAction(\''+banner_data.image[i].mofluid_image_action+'\')" src="'+banner_data.image[i].mofluid_image_value+'" alt=""  onerror="this.src=\''+ config.data[0].banner+'\'" ></div>');
+                          banner_image_slider += '<div class="banner"><img onclick="bannerAction(\''+banner_data.image[i].mofluid_image_action+'\')" src="'+banner_data.image[i].mofluid_image_value+'" alt=""  onerror="this.src=\''+ config.data[0].banner+'\'" ></div>';
                           
                           }
                           }
                           } catch(err) {
-                          $("#banner_slider").append('<div class="item hauto"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>');
-                          banner_image_slider += '<div class="item hauto"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>';
+                          $("#banner_slider").append('<div class="banner"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>');
+                          banner_image_slider += '<div class="banner"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>';
                           }
                           
                           localStorage.setItem(config.data[0].storage_key+'_banner_image_slider', banner_image_slider);
