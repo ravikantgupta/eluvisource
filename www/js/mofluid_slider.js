@@ -148,8 +148,8 @@ function feature_product_list(results){
         localStorage.setItem(config.data[0].storage_key+'_featured_products_html',featured_pro);
         
         $("#feature_products_outer_div").show();
-		alert(featured_pro);
-        $("#featured_owl").html(featured_pro);
+		
+        //$("#featured_owl").html(featured_pro);
         $("#featured_owl").trigger("create");
 		
     } else {
