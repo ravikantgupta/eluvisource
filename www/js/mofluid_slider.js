@@ -93,6 +93,24 @@ function setfourBox(data) {
 	alert(data);
 	
 	
+	    alert(BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getFeaturedProducts&currency=" + app_curr_code);
+                                 $.ajax({
+                                        url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getFeaturedProducts&currency=" + app_curr_code,
+                                        type: 'GET',
+                                        contentType: 'application/json',
+                                        dataType: 'json',
+                                        async: false,
+                                        error: function(jqXHR, textStatus, errorThrown) {
+                                        console.log("Internal server Error! \n please try after some time.")
+                                        },
+                                        success: function(response) {
+                                       
+                                       
+                                        alert(JSON.stringify(response));
+                                        }
+                                        });
+	
+	
 }
 
 function feature_product_list(results){
