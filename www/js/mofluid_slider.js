@@ -86,6 +86,15 @@ function fetchFeaturesProduct() {
                    });
 }
 
+
+
+function setfourBox(data) {
+	
+	alert(data);
+	
+	
+}
+
 function feature_product_list(results){
     
     var response = JSON.parse(results);
@@ -145,7 +154,7 @@ function feature_product_list(results){
             i++;
         }
 		
-		alert(locale.message.text.featured_products);
+		
        // $('#feature_products_inner_div').html(locale.message.text.featured_products);
         localStorage.setItem(config.data[0].storage_key+'_featured_products_html',featured_pro);
         
