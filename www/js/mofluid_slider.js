@@ -324,10 +324,10 @@ function new_product_list(results){
         }
         
         localStorage.setItem(config.data[0].storage_key+'_new_products_html' , featured_pro);
-        $("#new_products_inner_div").html(locale.message.text.new_products);
-        $("#new_products_outer_div").show();
-        $("#new_owl").html(featured_pro);
-        $("#new_owl").trigger("create");
+     //   $("#new_products_inner_div").html(locale.message.text.new_products);
+       // $("#new_products_outer_div").show();
+       // $("#new_owl").html(featured_pro);
+       // $("#new_owl").trigger("create");
     } else {
         $('#new_products_outer_div').hide();
         $("#new_owl").hide();
