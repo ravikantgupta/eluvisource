@@ -180,8 +180,9 @@ function new_side_cat(data){
     {
         if(localStorage[config.data[0].storage_key+'about_us'] != 0)
         {
-            $("#Cate_slide").append('<div class="new_cate_panel_div_main new_head" id="mofluid_about" onclick="getCMSB('+localStorage[config.data[0].storage_key+'about_us']+')">'+locale.message.text["aboutus"]+'</div>');
+            $("#Cate_slide").append('<div class="new_cate_panel_div_main new_head" id="mofluid_about" onclick="getCMSB('+localStorage[config.data[0].storage_key+'about_us']+')">Contact Us</div>');
             
+			$("#Cate_slide").append('<div class="new_cate_panel_div_main new_head" onclick="getCMSB('+localStorage[config.data[0].storage_key+'about_us']+')">Get 20% Off</div>');
         }
         if(localStorage[config.data[0].storage_key+'term_condition'] != 0)
         {
@@ -196,7 +197,8 @@ function new_side_cat(data){
         if(localStorage[config.data[0].storage_key+'return_privacy_policy'] != 0)
         {
             $("#Cate_slide").append('<div class="new_cate_panel_div_main new_head" id="mofluid_home" onclick="getCMSB('+localStorage[config.data[0].storage_key+'return_privacy_policy']+')">'+locale.message.text["returnpolicy"]+'</div>');
-            
+            $("#Cate_slide").append('<div class="new_cate_panel_div_main new_head" id="mofluid_home" ><div id="searchBox" class="searchbox" style="display:none;z-index:99999;"><form name="serachForm" action="javascript:custom_search();"><div><input id="searchFilter" type="serach" data-type="search" placeholder="" data-theme="a" /><ul id="suggestions" data-role="listview" data-inset="true" data-theme="a"></ul></div></form></div></div>');
+           
         }
         
     }
