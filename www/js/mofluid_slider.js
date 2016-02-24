@@ -88,9 +88,9 @@ function fetchFeaturesProduct() {
 
 
 
-function setfourBox(data) {
+function setfourBox() {
 	
-	alert(data);
+	
 	
 	
 	  
