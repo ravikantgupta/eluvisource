@@ -93,9 +93,9 @@ function setfourBox(data) {
 	alert(data);
 	
 	
-	    alert(BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getFeaturedProducts&currency=" + app_curr_code);
+	  
                                  $.ajax({
-                                        url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getFeaturedProducts&currency=" + app_curr_code,
+                                        url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getFourBox&currency=" + app_curr_code,
                                         type: 'GET',
                                         contentType: 'application/json',
                                         dataType: 'json',
@@ -105,8 +105,9 @@ function setfourBox(data) {
                                         },
                                         success: function(response) {
                                        
-                                       
-                                        alert(JSON.stringify(response));
+                                       var redata=JSON.stringify(response);
+										   alert(redata);
+											alert(redata.four_boxes.content);
                                         }
                                         });
 	
