@@ -63,8 +63,11 @@ function checkLoginStatus() {
         {
         if(localStorage[config.data[0].storage_key+'about_us'] != 0)
         {
-            pages +="<li id='mofluid_about'><a href='javascript:void(0);' onclick='getCMSB("+localStorage[config.data[0].storage_key+'about_us']+")'>"+locale.message.text["aboutus"]+"</a></li>";
-        }
+            pages +="<li id='mofluid_about'><a href='javascript:void(0);' onclick='getCMSB("+localStorage[config.data[0].storage_key+'about_us']+")'>Contact Us</a></li>";
+		   
+		   pages +="<li id='mofluid_about'><a href='javascript:void(0);' onclick='getCMSB("+localStorage[config.data[0].storage_key+'about_us']+")'>Get 20% Off</a></li>";
+        
+		}
         if(localStorage[config.data[0].storage_key+'term_condition'] != 0)
         {
             pages +="<li id='mofluid_home'><a href='javascript:void(0);' onclick='getCMSB("+localStorage[config.data[0].storage_key+'term_condition']+")'>"+locale.message.text["termcondition"]+"</a></li>";
@@ -76,6 +79,7 @@ function checkLoginStatus() {
         if(localStorage[config.data[0].storage_key+'return_privacy_policy'] != 0)
         {
             pages +="<li id='mofluid_home'><a href='javascript:void(0);' onclick='getCMSB("+localStorage[config.data[0].storage_key+'return_privacy_policy']+")'>"+locale.message.text["returnpolicy"]+"</a></li>";
+			 pages +="<li id='mofluid_home'><div class='search'><div id='searchBox' class='searchbox' ><form name='serachForm' action='javascript:custom_search();'><div><input id='searchFilter' type='serach' data-type='search' data-theme='a' /><ul id='suggestions' data-role='listview' data-inset='true' data-theme='a'></ul></div></form></div> </div></li>";
         }
     }
     var current_time = new Date().getTime();

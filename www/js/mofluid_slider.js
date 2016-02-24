@@ -91,8 +91,6 @@ function fetchFeaturesProduct() {
 function setfourBox() {
 	
 	
-	
-	
 	  
                                  $.ajax({
                                         url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getFourBox&currency=" + app_curr_code,
