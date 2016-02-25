@@ -3889,8 +3889,14 @@ $.ajax({
        else {
        for(i=0; i<image_len; i++) {
        
-       $("#product_image_slider").append('<div class="item"><img src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
-       
+	     if(i==0)
+		 {
+          $("#product_image_slider").append('<div class="item active"><img src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
+		 }else{
+			   $("#product_image_slider").append('<div class="item"><img src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
+		 
+			 
+		 }
 	   }
        }
        $( "#hideit1" ).hide();
