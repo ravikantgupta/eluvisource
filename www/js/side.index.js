@@ -198,7 +198,7 @@ function new_side_cat(data){
         {
            // $("#Cate_slide").append('<div class="new_cate_panel_div_main new_head" id="mofluid_home" onclick="getCMSB('+localStorage[config.data[0].storage_key+'return_privacy_policy']+')">'+locale.message.text["returnpolicy"]+'</div>');
            
-  		   $("#Cate_slide").append('<div class="new_cate_panel_div_main new_head search" id="mofluid_home" ><div id="searchBox1" class="searchbox" ><form name="serachForm" action="javascript:custom_search();"><input id="searchFilter" type="serach" data-type="search" placeholder="" data-theme="a" /></form></div></div>');
+  		   $("#Cate_slide").append('<div class="new_cate_panel_div_main new_head search" id="mofluid_home" ><div id="searchBox1" class="searchbox1" ><form name="serachForm" action="javascript:custom_search();"><input id="searchFilter" type="serach" data-type="search" placeholder="" data-theme="a" /></form></div></div>');
            
         }
         
