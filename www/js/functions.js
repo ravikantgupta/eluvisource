@@ -3890,11 +3890,12 @@ $.ajax({
        for(i=0; i<image_len; i++) {
        
        $("#product_image_slider").append('<div class="item"><img src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
-       }
+       
+	   }
        }
        $( "#hideit1" ).hide();
        $( "#product_image_slider" ).show();
-       var owl = $("#product_image_slider");
+      /* var owl = $("#product_image_slider");
        owl.owlCarousel({
                        items : 1, //10 items above 1000px browser width
                        itemsDesktop : [1000,1], //5 items between 1000px and 901px
@@ -3903,7 +3904,7 @@ $.ajax({
                        itemsMobile : false,  // itemsMobile disabled - inherit from itemsTablet option
                        navigation : false,
                        pagination: false
-                       });
+                       });*/
        
        }
        });
