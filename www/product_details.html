@@ -234,50 +234,50 @@
                 <div>
                 	
                     <div class="qty-wrapper">
-            <label for="qty">Qty:</label>
-            
-			<input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty">
-			<a id="plus" href="javascript:void(0)"></a>
-			<a id="minus" href="javascript:void(0)"></a>
-        </div>
+							<label for="qty">Qty:</label>
+							
+							<input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty">
+							<a id="plus" href="javascript:void(0)"></a>
+							<a id="minus" href="javascript:void(0)"></a>
+                    </div>
         
         	
-            <div class="rgt-btn">
-            	<div class="add-to-cart-buttons">
-            		<button type="button" title="Add to Cart" class="button btn-cart">Add to Cart</button>
-                </div>
-                <ul class="add-to-links">
-                                <li class=""><a href="#" class="link-wishlist "><i class="fa fa-heart"></i>Add to Wishlist</a></li>
-                 <li><a href="#" class="link-compare"><i class="fa fa-exchange"></i>Add to Compare</a></li>
+						<div class="rgt-btn">
+							<div class="add-to-cart-buttons">
+								<button type="button" title="Add to Cart" class="button btn-cart">Add to Cart</button>
+							</div>
+							<ul class="add-to-links">
+											<li class=""><a href="#" class="link-wishlist "><i class="fa fa-heart"></i>Add to Wishlist</a></li>
+							 <li><a href="#" class="link-compare"><i class="fa fa-exchange"></i>Add to Compare</a></li>
 
-                </ul>
-            </div>
+							</ul>
+						</div>
         
         
-        <script>
-	 jQuery('#plus').click(function(){
-		 
-		 var qty=jQuery('#qty').val(); 
-		 
-		 
-		 jQuery('#qty').val(parseInt(qty)+1);
-		 
-		 
-		 
-	 });
-	 
-	 jQuery('#minus').click(function(){
-		 
-		 var qty=jQuery('#qty').val(); 
-		 
-		 if(qty>1)
-		 {
-		    jQuery('#qty').val(parseInt(qty)-1);
-		 }
-		 
-		 
-	 });
-	</script>
+									<script>
+								 jQuery('#plus').click(function(){
+									 
+									 var qty=jQuery('#qty').val(); 
+									 
+									 
+									 jQuery('#qty').val(parseInt(qty)+1);
+									 
+									 
+									 
+								 });
+								 
+								 jQuery('#minus').click(function(){
+									 
+									 var qty=jQuery('#qty').val(); 
+									 
+									 if(qty>1)
+									 {
+										jQuery('#qty').val(parseInt(qty)-1);
+									 }
+									 
+									 
+								 });
+								</script>
                     
                 </div>
                 <div class="offer">You'll earn <b> 100 Reward Points </b for this item></div>
@@ -441,7 +441,36 @@
             </div>
         </div>
         
-        
+        <style>
+		.dtl-rgt {
+				width: 100%;
+			}
+			.dtl-rgt {
+				background: #fff none repeat scroll 0 0;
+				float: right;
+				min-height: 610px;
+				
+			}
+			
+		  .dtl-rgt .name {
+				font-size: 25px;
+			}
+			.dtl-rgt .name {
+				float: left;
+				font-size: 35px;
+				margin: 20px 0 10px;
+				text-align: center;
+				width: 100%;
+			}
+
+		.dtl-rgt .name {
+			float: left;
+			font-size: 35px;
+			margin: 20px 0 10px;
+			text-align: center;
+			width: 100%;
+		}
+		</style>
          <script type="text/javascript" src="js/groupproduct.js"></script>
         <script type="text/javascript" src="lib/owl-carousel/mofluid_slider.js"></script>
         <script type="text/javascript" src="js/product_details.js"></script>
