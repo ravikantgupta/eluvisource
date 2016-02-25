@@ -691,7 +691,7 @@ function bannerAction(action) {
 	          	if(banner_action.base == "category") {
 	                    var dirPath = dirname(location.href);
                          var fullPath = dirPath + "/subcategory.html?parent=" + banner_action.id;
-						 alert(fullPath);
+						
                          window.location = fullPath;
 	               }
 	               else if(banner_action.base == "product") {
