@@ -199,7 +199,11 @@
                     </form>
                 </div>
                 <div id="loginbox" class="loginbox" align="center">
-                    <h3 id="productName" class="edit_heading" ></h3>
+                   
+                    
+                    <div class="main-aap">
+					
+				     <h3 id="productName" class="edit_heading" ></h3>
                     <input type="hidden" id="gpid" />
                     <input type="hidden" id="group_pro_status" />
                  <!--   <input type="hidden" id="manage_stock" />
@@ -211,15 +215,148 @@
                     
                     
                     
-                    <div>
+                    <div class="header-slider">
                         <div class="item hideit1" id="hideit1" align="center"><img src="images/spin.gif" style="width:30px;height:30px;"></div>
                         <div id="product_image_slider" style="display:none;" class ="product_image_slider">
                             
-                        </div></div>
+                        </div>
+					</div>
                     
                     
                     
-                    <div id="productdescription" style="display:none">
+                    <div id="productdescription" style="display:none" class="dtl-rgt">
+					
+				    	<div class="name">ANEMONE COLLAR NECKLACE</div>
+                        <div class="price">$70.00</div>
+				
+				           
+						   
+                <div>
+                	
+                    <div class="qty-wrapper">
+            <label for="qty">Qty:</label>
+            
+			<input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty">
+			<a id="plus" href="javascript:void(0)"></a>
+			<a id="minus" href="javascript:void(0)"></a>
+        </div>
+        
+        	
+            <div class="rgt-btn">
+            	<div class="add-to-cart-buttons">
+            		<button type="button" title="Add to Cart" class="button btn-cart">Add to Cart</button>
+                </div>
+                <ul class="add-to-links">
+                                <li class=""><a href="#" class="link-wishlist "><i class="fa fa-heart"></i>Add to Wishlist</a></li>
+                 <li><a href="#" class="link-compare"><i class="fa fa-exchange"></i>Add to Compare</a></li>
+
+                </ul>
+            </div>
+        
+        
+        <script>
+	 jQuery('#plus').click(function(){
+		 
+		 var qty=jQuery('#qty').val(); 
+		 
+		 
+		 jQuery('#qty').val(parseInt(qty)+1);
+		 
+		 
+		 
+	 });
+	 
+	 jQuery('#minus').click(function(){
+		 
+		 var qty=jQuery('#qty').val(); 
+		 
+		 if(qty>1)
+		 {
+		    jQuery('#qty').val(parseInt(qty)-1);
+		 }
+		 
+		 
+	 });
+	</script>
+                    
+                </div>
+                <div class="offer">You'll earn <b> 100 Reward Points </b for this item></div>
+                
+                <div class="asd">
+                	<div class="overview">
+				    <div class="description">
+					    <label>Description</label>
+						<div class="acr"><a class="descrip" id="desc" href="javascript:void(0)"><span>+</span></a></div>
+                        <div class="std" id="descdesc" style="display: none;">
+						
+						
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.								
+						
+						</div>
+                    </div>
+					
+					 <div class="description">
+					    <label>Size &amp; Materials</label>
+						<div class="acr"><a class="descrip" id="szmt" href="javascript:void(0)"><span>+</span></a></div>
+                        <div class="std" id="descszmt" style="display: none;">
+						
+						
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.	
+
+								
+						
+						</div>
+                    </div>
+					
+					<div class="description">
+					    <label>Delivery &amp; Returns</label>
+						<div class="acr"><a class="descrip" id="dlrt" href="javascript:void(0)"><span>+</span></a></div>
+                        <div class="std" id="descdlrt" style="display: none;">
+						
+						
+							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.	
+	
+
+								
+						</div>
+                    </div>
+					
+					
+				</div>
+                
+                <script>
+				
+				
+				 
+				 jQuery('.descrip').click(function(){
+					 
+					  var curid=jQuery(this).attr("id");
+					
+				 
+					if(jQuery("#"+curid).hasClass( "active" ))
+					  {
+					  
+						jQuery("#"+curid).removeClass('active');
+						jQuery("#desc"+curid).slideUp();
+						
+						
+						
+					
+					}else
+					 {
+					  
+					  jQuery("#"+curid).addClass('active');
+					  jQuery("#desc"+curid).slideDown();
+					 }
+				  
+				 });
+				 
+				</script>
+                
+                </div>
+           
+
+				<div style="display:none;">
                         <h3 class="edit_heading" style="clear:both;margin-top:10px" id="product_description"></h3>
                         <div id="fulldescription" class="" style="padding-bottom: 15px"></div>
                         <!---Code for Configurable Options Starts --->
@@ -278,8 +415,12 @@
                         <!--Code for Custom Options Ends-->
                         <div id="buy_now_div"></div>
                         <!--<input id="buyNow" class="content-secondry" type="button" data-role="button" data-theme="b" value="Add to Cart"/>-->
+						
+						</div>
+						
                     </div>
                 </div>
+				</div>
                 
                 <div class="clear"></div>
                 
