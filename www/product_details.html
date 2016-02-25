@@ -238,7 +238,7 @@
                     <div class="qty-wrapper">
 							<label for="qty">Qty:</label>
 							
-							<input type="text" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty">
+							<input type="nnn" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty">
 							<a id="plus" href="javascript:void(0)"></a>
 							<a id="minus" href="javascript:void(0)"></a>
                     </div>
@@ -530,6 +530,44 @@
     position: absolute !important;
     text-decoration: none !important;
     width: 10px !important;
+}
+
+.overview {
+    float: left !important;
+    margin: 0 3% !important;
+    text-align: center !important;
+    width: 94% !important;
+}
+
+.dtl-rgt .description {
+    border-top: 1px solid #ccc !important;
+    padding: 10px 0 !important;
+}
+
+.description .acr a {
+    color: #000 !important;
+    font-size: 18px !important;
+    line-height: 0 !important;
+    text-decoration: none !important;
+    vertical-align: sub !important;
+}
+
+.description .acr {
+    display: inline-block !important;
+    float: right !important;
+    font-weight: bold !important;
+}
+
+.main-aap {
+    float: left;
+    margin: 0 !important;
+    padding: 0;
+}
+.description label {
+    color: #000;
+    display: inline;
+    margin-bottom: 0;
+    text-transform: uppercase;
 }
 		</style>
          <script type="text/javascript" src="js/groupproduct.js"></script>
