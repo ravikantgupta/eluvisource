@@ -180,18 +180,18 @@ function new_side_cat(data){
     {
         if(localStorage[config.data[0].storage_key+'about_us'] != 0)
         {
-            $("#Cate_slide").append('<div class="new_cate_panel_div_main" id="mofluid_about" onclick="getCMSB('+localStorage[config.data[0].storage_key+'about_us']+')">Contact Us</div>');
+            $("#Cate_slide").append('<div class="new_cate_panel_div" id="mofluid_about" onclick="getCMSB('+localStorage[config.data[0].storage_key+'about_us']+')">Contact Us</div>');
             
-			$("#Cate_slide").append('<div class="new_cate_panel_div_main" onclick="getCMSB(28)">Get 20% Off</div>');
+			$("#Cate_slide").append('<div class="new_cate_panel_div" onclick="getCMSB(28)">Get 20% Off</div>');
         }
         if(localStorage[config.data[0].storage_key+'term_condition'] != 0)
         {
-            $("#Cate_slide").append('<div class="new_cate_panel_div_main" id="mofluid_home" onclick="getCMSB('+localStorage[config.data[0].storage_key+'term_condition']+')">'+locale.message.text["termcondition"]+'</div>');
+            $("#Cate_slide").append('<div class="new_cate_panel_div" id="mofluid_home" onclick="getCMSB('+localStorage[config.data[0].storage_key+'term_condition']+')">'+locale.message.text["termcondition"]+'</div>');
             
         }
         if(localStorage[config.data[0].storage_key+'privacy_policy'] != 0)
         {
-            $("#Cate_slide").append('<div class="new_cate_panel_div_main" id="mofluid_home" onclick="getCMSB('+localStorage[config.data[0].storage_key+'privacy_policy']+')">'+locale.message.text["privacypolicy"]+'</div>');
+            $("#Cate_slide").append('<div class="new_cate_panel_div" id="mofluid_home" onclick="getCMSB('+localStorage[config.data[0].storage_key+'privacy_policy']+')">'+locale.message.text["privacypolicy"]+'</div>');
             
         }
         if(localStorage[config.data[0].storage_key+'return_privacy_policy'] != 0)
