@@ -943,8 +943,14 @@ function setApplicationLogoBanner(results) {
                           $("#banner_slider").append('<div class="banner"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>');
                           banner_image_slider += '<div class="banner"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>';
                           }
-                          
+						  
+						  
+                         banner_image_slider += '<div class="banner"> <div class="customermsg"><div class="customer-message"> <p>Ready to <em>revamp</em> your wardrobe? Stay <em>on trend</em> with fashion\'s finishing touch.<br><a onclick="bannerAction(5)" href="javascript:void(0)">SHOP FASHION JEWELRY &gt;</a></p> </div></div></div>';
                           localStorage.setItem(config.data[0].storage_key+'_banner_image_slider', banner_image_slider);
+						  
+						
+					
+						  
                           //alert($("#hideit").attr('value'));
                           $( "#hideit" ).remove();
                           $("#new_hide").show();
