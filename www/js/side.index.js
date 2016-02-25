@@ -78,7 +78,7 @@ function checkLoginStatus() {
         }
         if(localStorage[config.data[0].storage_key+'return_privacy_policy'] != 0)
         {
-            pages +="<li id='mofluid_home'><a href='javascript:void(0);' onclick='getCMSB("+localStorage[config.data[0].storage_key+'return_privacy_policy']+")'>"+locale.message.text["returnpolicy"]+"</a></li>";
+          //  pages +="<li id='mofluid_home'><a href='javascript:void(0);' onclick='getCMSB("+localStorage[config.data[0].storage_key+'return_privacy_policy']+")'>"+locale.message.text["returnpolicy"]+"</a></li>";
 			 pages +="<li id='mofluid_home'><div class='search'><div id='searchBox' class='searchbox' ><form name='serachForm' action='javascript:custom_search();'><div><input id='searchFilter' type='serach' data-type='search' data-theme='a' /><ul id='suggestions' data-role='listview' data-inset='true' data-theme='a'></ul></div></form></div> </div></li>";
         }
     }
@@ -196,8 +196,9 @@ function new_side_cat(data){
         }
         if(localStorage[config.data[0].storage_key+'return_privacy_policy'] != 0)
         {
-            $("#Cate_slide").append('<div class="new_cate_panel_div_main new_head" id="mofluid_home" onclick="getCMSB('+localStorage[config.data[0].storage_key+'return_privacy_policy']+')">'+locale.message.text["returnpolicy"]+'</div>');
-            $("#Cate_slide").append('<div class="new_cate_panel_div_main new_head" id="mofluid_home" ><div id="searchBox" class="searchbox" style="display:none;z-index:99999;"><form name="serachForm" action="javascript:custom_search();"><div><input id="searchFilter" type="serach" data-type="search" placeholder="" data-theme="a" /><ul id="suggestions" data-role="listview" data-inset="true" data-theme="a"></ul></div></form></div></div>');
+           // $("#Cate_slide").append('<div class="new_cate_panel_div_main new_head" id="mofluid_home" onclick="getCMSB('+localStorage[config.data[0].storage_key+'return_privacy_policy']+')">'+locale.message.text["returnpolicy"]+'</div>');
+           
+  		   $("#Cate_slide").append('<div class="new_cate_panel_div_main new_head" id="mofluid_home" ><div id="searchBox" class="searchbox" style="display:none;z-index:99999;"><form name="serachForm" action="javascript:custom_search();"><div><input id="searchFilter" type="serach" data-type="search" placeholder="" data-theme="a" /><ul id="suggestions" data-role="listview" data-inset="true" data-theme="a"></ul></div></form></div></div>');
            
         }
         
