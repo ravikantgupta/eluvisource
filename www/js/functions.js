@@ -3899,16 +3899,16 @@ $.ajax({
        var i = 0;
        
        if(image_len <= 0 || image_len == null || image_len == "") {
-       $("#product_image_slider").append('<div class="item"><img src="images/product_default_image.png" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
+       $("#product_image_slider").append('<div class="item"><img height="400" src="images/product_default_image.png" alt="" onerror="images/product_default_image.png" ></div>');
        }
        else {
        for(i=0; i<image_len; i++) {
        
 	     if(i==0)
 		 {
-          $("#product_image_slider").append('<div class="item active"><img src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
+          $("#product_image_slider").append('<div class="item active"><img   height="400" src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" ></div>');
 		 }else{
-			   $("#product_image_slider").append('<div class="item"><img src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
+			   $("#product_image_slider").append('<div class="item"><img   height="400" src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" ></div>');
 		 
 			 
 		 }
