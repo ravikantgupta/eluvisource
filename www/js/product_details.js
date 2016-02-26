@@ -242,13 +242,7 @@ function addTocartDetail(){
                 new_pro_data["max_sale_qty"] = max_sale_qty;
                 new_pro_data["config_manage_stock"] = config_manage_stock; */
                 
-                
-                
-                
-                alert(qty);
-                
-                
-                
+                             
                 addToCart(global_results_configurable.id, pSKU, pPrice, pShipp, imageURL,pName,selectSize,selectColor, selected_option_array, customoptions,qty,new_pro_data);
                     
                //Sumit code commented
