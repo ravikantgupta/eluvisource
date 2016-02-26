@@ -62,7 +62,7 @@
 	        $("#product_description").html(locale.message.text["product_description"]);
             $("#product_name").html(locale.message.text["products"] + locale.message.text["name"]);
             $("#item_code").html(locale.message.text["item"]);
-            $("#description").html(locale.message.text["description"]);
+            $("#descdesc").html(locale.message.text["description"]);
             $("#availability").html(locale.message.text["availability"]);
             $("#price").html(locale.message.text["price"]);
             $("#size").html(locale.message.text["price"]);
@@ -245,26 +245,11 @@
 					
 				  <div id="productName" class="name">ANEMONE COLLAR NECKLACE</div>
                       <div>  
-						          <div class="price" id="price">$70.00</div>
-						          <div id="pCrossRow" class="product_special_cut_price_color" style="display:inline;text-decoration:line-through;">
-                                        <span id="price_symbol_cross"></span>
-                                        <div id="pCross" style="display:inline;text-decoration:line-through">
-                                        </div>
-                                    </div>
-                                    <span id="price_symbol" class="product_price_color"></span>
-                                    <div id="pPrice" class="product_price_color" style="display:inline;"></div>
-                                    <div id="pPriceOrg" style="display:none;"></div>
-                                    <div id="tax_type" style="display:none;"></div>
+						          <div class="price" id="pPrice">$70.00</div>
+						         
 					 </div>  	
 								  
-					 <!--Code for Custom Options Startsstyle="display:none;"-->
-                        <div id ="custom_options_collapsible" style="display:none;">
-                            <h3 id="product_options"></h3>
-                            
-                            <div id="custom_options">
-                                
-                            </div>
-                        </div>
+					
                         			  
 									
 		
@@ -285,12 +270,11 @@
                         <div id="group_product_div" style="overflow: hidden;clear: both;"></div>
                         
                         <!--Code for Custom Options Ends-->
-                        <div id="buy_now_div"></div>
-                        <!--<input id="buyNow" class="content-secondry" type="button" data-role="button" data-theme="b" value="Add to Cart"/>-->
+                       
         	
 						<div class="rgt-btn">
 							<div class="add-to-cart-buttons">
-								<button type="button" title="Add to Cart" class="button btn-cart">Add to Cart</button>
+								<button type="button" title="Add to Cart" class="button btn-cart"  onclick="addTocartDetail()">Add to Cart</button>
 							</div>
 							<ul class="add-to-links">
 											<li class=""><a href="#" class="link-wishlist "><i class="fa fa-heart"></i>Add to Wishlist</a></li>
