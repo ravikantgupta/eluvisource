@@ -127,6 +127,10 @@ $.ajax({
 	    params["description"] = results["description"];
 	    params["sizeandmaterial"] = results["sizeandmaterial"];
 	    params["deliveryreturns"] = results["deliveryreturns"];
+		params["price"] = results["price"];
+		
+		
+		
        
         
        if(results["type"] == "configurable"){
