@@ -28,6 +28,8 @@
         var product_final_price = 0;
         var app_curr_code = config.data[0].app_currency;
         var app_curr_symbol = config.data[0].app_curr_symbol;
+		
+		   var price_symbol = config.data[0].price_symbol;
         
         
         
@@ -59,8 +61,8 @@
                 $("#tax_type").html("("+locale.message.text["excluding_tax"]+")");
             }*/
             
-			
-			
+			alert(app_curr_symbol);
+			alert(price_symbol);
 			 var params1 = Page.getParams();
                     var sizeandmaterial = params1.sizeandmaterial;
                     var deliveryreturns = params1.deliveryreturns;
@@ -68,7 +70,7 @@
 			        $("#descdesc").html(description);
 				    $("#descdlrt").html(deliveryreturns);
 				    $("#descszmt").html(sizeandmaterial);
-				    $("#cprice").html(params1.price);
+				    $("#cprice").html(price_symbol+params1.price);
 				 
 	        $("#product_description").html(locale.message.text["product_description"]);
             $("#product_name").html(locale.message.text["products"] + locale.message.text["name"]);
