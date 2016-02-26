@@ -961,6 +961,9 @@ function setApplicationLogoBanner(results) {
                           store_data["banner"] = banner_image_slider;
                           store_data["store"] = store_response;
                           localStorage[config.data[0].storage_key+"_STORE"] = JSON.stringify(store_data);
+						  
+						   $("#readytore").show();
+						   
                          /* var owl_banner = $("#banner_slider");
                           owl_banner.owlCarousel({
                                                  items : 1, //10 items above 1000px browser width
