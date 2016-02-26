@@ -122,8 +122,9 @@ $.ajax({
        params["result"] = results;
        params["stock_status"] = stock_status;
        params["ptype"] = results["type"];
+	   params["pid"] = results["id"];
        
-       //alert(JSON.stringify(results));
+         alert(JSON.stringify(results));
        if(results["type"] == "configurable"){
        getProDetail(PRODUCT_ID,stock_status,results["type"]);
        }
