@@ -118,13 +118,17 @@ $.ajax({
      },
      success: function(results){
        localStorage.setItem('productDetailslocal', JSON.stringify(results));
-     var params = new Object();
+      var params = new Object();
        params["result"] = results;
        params["stock_status"] = stock_status;
        params["ptype"] = results["type"];
 	   params["pid"] = results["id"];
+	   
+	    params["description"] = results["description"];
+	    params["sizeandmaterial"] = results["sizeandmaterial"];
+	    params["deliveryreturns"] = results["deliveryreturns"];
        
-         alert(params);
+        
        if(results["type"] == "configurable"){
        getProDetail(PRODUCT_ID,stock_status,results["type"]);
        }

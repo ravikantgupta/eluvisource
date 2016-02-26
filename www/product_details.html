@@ -59,18 +59,20 @@
                 $("#tax_type").html("("+locale.message.text["excluding_tax"]+")");
             }*/
             
-			alert(locale.message.text["price"]);
+			
 			
 			 var params1 = Page.getParams();
-                    var pId1 = params1.pid;
-                  var pType1 = params1.ptype;
-			alert(pId1);
-			alert(pType1);
-			
-	        $("#descdesc").html(locale.message.text["product_description"]);
+                    var sizeandmaterial = params1.sizeandmaterial;
+                    var deliveryreturns = params1.deliveryreturns;
+			        var description= params1.description;
+			        $("#descdesc").html(description);
+				    $("#descdlrt").html(deliveryreturns);
+				    $("#descszmt").html(sizeandmaterial);
+				 
+	        $("#product_description").html(locale.message.text["product_description"]);
             $("#product_name").html(locale.message.text["products"] + locale.message.text["name"]);
             $("#item_code").html(locale.message.text["item"]);
-           // $("#descdesc").html(locale.message.text["description"]);
+            $("#description").html(locale.message.text["description"]);
             $("#availability").html(locale.message.text["availability"]);
             $("#price").html(locale.message.text["price"]);
             $("#size").html(locale.message.text["price"]);
@@ -262,11 +264,9 @@
               <div  class="dtl-rgt">
 					
 				  <div id="productName" class="name">ANEMONE COLLAR NECKLACE</div>
-                      <div>  
-						          <div class="price" id="pPrice">$70.00</div>
-						         
-					 </div>  	
-								  
+                    
+					     <div class="price" id="pPrice">$70.00</div>
+					  
 					
                         			  
 									
