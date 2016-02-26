@@ -235,6 +235,8 @@ function addTocartDetail(){
                 var new_pro_data = {};
                 new_pro_data["pro_type"] = pType;
                 new_pro_data["parent_id"] = global_results_configurable.id;
+				
+				var qty=$("#qty").val();
                /* new_pro_data["manage_stock"] = manage_stock;
                 new_pro_data["use_config_manage_stock"] = use_config_manage_stock;
                 new_pro_data["max_sale_qty"] = max_sale_qty;
@@ -243,11 +245,11 @@ function addTocartDetail(){
                 
                 
                 
+                alert(qty);
                 
                 
                 
-                
-                addToCart(global_results_configurable.id, pSKU, pPrice, pShipp, imageURL,pName,selectSize,selectColor, selected_option_array, customoptions,1,new_pro_data);
+                addToCart(global_results_configurable.id, pSKU, pPrice, pShipp, imageURL,pName,selectSize,selectColor, selected_option_array, customoptions,qty,new_pro_data);
                     
                //Sumit code commented
              //   addToCart(new_product_id,stock_status,product_updated_sku,pPrice,pShipp,imageURL,pName,selectSize,selectColor, selected_option_array, customoptions,product_choice,product_custom_price);
