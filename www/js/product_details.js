@@ -8,7 +8,7 @@
 //----------------------------------Add to cart-----------------------------------------------------
 function addTocartDetail(){
 	
-	alert('shreeram');
+	
     
     if($("#pStock").html()==locale.message.text["out_of_stock"] && pType != "grouped"){
         if (config.data[0].platform=='ios' || config.data[0].platform=='android') {
@@ -505,6 +505,8 @@ function add_total_price() {
     $("#price_symbol").html(config.data[0].app_curr_symbol);
     $("#pPrice").html(total_price);
     $("#pPriceOrg").html(total_price);
+	
+	 alert('siyaram8');
     
 }
 
