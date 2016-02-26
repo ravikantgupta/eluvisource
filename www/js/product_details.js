@@ -7,6 +7,8 @@
 
 //----------------------------------Add to cart-----------------------------------------------------
 function addTocartDetail(){
+	
+	alert('shreeram');
     
     if($("#pStock").html()==locale.message.text["out_of_stock"] && pType != "grouped"){
         if (config.data[0].platform=='ios' || config.data[0].platform=='android') {
