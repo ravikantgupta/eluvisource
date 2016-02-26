@@ -281,26 +281,13 @@
     <body onLoad="onLoad()">
         <div data-role="page" data-dom-cache="true" id="mainpage" class="pushnotification">
             
-            <div data-role="header" id="mainheader" class="mainheader" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
+            <div data-role="header" id="mainheader" class="fixed-head priam_shifted" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
                 
-                <div class="navigation_menu_button1 navigation_menu_button menu-btn">
-                    <a href="#" class="fa fa-bars fa">
-                        
-                    </a>
-                </div>
-                
-                <div class="navigation_logo1 navigation_logo" align="center">
-                    <a href="javascript:void(0);">
-                        <img  class="logo_icon" src="images/spin.gif" style="height:30px;width:30px;"/>
-                    </a>
-                </div>
+              
                 
                 <div class="clear"></div>
                 
-                <div id="push-header" style="">
-                    <a href="javascript:hidePush();" style="float: right;margin: 5px 5px 5px 5px;background-color: #e5e5e5;width: 25px;height: 25px;border-radius: 100%;padding: 5px;background-image: url(images/dark/cross.png);background-position: center;background-size: 80% 80%;margin-right:5px;">&nbsp;</a>
-                    <p id='push-msg' style='text-align:justify;font-weight:400;padding:0px 10px;line-height:17px;font-size:14px;width:95%'>&nbsp;</p>
-                </div>
+              
                 
             </div>
               <div class="item hideit" align="center" id="hideit" value="1"><img src="images/spin.gif"></div>
@@ -355,20 +342,40 @@
             </div>
             
 			
-            <nav class="pushy pushy-left">
-			<div class="colose" style="float:right;"><span onclick="hidenav()" style="cursor:pointer;"><img src="img/close.png" style="margin-top:2px; margin-right:5px;"></span></div>
-                <div id="Cate_slide">
-                <center style="margin-top:100px;"><img src="images/spin.gif"></center>
-                </div>
-            </nav>
-			
-            <!-- Site Overlay -->
-            <div class="site-overlay"></div>
+            
 			
         </div>
+		<div id="sidebar"> 
+			   <ul>
+				   <li><a href="what-new.html">What New</a></li>
+				   <li><a href="sale-item.html">Sale Items</a></li>
+				   <li><a href="necklaces.html">Necklaces</a></li>
+				   <li><a href="earrings.html">Earrings</a></li>
+				   <li><a href="bracelets.html">Bracelets</a></li>
+				   <li><a href="rings.html">Rings</a></li>
+				   <li><a href="#">Login</a></li>
+				   <li><a href="#">Contact Us</a></li>
+				   <li><a href="#">Get 20% Off</a></li>
+				   <li><a href="#">Shopping Cart</a></li>
+				   <li><a href="#">Terms of Use</a></li>
+				   <li><a href="#">Privacy Policy</a></li>
+				   <li><div class="search"><input type="search" placeholder="Search"><a href="#"><img src="img/search.png"></a></div></li>
+			   </ul>
+       <div id="sidebar-btn">
+           <span></span>
+           <span></span>
+           <span></span>   
+		   </div>
+   </div>
         <script type="text/javascript" src="js/footer.js"></script>
     </body>
-    
+     <script>
+    jQuery(document).ready(function($) {
+        $('#sidebar-btn').click(function() {
+            $('#sidebar').toggleClass('visible');
+        });
+    });
+    </script>
     <script>
 	
 	function setcat(fullPath){
