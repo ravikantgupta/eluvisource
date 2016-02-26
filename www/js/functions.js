@@ -3854,7 +3854,7 @@ function validate_input(pName,pCat,pColor,pSize,description,shortdes,pPriceSpl,p
                 
 				
 				
-				alert('helll0')';
+				alert('helll0');
 				
                 }
             
