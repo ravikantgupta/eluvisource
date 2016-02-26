@@ -61,8 +61,8 @@
                 $("#tax_type").html("("+locale.message.text["excluding_tax"]+")");
             }*/
             
-			alert(app_curr_symbol);
-			alert(price_symbol);
+			
+			
 			 var params1 = Page.getParams();
                     var sizeandmaterial = params1.sizeandmaterial;
                     var deliveryreturns = params1.deliveryreturns;
@@ -70,7 +70,9 @@
 			        $("#descdesc").html(description);
 				    $("#descdlrt").html(deliveryreturns);
 				    $("#descszmt").html(sizeandmaterial);
-				    $("#cprice").html(price_symbol+params1.price);
+				    $("#cprice").html(app_curr_symbol+params1.price);
+					
+					alert(params1.result);
 				 
 	        $("#product_description").html(locale.message.text["product_description"]);
             $("#product_name").html(locale.message.text["products"] + locale.message.text["name"]);
@@ -101,7 +103,7 @@
           if(localStorage.getItem('foo') == 1){
            
              try{
-			  alert('siyaram67');
+			 
                   var params = JSON.parse(localStorage.getItem('productDetailslocal'));
                   pType = params.ptype;
                   pId = params.pid;
@@ -112,17 +114,17 @@
                    console.log("error");
               }
               if(pType == "configurable"){
-			   alert('siyaram6');
+			  
                   product_det_from_page.configurable_product_function(localStorage.getItem('productDetailslocal'));
               }
               else if(pType=="grouped"){
 			  
-			   alert('siyaram5');
+			  
                   
                   getgroupproductdetail(pId);
               }
               else{
-                  alert(localStorage.getItem('productDetailslocal'));
+                 
                   product_det_from_page.simple_product_info(localStorage.getItem('productDetailslocal'));
               }
           }
@@ -138,7 +140,7 @@
               }
               catch(e)
               {
-			   alert('siyaram3');
+			   alert(e);
                   console.log("error");
               }
               if(pType == "configurable"){
@@ -152,8 +154,7 @@
               }
               else{
 			  
-			    alert('siyaram');
-			   alert(JSON.stringify(params));
+			   
                 product_det_from_page.simple_product_info(JSON.stringify(params));
               }
           }

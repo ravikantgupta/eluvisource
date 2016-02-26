@@ -129,7 +129,7 @@ function showgroupproductdata(results , product_id){
             description = shortdes;
     }
 	
-	alert('ram')
+	
     
     $("#gpid").val(product_id);
     $("#group_pro_status").val(results.stock.status);
