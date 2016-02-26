@@ -3852,6 +3852,10 @@ function validate_input(pName,pCat,pColor,pSize,description,shortdes,pPriceSpl,p
                 $("#pPriceOrg").html(pPrice);
                 $("#pPriceCrossOrg").html(pCross);
                 
+				
+				
+				alert('helll0')';
+				
                 }
             
 
