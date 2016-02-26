@@ -60,6 +60,13 @@
             }*/
             
 			alert(locale.message.text["price"]);
+			
+			 var params1 = Page.getParams();
+                     pId1 = params1.pid;
+                  pType1 = params1.ptype;
+			alert(pId1);
+			alert(pType1);
+			
 	        $("#descdesc").html(locale.message.text["product_description"]);
             $("#product_name").html(locale.message.text["products"] + locale.message.text["name"]);
             $("#item_code").html(locale.message.text["item"]);
@@ -72,7 +79,7 @@
             $("#color").html(locale.message.text["price"]);
 	        $("#product_options").html(locale.message.text["product_options"]);
             $("#searchFilter").attr("placeholder",locale.message.text["search"]);
-            $("#buy_now_div").html(' <input id="buyNow" onclick="addTocartDetail()" class="content-secondry" type="button" data-role="button" data-theme="b" value="'+locale.message.button["add_to_cart"]+'"/  > ');
+            $("#buy_now_div").html('<input id="buyNow" onclick="addTocartDetail()" class="content-secondry" type="button" data-role="button" data-theme="b" value="'+locale.message.button["add_to_cart"]+'"/  > ');
             $("#buy_now_div").trigger("create");
             $("#searchFilter").attr("placeholder",locale.message.text["search_by_name"]);
             $("#price_symbol").html(price_symbol);
@@ -117,7 +124,7 @@
           else{
               var params = Page.getParams();
               try {
-			   alert('siyaram4');
+			  
                   pId = params.pid;
                   pType = params.ptype;
                   var params = JSON.parse(params);
