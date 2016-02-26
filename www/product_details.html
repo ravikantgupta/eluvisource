@@ -67,12 +67,14 @@
                     var sizeandmaterial = params1.sizeandmaterial;
                     var deliveryreturns = params1.deliveryreturns;
 			        var description= params1.description;
-			        $("#descdesc").html(description);
-				    $("#descdlrt").html(deliveryreturns);
-				    $("#descszmt").html(sizeandmaterial);
-				    $("#cprice").html(app_curr_symbol+params1.price);
+			        $("#descdesc").html(params1.result.description);
+				    $("#descdlrt").html(params1.result.deliveryreturns);
+				    $("#descszmt").html(params1.result.sizeandmaterial);
+				    $("#cprice").html(app_curr_symbol+params1.result.price);
+				    $("#rewardpoint").html(params1.result.rewardpoint);
+					 
 					
-					alert(params1.result.rewardpoint);
+				
 				 
 	        $("#product_description").html(locale.message.text["product_description"]);
             $("#product_name").html(locale.message.text["products"] + locale.message.text["name"]);
@@ -140,7 +142,7 @@
               }
               catch(e)
               {
-			   alert(e);
+			  
                   console.log("error");
               }
               if(pType == "configurable"){
@@ -333,7 +335,7 @@
                     
                 </div>
                
-			   <div class="offer">You'll earn <b> 100 Reward Points </b for this item></div>
+			   <div id="rewardpoint" class="offer">You'll earn <b> 100 Reward Points </b for this item></div>
                 
                 <div class="asd">
                 	<div class="overview">
