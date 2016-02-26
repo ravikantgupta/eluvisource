@@ -128,14 +128,17 @@ function showgroupproductdata(results , product_id){
         if(shortdes!="")
             description = shortdes;
     }
+	
+	alert('ram')
     
     $("#gpid").val(product_id);
     $("#group_pro_status").val(results.stock.status);
-    $("#fulldescription").html(description);
+    //$("#fulldescription").html(description);
+	$("#descdesc").html(description);
     $("#pName").html(pName);
     $("#productName").html(pName);
     $("#pCat").html(pCat);
-    $("#fulldescription").html(description);
+    //$("#fulldescription").html(description);
     $("#pSKU").html(pSKU);
     $("#pStock").html(is_in_stock);
     $("#pPrice").html(pPrice);
