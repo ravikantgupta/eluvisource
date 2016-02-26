@@ -80,13 +80,14 @@
 #sidebar-btn {
   display: inline-block;
   vertical-align: middle;
-  width: 30px;
+  width: 76px;
   cursor: pointer;
   padding: 12px;
   position: absolute;
   top: 0; background:url(../img/bg.jpg) left top repeat-y; height:100vh;
   right: -54px;
   z-index:999;
+   height: 100%;
 }
 
 #sidebar-btn span {
