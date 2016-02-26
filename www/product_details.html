@@ -244,7 +244,29 @@
               <div  class="dtl-rgt">
 					
 				  <div id="productName" class="name">ANEMONE COLLAR NECKLACE</div>
-                        <div class="price">$70.00</div>
+                      <div>  
+						          <div class="price" id="price">$70.00</div>
+						          <div id="pCrossRow" class="product_special_cut_price_color" style="display:inline;text-decoration:line-through;">
+                                        <span id="price_symbol_cross"></span>
+                                        <div id="pCross" style="display:inline;text-decoration:line-through">
+                                        </div>
+                                    </div>
+                                    <span id="price_symbol" class="product_price_color"></span>
+                                    <div id="pPrice" class="product_price_color" style="display:inline;"></div>
+                                    <div id="pPriceOrg" style="display:none;"></div>
+                                    <div id="tax_type" style="display:none;"></div>
+					 </div>  	
+								  
+					 <!--Code for Custom Options Startsstyle="display:none;"-->
+                        <div id ="custom_options_collapsible" style="display:none;">
+                            <h3 id="product_options"></h3>
+                            
+                            <div id="custom_options">
+                                
+                            </div>
+                        </div>
+                        			  
+									
 		
 				           
 						   
@@ -258,6 +280,13 @@
 							<a id="minus" href="javascript:void(0)"></a>
                     </div>
         
+		
+		               <!--Grouped Products -->
+                        <div id="group_product_div" style="overflow: hidden;clear: both;"></div>
+                        
+                        <!--Code for Custom Options Ends-->
+                        <div id="buy_now_div"></div>
+                        <!--<input id="buyNow" class="content-secondry" type="button" data-role="button" data-theme="b" value="Add to Cart"/>-->
         	
 						<div class="rgt-btn">
 							<div class="add-to-cart-buttons">
@@ -399,40 +428,14 @@
                                 <td id="availability"></td>
                                 <td id="pStock"> </td>
                             </tr>
-                            <tr id = "pPriceRow">
-                                <td id="price"></td>
-                                <td>
-                                    <div id="pCrossRow" class="product_special_cut_price_color" style="display:inline;text-decoration:line-through;">
-                                        <span id="price_symbol_cross"></span>
-                                        <div id="pCross" style="display:inline;text-decoration:line-through">
-                                        </div>
-                                    </div>
-                                    <span id="price_symbol" class="product_price_color"></span>
-                                    <div id="pPrice" class="product_price_color" style="display:inline;"></div>
-                                    <div id="pPriceOrg" style="display:none;"></div>
-                                    <div id="tax_type" style="display:none;"></div>
-                                </td>
-                            </tr>
+                           
                             <tr id = "pShippRow" style="display:none">
                                 <td id="shipping_charge"></td>
                                 <td id="pShipp"></td>
                             </tr>
                         </table>
-                        <!--Code for Custom Options Startsstyle="display:none;"-->
-                        <div id ="custom_options_collapsible" style="display:none;">
-                            <h3 id="product_options"></h3>
-                            
-                            <div id="custom_options">
-                                
-                            </div>
-                        </div>
-                        
-                        <!--Grouped Products -->
-                        <div id="group_product_div" style="overflow: hidden;clear: both;"></div>
-                        
-                        <!--Code for Custom Options Ends-->
-                        <div id="buy_now_div"></div>
-                        <!--<input id="buyNow" class="content-secondry" type="button" data-role="button" data-theme="b" value="Add to Cart"/>-->
+                       
+                      
 						
 						</div>
 						
