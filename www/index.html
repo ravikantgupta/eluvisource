@@ -5,7 +5,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
         <meta name="msapplication-tap-highlight" content="no" />
-        <title>Eluvy</title>
+        <title>Mofluid</title>
         
         <script type="text/javascript" src="js/header.js"></script>
         <script type="text/javascript" src="js/mofluid_slider.js"></script>
@@ -28,13 +28,9 @@
                 // fetchStoredetail();
                 if(localStorage.getItem('foo') == 1){
                    //$("#hideit").remove();
-				   
-				 
                  var banner_image_slider=localStorage.getItem(config.data[0].storage_key+'_banner_image_slider');
-                  $("#banner_slider").html(banner_image_slider);
-				     $("#newbnr").html(banner_image_slider);
-				  
-                var owl_banner = $("#banner_slider");
+                 $("#banner_slider").html(banner_image_slider);
+                 var owl_banner = $("#banner_slider");
                  owl_banner.owlCarousel({
                                         items : 1, //10 items above 1000px browser width
                                         itemsDesktop : [1000,1], //5 items between 1000px and 901px
@@ -44,11 +40,11 @@
                                         navigation : false,
                                         pagination: true
                                         });
-                  $('#feature_products_inner_div').html(locale.message.text.featured_products);
+                 $('#feature_products_inner_div').html(locale.message.text.featured_products);
                   var featured_products_html=localStorage.getItem(config.data[0].storage_key+'_featured_products_html');
                   $("#feature_products_outer_div").show();
                   $("#featured_owl").html(featured_products_html);
-                 /*var owl_featured = $("#featured_owl");
+                /*  var owl_featured = $("#featured_owl");
                   owl_featured.featureowlCarousel({
                                            items : 3, //10 items above 1000px browser width
                                            itemsDesktop : [1000,3], //5 items between 1000px and 901px
@@ -85,8 +81,6 @@
                   
                 }
               else{
-			  
-			   
                   $("#new_hide").hide();
                       // return false;
                   
@@ -151,7 +145,6 @@
                                                       setApplicationLogoBanner(JSON.stringify(response));
                                                       fetchFeaturesProduct();
                                                       optional_products_slide();
-													    setfourBox();
                                                       
                                                       }
                                                       });
@@ -164,7 +157,6 @@
                                                setApplicationLogoBanner(resdata.rows.item(0).data);
                                                fetchFeaturesProduct();
                                                optional_products_slide();
-											   setfourBox();
                                                
                                                //   printRootCategory(response.categories);
                                                }//End of (if cache time is not expire then this code will be execute) comment
@@ -219,7 +211,6 @@
                                                       setApplicationLogoBanner(JSON.stringify(response));
                                                       fetchFeaturesProduct();
                                                       optional_products_slide();
-													   setfourBox();
                                                       
                                                       //    printRootCategory(response.categories);
                                                       //console.log("Success Webservice");
@@ -277,21 +268,39 @@
                 getFooter();
             }
                    </script>
+				   <style>
+ .main-aap{width:100%;padding:0;margin:0;float:left;}
+.main-aap .banner{width:100%; margin:0; padding:0; float:left;}
+.main-aap .banner img{width:100% !important; margin:0; padding:0;height:auto !important;}
+				   </style>
     </head>
     <body onLoad="onLoad()">
         <div data-role="page" data-dom-cache="true" id="mainpage" class="pushnotification">
             
-            <div data-role="header" id="mainheader" class="fixed-head priam_shifted" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
+            <div data-role="header" id="mainheader" class="mainheader" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
                 
-              
+                <div class="navigation_menu_button1 navigation_menu_button menu-btn">
+                    <a href="#" class="fa fa-bars fa">
+                        
+                    </a>
+                </div>
+                
+                <div class="navigation_logo1 navigation_logo" align="center">
+                    <a href="javascript:void(0);">
+                        <img  class="logo_icon" src="images/spin.gif" style="height:30px;width:30px;"/>
+                    </a>
+                </div>
                 
                 <div class="clear"></div>
                 
-              
+                <div id="push-header" style="">
+                    <a href="javascript:hidePush();" style="float: right;margin: 5px 5px 5px 5px;background-color: #e5e5e5;width: 25px;height: 25px;border-radius: 100%;padding: 5px;background-image: url(images/dark/cross.png);background-position: center;background-size: 80% 80%;margin-right:5px;">&nbsp;</a>
+                    <p id='push-msg' style='text-align:justify;font-weight:400;padding:0px 10px;line-height:17px;font-size:14px;width:95%'>&nbsp;</p>
+                </div>
                 
             </div>
-              <div class="item hideit" align="center" id="hideit" value="1"><img src="images/spin.gif"></div>
-            <div data-role="content" class="home_content main-aap">
+            
+            <div data-role="content" class="home_content">
                 
                 <div id="searchBox" class="searchbox" style="display:none;z-index:99999;">
                    <form name="serachForm" action="javascript:custom_search();">
@@ -305,84 +314,55 @@
                 </div>
                 
                 
-                <div id="newbnr">
-                  
-                    <div id="banner_slider" class="" style="text-align:center;width:100%">
-					
+                <!--<div class="main-aap">
+			<div class="banner"><a href="what-new.html"><img src="img/ban1.jpg"></a></div>
+            <div class="banner"><a href="sale-item.html"><img src="img/ban2.jpg"></a></div>
+            <div class="banner"><a href="necklaces.html"><img src="img/ban3.jpg"></a></div>
+            <div class="banner"><a href="earrings.html"><img src="img/ban4.jpg"></a></div>
+            <div class="banner"><a href="bracelets.html"><img src="img/ban5.jpg"></a></div>
+            <div class="banner"><a href="rings.html"><img src="img/ban6.jpg"></a></div>
+			  </div> -->
+                   <div class="item hideit" align="center" id="hideit" value="1"><img src="images/spin.gif"></div>
+                    <div id="banner_slider" class="slider-contaner hslider" style="text-align:center;width:100%">
                     </div>
-					<div class="banner" id="readytore" style="display:none;"> <div class="customermsg" onclick="setcat('file:///android_asset/www/subcategory.html?parent=4')" ><div class="customer-message"> <p>Ready to <em>revamp</em> your wardrobe? Stay <em>on trend</em> with fashion's finishing touch.<br><a style="background: #000 none repeat scroll 0 0;border: 1px solid #fff;box-shadow: 0 2px 1px #999;color: #fff;font-size: 12px;font-weight: bold;margin-left: 5px;padding: 9px 12px 8px;text-decoration: none;vertical-align: text-bottom;" >SHOP FASHION JEWELRY ></a></p> </div></div></div>
-                </div>
-				
-				
+              
                 
                 <!-- Slider for Feature Products -->
-                <!--<div class="category_list" style = "display:none" id="feature_products_outer_div">
+                <div class="category_list" style = "display:none" id="feature_products_outer_div">
                     <div class="heading_text" id="feature_products_inner_div"></div>
-                </div>-->
-				
-                <div id="featured_owl"  class="main-cate" >
+                </div>
+                <div id="featured_owl"  class="parent" data-role="none">
                 	
                 </div>
-              
+                
                 <!-- Slider for Optional Products -->
-               <!-- <div class="category_list" style="display:none" id="new_products_outer_div">
+                <div class="category_list" style="display:none" id="new_products_outer_div">
                     <div class="heading_text" id="new_products_inner_div"></div>
-                </div>-->
+                </div>
                 <div id="new_owl" class="parent" data-role="none">
                 	<center><img src="images/spin.gif" id="new_hide" style="display:none;"></center>
                 </div>
-				
-				<div id="buttombox" class="forboxes">
-				
-				</div>
                 
             </div>
             
             <div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="footer">
             </div>
-            
-			
-            
+            <div style="display:none;">
+            <nav class="pushy pushy-left">
+			<div class="colose" style="float:right;"><span onclick="hidenav()" style="cursor:pointer;"><img src="img/close.png" style="margin-top:2px; margin-right:5px;"></span></div>
+                <div id="Cate_slide">
+                <center style="margin-top:100px;"><img src="images/spin.gif"></center>
+                </div>
+            </nav>
+            <!-- Site Overlay -->
+            <div class="site-overlay"></div>
+			</div>
 			
         </div>
-		<div id="sidebar"> 
-			   <ul>
-				   <li><a href="what-new.html">What New</a></li>
-				   <li><a href="sale-item.html">Sale Items</a></li>
-				   <li><a href="necklaces.html">Necklaces</a></li>
-				   <li><a href="earrings.html">Earrings</a></li>
-				   <li><a href="bracelets.html">Bracelets</a></li>
-				   <li><a href="rings.html">Rings</a></li>
-				   <li><a href="#">Login</a></li>
-				   <li><a href="#">Contact Us</a></li>
-				   <li><a href="#">Get 20% Off</a></li>
-				   <li><a href="#">Shopping Cart</a></li>
-				   <li><a href="#">Terms of Use</a></li>
-				   <li><a href="#">Privacy Policy</a></li>
-				   <li><div class="search"><input type="search" placeholder="Search"><a href="#"><img src="img/search.png"></a></div></li>
-			   </ul>
-       <div id="sidebar-btn">
-           <span></span>
-           <span></span>
-           <span></span>   
-		   </div>
-   </div>
         <script type="text/javascript" src="js/footer.js"></script>
     </body>
-     <script>
-    jQuery(document).ready(function($) {
-        $('#sidebar-btn').click(function() {
-            $('#sidebar').toggleClass('visible');
-        });
-    });
-    </script>
+    
     <script>
-	
-	function setcat(fullPath){
-	
-	
-	  window.location = fullPath;
-	}
 	 function hidenav()
 	{
 	  
