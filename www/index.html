@@ -8,10 +8,12 @@
         <title>Mofluid</title>
         
         <link rel="stylesheet" type="text/css" href="https://eluvy.com//skin/frontend/rwd/eluvy/css/font-awesome.min.css" media="all" />
-       
+        <link rel="stylesheet" type="text/css" href="https://eluvy.com/skin/frontend/rwd/eluvy/css/bannerslider/owl.carousel.css" media="all" />
+
         <script type="text/javascript" src="js/header.js"></script>
         <script type="text/javascript" src="js/mofluid_slider.js"></script>
-        
+        <script type="text/javascript" src="https://eluvy.com/skin/frontend/base/default/js/bannerslider/owl.slider.js"></script>
+
 
 		  
 <script type="text/javascript">
@@ -409,59 +411,7 @@ jQuery('#fproductslide1').owlSlider({
     </head>
     <body onLoad="onLoad()">
         <div data-role="page" data-dom-cache="true" id="mainpage" class="pushnotification">
-        
-        
-        <style>
-.fixed {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-.header-language-background {
-    min-height: 60px;
-	padding: 0 10px;
-    background-color: #000000;
-    text-transform: uppercase; color:#fff; z-index:9999;
-}
-.header-language-background a{color:#fff;}
-.header-language-background a:hover{color:#ccc;}
-.logoheader {
-    width:100%;
-    display: inline-block !important;
-    position: relative;
-    vertical-align: text-top;
-}
-.search-button {
-    width: 25px;
-    height: 25px;
-	text-indent: -9999px;
-    position: absolute;
-    top: 2px;
-    right: -3px;
-    border: 0;
-}
-
-<!-- Style -->
-#banner-slider1.owl-theme .owl-controls .owl-nav div
-{
-	background:#1F1F1F;
-	color:#6B6B6B}
-#banner-slider1.owl-theme .owl-controls .owl-nav div:hover
-{
-	background:#121212;
-	color:#666666}
-#banner-slider1.owl-theme .owl-controls .owl-dot span
-{
-	background:#DBDBDB;
-}
-#banner-slider1.owl-theme .owl-controls .owl-dot.active span,
-#banner-slider1.owl-theme .owl-controls .owl-dot:hover span
-{
-	background:#BFBFBF;
-}
-        	
-        </style>
+     
 
 <!-- new code vipin start-->
             <div class="header-language-background fixed">
@@ -507,7 +457,128 @@ jQuery('#fproductslide1').owlSlider({
 			
 			          </div>
 					
-							   
+							<div id="header-account" style="display:none;" class="skip-content loginuser skip-active"><div class="caret"></div><div class="youama-login-window" style="display: block;">
+        <div class="youama-window-outside">
+          
+            <div class="youama-window-inside">
+                <div class="youama-window-title">
+                    <h3>
+                        Sign In                    </h3>
+                </div>
+                
+                <div class="youama-window-box first">
+                    <div class="youama-window-content">
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-email">Email <!--<span>*</span>--></label>
+                            <input type="text" id="youama-emails" name="youama-email" value="">
+                            <div class="youama-ajaxlogin-error err-email err-noemail err-wrongemail err-wronglogin" style="display: none;"></div>
+                        </div>
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-password">Password <!--<span>*</span>--></label>
+                            <input type="password" id="youama-password" name="youama-password" value="">
+                            <div class="youama-ajaxlogin-error err-password err-dirtypassword err-nopassword err-longpassword" style="display: none;"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="youama-window-box last">
+                    <div class="youama-window-content box-contents box-contents-button youama-showhideme">
+                        <span class="youama-forgot-password">
+                            <a href="https://eluvy.com/customer/account/forgotpassword/">Forgot Password</a>
+                        </span>
+                        <button type="button" class="button btn-proceed-checkout btn-checkout youama-ajaxlogin-button">
+                            <span>
+                                <span>
+                                    Login                                </span>
+                            </span>
+                        </button>
+                       <!-- <p id="y-to-register" class="yoauam-switch-window">
+                            or registration                        </p>-->
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div><div class="youama-register-window" style="display: block;">
+        <div class="youama-window-outside">
+            <span class="close">×</span>
+
+            <div class="youama-window-inside">
+                <div class="youama-window-title">
+                    <h3>
+                        Create an Account                    </h3>
+                </div>
+
+                <div class="youama-window-box first">
+                   
+                    <div class="youama-window-content">
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-firstname">Name <!--<span>*</span>--></label>
+                            <input type="text" id="youama-firstname" name="youama-firstname" value="">
+                            <div class="youama-ajaxlogin-error err-firstname err-nofirstname err-dirtyfirstname" style="display: none;"></div>
+                        </div>
+                         <!--<div class="input-fly youama-showhideme">
+                            <label for="youama-lastname">Last Name <span>*</span></label>
+                            <input type="text" placeholder="Last Name" id="youama-lastname" name="youama-lastname" value="" />
+                            <div class="youama-ajaxlogin-error err-lastname err-nolastname err-dirtylastname"></div>
+                        </div>
+                       <div class="input-fly input-fly-checkbox youama-showhideme">
+                            <input type="checkbox" id="youama-newsletter" name="youama-newsletter" value="ok" />
+                            <label for="youama-newsletter">Subscribe to Newsletter</label>
+                        </div>-->
+                    </div>
+                </div>
+
+                <div class="youama-window-box second">
+                  
+                    <div class="youama-window-content">
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-email">Email <!--<span>*</span>--></label>
+                            <input type="text" id="youama-email" name="youama-email" value="">
+                            <div class="youama-ajaxlogin-error err-email err-noemail err-wrongemail err-emailisexist" style="display: none;"></div>
+                        </div>
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-password">Password <!--<span>*</span>--></label>
+                            <input type="password" id="youama-password" name="youama-password" value="">
+                            <div class="youama-ajaxlogin-error err-password err-dirtypassword err-nopassword err-shortpassword err-longpassword" style="display: none;"></div>
+                        </div>
+                        <div class="input-fly youama-showhideme">
+                            <label for="youama-passwordsecond">Confirm Password <!--<span>*</span>--></label>
+                            <input type="password" id="youama-passwordsecond" name="youama-passwordsecond" value="">
+                            <div class="youama-ajaxlogin-error err-passwordsecond err-nopasswordsecond err-notsamepasswords" style="display: none;"></div>
+                        </div>
+						
+						<div class="input-fly youama-showhideme">
+                            <label for="youama-invitationcode">Invitation Code (optional) <!--<span>*</span>--></label>
+                            <input type="text" id="youama-invitationcode" name="youama-invitationcode" value="" autocomplete="OfF" autocorrect="off" autocapitalize="off">
+                           
+                        </div>
+                       
+                    </div>
+                </div>
+
+                <div class="youama-window-box last">
+                    <div class="youama-window-content box-contents youama-showhideme">
+                        <button type="button" class="button btn-proceed-checkout btn-checkout youama-ajaxlogin-button">
+                            <span>
+                                <span>
+                                    Register                                </span>
+                            </span>
+                        </button>
+                       <!-- <p id="y-to-login" class="yoauam-switch-window">
+                                                    </p>-->
+                    </div>
+					 <div class="input-fly input-fly-checkbox youama-showhideme">
+                           <span style="display:none;"> <input type="checkbox" id="youama-licence" name="youama-licence" checked="checked" value="ok"></span>
+                            <label for="youama-licence">By creating an account you agree to the <a href="https://eluvy.com/term-condition" target="_blank">Terms and Coditions</a></label>
+                            <div class="youama-ajaxlogin-error err-nolicence" style="display: none;"></div>
+                     </div>
+                </div>
+
+            </div>
+        </div>
+    </div><div class="youama-ajaxlogin-loader">
+    </div></div>   
 						
 		  
 			<div class="visitus" style="display:none;">
@@ -978,7 +1049,7 @@ jQuery(document).ready(function() {
 		           <div class="hover-action">
 					<div class="cartactions">
 					
-						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+						 <button onClick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
 													
 						<ul class="wish-add-to-links">
 						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
@@ -1005,7 +1076,7 @@ jQuery(document).ready(function() {
 		           <div class="hover-action">
 					<div class="cartactions">
 					
-						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+						 <button onClick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
 													
 						<ul class="wish-add-to-links">
 						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
@@ -1033,7 +1104,7 @@ jQuery(document).ready(function() {
 		           <div class="hover-action">
 					<div class="cartactions">
 					
-						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+						 <button onClick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
 													
 						<ul class="wish-add-to-links">
 						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
@@ -1059,7 +1130,7 @@ jQuery(document).ready(function() {
 		           <div class="hover-action">
 					<div class="cartactions">
 					
-						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+						 <button onClick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
 													
 						<ul class="wish-add-to-links">
 						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
@@ -1085,7 +1156,7 @@ jQuery(document).ready(function() {
 		           <div class="hover-action">
 					<div class="cartactions">
 					
-						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+						 <button onClick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
 													
 						<ul class="wish-add-to-links">
 						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
@@ -1147,7 +1218,7 @@ jQuery(document).ready(function() {
 		           <div class="hover-action">
 					<div class="cartactions">
 					
-						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+						 <button onClick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
 													
 						<ul class="wish-add-to-links">
 						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
@@ -1174,7 +1245,7 @@ jQuery(document).ready(function() {
 		           <div class="hover-action">
 					<div class="cartactions">
 					
-						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+						 <button onClick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
 													
 						<ul class="wish-add-to-links">
 						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
@@ -1202,7 +1273,7 @@ jQuery(document).ready(function() {
 		           <div class="hover-action">
 					<div class="cartactions">
 					
-						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+						 <button onClick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
 													
 						<ul class="wish-add-to-links">
 						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
@@ -1228,7 +1299,7 @@ jQuery(document).ready(function() {
 		           <div class="hover-action">
 					<div class="cartactions">
 					
-						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+						 <button onClick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
 													
 						<ul class="wish-add-to-links">
 						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
@@ -1254,7 +1325,7 @@ jQuery(document).ready(function() {
 		           <div class="hover-action">
 					<div class="cartactions">
 					
-						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+						 <button onClick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
 													
 						<ul class="wish-add-to-links">
 						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
@@ -1449,7 +1520,7 @@ jQuery(document).ready(function() {
 <ul>
 <li><a href="https://eluvy.com/">Eluvy.com</a></li>
 <li><a href="https://eluvy.com/our-company/eluvy-club-program">Eluvy Club Program</a></li>
-<li><a href="javascript:void(0)" onclick="popWin('https://eluvy.com/catalog/product_compare/index','compare','top:0,left:0,width=820,height=600,resizable=yes,scrollbars=yes')">Compare Products</a></li>
+<li><a href="javascript:void(0)" onClick="popWin('https://eluvy.com/catalog/product_compare/index','compare','top:0,left:0,width=820,height=600,resizable=yes,scrollbars=yes')">Compare Products</a></li>
 </ul>
 </div>
 <div class="links">
@@ -1495,7 +1566,7 @@ jQuery(document).ready(function() {
             
             <div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="footer">
             </div>
-            <div style="display:none;">
+            
             <nav class="pushy pushy-left">
                 <div id="Cate_slide">
                
@@ -1518,8 +1589,6 @@ jQuery(document).ready(function() {
             </nav>
             <!-- Site Overlay -->
             <div class="site-overlay"></div>
-			
-			</div>
         </div>
         <script type="text/javascript" src="js/footer.js"></script>
     </body>

@@ -7,8 +7,6 @@
 
 //----------------------------------Add to cart-----------------------------------------------------
 function addTocartDetail(){
-	
-	
     
     if($("#pStock").html()==locale.message.text["out_of_stock"] && pType != "grouped"){
         if (config.data[0].platform=='ios' || config.data[0].platform=='android') {
@@ -235,15 +233,19 @@ function addTocartDetail(){
                 var new_pro_data = {};
                 new_pro_data["pro_type"] = pType;
                 new_pro_data["parent_id"] = global_results_configurable.id;
-				
-				var qty=$("#qty").val();
                /* new_pro_data["manage_stock"] = manage_stock;
                 new_pro_data["use_config_manage_stock"] = use_config_manage_stock;
                 new_pro_data["max_sale_qty"] = max_sale_qty;
                 new_pro_data["config_manage_stock"] = config_manage_stock; */
                 
-                             
-                addToCart(global_results_configurable.id, pSKU, pPrice, pShipp, imageURL,pName,selectSize,selectColor, selected_option_array, customoptions,qty,new_pro_data);
+                
+                
+                
+                
+                
+                
+                
+                addToCart(global_results_configurable.id, pSKU, pPrice, pShipp, imageURL,pName,selectSize,selectColor, selected_option_array, customoptions,1,new_pro_data);
                     
                //Sumit code commented
              //   addToCart(new_product_id,stock_status,product_updated_sku,pPrice,pShipp,imageURL,pName,selectSize,selectColor, selected_option_array, customoptions,product_choice,product_custom_price);
@@ -501,8 +503,6 @@ function add_total_price() {
     $("#price_symbol").html(config.data[0].app_curr_symbol);
     $("#pPrice").html(total_price);
     $("#pPriceOrg").html(total_price);
-	
-	 alert('siyaram8');
     
 }
 

@@ -86,33 +86,6 @@ function fetchFeaturesProduct() {
                    });
 }
 
-
-
-function setfourBox() {
-	
-	
-	  
-                                 $.ajax({
-                                        url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getFourBox&currency=" + app_curr_code,
-                                        type: 'GET',
-                                        contentType: 'application/json',
-                                        dataType: 'json',
-                                        async: false,
-                                        error: function(jqXHR, textStatus, errorThrown) {
-                                        console.log("Internal server Error! \n please try after some time.")
-                                        },
-                                        success: function(response) {
-                                       
-                                       var resdata=JSON.stringify(response);
-									    var response = JSON.parse(resdata);
-										   										
-											 $("#buttombox").html(response.four_boxes.content);
-                                        }
-                                        });
-	
-	
-}
-
 function feature_product_list(results){
     
     var response = JSON.parse(results);
@@ -154,16 +127,16 @@ function feature_product_list(results){
                 price_html += '<h4 class="producth4 product_price_color">' + app_curr_symbol + parseFloat(response.products_list[i].price.replace(",", "")).toFixed(2) + '</h4>';
             }
             
-            featured_pro += '<div class="cate">\
-            <div class="sep" >\
-            <div style="display:table;width:100%">\
-            <div  onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
-            <img style="height:314px;" src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" />\
-            </div>\
-            </div>\
-			<div class="new_header_product_list">\
+            featured_pro += '<div class="child">\
+            <div class="slider_products">\
+            <div class="new_header_product_list">\
             <h2 class="producth2">' + response.products_list[i].name + '</h2>\
             '+price_html+'\
+            </div>\
+            <div style="display:table;width:100%">\
+            <div class="home_page_product_list_div" style="height:120px;display:table-cell;vertical-align:middle;" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
+            <img src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" />\
+            </div>\
             </div>\
             </div>\
             </div>';
@@ -171,35 +144,29 @@ function feature_product_list(results){
           //  featured_pro +='<div class="child" >child '+i+'</div>';
             i++;
         }
-		
-		
-       // $('#feature_products_inner_div').html(locale.message.text.featured_products);
+        $('#feature_products_inner_div').html(locale.message.text.featured_products);
         localStorage.setItem(config.data[0].storage_key+'_featured_products_html',featured_pro);
         
         $("#feature_products_outer_div").show();
-		
         $("#featured_owl").html(featured_pro);
-        //$("#featured_owl").trigger("create");
-		
+        $("#featured_owl").trigger("create");
     } else {
         $('#feature_products_outer_div').hide();
         $("#featured_owl").hide();
     }
-        var owl_featured = $("#featured_owl");
-   
+    var owl_featured = $("#featured_owl");
+   /*
     owl_featured.owlCarousel({
-                             items : 1, //10 items above 1000px browser width
+                             items : 3, //10 items above 1000px browser width
                              itemsDesktop : [1000,3], //5 items between 1000px and 901px
                              itemsDesktopSmall : [900,4], // betweem 900px and 601px
                              itemsTablet: [600,3], //2 items between 600 and 0
-							 itemsMobile :[360,1], 
-                             itemsMobile : true,  // itemsMobile disabled - inherit from itemsTablet option
-                             navigation : true,
+                             itemsMobile : false,  // itemsMobile disabled - inherit from itemsTablet option
+                             navigation : false,
                              pagination: false,
-                             autoPlay:true
+                             autoPlay:false
                              });
-   
-    
+    */
 }
 
 //------------------------------------------------New product list----------------------------------------
@@ -275,8 +242,6 @@ function optional_products_slide(){
 }
 
 function new_product_list(results){
-	
-	
     var response = JSON.parse(results);
     var featured_pro = "";
     var i = 0;
@@ -351,7 +316,7 @@ function new_product_list(results){
         }
         
         localStorage.setItem(config.data[0].storage_key+'_new_products_html' , featured_pro);
-     //   $("#new_products_inner_div").html(locale.message.text.new_products);
+        $("#new_products_inner_div").html(locale.message.text.new_products);
         $("#new_products_outer_div").show();
         $("#new_owl").html(featured_pro);
         $("#new_owl").trigger("create");
@@ -360,8 +325,8 @@ function new_product_list(results){
         $("#new_owl").hide();
     }
     //printRootCategory();
-    var owl_new = $("#new_owl");
-  owl_new.owlCarousel({
+  //  var owl_new = $("#new_owl");
+ /*   owl_new.owlCarousel({
                         items : 3, //10 items above 1000px browser width
                         itemsDesktop : [1000,3], //5 items between 1000px and 901px
                         itemsDesktopSmall : [900,4], // betweem 900px and 601px
@@ -370,6 +335,6 @@ function new_product_list(results){
                         navigation : false,
                         pagination: false,
                         autoPlay :false
-                        }); 
+                        }); */
     $("#footer_content").show();
 }

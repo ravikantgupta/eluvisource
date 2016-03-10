@@ -10,10 +10,6 @@
 
         </style>
         <script type="text/javascript" src="js/header.js"></script>
-		 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-       
- 
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
         <script type="text/javascript">
             app.initialize();
         </script>
@@ -28,8 +24,6 @@
         var product_final_price = 0;
         var app_curr_code = config.data[0].app_currency;
         var app_curr_symbol = config.data[0].app_curr_symbol;
-		
-		   var price_symbol = config.data[0].price_symbol;
         
         
         
@@ -61,21 +55,6 @@
                 $("#tax_type").html("("+locale.message.text["excluding_tax"]+")");
             }*/
             
-			
-			
-			 var params1 = Page.getParams();
-                    var sizeandmaterial = params1.sizeandmaterial;
-                    var deliveryreturns = params1.deliveryreturns;
-			        var description= params1.description;
-			        $("#descdesc").html(params1.result.description);
-				    $("#descdlrt").html(params1.result.deliveryreturns);
-				    $("#descszmt").html(params1.result.sizeandmaterial);
-				    $("#cprice").html(app_curr_symbol+params1.result.price);
-				    $("#rewardpoint").html(params1.result.rewardpoint);
-					 
-					
-				
-				 
 	        $("#product_description").html(locale.message.text["product_description"]);
             $("#product_name").html(locale.message.text["products"] + locale.message.text["name"]);
             $("#item_code").html(locale.message.text["item"]);
@@ -88,7 +67,7 @@
             $("#color").html(locale.message.text["price"]);
 	        $("#product_options").html(locale.message.text["product_options"]);
             $("#searchFilter").attr("placeholder",locale.message.text["search"]);
-            $("#buy_now_div").html('<input id="buyNow" onclick="addTocartDetail()" class="content-secondry" type="button" data-role="button" data-theme="b" value="'+locale.message.button["add_to_cart"]+'"/  > ');
+            $("#buy_now_div").html(' <input id="buyNow" onclick="addTocartDetail()" class="content-secondry" type="button" data-role="button" data-theme="b" value="'+locale.message.button["add_to_cart"]+'"/  > ');
             $("#buy_now_div").trigger("create");
             $("#searchFilter").attr("placeholder",locale.message.text["search_by_name"]);
             $("#price_symbol").html(price_symbol);
@@ -105,7 +84,6 @@
           if(localStorage.getItem('foo') == 1){
            
              try{
-			 
                   var params = JSON.parse(localStorage.getItem('productDetailslocal'));
                   pType = params.ptype;
                   pId = params.pid;
@@ -116,24 +94,20 @@
                    console.log("error");
               }
               if(pType == "configurable"){
-			  
                   product_det_from_page.configurable_product_function(localStorage.getItem('productDetailslocal'));
               }
               else if(pType=="grouped"){
-			  
-			  
                   
                   getgroupproductdetail(pId);
               }
               else{
-                 
+                  //alert("1");
                   product_det_from_page.simple_product_info(localStorage.getItem('productDetailslocal'));
               }
           }
           else{
               var params = Page.getParams();
               try {
-			  
                   pId = params.pid;
                   pType = params.ptype;
                   var params = JSON.parse(params);
@@ -142,21 +116,17 @@
               }
               catch(e)
               {
-			  
                   console.log("error");
               }
               if(pType == "configurable"){
-			   alert('siyaram2');
                   product_det_from_page.configurable_product_function(JSON.stringify(params));
               }
               else if(pType=="grouped"){
-                   alert('siyaram1');
+                  
                   getgroupproductdetail(pId);
                   
               }
               else{
-			  
-			   
                 product_det_from_page.simple_product_info(JSON.stringify(params));
               }
           }
@@ -228,190 +198,28 @@
                         </div>
                     </form>
                 </div>
-              
-
-			  <div>
-                   
+                <div id="loginbox" class="loginbox" align="center">
+                    <h3 id="productName" class="edit_heading" ></h3>
+                    <input type="hidden" id="gpid" />
+                    <input type="hidden" id="group_pro_status" />
+                 <!--   <input type="hidden" id="manage_stock" />
+                    <input type="hidden" id="use_config_manage_stock"/>
+                    <input type="hidden" id="max_sale_qty"/>
+                    <input type="hidden" id="config_manage_stock"/> -->
                     
-                    <div class="main-aap">
-					
-						<div class="header-slider">
-							
-							<input type="hidden" id="gpid" />
-							<input type="hidden" id="group_pro_status" />
-						 <!--   <input type="hidden" id="manage_stock" />
-							<input type="hidden" id="use_config_manage_stock"/>
-							<input type="hidden" id="max_sale_qty"/>
-							<input type="hidden" id="config_manage_stock"/> -->
-							
-							
-							
-							
-							
-						
-								<div class="item hideit1" id="hideit1" align="center"><img src="images/spin.gif" style="width:30px;height:30px;"></div>
-							<div id="myCarousel" class="carousel slide" data-ride="carousel">	
-								 <!-- Indicators -->
-								<div id="product_image_slider" style="display:none;" class="carousel-inner" role="listbox">
-									
-								</div>
-                                <!-- Left and right controls -->
-								<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-								  <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-								  <span class="sr-only">Previous</span>
-								</a>
-								<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-								  <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-								  <span class="sr-only">Next</span>
-								</a>
-							</div>
-							</div>
                     
-              <div  class="dtl-rgt">
-					
-				  <div id="productName" class="name">ANEMONE COLLAR NECKLACE</div>
                     
-					     <div class="price" id="cprice">$70.00</div>
-					  
-					
-                        			  
-									
-		
-				           
-						   
-                <div>
-                	
-                    <div class="qty-wrapper">
-							<label for="qty">Qty:</label>
-							
-							<input type="nnn" pattern="\d*" name="qty" id="qty" maxlength="12" value="1" title="Qty" class="input-text qty">
-							<a id="plus" href="javascript:void(0)"></a>
-							<a id="minus" href="javascript:void(0)"></a>
-                    </div>
-        
-		
-		               <!--Grouped Products -->
-                        <div id="group_product_div" style="overflow: hidden;clear: both;"></div>
-                        
-                        <!--Code for Custom Options Ends-->
-                       
-        	
-						<div class="rgt-btn">
-							<div class="add-to-cart-buttons">
-								<button type="button" title="Add to Cart" class="button btn-cart"  onclick="addTocartDetail()">Add to Cart</button>
-							</div>
-							<ul class="add-to-links">
-											<li class=""><a href="#" class="link-wishlist "><i class="fa fa-heart"></i>Add to Wishlist</a></li>
-							 <li><a href="#" class="link-compare"><i class="fa fa-exchange"></i>Add to Compare</a></li>
-
-							</ul>
-						</div>
-        
-        
-									<script>
-								 jQuery('#plus').click(function(){
-									 
-									 var qty=jQuery('#qty').val(); 
-									 
-									 
-									 jQuery('#qty').val(parseInt(qty)+1);
-									 
-									 
-									 
-								 });
-								 
-								 jQuery('#minus').click(function(){
-									 
-									 var qty=jQuery('#qty').val(); 
-									 
-									 if(qty>1)
-									 {
-										jQuery('#qty').val(parseInt(qty)-1);
-									 }
-									 
-									 
-								 });
-								</script>
                     
-                </div>
-               
-			   <div id="rewardpoint" class="offer">You'll earn <b> 100 Reward Points </b for this item></div>
-                
-                <div class="asd">
-                	<div class="overview">
-				    <div class="description">
-					    <label>Description</label>
-						<div class="acr"><a class="descrip" id="desc" href="javascript:void(0)"><span>+</span></a></div>
-                        <div class="std" id="descdesc" style="display: none;">
-						
-						
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.								
-						
-						</div>
-                    </div>
-					
-					 <div class="description">
-					    <label>Size &amp; Materials</label>
-						<div class="acr"><a class="descrip" id="szmt" href="javascript:void(0)"><span>+</span></a></div>
-                        <div class="std" id="descszmt" style="display: none;">
-						
-						
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.	
-
-								
-						
-						</div>
-                    </div>
-					
-					<div class="description">
-					    <label>Delivery &amp; Returns</label>
-						<div class="acr"><a class="descrip" id="dlrt" href="javascript:void(0)"><span>+</span></a></div>
-                        <div class="std" id="descdlrt" style="display: none;">
-						
-						
-							Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.	
-	
-
-								
-						</div>
-                    </div>
-					
-					
-				</div>
-                
-                <script>
-				
-				
-				 
-				 jQuery('.descrip').click(function(){
-					 
-					  var curid=jQuery(this).attr("id");
-					
-				 
-					if(jQuery("#"+curid).hasClass( "active" ))
-					  {
-					  
-						jQuery("#"+curid).removeClass('active');
-						jQuery("#desc"+curid).slideUp();
-						
-						
-						
-					
-					}else
-					 {
-					  
-					  jQuery("#"+curid).addClass('active');
-					  jQuery("#desc"+curid).slideDown();
-					 }
-				  
-				 });
-				 
-				</script>
-                
-                </div>
-           
-
-				<div style="display:none;">
+                    
+                    <div>
+                        <div class="item hideit1" id="hideit1" align="center"><img src="images/spin.gif" style="width:30px;height:30px;"></div>
+                        <div id="product_image_slider" style="display:none;" class ="product_image_slider">
+                            
+                        </div></div>
+                    
+                    
+                    
+                    <div id="productdescription" style="display:none">
                         <h3 class="edit_heading" style="clear:both;margin-top:10px" id="product_description"></h3>
                         <div id="fulldescription" class="" style="padding-bottom: 15px"></div>
                         <!---Code for Configurable Options Starts --->
@@ -421,7 +229,7 @@
                             </table>
                         </div>
                         <!---Code for Configurable Options Ends--->
-                         <table id="productDes" width="100%" cellpadding="0" cellspacing="0" class="productDesc">
+                        <table id="productDes" width="100%" cellpadding="0" cellspacing="0" class="productDesc">
                             <tr>
                                 <td class="pName" id="product_name"></td>
                                 <td id = "pName"></td>
@@ -455,15 +263,23 @@
                                 <td id="pShipp"></td>
                             </tr>
                         </table>
+                        <!--Code for Custom Options Startsstyle="display:none;"-->
+                        <div id ="custom_options_collapsible" style="display:none;">
+                            <h3 id="product_options"></h3>
+                            
+                            <div id="custom_options">
+                                
+                            </div>
+                        </div>
                         
-                       
-                      
-						
-						</div>
-						
+                        <!--Grouped Products -->
+                        <div id="group_product_div" style="overflow: hidden;clear: both;"></div>
+                        
+                        <!--Code for Custom Options Ends-->
+                        <div id="buy_now_div"></div>
+                        <!--<input id="buyNow" class="content-secondry" type="button" data-role="button" data-theme="b" value="Add to Cart"/>-->
                     </div>
                 </div>
-				</div>
                 
                 <div class="clear"></div>
                 
@@ -473,173 +289,22 @@
             </div>
             <div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="footer">
             </div>
-			
             <nav class="pushy pushy-left">
-            <div class="colose" style="float:right;"><span onclick="hidenav()" style="cursor:pointer;"><img src="img/close.png" style="margin-top:2px; margin-right:5px;"></span></div>
                 <div id="Cate_slide">
                 </div>
             </nav>
             <!-- Site Overlay -->
             <div class="site-overlay"></div>
-           
+            
         </div>
         
-        <style>
-		.dtl-rgt {
-				width: 100% !important;
-			}
-			.dtl-rgt {
-				background: #fff none repeat scroll 0 0;
-				float: left !important;
-				min-height: 610px !important;
-				
-			}
-			
-		  .dtl-rgt .name {
-				font-size: 25px !important;
-			}
-			.dtl-rgt .name {
-				float: left !important;
-				font-size: 35px !important;
-				margin: 20px 0 10px !important;
-				text-align: center !important;
-				width: 100%;
-			}
-
-		.dtl-rgt .name {
-			float: left !important;
-			font-size: 35px !important;
-			margin: 20px 0 10px !important;
-			text-align: center !important;
-			width: 100% !important;
-		}
-		.dtl-rgt .qty-wrapper {
-			float: left !important;
-			margin-right: 0 !important;
-			position: relative !important;
-			text-align: center !important;
-			width: 100% !important;
-		}
-		.dtl-rgt .rgt-btn {
-			float: left !important;
-			margin: 0 3% !important;
-			width: 94% !important;
-		}
-		
-		.dtl-rgt .qty-wrapper #qty {
-			float: initial !important;
-			font-size: 18px !important;
-			height: 40px !important;
-			margin: 10px auto 0 !important;
-			padding: 0 8px !important;
-			position: relative !important;
-			text-align: left !important;
-			width: 100px !important;
-		}
-		
-		button, input, select, textarea {
-			font-family: inherit !important;
-			font-size: inherit !important;
-			line-height: inherit !important;
-			 color: inherit  !important;
-		}
-		
-	 #plus {
-			background: rgba(0, 0, 0, 0) url("https://eluvy.com/skin/frontend/base/default/images/amshopby-collapsed.gif") no-repeat scroll left center / 100% auto !important;
-			font-size: 22px  !important;
-			height: 10px !important;
-			margin-left: -22px !important;
-			position: absolute !important;
-			text-decoration: none !important;
-			top: 34px !important;
-			width: 10px !important;
-		}
-		a {
-			color: #666 !important;
-		}
-		
-		
-
-#minus {
-    background: rgba(0, 0, 0, 0) url("https://eluvy.com/skin/frontend/base/default/images/amshopby-expanded.gif") no-repeat scroll left center / 100% auto !important;
-    bottom: 6px !important;
-    font-size: 37px !important;
-    height: 10px !important;
-    line-height: 0 !important;
-    margin-left: -21px !important;
-    position: absolute !important;
-    text-decoration: none !important;
-    width: 10px !important;
-}
-
-.overview {
-    float: left !important;
-    margin: 0 3% !important;
-    text-align: center !important;
-    width: 94% !important;
-}
-
-.dtl-rgt .description {
-    border-top: 1px solid #ccc !important;
-    padding: 10px 0 !important;
-}
-
-.description .acr a {
-    color: #000 !important;
-    font-size: 18px !important;
-    line-height: 0 !important;
-    text-decoration: none !important;
-    vertical-align: sub !important;
-}
-
-.description .acr {
-    display: inline-block !important;
-    float: right !important;
-    font-weight: bold !important;
-}
-
-.main-aap {
-    float: left;
-    margin: 0 !important;
-    padding: 0;
-}
-.description label {
-    color: #000;
-    display: inline;
-    margin-bottom: 0;
-    text-transform: uppercase;
-}
-
-.dtl-rgt .add-to-cart-buttons .btn-cart {
-    background: #000 none repeat scroll 0 0 !important;
-    border: 2px solid #000 !important;
-    color: #fff !important;
-    font-size: 15px !important;
-    font-weight: bold !important;
-    height: 55px !important;
-    letter-spacing: 1.5px !important;
-    line-height: 40px !important;
-    margin-top: 25px !important;
-    text-transform: uppercase !important;
-    width: 99% !important;
-}
-
-
-		</style>
+        
          <script type="text/javascript" src="js/groupproduct.js"></script>
         <script type="text/javascript" src="lib/owl-carousel/mofluid_slider.js"></script>
         <script type="text/javascript" src="js/product_details.js"></script>
         <script type="text/javascript" src="js/footer.js"></script>
         <script type="text/javascript" src="js/jqm-spinbox.min.js"></script>
-          <script type="text/javascript">
-		 function hidenav()
-	{
-	  
-	   
-	   jQuery('.site-overlay').click();
-	
-	}
-		</script>
+        
     </body>
     
     <script>

@@ -2517,7 +2517,7 @@ text-align: center;
     color: #555;
     font-size: 12px;
 }
-.main-pro{width:100%; float:left; margin:0; padding:0;}
+.main-pro{width:100%; float:left; margin:0 0 20px 0; padding:0;}
 .main-pro ul{margin:0 3%; padding:0; width:100%; float:left; text-align:center;}
 .main-pro ul li{list-style:none;}
 .main-pro .owl-item .item{width:94%;}
@@ -2826,7 +2826,87 @@ text-align: center;
     line-height: 26px;
 }
 .youama-window-box div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset{width:100%; float:left;}
-#youama-emails{width:100%; float:left; border: 1px solid #cecece;}
+.youama-window-box input[type="text"], input[type="password"]{width:100%; float:left; border: 1px solid #cecece;}
+.youama-window-box .ui-link{color:#000; font-size:13px;}
+.youama-window-box .ui-link:hover{color:#666;}
+.youama-ajaxlogin-button {
+    background: #000 !important; color:#fff !important; border:none;
+    width: 100%;
+}
+
+
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.header-language-background {
+    min-height: 60px;
+	padding: 0 10px;
+    background-color: #000000;
+    color:#fff; z-index:9999;
+}
+.header-language-background a{color:#fff;}
+.header-language-background a:hover{color:#ccc;}
+.logoheader {
+    width:100%;
+    display: inline-block !important;
+    position: relative;
+    vertical-align: text-top;
+}
+.search-button {
+    width: 25px;
+    height: 25px;
+	text-indent: -9999px;
+    position: absolute;
+    top: 2px;
+    right: -3px;
+    border: 0;
+}
+
+<!-- Style -->
+#banner-slider1.owl-theme .owl-controls .owl-nav div
+{
+	background:#1F1F1F;
+	color:#6B6B6B}
+#banner-slider1.owl-theme .owl-controls .owl-nav div:hover
+{
+	background:#121212;
+	color:#666666}
+#banner-slider1.owl-theme .owl-controls .owl-dot span
+{
+	background:#DBDBDB;
+}
+#banner-slider1.owl-theme .owl-controls .owl-dot.active span,
+#banner-slider1.owl-theme .owl-controls .owl-dot:hover span
+{
+	background:#BFBFBF;
+}
+ .youama-window-box {
+    margin-top: 0; width:100%; float:left;
+}       
+.youama-window-outside{position:relative;}
+.youama-register-window .youama-window-outside .close {
+    font-weight: bold;
+font-size: 25px;
+font-family: arial;
+position: absolute;
+top: 0;
+right: 0;
+margin-top: -20px;
+margin-right: -7px;
+color: #000 !important;
+opacity: 1 !important; cursor:pointer;
+}
+.main-pro .owl-controls {
+    position: absolute;
+    text-align: center;
+    opacity: 0.3;
+    top: -40px !important;
+    right: 0;
+}
+
 
 @media all and (max-width: 414px) {
 #search_mini_form .search-button{top:2px;}

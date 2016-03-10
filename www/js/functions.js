@@ -118,21 +118,12 @@ $.ajax({
      },
      success: function(results){
        localStorage.setItem('productDetailslocal', JSON.stringify(results));
-      var params = new Object();
+     var params = new Object();
        params["result"] = results;
        params["stock_status"] = stock_status;
        params["ptype"] = results["type"];
-	   params["pid"] = results["id"];
-	   
-	    params["description"] = results["description"];
-	    params["sizeandmaterial"] = results["sizeandmaterial"];
-	    params["deliveryreturns"] = results["deliveryreturns"];
-		params["price"] = results["price"];
-		
-		
-		
        
-        
+       //alert(JSON.stringify(results));
        if(results["type"] == "configurable"){
        getProDetail(PRODUCT_ID,stock_status,results["type"]);
        }
@@ -700,7 +691,6 @@ function bannerAction(action) {
 	          	if(banner_action.base == "category") {
 	                    var dirPath = dirname(location.href);
                          var fullPath = dirPath + "/subcategory.html?parent=" + banner_action.id;
-						
                          window.location = fullPath;
 	               }
 	               else if(banner_action.base == "product") {
@@ -916,9 +906,6 @@ function fetchStoredetail() {
      */
                           
 function setApplicationLogoBanner(results) {
-	
-	  
-	 
                           
                           var response = JSON.parse(results);
                           console.log("Logo and Banner Function Called : ");
@@ -939,27 +926,22 @@ function setApplicationLogoBanner(results) {
                           console.log("Images : "+image_len);
                           try {
                           if(image_len <= 0 || image_len == null || image_len == "") {
-                          banner_image_slider += '<div class="banner"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>';
+                          banner_image_slider += '<div class="item hauto"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>';
                           $("#banner_slider").append('<div class="item hauto"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>');
                           }
                           else {
                           for(i=0; i<image_len; i++) {
-                          $("#banner_slider").append('<div class="banner"><img onclick="bannerAction(\''+banner_data.image[i].mofluid_image_action+'\')" src="'+banner_data.image[i].mofluid_image_value+'" alt=""  onerror="this.src=\''+ config.data[0].banner+'\'" ></div>');
-                          banner_image_slider += '<div class="banner"><img onclick="bannerAction(\''+banner_data.image[i].mofluid_image_action+'\')" src="'+banner_data.image[i].mofluid_image_value+'" alt=""  onerror="this.src=\''+ config.data[0].banner+'\'" ></div>';
+                          $("#banner_slider").append('<div class="item hauto"><img onclick="bannerAction(\''+banner_data.image[i].mofluid_image_action+'\')" src="'+banner_data.image[i].mofluid_image_value+'" alt=""  onerror="this.src=\''+ config.data[0].banner+'\'" ></div>');
+                          banner_image_slider += '<div class="item hauto"><img onclick="bannerAction(\''+banner_data.image[i].mofluid_image_action+'\')" src="'+banner_data.image[i].mofluid_image_value+'" alt=""  onerror="this.src=\''+ config.data[0].banner+'\'" ></div>';
                           
                           }
                           }
                           } catch(err) {
-                          $("#banner_slider").append('<div class="banner"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>');
-                          banner_image_slider += '<div class="banner"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>';
+                          $("#banner_slider").append('<div class="item hauto"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>');
+                          banner_image_slider += '<div class="item hauto"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>';
                           }
-						  
-						
+                          
                           localStorage.setItem(config.data[0].storage_key+'_banner_image_slider', banner_image_slider);
-						  
-						
-					
-						  
                           //alert($("#hideit").attr('value'));
                           $( "#hideit" ).remove();
                           $("#new_hide").show();
@@ -970,10 +952,7 @@ function setApplicationLogoBanner(results) {
                           store_data["banner"] = banner_image_slider;
                           store_data["store"] = store_response;
                           localStorage[config.data[0].storage_key+"_STORE"] = JSON.stringify(store_data);
-						  
-						   $("#readytore").show();
-						   
-                         var owl_banner = $("#banner_slider");
+                          var owl_banner = $("#banner_slider");
                           owl_banner.owlCarousel({
                                                  items : 1, //10 items above 1000px browser width
                                                  itemsDesktop : [1000,1], //5 items between 1000px and 901px
@@ -3861,9 +3840,6 @@ function validate_input(pName,pCat,pColor,pSize,description,shortdes,pPriceSpl,p
                 $("#pPriceOrg").html(pPrice);
                 $("#pPriceCrossOrg").html(pCross);
                 
-				
-				
-								
                 }
             
 
@@ -3899,24 +3875,17 @@ $.ajax({
        var i = 0;
        
        if(image_len <= 0 || image_len == null || image_len == "") {
-       $("#product_image_slider").append('<div class="item"><img height="400" src="images/product_default_image.png" alt="" onerror="images/product_default_image.png" ></div>');
+       $("#product_image_slider").append('<div class="item"><img src="images/product_default_image.png" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
        }
        else {
        for(i=0; i<image_len; i++) {
        
-	     if(i==0)
-		 {
-          $("#product_image_slider").append('<div class="item active"><img   height="400" src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" ></div>');
-		 }else{
-			   $("#product_image_slider").append('<div class="item"><img   height="400" src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" ></div>');
-		 
-			 
-		 }
-	   }
+       $("#product_image_slider").append('<div class="item"><img src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
+       }
        }
        $( "#hideit1" ).hide();
        $( "#product_image_slider" ).show();
-      /* var owl = $("#product_image_slider");
+       var owl = $("#product_image_slider");
        owl.owlCarousel({
                        items : 1, //10 items above 1000px browser width
                        itemsDesktop : [1000,1], //5 items between 1000px and 901px
@@ -3925,7 +3894,7 @@ $.ajax({
                        itemsMobile : false,  // itemsMobile disabled - inherit from itemsTablet option
                        navigation : false,
                        pagination: false
-                       });*/
+                       });
        
        }
        });
