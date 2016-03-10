@@ -8,10 +8,12 @@
         <title>Mofluid</title>
         
         <link rel="stylesheet" type="text/css" href="https://eluvy.com//skin/frontend/rwd/eluvy/css/font-awesome.min.css" media="all" />
-      
+        <link rel="stylesheet" type="text/css" href="https://eluvy.com/skin/frontend/rwd/eluvy/css/bannerslider/owl.carousel.css" media="all" />
+
         <script type="text/javascript" src="js/header.js"></script>
         <script type="text/javascript" src="js/mofluid_slider.js"></script>
-       
+        <script type="text/javascript" src="https://eluvy.com/skin/frontend/base/default/js/bannerslider/owl.slider.js"></script>
+
 
 		  
 <script type="text/javascript">
@@ -430,6 +432,12 @@ jQuery('#fproductslide1').owlSlider({
     </div>
 
     
+    <script type="text/javascript">
+    //<![CDATA[
+        var searchForm = new Varien.searchForm('search_mini_form', 'search', '');
+        searchForm.initAutocomplete('https://eluvy.com/catalogsearch/ajax/suggest/', 'search_autocomplete');
+    //]]>
+    </script>
 </form>
          </div>
         <!--<div class="store-language-container">
@@ -765,26 +773,7 @@ jQuery('#fproductslide1').owlSlider({
     
 </div>
 
-<script type="text/javascript">
-jQuery(document).ready(function() {
-   jQuery('.header-minicart').mousemove(function() {
-	       
-		  //jQuery('#header-cart').stop().slideUp(); 
-	      //jQuery('#header-cart').slideDown();
-		  
-		  jQuery('#header-cart').stop(true, true).slideDown(800);
-		  
-		
-    });
-	
-	  jQuery('.header-language-backgroundt, .page , .banner, .logo-container , .main').hover(function() {
-		jQuery('#header-cart').slideUp(); 
-    });
-	
-	
-     
-});
-</script>
+
             </div>
 			</div>
 
@@ -1484,11 +1473,7 @@ jQuery(document).ready(function() {
             }
         }
 	</script>
-    <script type="text/javascript">
-    //<![CDATA[
-        var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
-    //]]>
-    </script>
+  
 </div>
         <div class="clearfix"></div>
     </div><!--footer-newsletter-->
@@ -1568,13 +1553,7 @@ jQuery(document).ready(function() {
 				   <div class="new_cate_panel_div">Earrings</div>
 				  <div class="new_cate_panel_div">Bracelets</div>
 				   <div class="new_cate_panel_div">Rings</div>
-				  <div class="new_cate_panel_div">Login</div>
-				   <div class="new_cate_panel_div">Contact Us</div>
-				   <div class="new_cate_panel_div">Get 20% Off</div>
-				   <div class="new_cate_panel_div">Shopping Cart</div>
-				   <div class="new_cate_panel_div">Terms of Use</div>
-				   <div class="new_cate_panel_div">Privacy Policy</div>
-				   <div class="new_cate_panel_div"><div class="search"><input type="search" placeholder="Search"><a href="#"><img src="img/search.png"></a></div></div>
+				  
 				
 			  
                 </div>

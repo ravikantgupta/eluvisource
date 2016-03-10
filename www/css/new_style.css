@@ -747,11 +747,12 @@ div#new_owl.owl-carousel.owl-theme,div.owl-wrapper-outer.autoHeight,div.owl-wrap
     font-size: 12px;
 }
 .new_cate_panel_div{
-  /*  border-bottom: 1px solid black; */
+  border-bottom: 1px solid #000; 
     padding: 10px;
     padding-left: 25px;
     width:100%;
 }
+.new_cate_panel_div:hover{background:#000; color:#fff;}
 .new_cate_panel_div_main{
  /*   border-bottom: 1px solid black; */
     padding: 10px;
