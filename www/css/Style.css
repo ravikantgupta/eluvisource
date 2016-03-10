@@ -1972,11 +1972,14 @@ ul.cms_page {
     padding: 15px;
 }
 
-.footer{
-    border: 1px solid rgb(205, 205, 205) !important;
-    width: 101%;
-    background: orange;
-    height: 50px;
+.footer1{
+border: 1px solid rgb(205, 205, 205) !important;
+width: 100%;
+background: orange;
+float: left;
+padding: 0 0 10px;
+border-left: none !important;
+border-right: none !important;
 }
 .css_footer{
     width:20%;
@@ -2406,8 +2409,8 @@ text-align: center;
     text-transform: uppercase;
     font-size: 16px;
     box-shadow: 0px 0px 5px #999;
-    margin-top: 25px;
-    margin-bottom: 25px; text-align:center;
+    margin-top: 2px;
+    margin-bottom: 2px; text-align:center;
 }
 .customer-message {
     width: 100% !important;
@@ -2597,30 +2600,30 @@ text-align: center;
     border-top: solid 5px #000;
     margin-top: 50px; text-align:center;
 }
-.footer-container .footer {background:#fff !important;}
-.footer .block-subscribe #newsletter-validate-detail {
+.footer-container .footer1 {background:#fff !important;}
+.footer1 .block-subscribe #newsletter-validate-detail {
     width: 98% !important;
 }
-.footer .block-subscribe .block-content {
+.footer1 .block-subscribe .block-content {
     padding-top: 7px;
 	    margin-top: 5px;
 }
-.footer .form-subscribe-header {
+.footer1 .form-subscribe-header {
     display: none;
 }
-.footer .block-subscribe .input-box {
+.footer1 .block-subscribe .input-box {
     width: 70% ;     float: left;
 }
-.footer .block-subscribe .actions {
+.footer1 .block-subscribe .actions {
     width: 30%; float:right;
 }
-.footer div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset{height: 40px;
+.footer1 div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset{height: 40px;
     border: 1px solid #e5e5e5;
     word-spacing: .1875rem;
     font-family: arial;
     font-style: italic;
     font-size: 13px; width:100%; float:left;}
-.footer .block-subscribe .actions .button {
+.footer1 .block-subscribe .actions .button {
     height: 40px;
     line-height: 17px;
     float: left;
@@ -2631,7 +2634,7 @@ text-align: center;
     font-family: arial; color:#fff;
     letter-spacing: 1px; border-radius:0; margin:0; border:none;
 }
-.footer .links {
+.footer1 .links {
     width: 100% !important;
     float: left;
     margin: 0 0 10px 0 !important;
@@ -2645,22 +2648,22 @@ text-align: center;
     padding: 10px 0 0;
     margin-bottom: 5px;
 }
-.footer .links:nth-child(odd) {
+.footer1 .links:nth-child(odd) {
     margin-right: 3.125%;
     clear: both;
 }
-.footer .links .block-title span {
+.footer1 .links .block-title span {
     font-weight: bold;
     color: #575757;
     font-size: 16px;
 }
-.footer .links ul {
+.footer1 .links ul {
     width: 100%;
     float: left;
     margin: 0 !important;
     padding: 0;
 }
-.footer .links li {
+.footer1 .links li {
     word-break: break-all;
     line-height: 1.4;
     padding: 4px 0;
@@ -2910,9 +2913,12 @@ opacity: 1 !important; cursor:pointer;
     border-radius: 50%;
     transition: 0.5s;
 }
-.footer .links li a{padding:4px 0; background:#fff; width:100%; float:left;}
-.footer .links li a:hover{background:#666666;}
+.footer1 .links li a{padding:4px 0; background:#fff; width:100%; float:left;}
+.footer1 .links li a:hover{background:#666666;}
 .featuredproduct{width:100%; float:left; margin:0; padding:0 2%;}
+#banner_slider .owl-controls{bottom:0;}
+#banner_slider .owl-controls .owl-page span{background:#000 !important;}
+
 
 
 @media all and (max-width: 414px) {
