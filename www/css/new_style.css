@@ -32,8 +32,8 @@
 }
 .ui-input-search {
     height: 30px;
-    margin-left: 12px;
-    margin-right: 12px;
+    margin-left: 0;
+    margin-right: 0;
     font-size: 10px;
     padding: 0px !important;
 }
@@ -44,7 +44,7 @@
 .footer {
     border-top: 2px solid white !important;
     width: 101%;
-    background: #ff8b01 !important;
+    background: #ff8b01 ;
     height: 45px !important;
     margin-left: -1px;
 }
@@ -99,7 +99,7 @@ div#featured_owl.owl-carousel.owl-theme,div.owl-wrapper-outer.autoHeight,div.owl
     /*  border: 3px solid white !important; */
     
     height: 170px !important;
-    width: 360px !important;
+    width: 120px !important;
     margin: 0px 0px 15px 10px;
 }
 #featured_owl .item, #featured_owl_optional .item{
@@ -163,10 +163,8 @@ div#new_owl.owl-carousel.owl-theme,div.owl-wrapper-outer.autoHeight,div.owl-wrap
 .owl-theme .owl-controls {
     position: absolute;
     width: 100%;
-    bottom: 0;
     text-align: center;
-    opacity: 0.3;
-    background: #000;
+    opacity: 0.3; top:0;
 }
 
 
@@ -511,8 +509,8 @@ div#new_owl.owl-carousel.owl-theme,div.owl-wrapper-outer.autoHeight,div.owl-wrap
     }
     .ui-input-search {
         height: 40px;
-        margin-left: 12px;
-        margin-right: 12px;
+        margin-left: 0;
+        margin-right: 0;
         font-size: 14px;
         padding: 0px !important;
     }
@@ -605,6 +603,7 @@ div#new_owl.owl-carousel.owl-theme,div.owl-wrapper-outer.autoHeight,div.owl-wrap
         padding: 0px !important;
     }
     
+
     
 }
 

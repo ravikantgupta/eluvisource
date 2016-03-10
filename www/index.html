@@ -7,9 +7,145 @@
         <meta name="msapplication-tap-highlight" content="no" />
         <title>Mofluid</title>
         
+        <link rel="stylesheet" type="text/css" href="https://eluvy.com//skin/frontend/rwd/eluvy/css/font-awesome.min.css" media="all" />
+        <link rel="stylesheet" type="text/css" href="https://eluvy.com/skin/frontend/rwd/eluvy/css/bannerslider/owl.carousel.css" media="all" />
+
         <script type="text/javascript" src="js/header.js"></script>
         <script type="text/javascript" src="js/mofluid_slider.js"></script>
-        
+        <script type="text/javascript" src="https://eluvy.com/skin/frontend/base/default/js/bannerslider/owl.slider.js"></script>
+
+
+		  
+<script type="text/javascript">
+
+jQuery(document).ready(function () {
+jQuery('#fproductslide').owlSlider({
+   
+    items:4,
+    margin:0,
+ responsiveClass:true,
+
+ responsive:{
+   0:{
+    items:1
+   },
+   
+   320:{
+    items:1
+   },
+
+   360:{
+    items:1,
+    margin:0
+   },
+   
+   375:{
+    items:1
+   },
+   
+   414:{
+    items:1
+   },
+   
+   480:{
+    items:2
+   },
+
+
+   768:{
+    items:3,
+    center:true
+   },
+
+   960:{
+    items:4,
+    margin:20,
+    center:false
+
+   },
+
+   1200:{
+    items:4,
+    loop:false,
+    margin: 30,
+          }
+    },
+    stagePadding:0,
+ autoplay:false,
+ autoplayTimeout:0,
+ nav:true,
+ navText:['<','>'],
+ smartSpeed:450,
+ loop:true,
+ autoplayHoverPause:true,
+ dots:true});
+});
+</script>
+<script type="text/javascript">
+
+jQuery(document).ready(function () {
+jQuery('#fproductslide1').owlSlider({
+   
+    items:4,
+    margin:0,
+ responsiveClass:true,
+
+ responsive:{
+   0:{
+    items:1
+   },
+   
+   320:{
+    items:1
+   },
+
+   360:{
+    items:1,
+    margin:0
+   },
+   
+   375:{
+    items:1
+   },
+   
+   414:{
+    items:1
+   },
+   
+   480:{
+    items:2
+   },
+
+
+   768:{
+    items:3,
+    center:true
+   },
+
+   960:{
+    items:4,
+    margin:20,
+    center:false
+
+   },
+
+   1200:{
+    items:4,
+    loop:false,
+    margin: 30,
+          }
+    },
+    stagePadding:0,
+ autoplay:false,
+ autoplayTimeout:0,
+ nav:true,
+ navText:['<','>'],
+ smartSpeed:450,
+ loop:true,
+ autoplayHoverPause:true,
+ dots:true});
+});
+</script>
         
         <script type="text/javascript" langauge="javascript">
             function onLoad(){
@@ -268,15 +404,466 @@
                 getFooter();
             }
                    </script>
-				   <style>
- .main-aap{width:100%;padding:0;margin:0;float:left;}
-.main-aap .banner{width:100%; margin:0; padding:0; float:left;}
-.main-aap .banner img{width:100% !important; margin:0; padding:0;height:auto !important;}
-				   </style>
+                   
+                   
+
+                   
     </head>
     <body onLoad="onLoad()">
         <div data-role="page" data-dom-cache="true" id="mainpage" class="pushnotification">
-            
+        
+        
+        <style>
+.fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.header-language-background {
+    min-height: 60px;
+	padding: 0 10px;
+    background-color: #000000;
+    text-transform: uppercase; color:#fff; z-index:9999;
+}
+.header-language-background a{color:#fff;}
+.header-language-background a:hover{color:#ccc;}
+.logoheader {
+    width:100%;
+    display: inline-block !important;
+    position: relative;
+    vertical-align: text-top;
+}
+.search-button {
+    width: 25px;
+    height: 25px;
+	text-indent: -9999px;
+    position: absolute;
+    top: 2px;
+    right: -3px;
+    border: 0;
+}
+
+<!-- Style -->
+#banner-slider1.owl-theme .owl-controls .owl-nav div
+{
+	background:#1F1F1F;
+	color:#6B6B6B}
+#banner-slider1.owl-theme .owl-controls .owl-nav div:hover
+{
+	background:#121212;
+	color:#666666}
+#banner-slider1.owl-theme .owl-controls .owl-dot span
+{
+	background:#DBDBDB;
+}
+#banner-slider1.owl-theme .owl-controls .owl-dot.active span,
+#banner-slider1.owl-theme .owl-controls .owl-dot:hover span
+{
+	background:#BFBFBF;
+}
+        	
+        </style>
+
+<!-- new code vipin start-->
+            <div class="header-language-background fixed">
+    <div class="header-language-container">
+	
+	     <div class="logoheader" style="display:none;">
+         	<div class="freeshipping">
+				  
+						<p><a href="https://eluvy.com/help/shipping-and-handling/">Free shipping to Singapore on Orders of $150 or More</a></p>			   
+			   </div>
+          <!--<a title="eluvy homepage" id="nav_top_list" href="https://eluvy.com/" class="">Eluvy</a>-->
+		    
+<form id="search_mini_form" action="https://eluvy.com/catalogsearch/result/" method="get">
+    <div class="input-box">
+        <label for="search">Search:</label>
+        <input id="search" type="search" name="q" value="" class="input-text required-entry" maxlength="128" placeholder="Search entire store here..." autocomplete="OfF" autocorrect="off" autocapitalize="off">
+        <button type="submit" title="Search" class="button search-button"><span><span>Search</span></span></button>
+    </div>
+
+    
+    <script type="text/javascript">
+    //<![CDATA[
+        var searchForm = new Varien.searchForm('search_mini_form', 'search', '');
+        searchForm.initAutocomplete('https://eluvy.com/catalogsearch/ajax/suggest/', 'search_autocomplete');
+    //]]>
+    </script>
+</form>
+         </div>
+        <!--<div class="store-language-container">
+                    </div>-->
+
+        
+       <!-- <p class="welcome-msg">Default welcome msg! </p>-->
+		
+		     		 
+		   <div class="skip-links">
+		   
+		   					  <div class="myact">
+				       <a href="#header-account" class="skip-link skip-account">
+					
+					    <span class="label">Login</span>
+				     </a>
+			
+			          </div>
+					
+							   
+						
+		  
+			<div class="visitus" style="display:none;">
+			  <span class="label"><a href="https://eluvy.com/locations">Visit us</a></span>
+			</div>
+			<div class="contactus">
+			  <span class="label"><a href="https://eluvy.com/contact-us/get-help">Contact us</a></span>
+			</div>
+			<div class="get20off">
+			  <span class="label"><a class="slide-link" href="javascript:void(0)">Get 20% Off</a></span>
+			  
+			      <div class="mask" style="display:none;"></div>
+			      <div class="slide email-signup row" id="email-signup" style="display: none;">
+				     <div class="caret"></div>
+						<div class="shell email-drawer-content">
+						
+						<div style="display:none" class="loader">
+						<img alt="Please wait..." src="https://eluvy.com/media/custimg/medium.gif">
+						<p class="h3">Please wait . . .</p>
+						</div>
+						<div style="display:none" class="success">
+						<p>You're all signed up!</p>
+						<p>(and your inbox just got a dose of sparkle)</p>
+						<p>You'll be the first to hear about promotions, specials and the latest new arrivals.</p>
+						<div class="load_on_success">
+						
+						</div>
+						</div>
+						<div>
+						
+						  <div class="closecontainer"><a href="javascript:void(0)" class="close">×</a></div>
+						  	
+						<h2>Want to <em>score 20% off</em> your first purchase?</h2>
+						<h3>Simply enter your email below and check your inbox for the promo code.</h3>
+						  <form id="newsletter-validate-detail" method="post" action="https://eluvy.com//newsletter/subscriber/new/">
+									   
+           
+                           <input type="email" class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletteremail" name="email" spellcheck="false" placeholder="enter your email address" autocorrect="off" autocapitalize="off">
+           
+                          <button class="button" title="Subscribe" id="nwsbtn" type="button"><span><span>Sign Up</span></span></button>
+                             <p><a title="No Thanks" type="reset" href="javascript:void(0)" class="exit-link">No Thanks</a></p>
+                          </form>
+					
+					
+						
+						<p>Offer valid on full-price items and for first time customers only. See email for restrictions. By entering your email address, you will receive emails from Eluvy. You can unsubscribe at any time.</p>
+						<div style="display:none" class="error">
+						<p>We're sorry, there's been a problem with your request. Please try again.</p>
+						</div>
+						
+						</div>
+						<a class="exit-btn" href="#"><i class="fa fa-times"></i></a>
+						</div>
+                     </div>
+			  
+			</div>
+			 <div class="header-minicart">
+                
+
+<a href="#header-cart" class="skip-link skip-cart  no-count">
+   
+    <span class="label">Shopping Bag</span>
+	  <span class="icon"></span>
+    <span class="count">0</span>
+</a>
+  
+<div id="header-cart" class="block block-cart skip-content" style="display:none;">
+<div class="caret"></div>
+    
+<div id="minicart-error-message" class="minicart-message"></div>
+<div id="minicart-success-message" class="minicart-message"></div>
+
+<div class="minicart-wrapper">
+
+    <p class="block-subtitle">
+        Recently added item(s)        <a class="close skip-link-close" href="#" title="Close">×</a>
+    </p>
+
+                    <p class="empty">You have no items in your shopping cart.</p>
+
+    </div>
+    
+<div class="minicart-wrapper">
+
+    <p class="block-subtitle">
+        Recently added item(s)        <a class="close skip-link-close" href="#" title="Close">×</a>
+    </p>
+
+                    <div>
+            <ul id="cart-sidebar" class="mini-products-list">
+                                    <li class="item odd" xmlns="http://www.w3.org/1999/html">
+            <a href="https://eluvy.com/grayscale-cuff.html" title="Grayscale Cuff" class="product-image"><img src="https://eluvy.com/media/catalog/product/cache/1/thumbnail/50x50/9df78eab33525d08d6e5fb8d27136e95/p/b/pbr14001-a.png" width="50" height="50" alt="Grayscale Cuff"></a>
+        <div class="product-details">
+        <p class="product-name"><a href="https://eluvy.com/grayscale-cuff.html">Grayscale Cuff</a></p>
+
+        <table class="info-wrapper">
+            <tbody>
+                <tr>
+                    
+                    <td><span>Price:</span>
+                        
+                                                                                                                                <span class="price">$45.00</span>                                                                                            
+
+
+                            
+                                            </td>
+                </tr>
+                <tr class="qty-wrapper">
+                    
+                    <td><span>Qty:</span>
+                        <input id="qinput-348" data-link="https://eluvy.com/checkout/cart/ajaxUpdate/id/348/uenc/aHR0cHM6Ly9lbHV2eS5jb20vY2hlY2tvdXQvY2FydC9hZGQvdWVuYy9hSFIwY0hNNkx5OWxiSFYyZVM1amIyMHYvcHJvZHVjdC8zMy9mb3JtX2tleS9NWnNDalhDWUtvRW5JTWRULw,,/" data-item-id="348" class="qty cart-item-quantity" name="" value="1">
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        		<div class="removeitem">
+                            <a href="https://eluvy.com/checkout/cart/ajaxDelete/id/348/uenc/aHR0cHM6Ly9lbHV2eS5jb20vY2hlY2tvdXQvY2FydC9hZGQvdWVuYy9hSFIwY0hNNkx5OWxiSFYyZVM1amIyMHYvcHJvZHVjdC8zMy9mb3JtX2tleS9NWnNDalhDWUtvRW5JTWRULw,,/" title="Remove This Item" data-confirm="Are you sure you would like to remove this item from the shopping cart?" class="remove"><i class="fa fa-trash-o"></i>
+                                    </a>
+			
+            		</div>	
+        
+
+
+        
+    </div>
+</li>
+                                    <li class="item last even" xmlns="http://www.w3.org/1999/html">
+            <a href="https://eluvy.com/festive-bracelet.html" title="FESTIVE BRACELET" class="product-image"><img src="https://eluvy.com/media/catalog/product/cache/1/thumbnail/50x50/9df78eab33525d08d6e5fb8d27136e95/b/r/bracelet3.jpg" width="50" height="50" alt="FESTIVE BRACELET"></a>
+        <div class="product-details">
+        <p class="product-name"><a href="https://eluvy.com/festive-bracelet.html">FESTIVE BRACELET</a></p>
+
+        <table class="info-wrapper">
+            <tbody>
+                <tr>
+                    
+                    <td><span>Price:</span>
+                        
+                                                                                                                                <span class="price">$50.00</span>                                                                                            
+
+
+                            
+                                            </td>
+                </tr>
+                <tr class="qty-wrapper">
+                    
+                    <td><span>Qty:</span>
+                        <input id="qinput-347" data-link="https://eluvy.com/checkout/cart/ajaxUpdate/id/347/uenc/aHR0cHM6Ly9lbHV2eS5jb20vY2hlY2tvdXQvY2FydC9hZGQvdWVuYy9hSFIwY0hNNkx5OWxiSFYyZVM1amIyMHYvcHJvZHVjdC8zMy9mb3JtX2tleS9NWnNDalhDWUtvRW5JTWRULw,,/" data-item-id="347" class="qty cart-item-quantity" name="" value="1">
+
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        		<div class="removeitem">
+				
+                            <a href="https://eluvy.com/checkout/cart/ajaxDelete/id/347/uenc/aHR0cHM6Ly9lbHV2eS5jb20vY2hlY2tvdXQvY2FydC9hZGQvdWVuYy9hSFIwY0hNNkx5OWxiSFYyZVM1amIyMHYvcHJvZHVjdC8zMy9mb3JtX2tleS9NWnNDalhDWUtvRW5JTWRULw,,/" title="Remove This Item" data-confirm="Are you sure you would like to remove this item from the shopping cart?" class="remove"><i class="fa fa-trash-o"></i>
+                                    </a>
+			
+            		</div>	
+        
+
+
+        
+    </div>
+</li>
+                            </ul>
+        </div>
+        
+
+        <div id="minicart-widgets">
+                    </div>
+        <div class="block-content">
+            <p class="subtotal">
+                                    <span class="label">Cart Subtotal:</span> <span class="price">$95.00</span>                                                </p>
+        </div>
+
+
+                    <div class="minicart-actions">
+                <a class="cart-link" href="https://eluvy.com/checkout/cart/">
+                    View Shopping Cart                </a>
+                <ul class="checkout-types minicart">
+                                        <li>
+                        <a title="Checkout" class="button checkout-button" href="https://eluvy.com/checkout/onepage/">
+                            Checkout                        </a>
+                    </li>
+                </ul>
+            </div>
+        
+    </div>
+    
+</div>
+
+<script type="text/javascript">
+jQuery(document).ready(function() {
+   jQuery('.header-minicart').mousemove(function() {
+	       
+		  //jQuery('#header-cart').stop().slideUp(); 
+	      //jQuery('#header-cart').slideDown();
+		  
+		  jQuery('#header-cart').stop(true, true).slideDown(800);
+		  
+		
+    });
+	
+	  jQuery('.header-language-backgroundt, .page , .banner, .logo-container , .main').hover(function() {
+		jQuery('#header-cart').slideUp(); 
+    });
+	
+	
+     
+});
+</script>
+            </div>
+			</div>
+
+    </div>
+	
+	
+	<script>
+	
+	 jQuery('.slide-link').click(function(){
+		 
+		 if(jQuery('.slide').css('display') == 'none')
+			{
+				jQuery('#header-account').removeClass('skip-active');
+				
+				
+				jQuery('.youama-login-window').hide();
+				jQuery('.youama-register-window').hide();
+                 jQuery('.slide').show();
+				 jQuery('.mask').show();
+				 
+			}else
+			{
+			     jQuery('.slide').hide();	
+				 jQuery('.mask').hide();
+			}
+		 
+	 });
+	 
+	  jQuery('.exit-link, .close').click(function(){
+		  
+		     
+		          jQuery('.slide').hide();	
+				 jQuery('.mask').hide();
+		 
+	 });
+	 
+	 jQuery('.skip-account').click(function(){
+		  
+		       if(jQuery('#header-account').hasClass('skip-active'))
+			    {
+					
+		          jQuery('.mask').hide();
+				  
+				}else{
+					 
+					  jQuery('#header-account .caret').remove();
+					 jQuery('#header-account').prepend('<div class="caret"></div>');
+					 jQuery('.mask').show();
+					jQuery('.slide').hide();
+				}
+		         
+				 
+		 
+	 });
+	
+	</script>
+	
+	<script>
+	
+	jQuery('#nwsbtn').click(function(){
+		
+		jQuery('.success').hide();
+		 if(jQuery('#newsletteremail').val()=='')
+		 {
+			 
+			   jQuery('.success').show();
+				
+				jQuery('.success').html('<div class="error">Please Enter Email Id.</div>');
+				
+				return false;
+				
+		 }else
+		 {
+			 
+			 if(!validatesEmail(jQuery('#newsletteremail').val()))
+			 {
+				 
+				  jQuery('.success').show();
+				
+				 jQuery('.success').html('<div class="error">Please Enter Valid Email Id.</div>');
+				
+				 return false;
+			 }
+		 }
+		 
+		 jQuery.ajax(
+				{
+					url : 'https://eluvy.com/newsletter/subscriber/newajax/',
+					type: "POST",
+					data :  {'email':jQuery('#newsletteremail').val()},
+					beforeSend: function(){	jQuery('.loader').show();},
+					success:function(data, textStatus, jqXHR) 
+					{
+						
+						jQuery('.loader').hide();
+						
+					
+						var msg='';
+						
+						if(data.errorMsg!='')
+						{
+							
+							msg='<div class="error">'+data.errorMsg+'</div>';
+						}
+						if(data.successMsg!='')
+						{
+							
+							msg='<div class="success">'+data.successMsg+'</div>';
+						}
+						
+						jQuery('.success').show();
+						
+						jQuery('.success').html(msg);
+						
+						
+						
+					},
+					error: function(jqXHR, textStatus, errorThrown) 
+					{
+						//if fails      
+					}
+				});
+	
+	
+		
+	});
+	   function validatesEmail(emailAddress) {
+            var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+
+            if (filter.test(emailAddress)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+	</script>
+	
+</div>
+<!--  new code vipin end-->
+
             <div data-role="header" id="mainheader" class="mainheader" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
                 
                 <div class="navigation_menu_button1 navigation_menu_button menu-btn">
@@ -286,9 +873,16 @@
                 </div>
                 
                 <div class="navigation_logo1 navigation_logo" align="center">
-                    <a href="javascript:void(0);">
+                   <!-- <a href="javascript:void(0);">
                         <img  class="logo_icon" src="images/spin.gif" style="height:30px;width:30px;"/>
-                    </a>
+                    </a>-->
+					<a class="logo" href="https://eluvy.com/">
+                               <!--  <h3>Eluvy</h3>
+                                 <title>Bridge to Fine Jewelry</title>-->
+                              
+                                <img src="https://eluvy.com/skin/frontend/rwd/eluvy/images/logo.png" alt="Eluvy Commerce" class="small">
+                        
+                        </a>
                 </div>
                 
                 <div class="clear"></div>
@@ -302,7 +896,7 @@
             
             <div data-role="content" class="home_content">
                 
-                <div id="searchBox" class="searchbox" style="display:none;z-index:99999;">
+                <div id="searchBox" class="searchbox" style="display:none;">
                    <form name="serachForm" action="javascript:custom_search();">
                         <div>
                             <input id="searchFilter" type="serach" data-type="search" placeholder="" data-theme="a" />
@@ -314,62 +908,623 @@
                 </div>
                 
                 
-                <!--<div class="main-aap">
-			<div class="banner"><a href="what-new.html"><img src="img/ban1.jpg"></a></div>
-            <div class="banner"><a href="sale-item.html"><img src="img/ban2.jpg"></a></div>
-            <div class="banner"><a href="necklaces.html"><img src="img/ban3.jpg"></a></div>
-            <div class="banner"><a href="earrings.html"><img src="img/ban4.jpg"></a></div>
-            <div class="banner"><a href="bracelets.html"><img src="img/ban5.jpg"></a></div>
-            <div class="banner"><a href="rings.html"><img src="img/ban6.jpg"></a></div>
-			  </div> -->
-                   <div class="item hideit" align="center" id="hideit" value="1"><img src="images/spin.gif"></div>
+                <div>
+                    <div class="item hideit" align="center" id="hideit" value="1"><img src="images/spin.gif"></div>
                     <div id="banner_slider" class="slider-contaner hslider" style="text-align:center;width:100%">
                     </div>
-              
+                </div>
+                
+<!-- new code vipin start-->
+<div class="cat-banner">
+<section class="customermsg">	
+					<div class="customer-message">
+					<p>Ready to <em>revamp</em> your wardrobe? Stay <em>on trend</em> with fashion's finishing touch. <a href="https://eluvy.com/what-s-new/just-added.html/">SHOP FASHION JEWELRY &gt;</a></p> 
+		             </div>
+		             </section>
+
+	<section class="secondbanner">	
+						<div class="staticbanner">
+						<ul class="btmbanners">
+<li><img src="https://eluvy.com/media/wysiwyg/homeimg/banner2-1.png" alt=""></li>
+<li><img src="https://eluvy.com/media/wysiwyg/homeimg/banner2-2.png" alt="">
+<div class="content">
+<h3>Integer</h3>
+<p>Aliquam quis sagittis</p>
+<a href="https://eluvy.com/rings.html/">Start to shop</a></div>
+</li>
+<li><img src="https://eluvy.com/media/wysiwyg/homeimg/banner2-3.png" alt=""></li>
+<li><img src="https://eluvy.com/media/wysiwyg/homeimg/banner2-4.png" alt="">
+<div class="content">
+<h3>Fermentum</h3>
+<p>Nam Lacinia lorem</p>
+<a href="#">Mauris rhoncus semper</a></div>
+</li>
+</ul>						 </div>
+		             </section>
+</div>
+
+<!-- new code vipin end-->
+
                 
                 <!-- Slider for Feature Products -->
                 <div class="category_list" style = "display:none" id="feature_products_outer_div">
                     <div class="heading_text" id="feature_products_inner_div"></div>
                 </div>
-                <div id="featured_owl"  class="parent" data-role="none">
+                <div class="main-pro">
                 	
+                    
+                    
+                    
+                    <div class="featuredproduct">
+<h3 class="stylish-border">Featured Products</h3>
+</div>
+                    
+                    
+                    
+                    
+                    
+                    
+                    <ul class="banner-slider wl-carousel" id="fproductslide">
+     <li class="item">
+		   <a class="product-image" title="" href="https://eluvy.com/pearl-earing.html">
+               
+                                <img alt="" src="https://eluvy.com/media/catalog/product/cache/1/small_image/235x388/17f82f742ffe127f42dca9de82fb58b1/b/r/bracelet3.jpg" id="product-collection-image-12">
+           
+              <span class="productimghover"></span>
+		   </a>
+			    <div class="sku">E13</div>
+			      <h3 class="product-name"><a title="PEARL EARRING" href="https://eluvy.com/pearl-earing.html">PEARL EARRING</a></h3>
+					 <div class="shortdesc">
+					  <a href="https://eluvy.com/pearl-earing.html">Detail</a>
+					 </div>
+		           <div class="hover-action">
+					<div class="cartactions">
+					
+						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+													
+						<ul class="wish-add-to-links">
+						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
+						    <li><!--<span class="separator"></span>--> <a class="link-compare" title="Compare" href="https://eluvy.com/catalog/product_compare/add/product/12/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-exchange"></i></a></li>
+						 </ul>     
+					</div>
+							
+			      </div>
+		
+		</li>
+		
+		<li class="item">
+		   <a class="product-image" title="" href="https://eluvy.com/pearl-earing.html">
+               
+                                <img alt="" src="https://eluvy.com/media/catalog/product/cache/1/small_image/235x388/17f82f742ffe127f42dca9de82fb58b1/b/r/bracelet3.jpg" id="product-collection-image-12">
+           
+              <span class="productimghover"></span>
+		   </a>
+			    <div class="sku">E13</div>
+			      <h3 class="product-name"><a title="PEARL EARRING" href="https://eluvy.com/pearl-earing.html">PEARL EARRING</a></h3>
+					 <div class="shortdesc">
+					  <a href="https://eluvy.com/pearl-earing.html">Detail</a>
+					 </div>
+		           <div class="hover-action">
+					<div class="cartactions">
+					
+						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+													
+						<ul class="wish-add-to-links">
+						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
+						    <li><!--<span class="separator"></span>--> <a class="link-compare" title="Compare" href="https://eluvy.com/catalog/product_compare/add/product/12/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-exchange"></i></a></li>
+						 </ul>     
+					</div>
+							
+			      </div>
+		
+		</li>
+		
+		
+		<li class="item">
+		   <a class="product-image" title="" href="https://eluvy.com/pearl-earing.html">
+               
+                                <img alt="" src="https://eluvy.com/media/catalog/product/cache/1/small_image/235x388/17f82f742ffe127f42dca9de82fb58b1/b/r/bracelet3.jpg" id="product-collection-image-12">
+           
+              <span class="productimghover"></span>
+		   </a>
+			    <div class="sku">E13</div>
+			      <h3 class="product-name"><a title="PEARL EARRING" href="https://eluvy.com/pearl-earing.html">PEARL EARRING</a></h3>
+					 <div class="shortdesc">
+					  <a href="https://eluvy.com/pearl-earing.html">Detail</a>
+					 </div>
+		           <div class="hover-action">
+					<div class="cartactions">
+					
+						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+													
+						<ul class="wish-add-to-links">
+						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
+						    <li><!--<span class="separator"></span>--> <a class="link-compare" title="Compare" href="https://eluvy.com/catalog/product_compare/add/product/12/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-exchange"></i></a></li>
+						 </ul>     
+					</div>
+							
+			      </div>
+		
+		</li>
+		<li class="item">
+		   <a class="product-image" title="" href="https://eluvy.com/pearl-earing.html">
+               
+                                <img alt="" src="https://eluvy.com/media/catalog/product/cache/1/small_image/235x388/17f82f742ffe127f42dca9de82fb58b1/b/r/bracelet3.jpg" id="product-collection-image-12">
+           
+              <span class="productimghover"></span>
+		   </a>
+			    <div class="sku">E13</div>
+			      <h3 class="product-name"><a title="PEARL EARRING" href="https://eluvy.com/pearl-earing.html">PEARL EARRING</a></h3>
+					 <div class="shortdesc">
+					  <a href="https://eluvy.com/pearl-earing.html">Detail</a>
+					 </div>
+		           <div class="hover-action">
+					<div class="cartactions">
+					
+						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+													
+						<ul class="wish-add-to-links">
+						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
+						    <li><!--<span class="separator"></span>--> <a class="link-compare" title="Compare" href="https://eluvy.com/catalog/product_compare/add/product/12/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-exchange"></i></a></li>
+						 </ul>     
+					</div>
+							
+			      </div>
+		
+		</li>
+		<li class="item">
+		   <a class="product-image" title="" href="https://eluvy.com/pearl-earing.html">
+               
+                                <img alt="" src="https://eluvy.com/media/catalog/product/cache/1/small_image/235x388/17f82f742ffe127f42dca9de82fb58b1/b/r/bracelet3.jpg" id="product-collection-image-12">
+           
+              <span class="productimghover"></span>
+		   </a>
+			    <div class="sku">E13</div>
+			      <h3 class="product-name"><a title="PEARL EARRING" href="https://eluvy.com/pearl-earing.html">PEARL EARRING</a></h3>
+					 <div class="shortdesc">
+					  <a href="https://eluvy.com/pearl-earing.html">Detail</a>
+					 </div>
+		           <div class="hover-action">
+					<div class="cartactions">
+					
+						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+													
+						<ul class="wish-add-to-links">
+						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
+						    <li><!--<span class="separator"></span>--> <a class="link-compare" title="Compare" href="https://eluvy.com/catalog/product_compare/add/product/12/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-exchange"></i></a></li>
+						 </ul>     
+					</div>
+							
+			      </div>
+		
+		</li>
+</ul>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
                 </div>
                 
                 <!-- Slider for Optional Products -->
                 <div class="category_list" style="display:none" id="new_products_outer_div">
                     <div class="heading_text" id="new_products_inner_div"></div>
                 </div>
-                <div id="new_owl" class="parent" data-role="none">
+                <div id="new_owl1">
                 	<center><img src="images/spin.gif" id="new_hide" style="display:none;"></center>
+                    
+                    
+                    <div class="featuredproduct">
+<h3 class="stylish-border">We Also Recommend</h3>
+</div>
+                    
+                    <div class="main-pro">
+                    <ul class="banner-slider wl-carousel" id="fproductslide1">
+     <li class="item">
+		   <a class="product-image" title="" href="https://eluvy.com/pearl-earing.html">
+               
+                                <img alt="" src="https://eluvy.com/media/catalog/product/cache/1/small_image/235x388/17f82f742ffe127f42dca9de82fb58b1/b/r/bracelet3.jpg" id="product-collection-image-12">
+           
+              <span class="productimghover"></span>
+		   </a>
+			    <div class="sku">E13</div>
+			      <h3 class="product-name"><a title="PEARL EARRING" href="https://eluvy.com/pearl-earing.html">PEARL EARRING</a></h3>
+					 <div class="shortdesc">
+					  <a href="https://eluvy.com/pearl-earing.html">Detail</a>
+					 </div>
+		           <div class="hover-action">
+					<div class="cartactions">
+					
+						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+													
+						<ul class="wish-add-to-links">
+						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
+						    <li><!--<span class="separator"></span>--> <a class="link-compare" title="Compare" href="https://eluvy.com/catalog/product_compare/add/product/12/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-exchange"></i></a></li>
+						 </ul>     
+					</div>
+							
+			      </div>
+		
+		</li>
+		
+		<li class="item">
+		   <a class="product-image" title="" href="https://eluvy.com/pearl-earing.html">
+               
+                                <img alt="" src="https://eluvy.com/media/catalog/product/cache/1/small_image/235x388/17f82f742ffe127f42dca9de82fb58b1/b/r/bracelet3.jpg" id="product-collection-image-12">
+           
+              <span class="productimghover"></span>
+		   </a>
+			    <div class="sku">E13</div>
+			      <h3 class="product-name"><a title="PEARL EARRING" href="https://eluvy.com/pearl-earing.html">PEARL EARRING</a></h3>
+					 <div class="shortdesc">
+					  <a href="https://eluvy.com/pearl-earing.html">Detail</a>
+					 </div>
+		           <div class="hover-action">
+					<div class="cartactions">
+					
+						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+													
+						<ul class="wish-add-to-links">
+						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
+						    <li><!--<span class="separator"></span>--> <a class="link-compare" title="Compare" href="https://eluvy.com/catalog/product_compare/add/product/12/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-exchange"></i></a></li>
+						 </ul>     
+					</div>
+							
+			      </div>
+		
+		</li>
+		
+		
+		<li class="item">
+		   <a class="product-image" title="" href="https://eluvy.com/pearl-earing.html">
+               
+                                <img alt="" src="https://eluvy.com/media/catalog/product/cache/1/small_image/235x388/17f82f742ffe127f42dca9de82fb58b1/b/r/bracelet3.jpg" id="product-collection-image-12">
+           
+              <span class="productimghover"></span>
+		   </a>
+			    <div class="sku">E13</div>
+			      <h3 class="product-name"><a title="PEARL EARRING" href="https://eluvy.com/pearl-earing.html">PEARL EARRING</a></h3>
+					 <div class="shortdesc">
+					  <a href="https://eluvy.com/pearl-earing.html">Detail</a>
+					 </div>
+		           <div class="hover-action">
+					<div class="cartactions">
+					
+						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+													
+						<ul class="wish-add-to-links">
+						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
+						    <li><!--<span class="separator"></span>--> <a class="link-compare" title="Compare" href="https://eluvy.com/catalog/product_compare/add/product/12/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-exchange"></i></a></li>
+						 </ul>     
+					</div>
+							
+			      </div>
+		
+		</li>
+		<li class="item">
+		   <a class="product-image" title="" href="https://eluvy.com/pearl-earing.html">
+               
+                                <img alt="" src="https://eluvy.com/media/catalog/product/cache/1/small_image/235x388/17f82f742ffe127f42dca9de82fb58b1/b/r/bracelet3.jpg" id="product-collection-image-12">
+           
+              <span class="productimghover"></span>
+		   </a>
+			    <div class="sku">E13</div>
+			      <h3 class="product-name"><a title="PEARL EARRING" href="https://eluvy.com/pearl-earing.html">PEARL EARRING</a></h3>
+					 <div class="shortdesc">
+					  <a href="https://eluvy.com/pearl-earing.html">Detail</a>
+					 </div>
+		           <div class="hover-action">
+					<div class="cartactions">
+					
+						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+													
+						<ul class="wish-add-to-links">
+						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
+						    <li><!--<span class="separator"></span>--> <a class="link-compare" title="Compare" href="https://eluvy.com/catalog/product_compare/add/product/12/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-exchange"></i></a></li>
+						 </ul>     
+					</div>
+							
+			      </div>
+		
+		</li>
+		<li class="item">
+		   <a class="product-image" title="" href="https://eluvy.com/pearl-earing.html">
+               
+                                <img alt="" src="https://eluvy.com/media/catalog/product/cache/1/small_image/235x388/17f82f742ffe127f42dca9de82fb58b1/b/r/bracelet3.jpg" id="product-collection-image-12">
+           
+              <span class="productimghover"></span>
+		   </a>
+			    <div class="sku">E13</div>
+			      <h3 class="product-name"><a title="PEARL EARRING" href="https://eluvy.com/pearl-earing.html">PEARL EARRING</a></h3>
+					 <div class="shortdesc">
+					  <a href="https://eluvy.com/pearl-earing.html">Detail</a>
+					 </div>
+		           <div class="hover-action">
+					<div class="cartactions">
+					
+						 <button onclick="setLocation('https://eluvy.com/checkout/cart/add/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/product/12/form_key/Eb5EYSj32Pa4zPPg/')" class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>
+													
+						<ul class="wish-add-to-links">
+						  						 <li><a class="link-wishlist " title="Wishlist" href="https://eluvy.com/wishlist/index/add/product/12/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-heart"></i></a></li>
+						    <li><!--<span class="separator"></span>--> <a class="link-compare" title="Compare" href="https://eluvy.com/catalog/product_compare/add/product/12/uenc/aHR0cHM6Ly9lbHV2eS5jb20v/form_key/Eb5EYSj32Pa4zPPg/"><i class="fa fa-exchange"></i></a></li>
+						 </ul>     
+					</div>
+							
+			      </div>
+		
+		</li>
+</ul>
+					</div>
+                    
+                    
+                    
+                    
                 </div>
+                
+                <!-- three box start-->
+                <div class="forboxes"><ul>
+<li>
+<div class="img"><img src="https://eluvy.com/media/wysiwyg/homeimg/blog-img1.jpg" alt=""></div>
+<div class="content">
+<div class="title">Introduction About Jewellery</div>
+<div class="text">
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+<a href="https://eluvy.com/introduction-about-jewellery/">Read More...</a></div>
+</div>
+</li>
+<li>
+<div class="img"><img src="https://eluvy.com/media/wysiwyg/homeimg/blog-img2.jpg" alt=""></div>
+<div class="title">Our Story</div>
+<div class="text">
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+<a href="https://eluvy.com/our-story/">Read More...</a></div>
+</li>
+<li>
+<div class="img"><img src="https://eluvy.com/media/wysiwyg/homeimg/blog-img3.jpg" alt=""></div>
+<div class="title">New Design</div>
+<div class="text">
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+<a href="https://eluvy.com/new-design/">Read More...</a></div>
+</li>
+<li>
+<div class="img"><img src="https://eluvy.com/media/wysiwyg/homeimg/blog-img4.jpg" alt=""></div>
+<div class="title">Customer Review</div>
+<div class="text">
+<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
+<a href="https://eluvy.com/customer-review/">Read More...</a></div>
+</li>
+</ul></div>
+                <!-- three box end-->
+                
+                 <!-- footer start-->
+                <div class="footer-container">
+    <div class="footer">
+	<div class="footer-newsletter">
+     	
+		<div class="block block-subscribe">
+<div style="display:none" class="loader">
+						<img alt="Please wait..." src="https://eluvy.com/media/custimg/medium.gif">
+						<p class="h3">Please wait . . .</p>
+						</div>
+						<div style="display:none" class="success">
+						<p>You're all signed up!</p>
+						<p>(and your inbox just got a dose of sparkle)</p>
+						<p>You'll be the first to hear about promotions, specials and the latest new arrivals.</p>
+						<div class="load_on_success">
+						
+						</div>
+						</div>
+    <form action="https://eluvy.com//newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
+        <div class="block-content">
+            <div class="form-subscribe-header">
+                <label for="newsletter">Sign Up for Our Newsletter:</label>
+            </div>
+            <div class="input-box">
+               <input type="email" autocapitalize="off" autocorrect="off" placeholder="enter your email address" spellcheck="false" name="email" id="newslettere" title="Sign up for our newsletter" class="input-text required-entry validate-email">
+            </div>
+            <div class="actions">
+                <button type="button" title="Subscribe" id="newsbtn" class="button"><span><span>Sign Up</span></span></button>
+            </div>
+        </div>
+    </form>
+	<div style="display:none" class="error">
+						<p>We're sorry, there's been a problem with your request. Please try again.</p>
+						</div>
+	<script>
+	
+	jQuery('#newsbtn').click(function(){
+		
+		jQuery('.success').hide();
+		 if(jQuery('#newslettere').val()=='')
+		 {
+			 
+			   jQuery('.success').show();
+				
+				jQuery('.success').html('<div class="error">Please Enter Email Id.</div>');
+				
+				return false;
+				
+		 }else
+		 {
+			 
+			 if(!validatesEmail(jQuery('#newslettere').val()))
+			 {
+				 
+				  jQuery('.success').show();
+				
+				 jQuery('.success').html('<div class="error">Please Enter Valid Email Id.</div>');
+				
+				 return false;
+			 }
+		 }
+		 
+		 jQuery.ajax(
+				{
+					url : 'https://eluvy.com/newsletter/subscriber/newajax/',
+					type: "POST",
+					data :  {'email':jQuery('#newslettere').val()},
+					beforeSend: function(){	jQuery('.loader').show();},
+					success:function(data, textStatus, jqXHR) 
+					{
+						
+						jQuery('.loader').hide();
+						
+					
+						var msg='';
+						
+						if(data.errorMsg!='')
+						{
+							
+							msg='<div class="error">'+data.errorMsg+'</div>';
+						}
+						if(data.successMsg!='')
+						{
+							
+							msg='<div class="success">'+data.successMsg+'</div>';
+						}
+						
+						jQuery('.success').show();
+						
+						jQuery('.success').html(msg);
+						
+						
+						
+					},
+					error: function(jqXHR, textStatus, errorThrown) 
+					{
+						//if fails      
+					}
+				});
+	
+	
+		
+	});
+	   function validatesEmail(emailAddress) {
+            var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+
+            if (filter.test(emailAddress)) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+	</script>
+    <script type="text/javascript">
+    //<![CDATA[
+        var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
+    //]]>
+    </script>
+</div>
+        <div class="clearfix"></div>
+    </div><!--footer-newsletter-->
+	 
+	<div class="footer-link-block">
+<div class="links">
+<div class="block-title"><strong><span>OUR PRODUCTS</span></strong></div>
+<ul>
+<li><span class="widget widget-category-link"><a href="https://eluvy.com/what-new.html?___store=default"><span>What New</span></a></span>
+</li>
+<li><span class="widget widget-category-link"><a href="https://eluvy.com/sale-items.html?___store=default"><span>Sale Items</span></a></span>
+</li>
+<li><span class="widget widget-category-link"><a href="https://eluvy.com/necklaces.html?___store=default"><span>Necklaces</span></a></span>
+</li>
+<li><span class="widget widget-category-link"><a href="https://eluvy.com/earrings.html?___store=default"><span>Earrings</span></a></span>
+</li>
+</ul>
+</div>
+<div class="links">
+<div class="block-title"><strong><span>OUR COMPANY</span></strong></div>
+<ul>
+<li><a href="https://eluvy.com/">Eluvy.com</a></li>
+<li><a href="https://eluvy.com/our-company/eluvy-club-program">Eluvy Club Program</a></li>
+<li><a href="javascript:void(0)" onclick="popWin('https://eluvy.com/catalog/product_compare/index','compare','top:0,left:0,width=820,height=600,resizable=yes,scrollbars=yes')">Compare Products</a></li>
+</ul>
+</div>
+<div class="links">
+<div class="block-title"><strong><span>HELP</span></strong></div>
+<ul>
+<li><span class="widget widget-cms-link"><a href="https://eluvy.com/help/shipping-and-handling" title="Shipping &amp; Handling"><span>Shipping &amp; Handling</span></a></span>
+</li>
+<li><span class="widget widget-cms-link"><a href="https://eluvy.com/help/return-policy" title="Return Policy"><span>Return Policy</span></a></span>
+</li>
+<li><span class="widget widget-cms-link"><a href="https://eluvy.com/help/international-orders" title="International Orders"><span>International Orders</span></a></span>
+</li>
+<li><span class="widget widget-cms-link"><a href="https://eluvy.com/help/faq" title="FAQ"><span>FAQ</span></a></span>
+</li>
+</ul>
+</div>
+<div class="links">
+<div class="block-title"><strong><span>CONTACT US</span></strong></div>
+<ul>
+<li><span class="widget widget-cms-link"><a href="https://eluvy.com/contact-us/get-help" title="Get Help"><span>Get Help</span></a></span>
+</li>
+<li><span class="widget widget-cms-link"><a href="https://eluvy.com/contact-us/get-styled" title="Get Styled"><span>Get Styled</span></a></span>
+</li>
+<li><span class="widget widget-cms-link"><a href="https://eluvy.com/contact-us/getting-married" title="Getting Married"><span>Getting Married</span></a></span>
+</li>
+</ul>
+</div>
+</div>       
+                <div class="clearfix"></div>
+        <div class="footer-copyright">
+            <ul class="copyright-box">
+                <li><a href="https://eluvy.com/">Bridge to Fine Jewelery</a></li>
+                <li><a href="https://eluvy.com/term-of-use">Term of use</a></li>
+                <li><a href="https://eluvy.com/privacy-policy">Privacy Policy</a></li>
+                <li style="border-right:0;"><a href="https://eluvy.com/">© 2015-16 Eluvy.com <em><strong>All Rights Reserved</strong></em></a></li>
+                <li style="float: right;"><strong>Powered by</strong> <a target="_blank" href="http://experienceit.sg/">EXperienceIT.sg</a></li>
+            </ul><!--copyright-box-->
+        </div><!--footer-copyright-->
+    </div>
+</div>
+                 <!-- footer end-->
                 
             </div>
             
             <div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="footer">
             </div>
-            <div style="display:none;">
+            
             <nav class="pushy pushy-left">
-			<div class="colose" style="float:right;"><span onclick="hidenav()" style="cursor:pointer;"><img src="img/close.png" style="margin-top:2px; margin-right:5px;"></span></div>
                 <div id="Cate_slide">
-                <center style="margin-top:100px;"><img src="images/spin.gif"></center>
+               
+				   <div class="new_cate_panel_div">What New</div>
+				   <div class="new_cate_panel_div">Sale Items</div>
+				   <div class="new_cate_panel_div">Necklaces</div>
+				   <div class="new_cate_panel_div">Earrings</div>
+				  <div class="new_cate_panel_div">Bracelets</div>
+				   <div class="new_cate_panel_div">Rings</div>
+				  <div class="new_cate_panel_div">Login</div>
+				   <div class="new_cate_panel_div">Contact Us</div>
+				   <div class="new_cate_panel_div">Get 20% Off</div>
+				   <div class="new_cate_panel_div">Shopping Cart</div>
+				   <div class="new_cate_panel_div">Terms of Use</div>
+				   <div class="new_cate_panel_div">Privacy Policy</div>
+				   <div class="new_cate_panel_div"><div class="search"><input type="search" placeholder="Search"><a href="#"><img src="img/search.png"></a></div></div>
+				
+			  
                 </div>
             </nav>
             <!-- Site Overlay -->
             <div class="site-overlay"></div>
-			
-			
         </div>
         <script type="text/javascript" src="js/footer.js"></script>
     </body>
     
     <script>
-	 function hidenav()
-	{
-	  
-	   
-	   jQuery('.site-overlay').click();
-	
-	}
        /*
         function app_local_store_new(){
             setApplicationLogoBanner(localStorage.getItem(config.data[0].storage_key+'_logoban'));
@@ -425,4 +1580,5 @@
     });
 */
     </script>
+  
 </html>
