@@ -29,7 +29,7 @@
     margin-right: 20px;
     padding-left: 6px;
     width: 154px;}
-.select_size_box:hover{border: 2px solid #747474;}
+.select_size_box:hover{border: 2px solid #FF8A00;}
 .select_size_box_rs{font-size:20px; font-weight:normal; padding-left: 8px;}
 hr{ background-color:#747474; color:#747474; height:1px; width:100%;}
 .product_options{font-size:30px; padding-left: 20px; font-family:Lato; font-weight:bold;  padding-top: 4px; height: 55px;}
@@ -47,7 +47,7 @@ hr{ background-color:#747474; color:#747474; height:1px; width:100%;}
 .product_options_price{font-size:23px; padding-left: 20px; padding-bottom: 14px; font-family:Lato; font-weight:normal;  padding-top: 43px; }
 .choose_style_price_box{float:right; padding-right: 22px;}
 .choose_style_price_box1{width:90px; height:40px; color:#ffffff;  background:#747474; padding:2px 33px 5px; margin-left: 5px;}
-.add_to_cart{width:95%; height:60px; background:#747474; margin:17px auto; font-size:30px; color:#ffffff; font-family:Lato; font-weight:normal; text-align:center; line-height:60px;}
+.add_to_cart{width:95%; height:60px; background:#ff8a00; margin:17px auto; font-size:30px; color:#ffffff; font-family:Lato; font-weight:normal; text-align:center; line-height:60px;}
 #myPanel{margin-top: 65px;}
 #myPanel2{margin-top: 65px;}
 #myPanel3{margin-top: 65px;}
@@ -87,7 +87,7 @@ hr{ background-color:#747474; color:#747474; height:1px; width:100%;}
     margin-right: 20px;
     padding-left: 6px;
     width: 154px;}
-.select_size_box:hover{border: 2px solid #747474;}
+.select_size_box:hover{border: 2px solid #FF8A00;}
 .select_size_box_rs{font-size:20px; font-weight:normal; padding-left: 8px;}
 hr{margin:0px auto; background-color:#747474; color:#747474; height:1px; width:95%;}
 .product_options{font-size:30px; padding-left: 20px; font-family:Lato; font-weight:bold;  padding-top: 4px; height: 55px;}
@@ -105,7 +105,7 @@ hr{margin:0px auto; background-color:#747474; color:#747474; height:1px; width:9
 .product_options_price{font-size:23px; padding-left: 20px; padding-bottom: 14px; font-family:Lato; font-weight:normal;  padding-top: 43px; }
 .choose_style_price_box{float:right; padding-right: 22px;}
 .choose_style_price_box1{width:90px; height:40px; color:#ffffff;  background:#747474; padding:2px 33px 5px; margin-left: 5px;}
-.add_to_cart{width:95%; height:60px; background:#747474; margin:17px auto; font-size:30px; color:#ffffff; font-family:Lato; font-weight:normal; text-align:center; line-height:60px;}
+.add_to_cart{width:95%; height:60px; background:#ff8a00; margin:17px auto; font-size:30px; color:#ffffff; font-family:Lato; font-weight:normal; text-align:center; line-height:60px;}
 #myPanel{margin-top: 65px;}
 #myPanel2{margin-top: 65px;}
 #myPanel3{margin-top: 65px;}
@@ -154,7 +154,7 @@ hr{margin:0px auto; background-color:#747474; color:#747474; height:1px; width:9
 .product_options_price{font-size:21px; padding-left: 20px; padding-bottom: 20px; font-family:Lato; font-weight:normal;  padding-top: 40px; }
 .choose_style_price_box{float:right; padding-right: 18px;}
 .choose_style_price_box1{width:90px; height:40px; color:#ffffff;  background:#747474; padding:4px 33px; margin-left: 5px;}
-.add_to_cart{width:95%; height:50px; background:#747474; margin:17px auto; font-size:26px; color:#ffffff; font-family:Lato; font-weight:normal; text-align:center; line-height:50px;}
+.add_to_cart{width:95%; height:50px; background:#ff8a00; margin:17px auto; font-size:26px; color:#ffffff; font-family:Lato; font-weight:normal; text-align:center; line-height:50px;}
 #myPanel{margin-top: 47px;}
 #myPanel2{margin-top: 47px;}
 #myPanel3{margin-top: 47px;}
@@ -202,7 +202,7 @@ hr{margin:0px auto; background-color:#747474; color:#747474; height:1px;}
 .product_options_price{font-size:14px; padding-left: 20px; padding-bottom: 14px; font-family:Lato; font-weight:normal;  padding-top: 30px; }
 .choose_style_price_box{float:right; padding-right: 18px;}
 .choose_style_price_box1{width:90px; height:40px; color:#ffffff;  background:#747474; padding:2px 33px; margin-left: 5px;}
-.add_to_cart{width:90%; height:40px; background:#747474; margin:17px auto; font-size:17px; color:#ffffff; font-family:Lato; font-weight:normal; text-align:center; line-height:40px;}
+.add_to_cart{width:90%; height:40px; background:#ff8a00; margin:17px auto; font-size:17px; color:#ffffff; font-family:Lato; font-weight:normal; text-align:center; line-height:40px;}
 #myPanel{margin-top: 37px;}
 #myPanel2{margin-top: 37px;}
 #myPanel3{margin-top: 37px;}
@@ -249,7 +249,7 @@ hr{margin:0px auto; background-color:#747474; color:#747474; height:1px;}
 .product_options_price{font-size:14px; padding-left: 20px; padding-bottom: 14px; font-family:Lato; font-weight:normal;  padding-top: 30px; }
 .choose_style_price_box{float:right; padding-right: 18px;}
 .choose_style_price_box1{width:90px; height:40px; color:#ffffff;  background:#747474; padding:2px 33px; margin-left: 5px;}
-.add_to_cart{width:90%; height:40px; background:#747474; margin:17px auto; font-size:17px; color:#ffffff; font-family:Lato; font-weight:normal; text-align:center; line-height:40px;}
+.add_to_cart{width:90%; height:40px; background:#ff8a00; margin:17px auto; font-size:17px; color:#ffffff; font-family:Lato; font-weight:normal; text-align:center; line-height:40px;}
 #myPanel{margin-top: 37px;}
 #myPanel2{margin-top: 37px;}
 #myPanel3{margin-top: 37px;}

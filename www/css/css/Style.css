@@ -2335,7 +2335,7 @@ text-align: center;
     width: 30px;
     border: 0;
     font-size: 12px;
-    color: #000; margin:0 4px; float:left;
+    color: #000; margin:0; float:left;
 }
 .qty-wrapper span{float:left; line-height:26px;}
 .removeitem{float:right;}
@@ -2715,6 +2715,118 @@ text-align: center;
     line-height: 25px;
     border-radius: 50%; float:right;
 }
+.get20off .email-signup {
+    width: 80%;
+    right: 10%;
+	position: absolute;
+    z-index: 999999;
+}
+.email-drawer-content {
+    width: 100%;
+    margin: 0 auto;
+    background: #fff;
+    padding: 0 15px 15px 15px;
+    z-index: 999;
+    overflow: hidden;
+    height: 400px;
+    overflow-y: scroll;
+}
+.email-drawer-content h2 {
+    font-size: 22px;
+    text-transform: initial;
+    margin-bottom: 5px;
+    color: #000;
+    padding-top: 8px; margin:0;
+}
+.email-drawer-content h3 {
+    font-size: 14px;
+    text-transform: initial;
+    color: #000; margin-bottom:0;
+}
+#newsletteremail {
+    height: 39px;
+    margin-top: 10px;
+    margin-bottom: 0; width:100%; border-radius: 2px;
+    border: 1px solid silver;
+    background: #FFFFFF;
+}
+#newsletter-validate-detail div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset{width:100%;}
+.mask {
+    width: 100%;
+    position: fixed;
+    background: rgba(0,0,0,0.7);
+    left: 0px;
+    top: 40px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 99999;
+}
+.closecontainer .close {
+    font-size: 25px;
+    font-weight: bold;
+    margin: -8px -4px 0px 0px;
+    color: #000;
+    opacity: 1;
+    font-family: arial; text-shadow: 0 1px 0 #fff; float:right;
+}
+.email-drawer-content p .exit-link {
+    text-transform: initial;
+    color: #888;
+    text-decoration: underline;
+}
+.email-drawer-content p {
+    font-size: 13px;
+    text-transform: initial;
+    color: #000;
+}
+.email-drawer-content .button {
+    width: 100%;
+    margin-bottom: 10px;
+    background: #000;
+    transition: 0.5s;
+	display: inline-block;
+    padding: 7px 15px;
+    border: 0;
+    color: #FFFFFF;
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 19px;
+    text-align: center;
+    text-transform: uppercase;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+#header-account.skip-active {
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#header-account.skip-active {
+    background: #fff;
+    border: solid 1px #cccccc;
+    display: block;
+    position: fixed;
+    z-index: 99999;
+    top: 75px;
+    width: 90%;
+    right: 5%;
+    padding: 15px;
+}
+.youama-window-title h3 {
+    width: 100%;
+    float: left;
+    margin: 10px 0; color:#000;
+}
+#header-account label {
+    margin-bottom: 0 !important; color:#000;
+}
+.youama-window-box .input-fly label {
+    font-size: 14px;
+    line-height: 26px;
+}
+.youama-window-box div.ui-input-text.ui-body-inherit.ui-corner-all.ui-shadow-inset{width:100%; float:left;}
+#youama-emails{width:100%; float:left; border: 1px solid #cecece;}
 
 @media all and (max-width: 414px) {
 #search_mini_form .search-button{top:2px;}
