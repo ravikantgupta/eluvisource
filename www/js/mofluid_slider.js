@@ -174,7 +174,7 @@ function feature_product_list(results){
 function setfourBox() {
 	
 	     
-		    alert('ram');
+		   
 	
 	
 	  
@@ -189,10 +189,14 @@ function setfourBox() {
                                         },
                                         success: function(response) {
                                        
-                                       var resdata=JSON.stringify(response);
-									    var response = JSON.parse(resdata);
+                                          var resdata=JSON.stringify(response);
+									      var response = JSON.parse(resdata);
 										   										
 											 $("#buttombox").html(response.four_boxes.content);
+											 $("#ready_revamp").html(response.ready_revamp.content);
+											 $("#secondstaticbanner").html(response.second_static_banner.content);
+											 
+											 alert(response.ready_revamp.content);
                                         }
                                         });
 	
