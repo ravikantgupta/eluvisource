@@ -153,14 +153,14 @@ function feature_product_list(results){
         
         $("#feature_products_outer_div1").show();
         $("#fproductslide").html(featured_pro);
-        $("#fproductslide").trigger("create");
+        //$("#fproductslide").trigger("create");
     } else {
         $('#feature_products_outer_div1').hide();
         $("#fproductslide").hide();
     }
     var owl_featured = $("#fproductslide");
   
-    owl_featured.owlCarousel({
+   /* owl_featured.owlCarousel({
                        
 					   
 						items:4,
@@ -221,7 +221,7 @@ function feature_product_list(results){
 					 loop:true,
 					 autoplayHoverPause:true,
 					 dots:true
-                             });
+                             });*/
    
 }
 
