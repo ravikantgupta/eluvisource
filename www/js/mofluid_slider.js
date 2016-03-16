@@ -127,35 +127,39 @@ function feature_product_list(results){
                 price_html += '<h4 class="producth4 product_price_color">' + app_curr_symbol + parseFloat(response.products_list[i].price.replace(",", "")).toFixed(2) + '</h4>';
             }
             
-            featured_pro += '<div class="child">\
-            <div class="slider_products">\
-            <div class="new_header_product_list">\
-            <h2 class="producth2">' + response.products_list[i].name + '</h2>\
-            '+price_html+'\
-            </div>\
-            <div style="display:table;width:100%">\
-            <div class="home_page_product_list_div" style="height:120px;display:table-cell;vertical-align:middle;" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
-            <img src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" />\
-            </div>\
-            </div>\
-            </div>\
-            </div>';
+            featured_pro += '<li class="child">\
+                <a class="product-image" title="" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
+				  <img src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" />\
+				<span class="productimghover"></span></a>\
+				 <div class="sku">E13</div>\
+		         <h3 class="product-name"><a title="PEARL EARRING" >' + response.products_list[i].name + '</a></h3>\
+				  <div class="shortdesc"><a onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">Detail</a></div>\
+				  <div class="hover-action">\
+					<div class="cartactions">\
+					 <button  class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>\
+					   <ul class="wish-add-to-links">\
+						 <li><a class="link-wishlist" title="Wishlist" ><i class="fa fa-heart"></i></a></li>\
+						 <li><a class="link-compare" title="Compare" ><i class="fa fa-exchange"></i></a></li>\
+						 <\ul>\
+								</div>\
+								  </div>\
+						          </li>';
             
           //  featured_pro +='<div class="child" >child '+i+'</div>';
             i++;
         }
-        $('#feature_products_inner_div').html(locale.message.text.featured_products);
+        $('#feature_products_inner_div1').html(locale.message.text.featured_products);
         localStorage.setItem(config.data[0].storage_key+'_featured_products_html',featured_pro);
         
-        $("#feature_products_outer_div").show();
-        $("#featured_owl").html(featured_pro);
-        $("#featured_owl").trigger("create");
+        $("#feature_products_outer_div1").show();
+        $("#fproductslide").html(featured_pro);
+        $("#fproductslide").trigger("create");
     } else {
-        $('#feature_products_outer_div').hide();
-        $("#featured_owl").hide();
+        $('#feature_products_outer_div1').hide();
+        $("#fproductslide").hide();
     }
-    var owl_featured = $("#featured_owl");
-   /*
+    var owl_featured = $("#fproductslide");
+  
     owl_featured.owlCarousel({
                              items : 3, //10 items above 1000px browser width
                              itemsDesktop : [1000,3], //5 items between 1000px and 901px
@@ -166,18 +170,14 @@ function feature_product_list(results){
                              pagination: false,
                              autoPlay:false
                              });
-    */
+   
 }
 
 
 
 function setfourBox() {
 	
-	     
-		   
-	
-	
-	  
+	       	  
                                  $.ajax({
                                         url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getFourBox&currency=" + app_curr_code,
                                         type: 'GET',
@@ -196,7 +196,7 @@ function setfourBox() {
 											 $("#ready_revamp").html(response.ready_revamp.content);
 											 $("#secondstaticbanner").html(response.second_static_banner.content);
 											 
-											 alert(response.ready_revamp.content);
+											
                                         }
                                         });
 	
