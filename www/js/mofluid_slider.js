@@ -153,6 +153,8 @@ function feature_product_list(results){
         
         $("#feature_products_outer_div1").show();
         $("#fproductslide").html(featured_pro);
+		
+		alert(featured_pro);
         //$("#fproductslide").trigger("create");
     } else {
         $('#feature_products_outer_div1').hide();
