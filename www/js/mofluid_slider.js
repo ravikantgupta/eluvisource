@@ -161,14 +161,66 @@ function feature_product_list(results){
     var owl_featured = $("#fproductslide");
   
     owl_featured.owlCarousel({
-                             items : 3, //10 items above 1000px browser width
-                             itemsDesktop : [1000,3], //5 items between 1000px and 901px
-                             itemsDesktopSmall : [900,4], // betweem 900px and 601px
-                             itemsTablet: [600,3], //2 items between 600 and 0
-                             itemsMobile : false,  // itemsMobile disabled - inherit from itemsTablet option
-                             navigation : false,
-                             pagination: false,
-                             autoPlay:false
+                       
+					   
+						items:4,
+						margin:0,
+					 responsiveClass:true,
+
+					 responsive:{
+					   0:{
+						items:1
+					   },
+					   
+					   320:{
+						items:1
+					   },
+
+					   360:{
+						items:1,
+						margin:0
+					   },
+					   
+					   375:{
+						items:1
+					   },
+					   
+					   414:{
+						items:1
+					   },
+					   
+					   480:{
+						items:2
+					   },
+
+
+					   768:{
+						items:3,
+						center:true
+					   },
+
+					   960:{
+						items:4,
+						margin:20,
+						center:false
+
+					   },
+
+					   1200:{
+						items:4,
+						loop:false,
+						margin: 30,
+							  }
+						},
+						stagePadding:0,
+					 autoplay:false,
+					 autoplayTimeout:0,
+					 nav:true,
+					 navText:['<','>'],
+					 smartSpeed:450,
+					 loop:true,
+					 autoplayHoverPause:true,
+					 dots:true
                              });
    
 }
