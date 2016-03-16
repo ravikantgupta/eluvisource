@@ -160,7 +160,7 @@ function feature_product_list(results){
     }
     var owl_featured = $("#fproductslide");
   
-    owl_featured.owlCarousel({
+    owl_featured.owlSlider({
                        
 		   			  items:4,
 					  margin:0,

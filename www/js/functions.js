@@ -953,7 +953,7 @@ function setApplicationLogoBanner(results) {
                           store_data["store"] = store_response;
                           localStorage[config.data[0].storage_key+"_STORE"] = JSON.stringify(store_data);
                           var owl_banner = $("#banner_slider");
-                          owl_banner.owlCarousel({
+                          owl_banner.owlSlider({
                                                  items : 1, //10 items above 1000px browser width
                                                  itemsDesktop : [1000,1], //5 items between 1000px and 901px
                                                  itemsDesktopSmall : [900,1], // betweem 900px and 601px
