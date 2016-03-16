@@ -155,6 +155,7 @@ jQuery('#fproductslide1').owlSlider({
                         
                 }
                 document.addEventListener("deviceready", onDeviceReady, false);
+				setfourBox();
             }
         
             function onDeviceReady(){
@@ -947,16 +948,9 @@ jQuery('#fproductslide1').owlSlider({
                 </div>
                 
                 <div class="navigation_logo1 navigation_logo" align="center">
-                   <!-- <a href="javascript:void(0);">
+                   <a href="javascript:void(0);">
                         <img  class="logo_icon" src="images/spin.gif" style="height:30px;width:30px;"/>
-                    </a>-->
-					<a class="logo" href="https://eluvy.com/">
-                               <!--  <h3>Eluvy</h3>
-                                 <title>Bridge to Fine Jewelry</title>-->
-                              
-                                <img src="https://eluvy.com/skin/frontend/rwd/eluvy/images/logo.png" alt="Eluvy Commerce" class="small">
-                        
-                        </a>
+                    </a>
                 </div>
                 
                 <div class="clear"></div>
@@ -983,7 +977,7 @@ jQuery('#fproductslide1').owlSlider({
                 
                 
                 <div>
-                    <div class="item hideit" align="center" id="hideit" value="1" style="display:none;">
+                    <div class="item hideit" align="center" id="hideit" value="1" >
 					 <img src="images/spin.gif">
 					</div>
                     <div id="banner_slider" class="slider-contaner hslider" style="text-align:center;width:100%; margin:72px 0 0 0;">
@@ -998,28 +992,28 @@ jQuery('#fproductslide1').owlSlider({
 									<div class="customer-message">
 									<p>Ready to <em>revamp</em> your wardrobe? Stay <em>on trend</em> with fashion's finishing touch. <a href="https://eluvy.com/what-s-new/just-added.html/">SHOP FASHION JEWELRY &gt;</a></p> 
 									 </div>
-									 </section>
+				</section>
 
-					<section class="secondbanner">	
-								<div class="staticbanner">
-										<ul class="btmbanners">
-										<li><img src="https://eluvy.com/media/wysiwyg/homeimg/banner2-1.png" alt=""></li>
-										<li><img src="https://eluvy.com/media/wysiwyg/homeimg/banner2-2.png" alt="">
-										<div class="content">
-										<h3>Integer</h3>
-										<p>Aliquam quis sagittis</p>
-										<a href="https://eluvy.com/rings.html/">Start to shop</a></div>
-										</li>
-										<li><img src="https://eluvy.com/media/wysiwyg/homeimg/banner2-3.png" alt=""></li>
-										<li><img src="https://eluvy.com/media/wysiwyg/homeimg/banner2-4.png" alt="">
-										<div class="content">
-										<h3>Fermentum</h3>
-										<p>Nam Lacinia lorem</p>
-										<a href="#">Mauris rhoncus semper</a></div>
-										</li>
-									 </ul>	
-								</div>
-					</section>
+				<section class="secondbanner">	
+							<div class="staticbanner">
+									<ul class="btmbanners">
+									<li><img src="https://eluvy.com/media/wysiwyg/homeimg/banner2-1.png" alt=""></li>
+									<li><img src="https://eluvy.com/media/wysiwyg/homeimg/banner2-2.png" alt="">
+									<div class="content">
+									<h3>Integer</h3>
+									<p>Aliquam quis sagittis</p>
+									<a href="https://eluvy.com/rings.html/">Start to shop</a></div>
+									</li>
+									<li><img src="https://eluvy.com/media/wysiwyg/homeimg/banner2-3.png" alt=""></li>
+									<li><img src="https://eluvy.com/media/wysiwyg/homeimg/banner2-4.png" alt="">
+									<div class="content">
+									<h3>Fermentum</h3>
+									<p>Nam Lacinia lorem</p>
+									<a href="#">Mauris rhoncus semper</a></div>
+									</li>
+								 </ul>	
+							</div>
+				</section>
 				</div>
 
 				<!-- new code vipin end-->
@@ -1343,39 +1337,10 @@ jQuery('#fproductslide1').owlSlider({
        </div>
                 
                 <!-- three box start-->
-         <div class="forboxes">
-				 <ul>
-					<li>
-						<div class="img"><img src="https://eluvy.com/media/wysiwyg/homeimg/blog-img1.jpg" alt=""></div>
-						<div class="content">
-						<div class="title">Introduction About Jewellery</div>
-						<div class="text">
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
-						<a href="https://eluvy.com/introduction-about-jewellery/">Read More...</a></div>
-						</div>
-					</li>
-					<li>
-						<div class="img"><img src="https://eluvy.com/media/wysiwyg/homeimg/blog-img2.jpg" alt=""></div>
-						<div class="title">Our Story</div>
-						<div class="text">
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
-						<a href="https://eluvy.com/our-story/">Read More...</a></div>
-					</li>
-					<li>
-						<div class="img"><img src="https://eluvy.com/media/wysiwyg/homeimg/blog-img3.jpg" alt=""></div>
-						<div class="title">New Design</div>
-						<div class="text">
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
-						<a href="https://eluvy.com/new-design/">Read More...</a></div>
-					</li>
-					<li>
-						<div class="img"><img src="https://eluvy.com/media/wysiwyg/homeimg/blog-img4.jpg" alt=""></div>
-						<div class="title">Customer Review</div>
-						<div class="text">
-						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500</p>
-						<a href="https://eluvy.com/customer-review/">Read More...</a></div>
-					</li>
-				</ul>
+         <div id="buttombox" class="forboxes">
+		 
+			 <div class="item hideit" align="center" id="hideit" value="1"><img src="images/spin.gif"></div>
+			 
 
 		</div>
                 <!-- three box end-->

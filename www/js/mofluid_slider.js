@@ -169,6 +169,38 @@ function feature_product_list(results){
     */
 }
 
+
+
+function setfourBox() {
+	
+	     
+		    alert('ram');
+	
+	
+	  
+                                 $.ajax({
+                                        url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getFourBox&currency=" + app_curr_code,
+                                        type: 'GET',
+                                        contentType: 'application/json',
+                                        dataType: 'json',
+                                        async: false,
+                                        error: function(jqXHR, textStatus, errorThrown) {
+                                        console.log("Internal server Error! \n please try after some time.")
+                                        },
+                                        success: function(response) {
+                                       
+                                       var resdata=JSON.stringify(response);
+									    var response = JSON.parse(resdata);
+										   										
+											 $("#buttombox").html(response.four_boxes.content);
+                                        }
+                                        });
+	
+	
+}
+
+
+
 //------------------------------------------------New product list----------------------------------------
 function optional_products_slide(){
     var db = dbConnection();
