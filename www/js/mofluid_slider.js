@@ -411,23 +411,78 @@ function new_product_list(results){
         localStorage.setItem(config.data[0].storage_key+'_new_products_html' , featured_pro);
         $("#new_products_inner_div").html(locale.message.text.new_products);
         $("#new_products_outer_div").hide();
-        $("#new_owl").html(featured_pro);
-       // $("#new_owl").trigger("create");
+        $("#fproductslide1").html(featured_pro);
+        $("#fproductslide1").trigger("create");
     } else {
         $('#new_products_outer_div').hide();
-        $("#new_owl").hide();
+        $("#fproductslide1").hide();
     }
-    //printRootCategory();
-  //  var owl_new = $("#new_owl");
- /*   owl_new.owlCarousel({
-                        items : 3, //10 items above 1000px browser width
-                        itemsDesktop : [1000,3], //5 items between 1000px and 901px
-                        itemsDesktopSmall : [900,4], // betweem 900px and 601px
-                        itemsTablet: [600,3], //2 items between 600 and 0
-                        itemsMobile : false,  // itemsMobile disabled - inherit from itemsTablet option
-                        navigation : false,
-                        pagination: false,
-                        autoPlay :false
-                        }); */
+   
+   
+   alert(featured_pro);
+   
+      jQuery('#fproductslide1').owlSlider({
+   
+    items:4,
+    margin:0,
+ responsiveClass:true,
+
+ responsive:{
+   0:{
+    items:1
+   },
+   
+   320:{
+    items:1
+   },
+
+   360:{
+    items:1,
+    margin:0
+   },
+   
+   375:{
+    items:1
+   },
+   
+   414:{
+    items:1
+   },
+   
+   480:{
+    items:2
+   },
+
+
+   768:{
+    items:3,
+    center:true
+   },
+
+   960:{
+    items:4,
+    margin:20,
+    center:false
+
+   },
+
+   1200:{
+    items:4,
+    loop:false,
+    margin: 30,
+          }
+    },
+    stagePadding:0,
+ autoplay:false,
+ autoplayTimeout:0,
+ nav:true,
+ navText:['<','>'],
+ smartSpeed:450,
+ loop:true,
+ autoplayHoverPause:true,
+ dots:true});
+   
+   
+   
     $("#footer_content").show();
 }
