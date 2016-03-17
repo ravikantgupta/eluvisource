@@ -49,10 +49,13 @@
                                         navigation : false,
                                         pagination: true
                                         });
-                 $('#feature_products_inner_div').html(locale.message.text.featured_products);
+                 $('#feature_products_inner_div1').html(locale.message.text.featured_products);
                   var featured_products_html=localStorage.getItem(config.data[0].storage_key+'_featured_products_html');
-                  $("#feature_products_outer_div").show();
-                  $("#featured_owl").html(featured_products_html);
+                  $("#feature_products_outer_div1").show();
+				  
+				   setfourBox();
+				   
+                  $("#fproductslide").html(featured_products_html);
                 /*  var owl_featured = $("#featured_owl");
                   owl_featured.featureowlCarousel({
                                            items : 3, //10 items above 1000px browser width
@@ -67,8 +70,11 @@
 */
                  var new_products_html=localStorage.getItem(config.data[0].storage_key+'_new_products_html');
                  $("#new_products_inner_div").html(locale.message.text.new_products);
-                 $("#new_products_outer_div").show();
-                 $("#new_owl").html(new_products_html);
+                 $("#new_products_outer_div").hide();
+                 $("#fproductslide1").html(new_products_html);
+				 
+				
+				 
              /*    var owl_new = $("#new_owl");
                 owl_new.featureowlCarousel({
                                     items : 2, //10 items above 1000px browser width
@@ -155,7 +161,8 @@
                                                       localStorage.setItem(config.data[0].storage_key+'return_privacy_policy', response.store.return_privacy_policy);
                                                       localStorage.setItem(config.data[0].storage_key+'tax_flag', response.store.tax_flag);
                                                       setApplicationLogoBanner(JSON.stringify(response));
-													  alert('rrrr12');
+													  
+													   setfourBox();
                                                        fetchFeaturesProduct();
                                                       optional_products_slide();
                                                       
@@ -170,8 +177,8 @@
                                                setApplicationLogoBanner(resdata.rows.item(0).data);
                                               
 											  
-											  alert('rrrr1');
-											  fetchFeaturesProduct();
+											   setfourBox();
+											   fetchFeaturesProduct();
                                                optional_products_slide();
                                                
                                                //   printRootCategory(response.categories);
@@ -227,9 +234,9 @@
                                                       //setApplicationFooter(response.store);
                                                       setApplicationLogoBanner(JSON.stringify(response));
 													  
-													  alert('rrrr');
+													 
 													  setfourBox();
-													  alert('rrrr0');
+													 
                                                       fetchFeaturesProduct();
                                                       optional_products_slide();
                                                       
