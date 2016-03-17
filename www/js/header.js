@@ -30,7 +30,7 @@ var header = '<!-- Header included -->'
 +'<script type="text/javascript" src="lib/tooltip/mofluid_tooltip_include.js"></script>'
 
 +'<!-- For Slider -->'
-//+'<script src="lib/owl-carousel/mofluid_slider.js"></script>'
++'<script src="lib/owl-carousel/mofluid_slider.js"></script>'
 
 +'<!-- For Custom JS and CSS -->'
 //+'<link rel="stylesheet" type="text/css" href="css/pushy.css" />'

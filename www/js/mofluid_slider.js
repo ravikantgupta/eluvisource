@@ -158,7 +158,9 @@ function feature_product_list(results){
         $('#feature_products_outer_div1').hide();
         $("#fproductslide").hide();
     }
-    var owl_featured = $("#fproductslide");
+	
+	
+   /* var owl_featured = $("#fproductslide");
   
     owl_featured.owlSlider({
                        
@@ -221,6 +223,8 @@ function feature_product_list(results){
 					 autoplayHoverPause:true,
 					 dots:true
                              });
+							 
+							 */
    
 }
 
