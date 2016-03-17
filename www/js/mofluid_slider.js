@@ -127,7 +127,7 @@ function feature_product_list(results){
                 price_html += '<h4 class="producth4 product_price_color">' + app_curr_symbol + parseFloat(response.products_list[i].price.replace(",", "")).toFixed(2) + '</h4>';
             }
             
-            featured_pro += '<li class="item"><div class="sku">E13</div><div class="hover-action"><div class="cartactions"><button  class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button></div></div></li>';
+            featured_pro += '<li class="item"><a class="product-image" title="" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')"><img src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" /><span class="productimghover"></span></a><div class="sku">E13</div><h3 class="product-name"><a title="PEARL EARRING" >'+ response.products_list[i].name + '</a></h3><div class="shortdesc"><a onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">Detail</a></div><div class="hover-action"><div class="cartactions"><button  class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button><ul class="wish-add-to-links"><li><a class="link-wishlist" title="Wishlist" ><i class="fa fa-heart"></i></a></li><li><a class="link-compare" title="Compare" ><i class="fa fa-exchange"></i></a></li><\ul></div></div></li>';
             
           //  featured_pro +='<div class="child" >child '+i+'</div>';
             i++;
