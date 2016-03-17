@@ -36,6 +36,8 @@
                
                 // fetchStoredetail();
                 if(localStorage.getItem('foo') == 1){
+				
+				alert('shreeram');
                    //$("#hideit").remove();
                  var banner_image_slider=localStorage.getItem(config.data[0].storage_key+'_banner_image_slider');
                  $("#banner_slider").html(banner_image_slider);
@@ -90,7 +92,9 @@
                   
                 }
               else{
-                  $("#new_hide").hide();
+                  
+				  alert('rma1');
+				  $("#new_hide").hide();
                       // return false;
                   
                   var db = dbConnection();
@@ -218,8 +222,10 @@
                                                       //setGoogleAnalytics(response.analytics);
                                                       //setApplicationFooter(response.store);
                                                       setApplicationLogoBanner(JSON.stringify(response));
-                                                     // fetchFeaturesProduct();
-                                                     // optional_products_slide();
+													  
+													  alert('rrrr');
+                                                      fetchFeaturesProduct();
+                                                      optional_products_slide();
                                                       
                                                       //    printRootCategory(response.categories);
                                                       //console.log("Success Webservice");
