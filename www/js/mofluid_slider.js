@@ -148,12 +148,7 @@ function feature_product_list(results){
           //  featured_pro +='<div class="child" >child '+i+'</div>';
             i++;
         }
-        $('#feature_products_inner_div1').html(locale.message.text.featured_products);
-        localStorage.setItem(config.data[0].storage_key+'_featured_products_html',featured_pro);
-        
-        $("#feature_products_outer_div1").show();
-        $("#fproductslide").html(featured_pro);
-        $("#fproductslide").trigger("create");
+          alert(featured_pro);
     } else {
         $('#feature_products_outer_div1').hide();
         $("#fproductslide").hide();
@@ -169,6 +164,8 @@ function feature_product_list(results){
 
 
 function setfourBox() {
+	
+	 alert('ram');
 	
 	       	  
                                  $.ajax({
@@ -271,6 +268,8 @@ function optional_products_slide(){
 }
 
 function new_product_list(results){
+	
+	alert('ram');
     var response = JSON.parse(results);
     var featured_pro = "";
     var i = 0;
