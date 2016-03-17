@@ -187,7 +187,7 @@
                                                else
                                                {
                                                var store_webservice = config.data[0].baseurl + "?callback=?" + "&store=" + config.data[0].storeid + "&service=storedetails&currency="+app_curr_code+"&theme="+config.data[0].theme;
-                                             alert(store_webservice);
+                                            
 											 $.ajax({
                                                       url: store_webservice,
                                                       type: "get",
