@@ -24,15 +24,15 @@
                         
                 }
 				
-				alert('ram');
 				
                 document.addEventListener("deviceready", onDeviceReady, false);
+				setfourBox();
 				
             }
         
             function onDeviceReady(){
-			//setfourBox();
-			alert('ram1');
+			
+			
                
                 // fetchStoredetail();
                 if(localStorage.getItem('foo') == 1){
@@ -218,8 +218,8 @@
                                                       //setGoogleAnalytics(response.analytics);
                                                       //setApplicationFooter(response.store);
                                                       setApplicationLogoBanner(JSON.stringify(response));
-                                                      fetchFeaturesProduct();
-                                                      optional_products_slide();
+                                                     // fetchFeaturesProduct();
+                                                     // optional_products_slide();
                                                       
                                                       //    printRootCategory(response.categories);
                                                       //console.log("Success Webservice");
