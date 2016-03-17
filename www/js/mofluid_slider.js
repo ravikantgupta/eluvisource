@@ -230,6 +230,8 @@ function feature_product_list(results){
 
 function setfourBox() {
 	
+	      alert('rma3');
+	
 	       	  
                                  $.ajax({
                                         url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getFourBox&currency=" + app_curr_code,
