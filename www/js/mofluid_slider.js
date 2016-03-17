@@ -233,27 +233,7 @@ function setfourBox() {
 	      alert('rma3');
 	
 	       	  
-                                 $.ajax({
-                                        url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getFourBox&currency=" + app_curr_code,
-                                        type: 'GET',
-                                        contentType: 'application/json',
-                                        dataType: 'json',
-                                        async: false,
-                                        error: function(jqXHR, textStatus, errorThrown) {
-                                        console.log("Internal server Error! \n please try after some time.")
-                                        },
-                                        success: function(response) {
-                                       
-                                          var resdata=JSON.stringify(response);
-									      var response = JSON.parse(resdata);
-										   										
-											 $("#buttombox").html(response.four_boxes.content);
-											 $("#ready_revamp").html(response.ready_revamp.content);
-											 $("#secondstaticbanner").html(response.second_static_banner.content);
-											 
-											
-                                        }
-                                        });
+                             
 	
 	
 }
