@@ -156,6 +156,7 @@
                                                       localStorage.setItem(config.data[0].storage_key+'return_privacy_policy', response.store.return_privacy_policy);
                                                       localStorage.setItem(config.data[0].storage_key+'tax_flag', response.store.tax_flag);
                                                       setApplicationLogoBanner(JSON.stringify(response));
+													  alert('rrrr12');
                                                       fetchFeaturesProduct();
                                                       optional_products_slide();
                                                       
@@ -168,7 +169,10 @@
                                                var response = JSON.parse(resdata.rows.item(0).data);
                                                localStorage.setItem(config.data[0].storage_key+'_logoban', resdata.rows.item(0).data);
                                                setApplicationLogoBanner(resdata.rows.item(0).data);
-                                               fetchFeaturesProduct();
+                                              
+											  
+											  alert('rrrr1');
+											  fetchFeaturesProduct();
                                                optional_products_slide();
                                                
                                                //   printRootCategory(response.categories);
