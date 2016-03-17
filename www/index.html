@@ -37,7 +37,7 @@
                 // fetchStoredetail();
                 if(localStorage.getItem('foo') == 1){
 				
-				alert('shreeram');
+				//it work on top back
                    //$("#hideit").remove();
                  var banner_image_slider=localStorage.getItem(config.data[0].storage_key+'_banner_image_slider');
                  $("#banner_slider").html(banner_image_slider);
@@ -93,7 +93,8 @@
                 }
               else{
                   
-				  alert('rma1');
+				  //it work on home button and mobile back button
+				 
 				  $("#new_hide").hide();
                       // return false;
                   
@@ -228,6 +229,8 @@
                                                       setApplicationLogoBanner(JSON.stringify(response));
 													  
 													  alert('rrrr');
+													  setfourBox();
+													  alert('rrrr0');
                                                       fetchFeaturesProduct();
                                                       optional_products_slide();
                                                       
