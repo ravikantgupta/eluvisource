@@ -231,7 +231,7 @@ function feature_product_list(results){
 function setfourBox() {
 	
 	    	
-	       	  alert('ram');
+	       	
                                  $.ajax({
                                         url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getFourBox&currency=" + app_curr_code,
                                         type: 'GET',
@@ -413,6 +413,7 @@ function new_product_list(results){
         $("#new_products_inner_div").html(locale.message.text.new_products);
         $("#new_products_outer_div").hide();
         $("#fproductslide1").html(featured_pro);
+		 $("#new_hide").hide();
         $("#fproductslide1").trigger("create");
     } else {
         $('#new_products_outer_div').hide();
@@ -420,7 +421,7 @@ function new_product_list(results){
     }
    
    
-   alert(featured_pro);
+   
    
       jQuery('#fproductslide1').owlSlider({
    
