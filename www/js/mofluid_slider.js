@@ -153,78 +153,76 @@ function feature_product_list(results){
         
         $("#feature_products_outer_div1").show();
         $("#fproductslide").html(featured_pro);
-       // $("#fproductslide").trigger("create");
+        $("#fproductslide").trigger("create");
     } else {
         $('#feature_products_outer_div1').hide();
         $("#fproductslide").hide();
     }
 	
 	
-   /* var owl_featured = $("#fproductslide");
-  
-    owl_featured.owlSlider({
-                       
-		   			  items:4,
-					  margin:0,
-					 responsiveClass:true,
+   jQuery('#fproductslide').owlSlider({
+   
+    items:4,
+    margin:0,
+ responsiveClass:true,
 
-					 responsive:{
-					   0:{
-						items:1
-					   },
-					   
-					   320:{
-						items:1
-					   },
+ responsive:{
+   0:{
+    items:1
+   },
+   
+   320:{
+    items:1
+   },
 
-					   360:{
-						items:1,
-						margin:0
-					   },
-					   
-					   375:{
-						items:1
-					   },
-					   
-					   414:{
-						items:1
-					   },
-					   
-					   480:{
-						items:2
-					   },
+   360:{
+    items:1,
+    margin:0
+   },
+   
+   375:{
+    items:1
+   },
+   
+   414:{
+    items:1
+   },
+   
+   480:{
+    items:2
+   },
 
 
-					   768:{
-						items:3,
-						center:true
-					   },
+   768:{
+    items:3,
+    center:true
+   },
 
-					   960:{
-						items:4,
-						margin:20,
-						center:false
+   960:{
+    items:4,
+    margin:20,
+    center:false
 
-					   },
+   },
 
-					   1200:{
-						items:4,
-						loop:false,
-						margin: 30,
-							  }
-						},
-						stagePadding:0,
-					 autoplay:false,
-					 autoplayTimeout:0,
-					 nav:true,
-					 navText:['<','>'],
-					 smartSpeed:450,
-					 loop:true,
-					 autoplayHoverPause:true,
-					 dots:true
-                             });
+   1200:{
+    items:4,
+    loop:false,
+    margin: 30,
+          }
+    },
+    stagePadding:0,
+ autoplay:false,
+ autoplayTimeout:0,
+ nav:true,
+ navText:['<','>'],
+ smartSpeed:450,
+ loop:true,
+ autoplayHoverPause:true,
+ dots:true});
+});
 							 
-							 */
+							
    
 }
 
@@ -408,9 +406,9 @@ function new_product_list(results){
         
         localStorage.setItem(config.data[0].storage_key+'_new_products_html' , featured_pro);
         $("#new_products_inner_div").html(locale.message.text.new_products);
-        $("#new_products_outer_div").show();
-        $("#new_owl").html(featured_pro);
-        $("#new_owl").trigger("create");
+        $("#new_products_outer_div").hide();
+       // $("#new_owl").html(featured_pro);
+       // $("#new_owl").trigger("create");
     } else {
         $('#new_products_outer_div').hide();
         $("#new_owl").hide();
