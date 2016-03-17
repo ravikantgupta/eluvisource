@@ -148,14 +148,79 @@ function feature_product_list(results){
           //  featured_pro +='<div class="child" >child '+i+'</div>';
             i++;
         }
-          alert(featured_pro);
+        $('#feature_products_inner_div1').html(locale.message.text.featured_products);
+        localStorage.setItem(config.data[0].storage_key+'_featured_products_html',featured_pro);
+        
+        $("#feature_products_outer_div1").show();
+        $("#fproductslide").html(featured_pro);
+        $("#fproductslide").trigger("create");
     } else {
         $('#feature_products_outer_div1').hide();
         $("#fproductslide").hide();
     }
 	
 	
-  
+   jQuery('#fproductslide').owlSlider({
+   
+    items:4,
+    margin:0,
+ responsiveClass:true,
+
+ responsive:{
+   0:{
+    items:1
+   },
+   
+   320:{
+    items:1
+   },
+
+   360:{
+    items:1,
+    margin:0
+   },
+   
+   375:{
+    items:1
+   },
+   
+   414:{
+    items:1
+   },
+   
+   480:{
+    items:2
+   },
+
+
+   768:{
+    items:3,
+    center:true
+   },
+
+   960:{
+    items:4,
+    margin:20,
+    center:false
+
+   },
+
+   1200:{
+    items:4,
+    loop:false,
+    margin: 30,
+          }
+    },
+    stagePadding:0,
+ autoplay:false,
+ autoplayTimeout:0,
+ nav:true,
+ navText:['<','>'],
+ smartSpeed:450,
+ loop:true,
+ autoplayHoverPause:true,
+ dots:true});
+
 							 
 							
    
@@ -164,8 +229,6 @@ function feature_product_list(results){
 
 
 function setfourBox() {
-	
-	 alert('ram');
 	
 	       	  
                                  $.ajax({
@@ -268,8 +331,6 @@ function optional_products_slide(){
 }
 
 function new_product_list(results){
-	
-	alert('ram');
     var response = JSON.parse(results);
     var featured_pro = "";
     var i = 0;
@@ -351,7 +412,7 @@ function new_product_list(results){
         $("#new_products_inner_div").html(locale.message.text.new_products);
         $("#new_products_outer_div").hide();
         $("#new_owl").html(featured_pro);
-        $("#new_owl").trigger("create");
+       // $("#new_owl").trigger("create");
     } else {
         $('#new_products_outer_div').hide();
         $("#new_owl").hide();

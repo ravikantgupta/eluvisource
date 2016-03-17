@@ -23,11 +23,15 @@
                       //  $("#new_hide").hide();
                         
                 }
+				
+				alert('ram');
                 document.addEventListener("deviceready", onDeviceReady, false);
 				setfourBox();
             }
         
             function onDeviceReady(){
+			
+			alert('ram1');
                
                 // fetchStoredetail();
                 if(localStorage.getItem('foo') == 1){
