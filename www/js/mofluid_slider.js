@@ -387,19 +387,23 @@ function new_product_list(results){
                 }
                 price_html += '<h4 class="producth4 product_price_color">' + app_curr_symbol + parseFloat(response.products_list[i].price.replace(",", "")).toFixed(2) + '</h4>';
             }
-            featured_pro += '<div class="child">\
-            <div class="slider_products">\
-            <div class="new_header_product_list">\
-            <h2 class="producth2">' + response.products_list[i].name + '</h2>\
-            '+price_html+'\
-            </div>\
-            <div style="display:table;width:100%">\
-            <div class="home_page_product_list_div" style="height:120px;display:table-cell;vertical-align:middle;" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
-            <img src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" />\
-            </div>\
-            </div>\
-            </div>\
-            </div>';
+              featured_pro += '<li class="item">\
+                <a class="product-image" title="" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
+				  <img src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" />\
+				<span class="productimghover"></span></a>\
+				 <div class="sku">E13</div>\
+		         <h3 class="product-name"><a title="PEARL EARRING" >' + response.products_list[i].name + '</a></h3>\
+				  <div class="shortdesc"><a onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">Detail</a></div>\
+				  <div class="hover-action">\
+					<div class="cartactions">\
+					 <button  class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>\
+					   <ul class="wish-add-to-links">\
+						 <li><a class="link-wishlist" title="Wishlist" ><i class="fa fa-heart"></i></a></li>\
+						 <li><a class="link-compare" title="Compare" ><i class="fa fa-exchange"></i></a></li>\
+						 <\ul>\
+								</div>\
+								  </div>\
+						          </li>';
             
             i++;
         }
@@ -407,23 +411,73 @@ function new_product_list(results){
         localStorage.setItem(config.data[0].storage_key+'_new_products_html' , featured_pro);
         $("#new_products_inner_div").html(locale.message.text.new_products);
         $("#new_products_outer_div").hide();
-       // $("#new_owl").html(featured_pro);
-       // $("#new_owl").trigger("create");
+        $("#fproductslide1").html(featured_pro);
+        $("#fproductslide1").trigger("create");
     } else {
         $('#new_products_outer_div').hide();
         $("#new_owl").hide();
     }
     //printRootCategory();
-  //  var owl_new = $("#new_owl");
- /*   owl_new.owlCarousel({
-                        items : 3, //10 items above 1000px browser width
-                        itemsDesktop : [1000,3], //5 items between 1000px and 901px
-                        itemsDesktopSmall : [900,4], // betweem 900px and 601px
-                        itemsTablet: [600,3], //2 items between 600 and 0
-                        itemsMobile : false,  // itemsMobile disabled - inherit from itemsTablet option
-                        navigation : false,
-                        pagination: false,
-                        autoPlay :false
-                        }); */
+  
+jQuery('#fproductslide1').owlSlider({
+   
+    items:4,
+    margin:0,
+ responsiveClass:true,
+
+ responsive:{
+   0:{
+    items:1
+   },
+   
+   320:{
+    items:1
+   },
+
+   360:{
+    items:1,
+    margin:0
+   },
+   
+   375:{
+    items:1
+   },
+   
+   414:{
+    items:1
+   },
+   
+   480:{
+    items:2
+   },
+
+
+   768:{
+    items:3,
+    center:true
+   },
+
+   960:{
+    items:4,
+    margin:20,
+    center:false
+
+   },
+
+   1200:{
+    items:4,
+    loop:false,
+    margin: 30,
+          }
+    },
+    stagePadding:0,
+ autoplay:false,
+ autoplayTimeout:0,
+ nav:true,
+ navText:['<','>'],
+ smartSpeed:450,
+ loop:true,
+ autoplayHoverPause:true,
+ dots:true});
     $("#footer_content").show();
 }
