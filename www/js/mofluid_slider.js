@@ -220,7 +220,7 @@ function feature_product_list(results){
  loop:true,
  autoplayHoverPause:true,
  dots:true});
-});
+
 							 
 							
    
