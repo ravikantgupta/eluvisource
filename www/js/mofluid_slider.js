@@ -411,14 +411,23 @@ function new_product_list(results){
         localStorage.setItem(config.data[0].storage_key+'_new_products_html' , featured_pro);
         $("#new_products_inner_div").html(locale.message.text.new_products);
         $("#new_products_outer_div").hide();
-        $("#fproductslide1").html(featured_pro);
-        $("#fproductslide1").trigger("create");
+        $("#new_owl").html(featured_pro);
+        $("#new_owl").trigger("create");
     } else {
         $('#new_products_outer_div').hide();
         $("#new_owl").hide();
     }
     //printRootCategory();
-  
-     
+  //  var owl_new = $("#new_owl");
+ /*   owl_new.owlCarousel({
+                        items : 3, //10 items above 1000px browser width
+                        itemsDesktop : [1000,3], //5 items between 1000px and 901px
+                        itemsDesktopSmall : [900,4], // betweem 900px and 601px
+                        itemsTablet: [600,3], //2 items between 600 and 0
+                        itemsMobile : false,  // itemsMobile disabled - inherit from itemsTablet option
+                        navigation : false,
+                        pagination: false,
+                        autoPlay :false
+                        }); */
     $("#footer_content").show();
 }
