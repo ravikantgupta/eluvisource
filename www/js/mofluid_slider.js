@@ -128,10 +128,7 @@ function feature_product_list(results){
             }
             
             featured_pro += '<li class="item">\
-                <a class="product-image" title="" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
-				  <img src="' + response.products_list[i].image + '"  />\
-				<span class="productimghover"></span></a>\
-				 <div class="sku">E13</div>\
+                				 <div class="sku">E13</div>\
 		          <div class="hover-action">\
 					<div class="cartactions">\
 					 <button  class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button>\
