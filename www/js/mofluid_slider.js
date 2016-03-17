@@ -131,7 +131,7 @@ function feature_product_list(results){
                 <a class="product-image" title="" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
 				  <img src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" />\
 				<span class="productimghover"></span></a>\
-				 <div class="sku">E13</div>\
+				 <div class="sku">' + response.products_list[i].sku + '</div>\
 		         <h3 class="product-name"><a title="PEARL EARRING" >' + response.products_list[i].name + '</a></h3>\
 				  <div class="shortdesc"><a onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">Detail</a></div>\
 				  <div class="hover-action">\
@@ -392,7 +392,7 @@ function new_product_list(results){
                 <a class="product-image" title="" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
 				  <img src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" />\
 				<span class="productimghover"></span></a>\
-				 <div class="sku">E13</div>\
+				 <div class="sku">' + response.products_list[i].sku + '</div>\
 		         <h3 class="product-name"><a title="PEARL EARRING" >' + response.products_list[i].name + '</a></h3>\
 				  <div class="shortdesc"><a onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">Detail</a></div>\
 				  <div class="hover-action">\
