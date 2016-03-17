@@ -127,7 +127,7 @@ function feature_product_list(results){
                 price_html += '<h4 class="producth4 product_price_color">' + app_curr_symbol + parseFloat(response.products_list[i].price.replace(",", "")).toFixed(2) + '</h4>';
             }
             
-            featured_pro += '<li class="item"><div class="sku">E13</div><div class="hover-action"><div class="cartactions"><button  class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button></div></div></li>';
+            featured_pro += '<li class="item"> <a class="product-image" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')"><img src="' + response.products_list[i].image + '"/><span class="productimghover"></span></a><div class="sku">E13</div><div class="hover-action"><div class="cartactions"><button  class="button btn-cart" title="Add to Cart" type="button"><span><span>Add to Cart</span></span></button></div></div></li>';
             
           //  featured_pro +='<div class="child" >child '+i+'</div>';
             i++;
