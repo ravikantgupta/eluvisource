@@ -631,7 +631,7 @@ function setApplicationFooter(store) {
       $("#storelabel").html(store.frontname);
       //$("#footer_content").show();
 	  
-	  alert(footer_content);
+	
 	  
 	 
 }
