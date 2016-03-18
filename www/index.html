@@ -575,9 +575,6 @@
 	
 	alert(config.data[0]);
 	alert(storedNames.length);
-	
-	
-	
 	          
 			  try{
                     var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div><div class="empty_text">"' + locale.message.text["cart_empty_text"] + '"</div></div>';
@@ -591,41 +588,35 @@
                     catch(Ex){
                         cartItems=0;
                     }
-                    console.error("Length of Cart Items data : "+cartItems);
+                    alert("Length of Cart Items data : "+cartItems);
                     if(cartItems<=0){
-                        var CouponDetail=new Object();
-                        CouponDetail["apply_to_shipping"]="";
-                        CouponDetail["simple_action"]="";
-                        CouponDetail["discount_amount"]="";
-                        CouponDetail["discount_qty"]="";
-                        CouponDetail["shipmyidonly"]="";
-                        localStorage[config.data[0].storage_key+"_coupondetails"]=JSON.stringify(CouponDetail);
-                        localStorage[config.data[0].storage_key+"_couponapplied"]="0";
-                        localStorage[config.data[0].storage_key+"_coupon_code"]=JSON.stringify("");
+                        
                     }
                     storedNames = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']);
-                    storedPrices = JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']);
-                    storedImages = JSON.parse(localStorage[config.data[0].storage_key+'_pImages']);
+                    var storedPrices = JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']);
+                     var  storedImages = JSON.parse(localStorage[config.data[0].storage_key+'_pImages']);
                     try {
-                        storedSizes = JSON.parse(localStorage[config.data[0].storage_key+'_pSizes']);
-                        storedColor = JSON.parse(localStorage[config.data[0].storage_key+'_pColor']);
+                       var  storedSizes = JSON.parse(localStorage[config.data[0].storage_key+'_pSizes']);
+                        var storedColor = JSON.parse(localStorage[config.data[0].storage_key+'_pColor']);
                     }
                     catch(rr) {
-                        storedSizes = '';
-                        storedColor = '';
+                        var storedSizes = '';
+                        var storedColor = '';
                     }
-                    storedQuantities = JSON.parse(localStorage[config.data[0].storage_key+'_pQuantities']);
+					
+                   var  storedQuantities = JSON.parse(localStorage[config.data[0].storage_key+'_pQuantities']);
+				   
                     var cart_val=storedQuantities.reduce(function(prev, cur) {
                                     return parseInt(prev) + parseInt(cur);
                                  });
-                    storedTitles = JSON.parse(localStorage[config.data[0].storage_key+'_pTitles']);
+                    var storedTitles = JSON.parse(localStorage[config.data[0].storage_key+'_pTitles']);
                      try {
-                         storedShipping = JSON.parse(localStorage[config.data[0].storage_key+'_pShippCharge']);
+                        var storedShipping = JSON.parse(localStorage[config.data[0].storage_key+'_pShippCharge']);
                      }
                      catch(rr) {
-                         storedShipping = '';
+                        var storedShipping = '';
                      }
-                     storedIds = JSON.parse(localStorage[config.data[0].storage_key+'_pIds']);
+                     var storedIds = JSON.parse(localStorage[config.data[0].storage_key+'_pIds']);
                      
                      
                      var parent_pro_data = JSON.parse(localStorage[config.data[0].storage_key+'_pnew_pro_data']);
@@ -634,18 +625,18 @@
                      
                      var CouponDetail =new Object();
                      var discount_amount,apply_to_shipping,simple_action,discount_qty,shipmyidonly;
-                     console.log(storedNames);
+                     alert(storedNames);
                     // $("#cartProductslist").html('<center><img src="images/spin.gif" /></center>');
                      var parray = new Object();
                      for(var i=0;i<storedIds.length;i++){
                          parray[i] = storedIds[i];
                      }
-                     productid=JSON.stringify(parray);
+                     var productid=JSON.stringify(parray);
                      var BASE_URL  = config.data[0].baseurl;
                      var STORE = config.data[0].storeid;
                      //---Fetch Store Details from Mofluid Magento Web Service
                      $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=productQuantity&product="+productid, function (response) {
-                        productquan_response=response;
+                        var productquan_response=response;
                                
                         var i=0, productList = '';
                         //$('#pName').html(JSON.parse(localStorage[config.data[0].storage_key+'_pNames']));
