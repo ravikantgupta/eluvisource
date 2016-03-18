@@ -315,7 +315,7 @@
 						<p><a href="javascript:void(0)">Free shipping to Singapore on Orders of $150 or More</a></p>			   
 			   </div>
             
-				 <form name="serachForms" action="javascript:custom_search();">
+				 <form id="srcfrm" name="serachForms" action="javascript:custom_search();">
 					<div class="input-box">
 						
 						
@@ -834,6 +834,21 @@
                 return false;
             }
         }
+		
+		
+		jQuery('#searchFilter').click(function(){
+		
+		   alert('ram');
+		
+		});
+		
+		jQuery('#srcfrm').click(function(){
+		
+		    alert('shreeram');
+		
+		});
+		
+		
 	</script>
 	
 </div>
