@@ -577,28 +577,97 @@
 	alert(storedNames.length);
 	
 	
-	   var i=0, productList = '';
-                        $('#pName').html(JSON.parse(localStorage[config.data[0].storage_key+'_pNames']));
-                        $('#pPrice').html(JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']));
-                        $('#removeItem').html('<a onClick="removeItem()" href="#"><img src="images/themeicons/delete_32x32.png"></a>');
+	
+	          
+			  try{
+                    var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div><div class="empty_text">"' + locale.message.text["cart_empty_text"] + '"</div></div>';
+                    var cartItems=0;
+                   // $("#cartProductslist").html(emptyText);
+                   // $("#cartbtn2").hide();
+                    //$("#couponcode").hide();
+                    try{
+                        cartItems = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']).length;
+                    }
+                    catch(Ex){
+                        cartItems=0;
+                    }
+                    console.error("Length of Cart Items data : "+cartItems);
+                    if(cartItems<=0){
+                        var CouponDetail=new Object();
+                        CouponDetail["apply_to_shipping"]="";
+                        CouponDetail["simple_action"]="";
+                        CouponDetail["discount_amount"]="";
+                        CouponDetail["discount_qty"]="";
+                        CouponDetail["shipmyidonly"]="";
+                        localStorage[config.data[0].storage_key+"_coupondetails"]=JSON.stringify(CouponDetail);
+                        localStorage[config.data[0].storage_key+"_couponapplied"]="0";
+                        localStorage[config.data[0].storage_key+"_coupon_code"]=JSON.stringify("");
+                    }
+                    storedNames = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']);
+                    storedPrices = JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']);
+                    storedImages = JSON.parse(localStorage[config.data[0].storage_key+'_pImages']);
+                    try {
+                        storedSizes = JSON.parse(localStorage[config.data[0].storage_key+'_pSizes']);
+                        storedColor = JSON.parse(localStorage[config.data[0].storage_key+'_pColor']);
+                    }
+                    catch(rr) {
+                        storedSizes = '';
+                        storedColor = '';
+                    }
+                    storedQuantities = JSON.parse(localStorage[config.data[0].storage_key+'_pQuantities']);
+                    var cart_val=storedQuantities.reduce(function(prev, cur) {
+                                    return parseInt(prev) + parseInt(cur);
+                                 });
+                    storedTitles = JSON.parse(localStorage[config.data[0].storage_key+'_pTitles']);
+                     try {
+                         storedShipping = JSON.parse(localStorage[config.data[0].storage_key+'_pShippCharge']);
+                     }
+                     catch(rr) {
+                         storedShipping = '';
+                     }
+                     storedIds = JSON.parse(localStorage[config.data[0].storage_key+'_pIds']);
+                     
+                     
+                     var parent_pro_data = JSON.parse(localStorage[config.data[0].storage_key+'_pnew_pro_data']);
+                     
+                     
+                     
+                     var CouponDetail =new Object();
+                     var discount_amount,apply_to_shipping,simple_action,discount_qty,shipmyidonly;
+                     console.log(storedNames);
+                    // $("#cartProductslist").html('<center><img src="images/spin.gif" /></center>');
+                     var parray = new Object();
+                     for(var i=0;i<storedIds.length;i++){
+                         parray[i] = storedIds[i];
+                     }
+                     productid=JSON.stringify(parray);
+                     var BASE_URL  = config.data[0].baseurl;
+                     var STORE = config.data[0].storeid;
+                     //---Fetch Store Details from Mofluid Magento Web Service
+                     $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=productQuantity&product="+productid, function (response) {
+                        productquan_response=response;
+                               
+                        var i=0, productList = '';
+                        //$('#pName').html(JSON.parse(localStorage[config.data[0].storage_key+'_pNames']));
+                      //  $('#pPrice').html(JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']));
+                      //  $('#removeItem').html('<a onClick="removeItem()" href="#"><img src="images/themeicons/delete_32x32.png"></a>');
                         if(storedNames.length==""){
                               
-                            var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div><div class="empty_text">'+locale.message.text["cart_empty_text"]+'</div></div>';
-                            $("#cartProductslist").html(emptyText);
-                            $("#cartbtn2").css("display", "none");
-                            $("#couponcode").hide();
+                          //  var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div><div class="empty_text">'+locale.message.text["cart_empty_text"]+'</div></div>';
+                         //   $("#cartProductslist").html(emptyText);
+                          //  $("#cartbtn2").css("display", "none");
+                           // $("#couponcode").hide();
                         }
                         else if(!(storedNames.length)) {
                             var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div class="empty_text"><div>'+locale.message.text["cart_empty_text"]+'</div></div>';
-                            $("#cartProductslist").html(emptyText);
-                            $("#cartbtn2").css("display", "none");
-                            $("#couponcode").hide();
+                         //   $("#cartProductslist").html(emptyText);
+                         //   $("#cartbtn2").css("display", "none");
+                         //   $("#couponcode").hide();
                         }
                         else {
-	
-	 while(i<storedNames.length) {
+                            while(i<storedNames.length) {
                               
-                                $("#cartbtn2").show();
+                                //$("#cartbtn2").show();
                                 var pName = storedNames[i],pSize = storedSizes[i],pColor=storedColor[i];
                                 pName = "'"+pName+"'", pSize = "'"+pSize+"'",pColor = "'"+pColor+"'";
                                 var pship = "'"+storedShipping[i]+"'";
@@ -606,7 +675,26 @@
                                     storedSizes[i] = '';
                                 }
                              
-                      
+                       /*
+                               if(parseInt(parent_pro_data[i].use_config_manage_stock)==0)
+                               {
+                                    if(parseInt(parent_pro_data[i].manage_stock)==0)
+                                    {
+                                           productList += '<div class="my_cart_product" >\n\
+                                           <div class="my_cart_product_box1" ><img  onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')" src="'+storedImages[i]+'" onerror="bad_image(this);"></div>\n\
+                                           <div class="my_cart_product_box2" ><div class="cart_outer_name"><div class="product_name_cart" > '+ storedTitles[i] +' </div><div class="delete"><a href="#" onclick="removeItem('+i+')"><img src="images/themeicons/delete_32x32.png"></a></div></div><div class="cart_outer_qtn"><div class="spinner-btn" style="text-align:left;vertical-align:middle;"><img src="images/spin.gif" width="24" height="24" id="quantity_loader'+i+'" style="display:none;padding:0px;"/><input type="number" data-role="spinbox" data-type="horizontal" data-mini="true" data-theme="d" name="spin" id='+storedNames[i]+storedSizes[i]+storedColor[i]+'  onChange="upadteQuanitiy(this,'+ storedPrices[i] +','+i+', '+ pName +', '+ pSize +','+pColor+','+pship+')" value="'+storedQuantities[i]+'" min="1" max="'+parseInt(parent_pro_data[i].max_sale_qty)+'" onKeyUp="validatespinbox(this,'+ storedPrices[i] +','+i+', '+ pName +', '+ pSize +','+pColor+','+pship+');"/></div><div class="cart_price product_price_color">&nbsp;'+app_curr_symbol+ parseFloat(storedPrices[i]).toFixed(2) +'</div></div></div>                                                               </div></div><div class="clear"></div>';
+                                    }
+                                    else
+                                    {
+                                       productList += '<div class="my_cart_product" >\n\
+                                       <div class="my_cart_product_box1" ><img  onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')" src="'+storedImages[i]+'" onerror="bad_image(this);"></div>\n\
+                                       <div class="my_cart_product_box2" ><div class="cart_outer_name"><div class="product_name_cart" > '+ storedTitles[i] +' </div><div class="delete"><a href="#" onclick="removeItem('+i+')"><img src="images/themeicons/delete_32x32.png"></a></div></div><div class="cart_outer_qtn"><div class="spinner-btn" style="text-align:left;vertical-align:middle;"><img src="images/spin.gif" width="24" height="24" id="quantity_loader'+i+'" style="display:none;padding:0px;"/><input type="number" data-role="spinbox" data-type="horizontal" data-mini="true" data-theme="d" name="spin" id='+storedNames[i]+storedSizes[i]+storedColor[i]+'  onChange="upadteQuanitiy(this,'+ storedPrices[i] +','+i+', '+ pName +', '+ pSize +','+pColor+','+pship+')" value="'+storedQuantities[i]+'" min="1" max="'+productquan_response[storedIds[i]]+'" onKeyUp="validatespinbox(this,'+ storedPrices[i] +','+i+', '+ pName +', '+ pSize +','+pColor+','+pship+');"/></div><div class="cart_price product_price_color">&nbsp;'+app_curr_symbol+ parseFloat(storedPrices[i]).toFixed(2) +'</div></div></div>                                                               </div></div><div class="clear"></div>';
+                               
+                                    }
+                               
+                               }
+                               else
+                               { */
                                
                                 productList += '<div class="my_cart_product" >\n\
                                                     <div class="my_cart_product_box1" ><img  onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')" src="'+storedImages[i]+'" onerror="bad_image(this);"></div>\n\
@@ -619,7 +707,43 @@
                                
                                
                             }
-						}
+                            var dirPath = dirname(location.href);
+                            var ttlAmt = 0;
+                            var shipAmt=0;
+                            var ttlAll=0;
+                            var i = 0;
+                            while(i < cartItems) {
+                                ttlAmt = ttlAmt + (storedQuantities[i] * storedPrices[i] );
+                                shipAmt = shipAmt + (storedQuantities[i] * storedShipping[i] );
+                                i++;
+                            }
+                           // $("#shipping_detail").html('<b>&nbsp;'+app_curr_symbol+shipAmt+'</b>');
+                            localStorage[config.data[0].storage_key+'_TotalShipp'] = shipAmt;
+                            coupon_status="0";
+                            ttlAll=parseFloat(ttlAll).toFixed(2);
+                            ttlAmt=parseFloat(ttlAmt).toFixed(2);
+                            localStorage[config.data[0].storage_key+'_totalAmount'] =ttlAll ;
+                            localStorage[config.data[0].storage_key+'_subtotal'] = ttlAmt;
+                            productList += '<div class="clear"></div><div class="blue " style="margin-top:10px;padding-bottom:10px; float:left; width:100%; border-bottom:1px solid #e5e5e5;"><div class="heading" style="float:left;width:50%;font-size:20px; font-weight:bold;">'+locale.message.text["total"]+'</div><div id ="totalAmount" class="cart_price product_price_color" style="float:right;width:50%;text-align:right;"><span style="float:right; font-weight:bold">'+app_curr_symbol+ttlAmt+'</span></div></div>';
+                            fullPath="/buy_now.html?amount=" + localStorage[config.data[0].storage_key+'_subtotal'] + "";
+                            buyNowContent = '<a onclick="parent.location='+fullPath+'"><img src="images/checkout.png"></a>';
+                            $("#amount").val(ttlAmt);
+                            //$("#cartProductslist").html(productList);
+                            //$("#cartProductslist").trigger("create");
+                            //$("#buyNow").html(buyNowContent);
+                            //$("#shipping_detail").html('<b>&nbsp;'+app_curr_symbol+shipAmt+'</b>');
+                            //$("#coupon_detail").html('<b>-'+app_curr_symbol+Math.round(parseFloat(discount_amount) * 100) / 100+'</b>');
+                        }
+                    });
+                } catch(err2) {
+                    console.log(err2);
+					
+					alert(err2);
+                }
+			  
+	
+	
+	   
 
 
 
