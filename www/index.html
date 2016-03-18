@@ -356,7 +356,7 @@
                 }
             }
             else {
-                $("#loginbutton_div").html('<center><img src="images/spin.gif"></center>');
+                 $(".youama-ajaxlogin-button").html('<center><img src="images/spin.gif"></center>');
                 var BASE_URL  = config.data[0].baseurl;
                 var STORE = config.data[0].storeid;
                 $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=verifylogin"+"&username="+username+"&password="+Base64.encode(password),
@@ -366,10 +366,10 @@
                           navigator.notification.alert(locale.message.alert["invalid_username__password_message"],function () {}, config.data[0].app_name, locale.message.button["close"]);
                           }
                           else {
-                          alert(locale.message.alert["invalid_username__password_message"]);
+                            alert(locale.message.alert["invalid_username__password_message"]);
                           }
-                          $("#loginbutton_div").html('<input type="submit" data-role="button" data-theme="b" id="loginbutton" name="loginbutton" value="Login" />');
-                          $("#loginbutton_div").trigger('create');
+                          $(".youama-ajaxlogin-button").html('<span><span>Login</span></span>');
+                          //$("#loginbutton_div").trigger('create');
                           }
                           else if(response["login_status"] == "1") {
                           localStorage[config.data[0].storage_key+"_Loginemail"]=username;
@@ -392,6 +392,8 @@
                           localStorage[config.data[0].storage_key+"_nextpage"] = null;
                           window.location=fullPath;
                           }
+						    
+							jQuery('#loginbtn').click();
                           }
                           else {
                           if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
@@ -1226,6 +1228,16 @@
 	    </div>
         </div>
         <script type="text/javascript" src="js/footer.js"></script>
+		
+		<style>
+		
+		.youama-ajaxlogin-error.err-email.err-noemail.err-wrongemail.err-wronglogin {
+			color: red;
+		}
+		.youama-ajaxlogin-error err-password err-dirtypassword err-nopassword err-longpassword{
+		   color: red;
+		}
+		</style>
     </body>
     
     <script>
