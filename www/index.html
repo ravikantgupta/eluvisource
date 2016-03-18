@@ -448,7 +448,7 @@
 			if(fullnameval.length == 1)
 				last_name = first_name = fullnameval.toString();
             email = $("#email").val();
-            password = $("#password").val();
+            password = $("#rpassword").val();
              if(fullnameval.length < 2 || fullnameval[1]=='' || fullnameval[1]=='undefined')
             {
                 if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
@@ -685,7 +685,7 @@
                         </div>
                         <div class="input-fly youama-showhideme">
                             <label for="youama-password">Password <!--<span>*</span>--></label>
-                            <input type="password" id="password" name="password" value="">
+                            <input type="password" id="rpassword" name="rpassword" value="">
                             <div class="youama-ajaxlogin-error err-password err-dirtypassword err-nopassword err-shortpassword err-longpassword" style="display: none;"></div>
                         </div>
                         <div class="input-fly youama-showhideme">

@@ -45,7 +45,7 @@ var app = {
              pushNotification.register(tokenHandler, errorHandler,{"badge":"true","sound":"true", "alert":"true","ecb":"onNotificationAPN"});
        }        
        console.log("Device Ready Called");
-    }
+    },
     onDOMReady: function(platform) {
         $("[data-role=footer]").html(Widget.getLoginFooter()).enhanceWithin();
     }
