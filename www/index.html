@@ -449,6 +449,9 @@
 				last_name = first_name = fullnameval.toString();
             email = $("#email").val();
             password = $("#rpassword").val();
+			
+			var cpassword = $("#cpassword").val();
+			
              if(fullnameval.length < 2 || fullnameval[1]=='' || fullnameval[1]=='undefined')
             {
                 if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
@@ -498,7 +501,11 @@
                 else{
                     alert(locale.message.alert["password_validation_for_minimum_length"]);
                 }
-            }
+            }else if(password!=cpassword) {
+			  
+			     alert('Confirm password not matched');
+			
+			}
             else {
                 $("#rgsbtn").html('<center><img src="images/spin.gif"></center>');
                 var customerid;
@@ -726,11 +733,9 @@
 	</div>   
 						
 		  
-			<div class="visitus" style="display:none;">
-			  <span class="label"><a href="https://eluvy.com/locations">Visit us</a></span>
-			</div>
+			
 			<div class="contactus">
-			  <span class="label"><a href="https://eluvy.com/contact-us/get-help">Contact us</a></span>
+			  <span class="label"><a onclick="getCMSB(25)" href="javascript:void(0);">Contact us</a></span>
 			</div>
 			<div class="get20off">
 			  <span class="label"><a class="slide-link" href="javascript:void(0)">Get 20% Off</a></span>
