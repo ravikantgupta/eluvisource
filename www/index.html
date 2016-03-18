@@ -421,8 +421,142 @@
 			} else {
 				alert(locale.message.alert["sign_out_message"]);
 			}
-			redirectTopage('index.html');
-         }
+			//redirectTopage('index.html');
+			
+			
+         
+		     jQuery('.myact').html('<a class="skip-link skip-account ui-link" id="loginbtn" href="javascript:void(0)"><span class="label">Login</span></a>');
+                       
+		 
+		 
+		 }
+		 
+		 function regsubmitform() {
+            var password, email, full_name, first_name, last_name;
+           
+			full_name = $("#fullname").val();
+			full_name = full_name.replace(/\s{2,}/g, ' ');
+			var fullnameval = full_name.split(" ");
+			var i = 0;
+			var firstnameval = [];
+			for(i = 0; i < (fullnameval.length-1); i++){
+			firstnameval[i] = fullnameval[i];
+			}
+			first_name = firstnameval.toString().replace(/\,/g, ' ');
+			
+			last_name = fullnameval[fullnameval.length-1];
+			if(fullnameval.length == 1)
+				last_name = first_name = fullnameval.toString();
+            email = $("#email").val();
+            password = $("#password").val();
+             if(fullnameval.length < 2 || fullnameval[1]=='' || fullnameval[1]=='undefined')
+            {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["full_name_message"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                }
+                else{
+                    alert(locale.message.alert["full_name_message"]);
+                }
+                return false;
+            }
+            if(first_name == "") {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["firstname_blank"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                }
+                else{
+                    alert(locale.message.alert["firstname_blank"]);
+                }
+            }
+            else if(!isValidName(first_name)) {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["firstname_invalid"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                }
+                else{
+                    alert(locale.message.alert["firstname_invalid"]);
+                }
+            }
+            else if(email == "") {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["empty_email"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                }
+                else {
+                    alert(locale.message.alert["empty_email"]);
+                }
+            }
+            else if(!checkEmail(email)) {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["invalid_email"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                }
+                else{
+                    alert(locale.message.alert["invalid_email"]);
+                }
+            }
+            else if(password.length < 6) {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["password_validation_for_minimum_length"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                }
+                else{
+                    alert(locale.message.alert["password_validation_for_minimum_length"]);
+                }
+            }
+            else {
+                $("#rgsbtn").html('<center><img src="images/spin.gif"></center>');
+                var customerid;
+                var STORE = config.data[0].storeid;
+                var BASE_URL  = config.data[0].baseurl;
+               // alert(BASE_URL+"?callback=?"+"&store="+STORE+"&service=createuser&firstname="+first_name+"&lastname="+last_name+"&email="+email+"&password="+Base64.encode(password));
+                $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=createuser&firstname="+first_name+"&lastname="+last_name+"&email="+email+"&password="+Base64.encode(password)+"",
+                          function (response) {
+							  try {
+								  var status = response["status"];
+								  if(status!=0 ) {
+									customerid = response["id"];
+								  }
+								  else {
+									customerid = -1;
+								  }
+							  }
+							  catch(ex) {
+								customerid = -1;
+							  }
+							  if(customerid<=0) {
+								  if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+									navigator.notification.alert(locale.message.alert["email_already_registered"],function () {},config.data[0].app_name, locale.message.button["close"]);
+								  }
+								  else{
+									alert(locale.message.alert["email_already_registered"]);
+								  }
+								  $("#email").val("");
+								  $("#password").val("");
+								  $("#cpassword").val("");
+								  //$("#registerbutton_div").html('<input type="submit" data-role="button" data-theme="b" id="registerbutton" name="registerbutton" value="'+ locale.message.button["sign_up_now"] +'" />');
+								  $("#rgsbtn").html('<span><span>Register</span></span>');
+								 // $("#registerbutton_div").trigger('create');
+							  }
+							  else {
+								  localStorage[config.data[0].storage_key+"_Loginemail"]=email;
+								  loginStart(customerid, first_name, last_name, email, password);
+								  if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+									  navigator.notification.alert(locale.message.alert["register_successfully_message"],function () {},config.data[0].app_name, locale.message.button["close"]);
+								  }
+								  else{
+									  alert(locale.message.alert["register_successfully_message"]);
+								  }
+								  if(localStorage[config.data[0].storage_key+"_nextpage"] == null || localStorage[config.data[0].storage_key+"_nextpage"] == "null") {
+									  visitHomePage();
+								  }
+								  else {
+									  var dirPath = dirname(location.href);
+									  var fullPath = dirPath +"/"+localStorage[config.data[0].storage_key+"_nextpage"];
+									  localStorage[config.data[0].storage_key+"_nextpage"] = null;
+									  window.location=fullPath;
+									  
+									  jQuery('#loginbtn').click();
+								  }
+							  }
+                          });
+            }
+        }
 		
                    </script>
                    
@@ -534,18 +668,10 @@
                     <div class="youama-window-content">
                         <div class="input-fly youama-showhideme">
                             <label for="youama-firstname">Name <!--<span>*</span>--></label>
-                            <input type="text" id="youama-firstname" name="youama-firstname" value="">
+                            <input type="text" id="fullname" name="fullname" value="">
                             <div class="youama-ajaxlogin-error err-firstname err-nofirstname err-dirtyfirstname" style="display: none;"></div>
                         </div>
-                         <!--<div class="input-fly youama-showhideme">
-                            <label for="youama-lastname">Last Name <span>*</span></label>
-                            <input type="text" placeholder="Last Name" id="youama-lastname" name="youama-lastname" value="" />
-                            <div class="youama-ajaxlogin-error err-lastname err-nolastname err-dirtylastname"></div>
-                        </div>
-                       <div class="input-fly input-fly-checkbox youama-showhideme">
-                            <input type="checkbox" id="youama-newsletter" name="youama-newsletter" value="ok" />
-                            <label for="youama-newsletter">Subscribe to Newsletter</label>
-                        </div>-->
+                        
                     </div>
                 </div>
 
@@ -554,17 +680,17 @@
                     <div class="youama-window-content">
                         <div class="input-fly youama-showhideme">
                             <label for="youama-email">Email <!--<span>*</span>--></label>
-                            <input type="text" id="youama-email" name="youama-email" value="">
+                            <input type="text" id="email" name="email" value="">
                             <div class="youama-ajaxlogin-error err-email err-noemail err-wrongemail err-emailisexist" style="display: none;"></div>
                         </div>
                         <div class="input-fly youama-showhideme">
                             <label for="youama-password">Password <!--<span>*</span>--></label>
-                            <input type="password" id="youama-password" name="youama-password" value="">
+                            <input type="password" id="password" name="password" value="">
                             <div class="youama-ajaxlogin-error err-password err-dirtypassword err-nopassword err-shortpassword err-longpassword" style="display: none;"></div>
                         </div>
                         <div class="input-fly youama-showhideme">
                             <label for="youama-passwordsecond">Confirm Password <!--<span>*</span>--></label>
-                            <input type="password" id="youama-passwordsecond" name="youama-passwordsecond" value="">
+                            <input type="password" id="cpassword" name="cpassword" value="">
                             <div class="youama-ajaxlogin-error err-passwordsecond err-nopasswordsecond err-notsamepasswords" style="display: none;"></div>
                         </div>
 						
@@ -579,11 +705,8 @@
 
                 <div class="youama-window-box last">
                     <div class="youama-window-content box-contents youama-showhideme">
-                        <button type="button" class="button btn-proceed-checkout btn-checkout youama-ajaxlogin-button">
-                            <span>
-                                <span>
-                                    Register                                </span>
-                            </span>
+                        <button id="rgsbtn" type="button" class="button btn-proceed-checkout btn-checkout youama-ajaxlogin-button">
+                            <span><span>Register</span></span>
                         </button>
                        <!-- <p id="y-to-login" class="yoauam-switch-window">
                                                     </p>-->
