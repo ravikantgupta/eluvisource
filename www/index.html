@@ -915,9 +915,7 @@
 		
 		jQuery('#searchFilter').click(function(){
 		
-		  $("#searchBox").slideUp('slow').removeClass('myclass');
-                        $("#searchFilter").blur();
-                        return false;
+		  $("#searchFilter").focus();
 		
 		});
 		
@@ -1227,10 +1225,8 @@
                      // alert(obj.id);
                       if (obj.id != 'new_search_btn')
                       {
-					  
-					   alert('shreeram01');
                         $("#searchBox").slideUp('slow').removeClass('myclass');
-                        $("#searchFilter").blur();
+                       // $("#searchFilter").blur();
                         return false;
                       }
 					  
