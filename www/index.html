@@ -295,6 +295,85 @@
                 }
                 getFooter();
             }
+			
+			
+	 function submitform() {
+            var username = $("#username").val();
+            var password = $("#password").val();
+            if(username == "") {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["username_validation_for_blank"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+                }
+                else
+                {
+                    alert(locale.message.alert["username_validation_for_blank"]);
+                }
+            }
+            else if(!checkEmail(username)) {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["username_validation_for_wrong_attempt"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+                }
+                else {
+                    alert(locale.message.alert["username_validation_for_wrong_attempt"]);
+                }
+            }
+            else if(password.length<6) {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["password_validation_for_minimum_length"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+                }
+                else {
+                    alert(locale.message.alert["password_validation_for_minimum_length"]);
+                }
+            }
+            else {
+                $("#loginbutton_div").html('<center><img src="images/spin.gif"></center>');
+                var BASE_URL  = config.data[0].baseurl;
+                var STORE = config.data[0].storeid;
+                $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=verifylogin"+"&username="+username+"&password="+Base64.encode(password),
+                          function (response) {
+                          if(response["login_status"] == "0") {
+                          if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                          navigator.notification.alert(locale.message.alert["invalid_username__password_message"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+                          }
+                          else {
+                          alert(locale.message.alert["invalid_username__password_message"]);
+                          }
+                          $("#loginbutton_div").html('<input type="submit" data-role="button" data-theme="b" id="loginbutton" name="loginbutton" value="Login" />');
+                          $("#loginbutton_div").trigger('create');
+                          }
+                          else if(response["login_status"] == "1") {
+                          localStorage[config.data[0].storage_key+"_Loginemail"]=username;
+                          loginStart(response["id"], response["firstname"], response["lastname"], response["username"], response["password"]);
+                          if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                          //navigator.notification.alert(locale.message.alert["login_success_message"] + response["firstname"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+                          navigator.notification.alert(locale.message.alert["login_success_message"].replace("{{username}}",response["firstname"]),function () {}, config.data[0].app_name, locale.message.button["close"]);
+                          //locale.message.alert["login_success_message"].replace("{{username}}",response["firstname"])
+                          }
+                          else
+                          {
+                          alert(locale.message.alert["login_success_message"].replace("{{username}}",response["firstname"]));
+                          }
+                          if(localStorage[config.data[0].storage_key+"_nextpage"] == null || localStorage[config.data[0].storage_key+"_nextpage"] == "null") {
+                          redirectTopage('index.html');
+                          }
+                          else {
+                          var dirPath = dirname(location.href);
+                          var fullPath = dirPath +"/"+localStorage[config.data[0].storage_key+"_nextpage"];
+                          localStorage[config.data[0].storage_key+"_nextpage"] = null;
+                          window.location=fullPath;
+                          }
+                          }
+                          else {
+                          if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                          navigator.notification.alert(locale.message.alert["server_not_responding"] ,function () {}, config.data[0].app_name, locale.message.button["close"]);
+                          }
+                          else {
+                          alert(locale.message.alert["server_not_responding"]);
+                          }
+                          }
+                          });
+            }
+        }
                    </script>
                    
                    
@@ -363,12 +442,12 @@
 											<div class="youama-window-content">
 												<div class="input-fly youama-showhideme">
 													<label for="youama-email">Email <!--<span>*</span>--></label>
-													<input type="text" id="youama-emails" name="youama-email" value="">
+													<input type="text" id="username" name="username" value="">
 													<div class="youama-ajaxlogin-error err-email err-noemail err-wrongemail err-wronglogin" style="display: none;"></div>
 												</div>
 												<div class="input-fly youama-showhideme">
 													<label for="youama-password">Password <!--<span>*</span>--></label>
-													<input type="password" id="youama-password" name="youama-password" value="">
+													<input type="password" id="password" name="password" value="">
 													<div class="youama-ajaxlogin-error err-password err-dirtypassword err-nopassword err-longpassword" style="display: none;"></div>
 												</div>
 											</div>
@@ -377,16 +456,14 @@
 										<div class="youama-window-box last">
 											<div class="youama-window-content box-contents box-contents-button youama-showhideme">
 												<span class="youama-forgot-password">
-													<a href="https://eluvy.com/customer/account/forgotpassword/">Forgot Password</a>
+													<a href="#">Forgot Password</a>
 												</span>
-												<button type="button" class="button btn-proceed-checkout btn-checkout youama-ajaxlogin-button">
+												<button type="button" onclick="submitform()" class="button btn-proceed-checkout btn-checkout youama-ajaxlogin-button">
 													<span>
-														<span>
-															Login                                </span>
+														<span>Login</span>
 													</span>
 												</button>
-											   <!-- <p id="y-to-register" class="yoauam-switch-window">
-													or registration                        </p>-->
+											  
 											</div>
 										</div>
 										
@@ -1152,6 +1229,9 @@
                         $("#searchFilter").blur();
                         return false;
                       }
+					  
+					    alert('shreram');
+						
                       });
    
    /*
