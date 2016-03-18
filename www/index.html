@@ -570,11 +570,61 @@
  function getcartitem()
  {
     alert('ram');
-	 
+	 var storage_key='Eluvyeccc3';
 	var storedNames = JSON.parse(localStorage['Eluvyeccc3'+'_pNames']);
 	
 	alert(config.data[0]);
 	alert(storedNames.length);
+	
+	
+	   var i=0, productList = '';
+                        $('#pName').html(JSON.parse(localStorage[config.data[0].storage_key+'_pNames']));
+                        $('#pPrice').html(JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']));
+                        $('#removeItem').html('<a onClick="removeItem()" href="#"><img src="images/themeicons/delete_32x32.png"></a>');
+                        if(storedNames.length==""){
+                              
+                            var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div><div class="empty_text">'+locale.message.text["cart_empty_text"]+'</div></div>';
+                            $("#cartProductslist").html(emptyText);
+                            $("#cartbtn2").css("display", "none");
+                            $("#couponcode").hide();
+                        }
+                        else if(!(storedNames.length)) {
+                            var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div class="empty_text"><div>'+locale.message.text["cart_empty_text"]+'</div></div>';
+                            $("#cartProductslist").html(emptyText);
+                            $("#cartbtn2").css("display", "none");
+                            $("#couponcode").hide();
+                        }
+                        else {
+	
+	 while(i<storedNames.length) {
+                              
+                                $("#cartbtn2").show();
+                                var pName = storedNames[i],pSize = storedSizes[i],pColor=storedColor[i];
+                                pName = "'"+pName+"'", pSize = "'"+pSize+"'",pColor = "'"+pColor+"'";
+                                var pship = "'"+storedShipping[i]+"'";
+                                if(!storedSizes[i]) {
+                                    storedSizes[i] = '';
+                                }
+                             
+                      
+                               
+                                productList += '<div class="my_cart_product" >\n\
+                                                    <div class="my_cart_product_box1" ><img  onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')" src="'+storedImages[i]+'" onerror="bad_image(this);"></div>\n\
+                                                    <div class="my_cart_product_box2" ><div class="cart_outer_name"><div class="product_name_cart" > '+ storedTitles[i] +' </div><div class="delete"><a href="#" onclick="removeItem('+i+')"><img src="images/themeicons/delete_32x32.png"></a></div></div><div class="cart_outer_qtn"><div class="spinner-btn" style="text-align:left;vertical-align:middle;"><img src="images/spin.gif" width="24" height="24" id="quantity_loader'+i+'" style="display:none;padding:0px;"/><input type="number" data-role="spinbox" data-type="horizontal" data-mini="true" data-theme="d" name="spin" id='+storedNames[i]+storedSizes[i]+storedColor[i]+'  onChange="upadteQuanitiy(this,'+ storedPrices[i] +','+i+', '+ pName +', '+ pSize +','+pColor+','+pship+')" value="'+storedQuantities[i]+'" min="1" max="'+productquan_response[storedIds[i]]+'" onKeyUp="validatespinbox(this,'+ storedPrices[i] +','+i+', '+ pName +', '+ pSize +','+pColor+','+pship+');"/></div><div class="cart_price product_price_color">&nbsp;'+app_curr_symbol+ parseFloat(storedPrices[i]).toFixed(2) +'</div></div></div>                                                               </div></div><div class="clear"></div>';
+                               
+                               
+                               
+                               i++;
+                               
+                               
+                               
+                            }
+						}
+
+
+
+						 alert(productList);
+  						
  }
 
 
