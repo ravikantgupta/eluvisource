@@ -569,9 +569,11 @@
                
  function getcartitem()
  {
-    //var storedNames = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']);
+    alert('ram');
+	var storedNames = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']);
 	
-	alert('storedNames.length');
+	alert(config.data[0]);
+	alert(storage_key);
  }
 
 
