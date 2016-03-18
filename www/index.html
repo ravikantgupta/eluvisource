@@ -302,27 +302,57 @@
             var password = $("#password").val();
             if(username == "") {
                 if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                    navigator.notification.alert(locale.message.alert["username_validation_for_blank"],function () {}, config.data[0].app_name, locale.message.button["close"]);
-                }
+                    //navigator.notification.alert(locale.message.alert["username_validation_for_blank"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+               
+			      jQuery('.err-wronglogin').html(locale.message.alert["username_validation_for_blank"]);
+				  
+				   jQuery('.err-wronglogin').show();
+
+			   }
                 else
                 {
-                    alert(locale.message.alert["username_validation_for_blank"]);
+                    //alert(locale.message.alert["username_validation_for_blank"]);
+					
+					
+					 jQuery('.err-wronglogin').html(locale.message.alert["username_validation_for_blank"]);
+				  
+				   jQuery('.err-wronglogin').show();
                 }
             }
             else if(!checkEmail(username)) {
                 if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                    navigator.notification.alert(locale.message.alert["username_validation_for_wrong_attempt"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+                   // navigator.notification.alert(locale.message.alert["username_validation_for_wrong_attempt"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+					
+					
+					  jQuery('.err-wronglogin').html(locale.message.alert["username_validation_for_wrong_attempt"]);
+				  
+				       jQuery('.err-wronglogin').show();
+					
                 }
                 else {
                     alert(locale.message.alert["username_validation_for_wrong_attempt"]);
+					
+					  jQuery('.err-wronglogin').html(locale.message.alert["username_validation_for_wrong_attempt"]);
+				  
+				       jQuery('.err-wronglogin').show();
                 }
             }
             else if(password.length<6) {
                 if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                    navigator.notification.alert(locale.message.alert["password_validation_for_minimum_length"],function () {}, config.data[0].app_name, locale.message.button["close"]);
-                }
+                   // navigator.notification.alert(locale.message.alert["password_validation_for_minimum_length"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+               
+			      jQuery('.err-longpassword').html(locale.message.alert["password_validation_for_minimum_length"]);
+				  
+				       jQuery('.err-longpassword').show();	
+
+			   }
                 else {
-                    alert(locale.message.alert["password_validation_for_minimum_length"]);
+                    //alert(locale.message.alert["password_validation_for_minimum_length"]);
+					
+					  jQuery('.err-longpassword').html(locale.message.alert["password_validation_for_minimum_length"]);
+				  
+				       jQuery('.err-longpassword').show();		 				
+					
                 }
             }
             else {
