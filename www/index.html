@@ -25,6 +25,7 @@
 				
                 document.addEventListener("deviceready", onDeviceReady, false);
 				setfourBox();
+				getcartitem();
 				
             }
         
@@ -565,7 +566,16 @@
             }
         }
 		
-                   </script>
+               
+ function getcartitem()
+ {
+    storedNames = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']);
+	
+	alert(storedNames.length);
+ }
+
+
+			   </script>
                    
                    
 
