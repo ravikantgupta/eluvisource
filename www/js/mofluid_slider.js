@@ -250,6 +250,11 @@ function setfourBox() {
 											 $("#ready_revamp").html(response.ready_revamp.content);
 											 $("#secondstaticbanner").html(response.second_static_banner.content);
 											 
+											 
+											  $("#footer_link_block").html(response.footer_link_block.content);
+											  
+											  $("#footer_coptright").html(response.footer_coptright.content);
+											 
 											
                                         }
                                         });
