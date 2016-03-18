@@ -630,6 +630,8 @@ function setApplicationFooter(store) {
       document.title = store.name;
       $("#storelabel").html(store.frontname);
       //$("#footer_content").show();
+	  
+	  alert(footer_content);
 }
 
 
