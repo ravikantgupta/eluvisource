@@ -310,21 +310,29 @@
                  <div class="header-language-container">
 	  
 	         <div class="logoheader" style="display:none;">
-         	<div class="freeshipping">
+            	<div class="freeshipping">
 				  
-						<p><a href="https://eluvy.com/help/shipping-and-handling/">Free shipping to Singapore on Orders of $150 or More</a></p>			   
+						<p><a href="javascript:void(0)">Free shipping to Singapore on Orders of $150 or More</a></p>			   
 			   </div>
-          <!--<a title="eluvy homepage" id="nav_top_list" href="https://eluvy.com/" class="">Eluvy</a>-->
-		    
-				<form id="search_mini_form" action="https://eluvy.com/catalogsearch/result/" method="get">
+            
+				 <form name="serachForm" action="javascript:custom_search();">
 					<div class="input-box">
 						<label for="search">Search:</label>
-						<input id="search" type="search" name="q" value="" class="input-text required-entry" maxlength="128" placeholder="Search entire store here..." autocomplete="OfF" autocorrect="off" autocapitalize="off">
+						
+						 <input id="searchFilter" type="serach" data-type="search" placeholder="Search entire store here..." data-theme="a" />
+						
 						<button type="submit" title="Search" class="button search-button"><span><span>Search</span></span></button>
+					
+					     <ul id="suggestions" data-role="listview" data-inset="true" data-theme="a">
+                                
+                            </ul>
 					</div>
 
 
 				</form>
+				
+				
+				
          </div>
         <!--<div class="store-language-container">
                     </div>-->
@@ -857,16 +865,7 @@
             
             <div data-role="content" class="home_content">
                 
-                <div id="searchBox" class="searchbox" style="display:none;">
-                   <form name="serachForm" action="javascript:custom_search();">
-                        <div>
-                            <input id="searchFilter" type="serach" data-type="search" placeholder="" data-theme="a" />
-                            <ul id="suggestions" data-role="listview" data-inset="true" data-theme="a">
-                                
-                            </ul>
-                        </div>
-                    </form>
-                </div>
+               
                 
                 
                 <div>
