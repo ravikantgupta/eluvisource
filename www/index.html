@@ -626,7 +626,7 @@
                      
                      var CouponDetail =new Object();
                      var discount_amount,apply_to_shipping,simple_action,discount_qty,shipmyidonly;
-                     alert(storedNames);
+                    
                     // $("#cartProductslist").html('<center><img src="images/spin.gif" /></center>');
                      var parray = new Object();
                      for(var i=0;i<storedIds.length;i++){
@@ -669,7 +669,7 @@
                                
                                 productList += '<li class="item odd" >\n\
 								                <a onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')"  class="product-image">\n\
-                                                  </a>\n\
+                                                   <img  src="'+storedImages[i]+'" onerror="bad_image(this);" width="50" height="50"></a>\n\
 												    <div class="product-details"><p class="product-name"><a onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')">'+ storedTitles[i] +'</a></p>\n\
 													<table class="info-wrapper">\n\
 													<tbody><tr><td><span>Price:</span><span class="price">'+app_curr_symbol+ parseFloat(storedPrices[i]).toFixed(2) +'</span> </td></tr>\n\
@@ -814,7 +814,89 @@
 	  function goTopage()
             {	  
 			   redirectTopage('cart.html');
-             }      
+             } 
+
+function removeItem(index) {
+    var nameArray = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']);
+    var priceArray = JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']);
+    var imageArray = JSON.parse(localStorage[config.data[0].storage_key+'_pImages']);
+    var title = JSON.parse(localStorage[config.data[0].storage_key+'_pTitles']);
+    try {
+        var sizes=JSON.parse(localStorage[config.data[0].storage_key+'_pSizes']);
+        var colors=JSON.parse(localStorage[config.data[0].storage_key+'_pColor']);
+    }
+    catch(ee) {
+        var sizes='';
+        var colors='';
+    }
+    var pIds=JSON.parse(localStorage[config.data[0].storage_key+'_pIds']);
+    if(localStorage.getItem(config.data[0].storage_key+"_pQuantities") === null) {
+        var quantityArray = [];
+    }
+    else
+        var quantityArray = JSON.parse(localStorage[config.data[0].storage_key+'_pQuantities']);
+    var pnew_pro_dataArray = JSON.parse(localStorage[config.data[0].storage_key+'_pnew_pro_data']);
+    var pcustomoptionsArray = JSON.parse(localStorage[config.data[0].storage_key+'_pcustom_options']);
+    
+    
+    var pname1=title[index];
+    nameArray.splice(index, 1);
+    priceArray.splice(index, 1);
+    imageArray.splice(index, 1);
+    quantityArray.splice(index, 1);
+    title.splice(index, 1);
+    try {
+        sizes.splice(index,1);
+        colors.splice(index,1);
+    }
+    catch(ee) {
+        var sizes='';
+        var colors='';
+    }
+    pIds.splice(index,1);
+    pnew_pro_dataArray.splice(index, 1);
+    pcustomoptionsArray.splice(index, 1);
+    localStorage[config.data[0].storage_key+'_pNames'] = JSON.stringify(nameArray);
+    localStorage[config.data[0].storage_key+'_pPrices'] = JSON.stringify(priceArray);
+    localStorage[config.data[0].storage_key+'_pImages'] = JSON.stringify(imageArray);
+    localStorage[config.data[0].storage_key+'_pQuantities'] = JSON.stringify(quantityArray);
+    localStorage[config.data[0].storage_key+'_pTitles'] = JSON.stringify(title);
+    try {
+        localStorage[config.data[0].storage_key+'_pSizes'] = JSON.stringify(sizes);
+        localStorage[config.data[0].storage_key+'_pColor'] = JSON.stringify(colors);
+    }
+    catch(err) {
+        localStorage[config.data[0].storage_key+'_pSizes'] = '';
+        localStorage[config.data[0].storage_key+'_pColor'] = '';
+    }
+    localStorage[config.data[0].storage_key+'_pIds'] = JSON.stringify(pIds);
+    localStorage[config.data[0].storage_key+'_pnew_pro_data'] = JSON.stringify(pnew_pro_dataArray);
+    localStorage[config.data[0].storage_key+'_pcustom_options'] = JSON.stringify(pcustomoptionsArray);
+    
+    if (config.data[0].platform=='ios' || config.data[0].platform=='android') {
+        navigator.notification.alert(locale.message.alert["when_a_product_removed_from_cart"].replace("{{product}}", pname1),function (){},config.data[0].app_name, locale.message.button["close"]);
+    }
+    else{
+        alert(locale.message.alert["when_a_product_removed_from_cart"].replace("{{product}}", pname1));
+    }
+    var totalShip = total=0,total_with_shipping;
+    for(i=0;i<priceArray.length;i++) {
+        total = total + (Number(priceArray[i])*Number(quantityArray[i]));
+    }
+    for(i=0;i<priceArray.length;i++) {
+        //  totalShip = totalShip + (Number(shippingArray[i])*Number(quantityArray[i]));
+    }
+    total_with_shipping = total + totalShip ;
+    localStorage[config.data[0].storage_key+'_totalAmount'] = total_with_shipping;
+    localStorage[config.data[0].storage_key+'_TotalShipp'] = totalShip;
+    total = parseFloat(total).toFixed(2);
+    totalShip = parseFloat(totalShip).toFixed(2);
+    total_with_shipping = parseFloat(total_with_shipping).toFixed(2);
+    $("#totalAmount").html(app_curr_symbol+total+'');
+    $("#shipping_detail").html(app_curr_symbol+totalShip+'');
+    $("#total_with_shipping").html(app_curr_symbol+total_with_shipping+'');
+    location.reload();
+}			 
 			   </script>
                    
                    
