@@ -573,8 +573,7 @@
 	 var storage_key='Eluvyeccc3';
 	var storedNames = JSON.parse(localStorage['Eluvyeccc3'+'_pNames']);
 	
-	alert('rrram');
-	          
+	
 			  try{
                     var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div><div class="empty_text">"' + locale.message.text["cart_empty_text"] + '"</div></div>';
                     var cartItems=0;
@@ -641,7 +640,7 @@
                         var productquan_response=response;
                                
                         var i=0, productList = '<div class="minicart-wrapper"><p class="block-subtitle">Recently added item(s)<a class="close skip-link-close" href="#" title="Close">×</a></p><div><ul id="cart-sidebar" class="mini-products-list">';
-                          alert('rrram1');
+                         
 
 						 if(storedNames.length==""){
                               
@@ -670,7 +669,7 @@
                                
                                 productList += '<li class="item odd" >\n\
 								                <a onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')"  class="product-image">\n\
-                                                   <img  src="'+storedImages[i]+'" onerror="bad_image(this);" width="50" height="50"></a>\n\
+                                                   </a>\n\
 												    <div class="product-details"><p class="product-name"><a onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')">'+ storedTitles[i] +'</a></p>\n\
 													<table class="info-wrapper">\n\
 													<tbody><tr><td><span>Price:</span><span class="price">'+app_curr_symbol+ parseFloat(storedPrices[i]).toFixed(2) +'</span> </td></tr>\n\
@@ -687,10 +686,7 @@
                                
                             }
 							
-							 productList +='</ul> </div><div id="minicart-widgets"></div><div class="block-content"><p class="subtotal"><span class="label">Cart Subtotal:</span> <span class="price">$95.00</span></p>\n\
-									</div> <div class="minicart-actions"><a class="cart-link" href="https://eluvy.com/checkout/cart/">View Shopping Cart</a>\n\
-											<ul class="checkout-types minicart"><li><a title="Checkout" class="button checkout-button" href="https://eluvy.com/checkout/onepage/">Checkout</a></li></ul></div></div>';
-							jQuery('#minicart').html(productList);
+							
                          
                             var ttlAmt = 0;
                             var shipAmt=0;
@@ -698,9 +694,14 @@
                             var i = 0;
                             while(i < cartItems) {
                                 ttlAmt = ttlAmt + (storedQuantities[i] * storedPrices[i] );
-                                shipAmt = shipAmt + (storedQuantities[i] * storedShipping[i] );
+                             
                                 i++;
                             }
+							
+							 productList +='</ul> </div><div id="minicart-widgets"></div><div class="block-content"><p class="subtotal"><span class="label">Cart Subtotal:</span> <span class="price">$'+ttlAmt+'</span></p>\n\
+									</div> <div class="minicart-actions"><a class="cart-link" onclick="redirectTopage(''\cart.html''\)">View Shopping Cart</a>\n\
+											<ul class="checkout-types minicart"><li><a title="Checkout" class="button checkout-button" onClick="proceedcheck();">Checkout</a></li></ul></div></div>';
+							jQuery('#minicart').html(productList);
                          
                          
                             
@@ -721,8 +722,94 @@
 
 						
   						
- }
+            }
 
+			
+			function proceed() {
+                try {
+                    var Session = JSON.parse(localStorage[config.data[0].storage_key+'_Session']);
+                }
+                catch(err) {
+                    console.log(err.message);
+                    var dirPath = dirname(location.href);
+                    var fullPath = dirPath + "/guestcheckout.html";
+                    window.location = fullPath;
+                }
+                var isValidQuantity = 1;
+                $('#cartProductslist input[type=number]').each(function() {
+                    if(/^\+?(0|[1-9]\d*)$/.test($(this).val())) {
+                        console.log("Valid Quantity");
+                    }
+                    else {
+                        isValidQuantity = 0;
+                        return false;
+                    }
+                });
+                if(isValidQuantity) {
+                    if(Session == null) {
+                        var dirPath = dirname(location.href);
+                        localStorage[config.data[0].storage_key+"_nextpage"] = "buy_now.html?amount=" + localStorage[config.data[0].storage_key+'_subtotal']+"";
+                        var fullPath = dirPath + "/guestcheckout.html";
+                        window.location=fullPath;
+                    }
+                    else {
+                        $('#buyNow2').button ("disable");
+                        var fullPath = "buy_now.html?amount=" + localStorage[config.data[0].storage_key+'_subtotal']+"";
+                        window.location=fullPath;
+                    }
+                }
+                else {
+                   console.error("Inalid Quantity");
+                   if (config.data[0].platform=='ios' || config.data[0].platform=='android') {
+                       
+                       navigator.notification.alert(locale.message.text["invalid_quantity"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                   }
+                   else{
+                       alert(locale.message.text["invalid_quantity"]);
+                   }
+                }
+            }
+            
+            /*
+             *Function call to check cart item quantity
+             *@param
+             *@return
+             */
+            
+            function proceedcheck(){
+                var flag;
+                storedIds = JSON.parse(localStorage[config.data[0].storage_key+'_pIds']);
+                var product_name_array = JSON.parse(localStorage[config.data[0].storage_key+'_pTitles']);
+                var parray = new Object();
+                for(var i=0;i<storedIds.length;i++){
+                    parray[i] = storedIds[i];
+                }
+                productid=JSON.stringify(parray);
+                var BASE_URL  = config.data[0].baseurl;
+                var STORE = config.data[0].storeid;
+                $.mobile.loading("show");
+                //---Fetch Store Details from Mofluid Magento Web Service
+                $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=productQuantity&product="+productid, function (response) {
+                          $.mobile.loading("hide");
+                    flag=0;
+                    productquan_response=response;
+                    for (var i=0;i<storedIds.length;i++){
+                        if(productquan_response[storedIds[i]]==0){
+                          
+                            if (config.data[0].platform=='ios' || config.data[0].platform=='android') {
+                                navigator.notification.alert(locale.message.alert["item_remove_message"] +"-"+ product_name_array[i],function (){},config.data[0].app_name, locale.message.button["close"]);
+                            }
+                            else{
+                                alert(locale.message.alert["item_remove_message"] +"-"+ product_name_array[i]);
+                            }
+                            flag=1;
+                        }
+                    }
+                    if(flag==0){
+                        proceed();
+                    }
+                });
+            }
 
 			   </script>
                    
