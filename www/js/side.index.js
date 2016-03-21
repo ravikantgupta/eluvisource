@@ -160,6 +160,12 @@ function new_side_cat(data){
     for(var key in data) {
         
         if (data.hasOwnProperty(key)) {
+			
+			if(data[key].name=='All' || data[key].name=='all')
+				{
+					
+					continue;
+				}
             
             $("#Cate_slide").append('<div class="new_cate_panel_div" id="new_category_id_'+data[key].id+'" onclick="new_sub_cat('+data[key].id+', 0,\''+data[key].name+'\')">'+data[key].name+'</div><div class="new_sub_cate_panel_div" style="display:none;" id='+data[key].id+'></div>');
             

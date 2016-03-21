@@ -2934,18 +2934,18 @@ $(document).ready(function() {
 
 function addDirectToCart(PRODUCT_ID, stock_status) {
 	
-	alert('ram');
+	
 	
     var BASE_URL = config.data[0].baseurl;
     var STORE = config.data[0].storeid;
 	
-		alert("" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=productdetail&productid=" + PRODUCT_ID);
+		
                           
     //---- Fetch Product Details from Magento Store via Mofluid Magento Webservice
     $.getJSON("" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=productdetail&productid=" + PRODUCT_ID,
         function(results) {
-			  alert('ram1');
-            alert(results);
+			 
+           
             pSKU = results["sku"];
             pShipp = results["shipping"];
             pName = results["name"];
@@ -2988,22 +2988,21 @@ function addDirectToCart(PRODUCT_ID, stock_status) {
                 pStock = locale.message.text["out_of_stock"];
             else
                 pStock = locale.message.text["in_stock"];
-            alert('ram2');
+            
             if (pStock == locale.message.text["out_of_stock"]) {
-				alert('ram3');
+				
                 if (config.data[0].platform == 'ios' || config.data[0].platform == 'android') {
 					
-					alert('ram4');
+					
                     navigator.notification.alert(locale.message.text["out_of_stock"], function() {}, config.data[0].app_name, locale.message.button["close"]);
                 
 				} else {
-					alert('ram5');
+					
                     alert(locale.message.text["out_of_stock"]);
                 }
                 location.reload(true);
             } else {
-                   alert('ram6');
-			       alert(PRODUCT_ID);
+                  
                 addToCart(PRODUCT_ID + "stock_status" + stock_status, pSKU, pPrice, pShipp, imageURL, pName, pSize, pColor);
             }
         });
