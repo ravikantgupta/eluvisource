@@ -136,7 +136,7 @@ function feature_product_list(results){
 				  <div class="shortdesc"><a onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">Detail</a></div>\
 				  <div class="hover-action">\
 					<div class="cartactions">\
-					 <button  class="button btn-cart" title="Add to Cart" type="button" onClick="addDirectToCart('+pid+', '+stock_status+')"><span><span>Add to Cart</span></span></button>\
+					 <button  class="button btn-cart" title="Add to Cart" type="button" onclick="addDirectToCart('+pid+', '+stock_status+')"><span><span>Add to Cart</span></span></button>\
 					   <ul class="wish-add-to-links">\
 						 <li><a class="link-wishlist" title="Wishlist" ><i class="fa fa-heart"></i></a></li>\
 						 <li><a class="link-compare" title="Compare" ><i class="fa fa-exchange"></i></a></li>\
