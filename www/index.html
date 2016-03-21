@@ -569,12 +569,11 @@
                
  function getcartitem()
  {
-    alert('ram1');
+   
 	 var storage_key='Eluvyeccc3';
 	var storedNames = JSON.parse(localStorage['Eluvyeccc3'+'_pNames']);
 	
-	alert(config.data[0]);
-	alert(storedNames.length);
+	
 	          
 			  try{
                     var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div><div class="empty_text">"' + locale.message.text["cart_empty_text"] + '"</div></div>';
@@ -588,12 +587,15 @@
                     catch(Ex){
                         cartItems=0;
                     }
-                    alert("Length of Cart Items data : "+cartItems);
+                   
                     if(cartItems<=0){
                         
                     }
-                    storedNames = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']);
-                    var storedPrices = JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']);
+                      storedNames = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']);
+					  
+					  jQuery('#totalcount').html(storedNames.length);
+	
+                     var storedPrices = JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']);
                      var  storedImages = JSON.parse(localStorage[config.data[0].storage_key+'_pImages']);
                     try {
                        var  storedSizes = JSON.parse(localStorage[config.data[0].storage_key+'_pSizes']);
@@ -638,21 +640,15 @@
                      $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=productQuantity&product="+productid, function (response) {
                         var productquan_response=response;
                                
-                        var i=0, productList = '';
-                        //$('#pName').html(JSON.parse(localStorage[config.data[0].storage_key+'_pNames']));
-                      //  $('#pPrice').html(JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']));
-                      //  $('#removeItem').html('<a onClick="removeItem()" href="#"><img src="images/themeicons/delete_32x32.png"></a>');
-                        if(storedNames.length==""){
+                        var i=0, productList = '<div class="minicart-wrapper"><p class="block-subtitle">Recently added item(s)<a class="close skip-link-close" href="#" title="Close">×</a></p><div><ul id="cart-sidebar" class="mini-products-list">';
+                          if(storedNames.length==""){
                               
-                          //  var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div><div class="empty_text">'+locale.message.text["cart_empty_text"]+'</div></div>';
-                         //   $("#cartProductslist").html(emptyText);
-                          //  $("#cartbtn2").css("display", "none");
+                        
                            // $("#couponcode").hide();
                         }
                         else if(!(storedNames.length)) {
                             var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div class="empty_text"><div>'+locale.message.text["cart_empty_text"]+'</div></div>';
-                         //   $("#cartProductslist").html(emptyText);
-                         //   $("#cartbtn2").css("display", "none");
+                       
                          //   $("#couponcode").hide();
                         }
                         else {
@@ -670,9 +666,16 @@
                              
                        
                                
-                                productList += '<div class="my_cart_product" >\n\
-                                                    <div class="my_cart_product_box1" ><img  onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')" src="'+storedImages[i]+'" onerror="bad_image(this);"></div>\n\
-                                                    <div class="my_cart_product_box2" ><div class="cart_outer_name"><div class="product_name_cart" > '+ storedTitles[i] +' </div><div class="delete"><a href="#" onclick="removeItem('+i+')"><img src="images/themeicons/delete_32x32.png"></a></div></div><div class="cart_outer_qtn"><div class="spinner-btn" style="text-align:left;vertical-align:middle;"><img src="images/spin.gif" width="24" height="24" id="quantity_loader'+i+'" style="display:none;padding:0px;"/><input type="number" data-role="spinbox" data-type="horizontal" data-mini="true" data-theme="d" name="spin" id='+storedNames[i]+storedSizes[i]+storedColor[i]+'  onChange="upadteQuanitiy(this,'+ storedPrices[i] +','+i+', '+ pName +', '+ pSize +','+pColor+','+pship+')" value="'+storedQuantities[i]+'" min="1" max="'+productquan_response[storedIds[i]]+'" onKeyUp="validatespinbox(this,'+ storedPrices[i] +','+i+', '+ pName +', '+ pSize +','+pColor+','+pship+');"/></div><div class="cart_price product_price_color">&nbsp;'+app_curr_symbol+ parseFloat(storedPrices[i]).toFixed(2) +'</div></div></div>                                                               </div></div><div class="clear"></div>';
+                                productList += '<li class="item odd" >\n\
+								                <a onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')"  class="product-image">\n\
+                                                   <img  src="'+storedImages[i]+'" onerror="bad_image(this);" width="50" height="50"></a>\n\
+												    <div class="product-details"><p class="product-name"><a onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')">'+ storedTitles[i] +'</a></p>\n\
+													<table class="info-wrapper">\n\
+													<tbody><tr><td><span>Price:</span><span class="price">'+app_curr_symbol+ parseFloat(storedPrices[i]).toFixed(2) +'</span> </td></tr>\n\
+															<tr class="qty-wrapper"><td><span>Qty:</span><input id="qinput-348" class="qty cart-item-quantity" name="" value="'+storedQuantities[i]+'"></td></tr>\n\
+														</tbody>\n\
+													</table>\n\
+                                             	<div class="removeitem"><a  onclick="removeItem('+i+')" title="Remove This Item"  class="remove"><i class="fa fa-trash-o"></i></a></div> </div></li>\n\';
                                
                                
                                
@@ -682,7 +685,9 @@
                                
                             }
 							
-							
+							 productList +='</ul> </div><div id="minicart-widgets"></div><div class="block-content"><p class="subtotal"><span class="label">Cart Subtotal:</span> <span class="price">$95.00</span></p>\n\
+									</div> <div class="minicart-actions"><a class="cart-link" href="https://eluvy.com/checkout/cart/">View Shopping Cart</a>\n\
+											<ul class="checkout-types minicart"><li><a title="Checkout" class="button checkout-button" href="https://eluvy.com/checkout/onepage/">Checkout</a></li></ul></div></div>';
 							jQuery('#minicart').html(productList);
                          
                             var ttlAmt = 0;
@@ -944,7 +949,7 @@
 				   
 					<span class="label">Shopping Bag</span>
 					  <span class="icon"></span>
-					<span class="count">0</span>
+					<span id="totalcount" class="count">0</span>
 				</a>
 			  
 			<div id="header-cart" class="block block-cart skip-content" style="display:none;">
