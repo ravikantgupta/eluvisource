@@ -669,7 +669,7 @@
                                
                                 productList += '<li class="item odd" >\n\
 								                <a onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')"  class="product-image">\n\
-                                                   </a>\n\
+                                                  </a>\n\
 												    <div class="product-details"><p class="product-name"><a onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')">'+ storedTitles[i] +'</a></p>\n\
 													<table class="info-wrapper">\n\
 													<tbody><tr><td><span>Price:</span><span class="price">'+app_curr_symbol+ parseFloat(storedPrices[i]).toFixed(2) +'</span> </td></tr>\n\
@@ -699,7 +699,7 @@
                             }
 							
 							 productList +='</ul> </div><div id="minicart-widgets"></div><div class="block-content"><p class="subtotal"><span class="label">Cart Subtotal:</span> <span class="price">$'+ttlAmt+'</span></p>\n\
-									</div> <div class="minicart-actions"><a class="cart-link" onclick="redirectTopage(''\cart.html''\)">View Shopping Cart</a>\n\
+									</div> <div class="minicart-actions"><a class="cart-link" onclick="goTopage()">View Shopping Cart</a>\n\
 											<ul class="checkout-types minicart"><li><a title="Checkout" class="button checkout-button" onClick="proceedcheck();">Checkout</a></li></ul></div></div>';
 							jQuery('#minicart').html(productList);
                          
@@ -810,7 +810,11 @@
                     }
                 });
             }
-
+			
+	  function goTopage()
+            {	  
+			   redirectTopage('cart.html');
+             }      
 			   </script>
                    
                    
