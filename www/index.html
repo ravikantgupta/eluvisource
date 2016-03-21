@@ -660,7 +660,7 @@
 						
                             while(i<storedNames.length) {
                               
-                                //$("#cartbtn2").show();
+                              
                                 var pName = storedNames[i],pSize = storedSizes[i],pColor=storedColor[i];
                                 pName = "'"+pName+"'", pSize = "'"+pSize+"'",pColor = "'"+pColor+"'";
                                 var pship = "'"+storedShipping[i]+"'";
@@ -668,26 +668,7 @@
                                     storedSizes[i] = '';
                                 }
                              
-                       /*
-                               if(parseInt(parent_pro_data[i].use_config_manage_stock)==0)
-                               {
-                                    if(parseInt(parent_pro_data[i].manage_stock)==0)
-                                    {
-                                           productList += '<div class="my_cart_product" >\n\
-                                           <div class="my_cart_product_box1" ><img  onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')" src="'+storedImages[i]+'" onerror="bad_image(this);"></div>\n\
-                                           <div class="my_cart_product_box2" ><div class="cart_outer_name"><div class="product_name_cart" > '+ storedTitles[i] +' </div><div class="delete"><a href="#" onclick="removeItem('+i+')"><img src="images/themeicons/delete_32x32.png"></a></div></div><div class="cart_outer_qtn"><div class="spinner-btn" style="text-align:left;vertical-align:middle;"><img src="images/spin.gif" width="24" height="24" id="quantity_loader'+i+'" style="display:none;padding:0px;"/><input type="number" data-role="spinbox" data-type="horizontal" data-mini="true" data-theme="d" name="spin" id='+storedNames[i]+storedSizes[i]+storedColor[i]+'  onChange="upadteQuanitiy(this,'+ storedPrices[i] +','+i+', '+ pName +', '+ pSize +','+pColor+','+pship+')" value="'+storedQuantities[i]+'" min="1" max="'+parseInt(parent_pro_data[i].max_sale_qty)+'" onKeyUp="validatespinbox(this,'+ storedPrices[i] +','+i+', '+ pName +', '+ pSize +','+pColor+','+pship+');"/></div><div class="cart_price product_price_color">&nbsp;'+app_curr_symbol+ parseFloat(storedPrices[i]).toFixed(2) +'</div></div></div>                                                               </div></div><div class="clear"></div>';
-                                    }
-                                    else
-                                    {
-                                       productList += '<div class="my_cart_product" >\n\
-                                       <div class="my_cart_product_box1" ><img  onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')" src="'+storedImages[i]+'" onerror="bad_image(this);"></div>\n\
-                                       <div class="my_cart_product_box2" ><div class="cart_outer_name"><div class="product_name_cart" > '+ storedTitles[i] +' </div><div class="delete"><a href="#" onclick="removeItem('+i+')"><img src="images/themeicons/delete_32x32.png"></a></div></div><div class="cart_outer_qtn"><div class="spinner-btn" style="text-align:left;vertical-align:middle;"><img src="images/spin.gif" width="24" height="24" id="quantity_loader'+i+'" style="display:none;padding:0px;"/><input type="number" data-role="spinbox" data-type="horizontal" data-mini="true" data-theme="d" name="spin" id='+storedNames[i]+storedSizes[i]+storedColor[i]+'  onChange="upadteQuanitiy(this,'+ storedPrices[i] +','+i+', '+ pName +', '+ pSize +','+pColor+','+pship+')" value="'+storedQuantities[i]+'" min="1" max="'+productquan_response[storedIds[i]]+'" onKeyUp="validatespinbox(this,'+ storedPrices[i] +','+i+', '+ pName +', '+ pSize +','+pColor+','+pship+');"/></div><div class="cart_price product_price_color">&nbsp;'+app_curr_symbol+ parseFloat(storedPrices[i]).toFixed(2) +'</div></div></div>                                                               </div></div><div class="clear"></div>';
-                               
-                                    }
-                               
-                               }
-                               else
-                               { */
+                       
                                
                                 productList += '<div class="my_cart_product" >\n\
                                                     <div class="my_cart_product_box1" ><img  onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')" src="'+storedImages[i]+'" onerror="bad_image(this);"></div>\n\
@@ -704,7 +685,7 @@
 							alert('ram1');
 							alert(productList);
 							
-                            var dirPath = dirname(location.href);
+                         
                             var ttlAmt = 0;
                             var shipAmt=0;
                             var ttlAll=0;
@@ -714,7 +695,7 @@
                                 shipAmt = shipAmt + (storedQuantities[i] * storedShipping[i] );
                                 i++;
                             }
-                           // $("#shipping_detail").html('<b>&nbsp;'+app_curr_symbol+shipAmt+'</b>');
+                         
                             localStorage[config.data[0].storage_key+'_TotalShipp'] = shipAmt;
                             coupon_status="0";
                             ttlAll=parseFloat(ttlAll).toFixed(2);
@@ -725,11 +706,7 @@
                             fullPath="/buy_now.html?amount=" + localStorage[config.data[0].storage_key+'_subtotal'] + "";
                             buyNowContent = '<a onclick="parent.location='+fullPath+'"><img src="images/checkout.png"></a>';
                             $("#amount").val(ttlAmt);
-                            //$("#cartProductslist").html(productList);
-                            //$("#cartProductslist").trigger("create");
-                            //$("#buyNow").html(buyNowContent);
-                            //$("#shipping_detail").html('<b>&nbsp;'+app_curr_symbol+shipAmt+'</b>');
-                            //$("#coupon_detail").html('<b>-'+app_curr_symbol+Math.round(parseFloat(discount_amount) * 100) / 100+'</b>');
+                           
                         }
                     });
                 } catch(err2) {
