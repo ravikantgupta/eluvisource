@@ -573,7 +573,7 @@
 	 var storage_key='Eluvyeccc3';
 	var storedNames = JSON.parse(localStorage['Eluvyeccc3'+'_pNames']);
 	
-	
+	alert('rrram');
 	          
 			  try{
                     var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div><div class="empty_text">"' + locale.message.text["cart_empty_text"] + '"</div></div>';
@@ -641,7 +641,9 @@
                         var productquan_response=response;
                                
                         var i=0, productList = '<div class="minicart-wrapper"><p class="block-subtitle">Recently added item(s)<a class="close skip-link-close" href="#" title="Close">×</a></p><div><ul id="cart-sidebar" class="mini-products-list">';
-                          if(storedNames.length==""){
+                          alert('rrram1');
+
+						 if(storedNames.length==""){
                               
                         
                            // $("#couponcode").hide();
@@ -675,7 +677,7 @@
 															<tr class="qty-wrapper"><td><span>Qty:</span><input id="qinput-348" class="qty cart-item-quantity" name="" value="'+storedQuantities[i]+'"></td></tr>\n\
 														</tbody>\n\
 													</table>\n\
-                                             	<div class="removeitem"><a  onclick="removeItem('+i+')" title="Remove This Item"  class="remove"><i class="fa fa-trash-o"></i></a></div> </div></li>\n\';
+                                             	<div class="removeitem"><a  onclick="removeItem('+i+')" title="Remove This Item"  class="remove"><i class="fa fa-trash-o"></i></a></div> </div></li>';
                                
                                
                                
