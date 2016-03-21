@@ -2935,7 +2935,7 @@ $(document).ready(function() {
 function addDirectToCart(PRODUCT_ID, stock_status) {
 	
 	alert('ram');
-		alert(PRODUCT_ID);
+		
     var BASE_URL = config.data[0].baseurl;
     var STORE = config.data[0].storeid;
                           
@@ -2995,6 +2995,7 @@ function addDirectToCart(PRODUCT_ID, stock_status) {
                 location.reload(true);
             } else {
 
+			       alert(PRODUCT_ID);
                 addToCart(PRODUCT_ID + "stock_status" + stock_status, pSKU, pPrice, pShipp, imageURL, pName, pSize, pColor);
             }
         });
