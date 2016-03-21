@@ -2935,9 +2935,11 @@ $(document).ready(function() {
 function addDirectToCart(PRODUCT_ID, stock_status) {
 	
 	alert('ram');
-		
+	
     var BASE_URL = config.data[0].baseurl;
     var STORE = config.data[0].storeid;
+	
+		alert("" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=productdetail&productid=" + PRODUCT_ID);
                           
     //---- Fetch Product Details from Magento Store via Mofluid Magento Webservice
     $.getJSON("" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=productdetail&productid=" + PRODUCT_ID,
