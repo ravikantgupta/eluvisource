@@ -696,16 +696,8 @@
                                 i++;
                             }
                          
-                            localStorage[config.data[0].storage_key+'_TotalShipp'] = shipAmt;
-                            coupon_status="0";
-                            ttlAll=parseFloat(ttlAll).toFixed(2);
-                            ttlAmt=parseFloat(ttlAmt).toFixed(2);
-                            localStorage[config.data[0].storage_key+'_totalAmount'] =ttlAll ;
-                            localStorage[config.data[0].storage_key+'_subtotal'] = ttlAmt;
-                            productList += '<div class="clear"></div><div class="blue " style="margin-top:10px;padding-bottom:10px; float:left; width:100%; border-bottom:1px solid #e5e5e5;"><div class="heading" style="float:left;width:50%;font-size:20px; font-weight:bold;">'+locale.message.text["total"]+'</div><div id ="totalAmount" class="cart_price product_price_color" style="float:right;width:50%;text-align:right;"><span style="float:right; font-weight:bold">'+app_curr_symbol+ttlAmt+'</span></div></div>';
-                            fullPath="/buy_now.html?amount=" + localStorage[config.data[0].storage_key+'_subtotal'] + "";
-                            buyNowContent = '<a onclick="parent.location='+fullPath+'"><img src="images/checkout.png"></a>';
-                            $("#amount").val(ttlAmt);
+                           alert('ram2');
+                          
                            
                         }
                     });
