@@ -208,7 +208,7 @@ function new_sub_cat(id, parentid,cat_name){
     var categories = JSON.parse(localStorage.getItem(config.data[0].storage_key+"_categories"));
     var total_child_current = 0;
     var children;
-    $("#"+id).html('<div class="new_sub_cate_panel_single_div" onclick="Page.redirect(\'subcategory.html?parent='+id+'\',\'slide\', \'left\')">All '+cat_name+'</div>');
+   // $("#"+id).html('<div class="new_sub_cate_panel_single_div" onclick="Page.redirect(\'subcategory.html?parent='+id+'\',\'slide\', \'left\')">All '+cat_name+'</div>');
     
     if(parseInt(id)<= 0 ) {
         if(parseInt(parentid)<= 0 ) {
