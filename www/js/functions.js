@@ -2933,6 +2933,9 @@ $(document).ready(function() {
 
 
 function addDirectToCart(PRODUCT_ID, stock_status) {
+	
+	alert('ram');
+		alert(PRODUCT_ID);
     var BASE_URL = config.data[0].baseurl;
     var STORE = config.data[0].storeid;
                           
