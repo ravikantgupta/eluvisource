@@ -504,7 +504,10 @@
            }
         }
         
-        
+        function productview(noofview)
+		{
+		    alert(noofview);
+		}
         function printResponse(responsedata)
         {
              localStorage.setItem('foo',0);
@@ -2047,8 +2050,8 @@ function removeItem(index) {
                         </div>
                     </form>
                 </div>
-                <div id="category_banner">
-                </div>
+               <!-- <div id="category_banner">
+                </div>-->
                 <div id="sorting_div" class="category-sort" style="display:none;">
                     <select name="sel-sortType" class="choose-btn" data-mini="true" id="sel-sortType" onChange="sortType();">
                         <!--option value="entity_id" rel="desc" id="p1" selected> </option>
@@ -2061,42 +2064,28 @@ function removeItem(index) {
                 </div>
 				
 		 <div class="list-main">
-                	<div class="category-image">
+                	<div class="category-image" id="category_banner">
                     	<img src="https://eluvy.com/media/catalog/category/sale-item_6.jpg" alt="Sale Items" title="Sale Items">
                     </div>		
               <div class="category-products">   
 			    <div class="toolbar">
-    <div class="count-container">
-                           <!-- <p class="amount amount--no-pages">
-                    <strong>5 Item(s)</strong>
-                </p>-->
-            
-            <div class="limiter">
-                <label>View</label>
-                <ul>
-				
-                				   <li>
-                    <a href="https://eluvy.com/sale-items.html?limit=12&amp;metaltype=4" class="selected">
-                        12                    </a>
-					</li>
-                				   <li>
-                    <a href="https://eluvy.com/sale-items.html?limit=24&amp;metaltype=4">
-                        24                    </a>
-					</li>
-                				   <li>
-                    <a href="https://eluvy.com/sale-items.html?limit=36&amp;metaltype=4">
-                        36                    </a>
-					</li>
-                                <li>
-                Per Page
-                </li>
-                </ul>
-            </div>
-            
-        </div>
+			<div class="count-container">
+								  
+					
+					<div class="limiter">
+						<label>View</label>
+						<ul>
+						  <li><a onClick="productview(12)" class="selected">12</a></li>
+							
+						  <li><a onClick="productview(24)">24   </a></li>
+						   <li><a onClick="productview(36)">36  </a></li>
+						<li>Per Page</li>
+						</ul>
+					</div>
+					
+			</div>
             <div class="sorter">
-                            <p class="view-mode">
-                                                        </p>
+                            <p class="view-mode"></p>
             
             <div class="sort-by">
                 <label>Sort By</label>
@@ -2168,17 +2157,14 @@ function removeItem(index) {
                         
                     </div>
                             </div>
-        </div>
+        
+		
+		    </div>
         <div class="pager">
     
+   
 
-        
-    
-    
-    
-    
-
-    </div>
+        </div>
     </div>	
 				
 					<div id="category" class="category" align="center">
