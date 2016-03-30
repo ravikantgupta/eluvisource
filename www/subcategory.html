@@ -114,6 +114,9 @@
                           cat_list = "<ul data-role='listview' data-inset='true'>";
                           cat_list += categorydata;
                           cat_list += "</ul>";
+						  alert('ram3');
+			   
+			    alert(banner_image_slider);
                           $("#category_banner").html(banner_image_slider);
                           $("#category_banner").css("display", "block");
                           $("#category").html(cat_list);
@@ -236,7 +239,11 @@
               
                         //Load Category Banner Image
                         var banner_image_slider = '<div class="category_image" style="background-image:url(' +  results["images"] +');"><div class="category_overlay"><div class="category_title_outer"><div class="category_title">'+results["title"]+'</div></div></div></div>';
-                        $("#category_banner").html(banner_image_slider);
+                        
+						alert('ram2');
+			   
+			    alert(banner_image_slider);
+						$("#category_banner").html(banner_image_slider);
                         $("#category_banner").css("display", "block");
                         
                         /*Case When Subcategory Exists therefore display subcategory accordingly*/
@@ -312,7 +319,10 @@
 
                  //Load Category Banner Image
                  var banner_image_slider = '<div class="category_image" style="background-image:url(' +  results["images"] +');"><div class="category_overlay"><div class="category_title_outer"><div class="category_title">'+results["title"]+'</div></div></div></div>';
-                 $("#category_banner").html(banner_image_slider);
+                 alert('ram1');
+			   
+			    alert(banner_image_slider);
+				 $("#category_banner").html(banner_image_slider);
                  $("#category_banner").css("display", "block");
                  
                  /*Case When Subcategory Exists therefore display subcategory accordingly*/
@@ -407,7 +417,11 @@
                 
                 //Load Category Banner Image
                 var banner_image_slider = '<div class="category_image" style="background-image:url(' +  results["images"] +');"><div class="category_overlay"><div class="category_title_outer"><div class="category_title">'+results["title"]+'</div></div></div></div>';
-                $("#category_banner").html(banner_image_slider);
+                 alert('ram');
+			   
+			    alert(banner_image_slider);
+				
+			   $("#category_banner").html(banner_image_slider);
                 $("#category_banner").css("display", "block");
                 
                 /*Case When Subcategory Exists therefore display subcategory accordingly*/
@@ -506,7 +520,10 @@
         
         function productview(noofview)
 		{
-		    alert(noofview);
+		   //alert(noofview);
+			
+			   $(".ui-loader").show();
+			      $(".ui-loader").hide(100);
 		}
         function printResponse(responsedata)
         {
@@ -2146,7 +2163,7 @@ function removeItem(index) {
 </li>
 </ol></dd>
                                             </dl>
-            <script type="text/javascript">decorateDataList('narrow-by-list')</script>
+           
             </div>
                                 </ul>
                             </div>
