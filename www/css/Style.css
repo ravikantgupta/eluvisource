@@ -3227,7 +3227,7 @@ padding: 0px 15px; font-size:14px;}
 .list-rgt dl{margin:0;}
 .list-rgt .block-subtitle--filter{padding:0 10px;}
 
-#cart-sidebar .item img{height:40px;}
+#cart-sidebar .item img{height:40px; width:40px;}
 .products-grid .product-name, .products-list .product-name {
     text-transform: inherit;
     font-size: 14px;
