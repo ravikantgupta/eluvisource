@@ -530,10 +530,13 @@
         
         function productview(noofview)
 		{
-		   //alert(noofview);
+		    var CategoryId = getParameterByName('parent');
 			
-			   $(".ui-loader").show();
+			       $(".ui-loader").show();
 			      $(".ui-loader").hide(100);
+				  alert(CategoryId);
+			alert(BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=products&currentpage="+page+"&pagesize="+pagesize_new+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code);	  
+				  
 		}
         function printResponse(responsedata)
         {
@@ -692,7 +695,7 @@
         
        function printProducts(page) {
             
-            alert('page:'+page);
+           
             $("#Showpro").hide();
             var append = parent_list = '';
             var stock_status = "0";
