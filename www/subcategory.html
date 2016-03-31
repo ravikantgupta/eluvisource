@@ -538,7 +538,7 @@
         function printResponse(responsedata)
         {
 		
-		alert(responsedata);
+		    alert(responsedata);
 		
 		/*  current woking for product list */
              localStorage.setItem('foo',0);
@@ -781,7 +781,7 @@
                                              else
                                              {
 											 
-											   alert('shreeram2');
+											   alert(BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=products&currentpage="+page+"&pagesize="+pagesize_new+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code);
                                                     $.ajax({
                                                             url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=products&currentpage="+page+"&pagesize="+pagesize_new+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code,
                                                             type: 'GET',
