@@ -538,7 +538,7 @@
         function printResponse(responsedata)
         {
 		
-		    alert(responsedata);
+		   
 		
 		/*  current woking for product list */
              localStorage.setItem('foo',0);
@@ -550,6 +550,14 @@
             }
             var productList = '';
             
+			/**categories banner**/
+			
+			jQuery('#category_banner').html('<img src="'+response.catimages+'" alt="Sale Items" title="Sale Items">');
+			
+			
+					
+			/**End categories banner**/
+			
             if(response.total <= 0){
                 productList = "<div style='padding-top:20px;'><h2>"+ locale.message.text["no_product_found_text"] +"</h2></div>";
                 loading = false;
@@ -781,8 +789,7 @@
                                              else
                                              {
 											 
-											   alert(BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=products&currentpage="+page+"&pagesize="+pagesize_new+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code);
-                                                    $.ajax({
+											        $.ajax({
                                                             url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=products&currentpage="+page+"&pagesize="+pagesize_new+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code,
                                                             type: 'GET',
                                                             contentType: 'application/json',
