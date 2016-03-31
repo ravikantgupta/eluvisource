@@ -199,9 +199,11 @@
                                          
          if (resdata.rows.length > 0) {//If table is empty
          
+		  alert('ram001');
          var diff=current_time - resdata.rows.item(0).timestamp;
          if (diff > cache_time) { //If time is expire
                                                   //delete the old row of storedetails data if cache time expire
+					alert('ram005');							  
          
          tx.executeSql("DELETE FROM mofluid_cache WHERE key=?", [key],
                        function(tx, result) {
@@ -226,12 +228,14 @@
                 
                         results = response;
                         if (results['categories'] == null || results['categories'].length <= 0) {
+						alert('ram005');
                         categoryfound = 0;
                         localStorage.setItem(config.data[0].storage_key+'_pro_flag', 1);
                         localStorage.setItem(config.data[0].storage_key+"_pro_detail_flag",0);
                         printProducts(page);
                         }
                         else {
+						alert('ram006');
                         localStorage.setItem(config.data[0].storage_key+'_cat_flag',1);
 
                             db.transaction(function(tx) {
@@ -384,7 +388,7 @@
          }//End if table is not empty
          else
          {
-        
+         alert('ram002');
          $.ajax({
                 url: ""+BASE_URL+"?callback=?"+"&store="+STORE+"&categoryid="+categoryId+"&service=subcategory",
                 type: 'GET',
@@ -404,12 +408,14 @@
                 
                 results = response;
                 if (results['categories'] == null || results['categories'].length <= 0) {
+				 alert('ram003');
                 categoryfound = 0;
                 localStorage.setItem(config.data[0].storage_key+'_pro_flag', 1);
                 localStorage.setItem(config.data[0].storage_key+"_pro_detail_flag",0);
                 printProducts(page);
                 }
                 else {
+				alert('ram004');
                 localStorage.setItem(config.data[0].storage_key+'_cat_flag',1);
                 db.transaction(function(tx) {
                                tx.executeSql("INSERT INTO mofluid_cache (key,data,timestamp) VALUES (?,?,?)", ["" + key + "", "" + JSON.stringify(response) + "", "" + current_time + ""], function(tx, res) {}, function(e) {
