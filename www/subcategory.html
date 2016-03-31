@@ -713,10 +713,10 @@
                                tx.executeSql("select * from mofluid_cache where key='"+key+"';", [], function(tx, resdata) {
                                             
                                              if (resdata.rows.length > 0) {//If table is not empty
-                                            
+                                              alert('shreeram0');
                                                      var diff=current_time - resdata.rows.item(0).timestamp;
                                                      if (diff > cache_time) { //Time expire
-                                             
+                                             alert('shreeram');
                                              tx.executeSql("DELETE FROM mofluid_cache WHERE key=?", [key],
                                                                    function(tx, result) {
                                                                    
@@ -768,6 +768,7 @@
                                                      }
                                                      else
                                                      {
+													    alert('shreeram1');
                                                          var response = JSON.parse(resdata.rows.item(0).data);
                                                          localStorage.setItem('productslistlocal', resdata.rows.item(0).data);
                                                          printResponse(resdata.rows.item(0).data);
@@ -775,6 +776,8 @@
                                              }
                                              else
                                              {
+											 
+											   alert('shreeram2');
                                                     $.ajax({
                                                             url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=products&currentpage="+page+"&pagesize="+pagesize_new+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code,
                                                             type: 'GET',
