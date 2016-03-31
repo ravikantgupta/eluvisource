@@ -47,7 +47,7 @@
             function onLoad(){
 			
 				
-                alert('ram0');
+                
                 var viewport = {
                     width  : $(window).width(),
                     height : $(window).height()
@@ -78,7 +78,7 @@
                    // printProducts(page);
                 }
                 else{
-				   alert('ram02');
+				   
                     if(localStorage.getItem('foo') == 1){
 					    alert('ram03');
                         categoryfound = 0;
@@ -106,7 +106,7 @@
                      
                      if(localStorage.getItem(config.data[0].storage_key+'_pro_flag')==1 && localStorage.getItem(config.data[0].storage_key+'_cat_flag')==1 && localStorage.getItem(config.data[0].storage_key+'_pro_detail_flag')==0)
                       {
-                          alert("In");
+                          
                           JSON.parse(localStorage['catIds']).pop();
                           
                           //alert("in cat");
@@ -154,7 +154,7 @@
                        //printResponse(localStorage.getItem('productslistlocal'));
                     }
                     else{
-					alert('ram04');
+					
                         
                         fetchSubCategoryList(parentstr);
                     }
@@ -203,7 +203,7 @@
          var diff=current_time - resdata.rows.item(0).timestamp;
          if (diff > cache_time) { //If time is expire
                                                   //delete the old row of storedetails data if cache time expire
-					alert('ram005');							  
+												  
          
          tx.executeSql("DELETE FROM mofluid_cache WHERE key=?", [key],
                        function(tx, result) {
@@ -248,9 +248,9 @@
                         //Load Category Banner Image
                         var banner_image_slider = '<div class="category_image" style="background-image:url(' +  results["images"] +');"><div class="category_overlay"><div class="category_title_outer"><div class="category_title">'+results["title"]+'</div></div></div></div>';
                         
-						alert('ram2');
+						
 			   
-			    alert(banner_image_slider);
+			  
 						$("#category_banner").html(banner_image_slider);
                         $("#category_banner").css("display", "block");
                         
@@ -327,9 +327,9 @@
 
                  //Load Category Banner Image
                  var banner_image_slider = '<div class="category_image" style="background-image:url(' +  results["images"] +');"><div class="category_overlay"><div class="category_title_outer"><div class="category_title">'+results["title"]+'</div></div></div></div>';
-                 alert('ram1');
+               
 			   
-			    alert(banner_image_slider);
+			  
 				 $("#category_banner").html(banner_image_slider);
                  $("#category_banner").css("display", "block");
                  
@@ -408,14 +408,14 @@
                 
                 results = response;
                 if (results['categories'] == null || results['categories'].length <= 0) {
-				 alert('ram003');
+				
                 categoryfound = 0;
                 localStorage.setItem(config.data[0].storage_key+'_pro_flag', 1);
                 localStorage.setItem(config.data[0].storage_key+"_pro_detail_flag",0);
                 printProducts(page);
                 }
                 else {
-				alert('ram004');
+				
                 localStorage.setItem(config.data[0].storage_key+'_cat_flag',1);
                 db.transaction(function(tx) {
                                tx.executeSql("INSERT INTO mofluid_cache (key,data,timestamp) VALUES (?,?,?)", ["" + key + "", "" + JSON.stringify(response) + "", "" + current_time + ""], function(tx, res) {}, function(e) {
@@ -427,9 +427,8 @@
                 
                 //Load Category Banner Image
                 var banner_image_slider = '<div class="category_image" style="background-image:url(' +  results["images"] +');"><div class="category_overlay"><div class="category_title_outer"><div class="category_title">'+results["title"]+'</div></div></div></div>';
-                 alert('ram');
-			   
-			    alert(banner_image_slider);
+                
+			    
 				
 			   $("#category_banner").html(banner_image_slider);
                 $("#category_banner").css("display", "block");
@@ -533,11 +532,7 @@
 		    var CategoryId = getParameterByName('parent');
 			
 			    $(".ui-loader").show();
-			    
-				
-			alert(BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=products&currentpage="+page+"&pagesize="+noofview+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code);	  
-				  
-				
+						
 		         $.ajax({
 							url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=products&currentpage="+page+"&pagesize="+noofview+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code,
 							type: 'GET',
@@ -771,10 +766,10 @@
                                tx.executeSql("select * from mofluid_cache where key='"+key+"';", [], function(tx, resdata) {
                                             
                                              if (resdata.rows.length > 0) {//If table is not empty
-                                              alert('shreeram0');
+                                             
                                                      var diff=current_time - resdata.rows.item(0).timestamp;
                                                      if (diff > cache_time) { //Time expire
-                                             alert('shreeram');
+                                           
                                              tx.executeSql("DELETE FROM mofluid_cache WHERE key=?", [key],
                                                                    function(tx, result) {
                                                                    
@@ -826,7 +821,7 @@
                                                      }
                                                      else
                                                      {
-													    alert('shreeram1');
+													   
                                                          var response = JSON.parse(resdata.rows.item(0).data);
                                                          localStorage.setItem('productslistlocal', resdata.rows.item(0).data);
                                                          printResponse(resdata.rows.item(0).data);
@@ -1704,7 +1699,7 @@ function removeItem(index) {
 		   		  <div class="myact">
 				       <a href="javascript:void(0)" id="loginbtn" class="skip-link skip-account">
 					
-					      <span class="label">Login</span>
+					      <span class="label">LOGIN</span>
 				      </a>
 			
 			          </div>
@@ -1824,7 +1819,7 @@ function removeItem(index) {
 		  
 			
 			<div class="contactus">
-			  <span class="label"><a onclick="getCMSB(25)" href="javascript:void(0);">Contact us</a></span>
+			  <span class="label"><a onclick="getCMSB(25)" href="javascript:void(0);">CONTACT US</a></span>
 			</div>
 			<div class="get20off">
 			  <span class="label"><a class="slide-link" href="javascript:void(0)">Get 20% Off</a></span>
@@ -2140,14 +2135,14 @@ function removeItem(index) {
                <!-- <div id="category_banner">
                 </div>-->
                 <div id="sorting_div" class="category-sort" style="display:none;">
-                    <select name="sel-sortType" class="choose-btn" data-mini="true" id="sel-sortType" onChange="sortType();">
-                        <!--option value="entity_id" rel="desc" id="p1" selected> </option>
-                         <option value="entity_id" rel="asc" id="p2"></option-->
+                   <!-- <select name="sel-sortType" class="choose-btn" data-mini="true" id="sel-sortType" onChange="sortType();">
+                        option value="entity_id" rel="desc" id="p1" selected> </option>
+                         <option value="entity_id" rel="asc" id="p2"></option
                         <option value="name" rel="asc" id="p3" selected></option>
                         <option value="name" rel="desc" id="p4"> </option>
                         <option value="price" rel="ASC" id="p5"></option>
                         <option value="price" rel="desc" id="p6"></option>
-                    </select>
+                    </select>-->
                 </div>
 				
 		 <div class="list-main">
@@ -2176,24 +2171,15 @@ function removeItem(index) {
             
             <div class="sort-by">
                 <label>Sort By</label>
-                <select onChange="setLocation(this.value)" title="Sort By">
-                    <option value="https://eluvy.com/sale-items.html?dir=desc&amp;metaltype=4&amp;order=created_at">   
-					  Newest Products 
-					 </option>  
+                <select  name="sel-sortType" data-mini="true" id="sel-sortType" onChange="sortType();" title="Sort By">
+                      <option value="name" rel="asc" id="p3">Newest Products</option>  
 					 
-					  <option value="https://eluvy.com/sale-items.html?dir=desc&amp;metaltype=4&amp;order=back_in_stock_rank">  
-					 Back In Stock 
-					  </option>  
-					  <option value="https://eluvy.com/sale-items.html?dir=desc&amp;metaltype=4&amp;order=bestsellers"> 
-					  Best Sellers 
-                      </option>  
-					  <option value="https://eluvy.com/sale-items.html?dir=desc&amp;metaltype=4&amp;order=price"> 
-					 Highest to Lowest
-                      </option>  
-					  <option value="https://eluvy.com/sale-items.html?dir=asc&amp;metaltype=4&amp;order=price"> 
-					 
-					Lowest to Highest 
-                   </option></select>  
+					 <option value="entity_id" rel="desc" >Back In Stock  </option>  
+					  <option value="name" rel="asc" id="p3">Best Sellers</option>
+					  <option value="price" rel="desc" id="p6">Highest to Lowest</option>  
+					  <option value="price" rel="ASC" id="p5">Lowest to Highest</option>
+				   
+				   </select>  
 				
                 	<a href="https://eluvy.com/sale-items.html?dir=desc&amp;metaltype=4&amp;order=name" class="sort-by-switcher sort-by-switcher--asc" title="Set Descending Direction">Set Descending Direction</a>
                     

@@ -3244,6 +3244,262 @@ padding: 0px 15px; font-size:14px;}
 .dtl-hed-img{}
 .product-image-gallery{width:100%; padding:5px; border:1px solid #ccc;}
 .product-image-gallery img{width:100%;}
+.logo .small{width:94px; height:auto; padding:8px 0 0 0;}
+.childpagelis{width:100%; margin: 0 auto; border-top: 5px solid #000;}
+.childpagelis ul {
+    border-bottom: 1px solid #e5e5e5;
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    line-height: 42px; margin:0; padding:0;
+    margin-bottom: 25px;}
+.childpagelis ul li {
+    display: inline-block;
+    width: 100%;
+    float: left;
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 13px;
+    border-bottom: 4px solid #fff;
+    height: 39px;
+    position: relative; margin:0; padding:0;
+}
+.childpagelis ul .active {
+    border-bottom: 4px solid #ddf942;
+    /* background: url(https://eluvy.com/skin/frontend/rwd/eluvy/images/tab-page-icon-caret-lime.png) center left no-repeat; */
+}
+.active .caret {
+    display: block;
+    margin: 0 auto;
+    margin-top: -3px;
+    color: #ddf942;
+    border-top: 10px dashed;
+    border-right: 10px solid transparent;
+    border-left: 10px solid transparent;
+	    width: 0;
+    height: 0;
+}
+.childpagelis ul li a {
+    letter-spacing: .035rem;
+    color: #575757;
+    text-transform: uppercase;
+    display: block;
+}
+.main-container {
+    width: 100%; position: relative; margin:0; padding:0;
+    float: left;
+}
+.main {
+    width: 100%;
+    float: left;
+    padding: 1%;
+}
+.main .breadcrumbs {
+    display: none;
+}
+.col1-layout .page-title h1 {
+    font-weight: bold;
+    color: #000;
+    display: none;
+}
+.childpagelis-innerpage h2 {
+    font-weight: bold;
+    color: #000;
+    margin-top: 35px;
+    font-size: 35px;
+    text-transform: inherit;
+    letter-spacing: 2px;
+    font-family: open sans-serif;
+}
+.childpagelis-innerpage {
+    text-align: center;
+}
+.contacting-box .col-sm-6 .fa {
+    font-size: 34px;
+    color: #000;
+}
+.contacting-box .col-sm-6 h3 {
+    font-weight: bold;
+    color: #000;
+    font-size: 16px;
+    margin-top: 15px;
+    margin-bottom: 0;
+}
+.contacting-box .col-sm-6 p {
+    margin-bottom: 6px;
+    font-style: normal;
+    text-align: center; margin-top:0;
+}
+.contacting-box .col-sm-6 button {
+    background: #000;
+    border: 0;
+    padding: 9px 0px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    width: 158px;
+}
+.contacting-box{display:inline-block;}
+.contacting-box .col-sm-6 {
+    padding: 25px 0;
+}
+.allhours h2 {
+    font-size: 25px;
+    font-weight: normal;
+    text-transform: uppercase;
+    padding: 30px 0;
+    border: 2px solid #ddf942;
+    margin: 45px 0 40px;
+    line-height: 38px;
+    letter-spacing: 5px;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1050;
+    display: none;
+    overflow: hidden;
+    -webkit-overflow-scrolling: touch;
+    outline: 0;
+}
+
+.std {
+    width: 100%;
+    float: left;
+}
+.contact-us .h1 {
+    text-transform: none;
+    padding: 1.6875rem 3.75rem 1rem;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    font-size: 50px;
+    line-height: 1;
+    color: #000;
+    text-transform: initial;
+    font-family: open sans-serif;
+}
+.contact-option-list {
+    margin-top: 36px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #e5e5e5;
+    margin-bottom: 10px;
+    padding:0; text-align:center; display:inline-block;
+}
+.contact-option-list li{list-style:none;}
+.contact-option-list .contact-options .fa {
+    font-size: 34px;
+    color: #000;
+    margin-bottom: 10px;
+}
+.contact-us .h4 {
+    color: #000;
+ 	margin: 0;
+    margin-bottom: 10px;
+    font-size: 17px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: 1.4;
+    text-rendering: optimizeSpeed;
+    text-transform: uppercase;
+}
+.contact-options {
+    width: 100%;
+    border-right: 0;
+    border-top: 1px solid #fff; padding: 15px 10px 15px;
+}
+.contact-us .btnXs {
+    width: auto;
+    padding: 0px 20px;
+    font-size: 12px;
+    background-color: #000;
+    color: #fff;
+    line-height: 1.875rem;
+    height: 35px;
+    font-style: normal;
+    text-transform: uppercase;
+    border-radius: 0; display:inline-block;
+}
+.contact-us .h2.subheader {
+    border: 2px solid #ddf942;
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+    margin: 40px 0;
+    font-size: 16px;
+    letter-spacing: .125em;
+    line-height: 1.5;
+    font-size: 29px;
+	    font-weight: 400;
+    font-style: normal;
+    padding: 30px 0;
+    color: #000; text-rendering: optimizeLegibility;
+    text-transform: uppercase
+}
+.std ol {
+    list-style: decimal outside;
+margin:0 0 1.5em 0; padding:0;
+}
+.cms-page-view .std li, .cms-no-route .std li {
+    color: #636363;
+    font-family: Georgia, Times, "Times New Roman", serif;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 24px;
+}
+.large-block-grid-4>li {
+    width: 100%;
+    padding: 15px 15px 0 15px;
+    border-right: 0;
+    border-top: 1px solid #e5e5e5; text-align:center; list-style:none;
+}
+.std .column h3{margin: 27px auto 41px;
+    text-align: center;
+    font-size: 50px;
+    line-height: 1;
+    color: #000;
+    text-transform: initial;
+    font-family: open sans-serif; font-weight:normal;}
+
+.block-content a.amshopby-attr {
+    padding-left: 15px;
+    background: transparent url(https://eluvy.com/skin/frontend/base/default/images/amshopby-cb1.gif) no-repeat left center;
+}
+.block-content a.amshopby-attr-selected {
+    font-weight: bold;
+    padding-left: 15px;
+    background: transparent url(https://eluvy.com/skin/frontend/base/default/images/amshopby-cb1.gif) no-repeat left center;
+}
+.block-content ol, ul{margin:0; padding:0; list-style:none;}
+.block-content li{padding:5px 0;}
+.amshopby-cat a {
+    color: #636363;
+    background-color: #f4f4f4;
+    padding: 5px 10px; width:100%; float:left; margin: 0 0 5px 0;
+}
+.married-steps {
+    text-align: center;
+    background-color: #e5e5e5;
+    padding: 20px 1.25rem !important;
+    margin-bottom: 9px !important;
+    min-height: 200px;
+    width: 100% !important;
+}
+.married-first-name{width:100%; float:left; margin:0; padding:0;}
+.married-first-name .ui-shadow-inset{width:100% !important; float:left; margin:0; padding:0;}
+.married-first-name .ui-shadow-inset .field{width:100%; float:left; border:1px solid #ccc;}
+.married-first-name label{width:100% !important; float:left;}
+
+
 
 
 @media all and (max-width: 414px) {
