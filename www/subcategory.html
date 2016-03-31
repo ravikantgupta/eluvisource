@@ -73,11 +73,14 @@
                 
                 if(show_pro == 1){
                     categoryfound = 0;
+					 alert('ram01');
                   //  localStorage.setItem(config.data[0].storage_key+'_cat_flag',1);
                    // printProducts(page);
                 }
                 else{
+				   alert('ram02');
                     if(localStorage.getItem('foo') == 1){
+					    alert('ram03');
                         categoryfound = 0;
                         
                         // $("#Showpro").hide();
@@ -96,14 +99,14 @@
                           localStorage.setItem(config.data[0].storage_key+'_cat_flag' , 1)
                       }
                       
-                     // alert(localStorage.getItem(config.data[0].storage_key+'_pro_flag'));
-                     // alert(localStorage.getItem(config.data[0].storage_key+'_cat_flag'));
-                     // alert(localStorage.getItem(config.data[0].storage_key+'_pro_detail_flag'));
+                     alert(localStorage.getItem(config.data[0].storage_key+'_pro_flag'));
+                     alert(localStorage.getItem(config.data[0].storage_key+'_cat_flag'));
+                      alert(localStorage.getItem(config.data[0].storage_key+'_pro_detail_flag'));
                     
                      
                      if(localStorage.getItem(config.data[0].storage_key+'_pro_flag')==1 && localStorage.getItem(config.data[0].storage_key+'_cat_flag')==1 && localStorage.getItem(config.data[0].storage_key+'_pro_detail_flag')==0)
                       {
-                          //alert("In");
+                          alert("In");
                           JSON.parse(localStorage['catIds']).pop();
                           
                           //alert("in cat");
@@ -151,6 +154,7 @@
                        //printResponse(localStorage.getItem('productslistlocal'));
                     }
                     else{
+					alert('ram04');
                         
                         fetchSubCategoryList(parentstr);
                     }
