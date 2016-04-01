@@ -605,15 +605,9 @@
          							
 											
 			  var childcat=response.cat;
-			  var text = '<dt class="odd">Category</dt><dd class="odd"><ol>';
-			  var x;
-			for (x in childcat) {
-				text +='<li rel="Antique Gold"><a class="amshopby-attr" href="'+x+'">'+childcat[x]+'</a></li>' ;
-			   }
-			    text +='</ol></dd>'; 
+			 		
 				
-				
-			var opt=response.opt;
+		    	var opt=response.opt;
            
 			   
 			   jQuery('#narrow-by-list').html(opt);
@@ -1067,11 +1061,12 @@
         
 	
 		function setcat(fullPath){
-		
-		
-		  window.location = 'file:///android_asset/www/subcategory.html?parent='+fullPath;
-		  
-		}
+	
+		  var url='file:///android_asset/www/subcategory.html?parent='+fullPath;
+		     alert(url);
+		  window.location =url ;
+	  
+	        }
         </script>
     
 	
