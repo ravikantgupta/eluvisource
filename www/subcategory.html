@@ -99,9 +99,9 @@
                           localStorage.setItem(config.data[0].storage_key+'_cat_flag' , 1)
                       }
                       
-                     alert(localStorage.getItem(config.data[0].storage_key+'_pro_flag'));
-                     alert(localStorage.getItem(config.data[0].storage_key+'_cat_flag'));
-                      alert(localStorage.getItem(config.data[0].storage_key+'_pro_detail_flag'));
+                    // alert(localStorage.getItem(config.data[0].storage_key+'_pro_flag'));
+                    /// alert(localStorage.getItem(config.data[0].storage_key+'_cat_flag'));
+                    //  alert(localStorage.getItem(config.data[0].storage_key+'_pro_detail_flag'));
                     
                      
                      if(localStorage.getItem(config.data[0].storage_key+'_pro_flag')==1 && localStorage.getItem(config.data[0].storage_key+'_cat_flag')==1 && localStorage.getItem(config.data[0].storage_key+'_pro_detail_flag')==0)
@@ -117,9 +117,9 @@
                           cat_list = "<ul data-role='listview' data-inset='true'>";
                           cat_list += categorydata;
                           cat_list += "</ul>";
-						  alert('ram3');
+						  
 			   
-			    alert(banner_image_slider);
+			   
                           $("#category_banner").html(banner_image_slider);
                           $("#category_banner").css("display", "block");
                           $("#category").html(cat_list);
@@ -228,14 +228,14 @@
                 
                         results = response;
                         if (results['categories'] == null || results['categories'].length <= 0) {
-						alert('ram005');
+						
                         categoryfound = 0;
                         localStorage.setItem(config.data[0].storage_key+'_pro_flag', 1);
                         localStorage.setItem(config.data[0].storage_key+"_pro_detail_flag",0);
                         printProducts(page);
                         }
                         else {
-						alert('ram006');
+						
                         localStorage.setItem(config.data[0].storage_key+'_cat_flag',1);
 
                             db.transaction(function(tx) {
@@ -388,7 +388,7 @@
          }//End if table is not empty
          else
          {
-         alert('ram002');
+         
          $.ajax({
                 url: ""+BASE_URL+"?callback=?"+"&store="+STORE+"&categoryid="+categoryId+"&service=subcategory",
                 type: 'GET',
@@ -591,13 +591,30 @@
             }
             var productList = '';
             
-			/**categories banner**/
+			/**Categories banner**/
 			
 			jQuery('#category_banner').html('<img src="'+response.catimages+'" alt="Sale Items" title="Sale Items">');
 			
 			
 					
 			/**End categories banner**/
+			
+			
+			/**Left navigation***/
+			
+         							
+											
+			  var childcat=response.cat;
+			  var text = '<dt class="odd">Category</dt><dd class="odd"><ol>';
+			  var x;
+			for (x in childcat) {
+				text +='<li rel="Antique Gold"><a class="amshopby-attr" href="'+x+'">'+childcat[x]+'</a></li>' ;
+			   }
+			    text +='</ol></dd>'; 
+				
+				alert(text);
+				
+			/**End Left navigation***/
 			
             if(response.total <= 0){
                 productList = "<div style='padding-top:20px;'><h2>"+ locale.message.text["no_product_found_text"] +"</h2></div>";
@@ -2190,35 +2207,47 @@ function removeItem(index) {
                                     <div class="shopby"> Shop By<i class="fa fa-caret-down"></i></div>
                                 </a>
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
-                                    <div class="block-content toggle-content">
+                                  <div class="block-content toggle-content">
+									
                                     <p class="block-subtitle block-subtitle--filter">Filter</p>
-            <dl id="narrow-by-list">
-                                                                    <dt class="odd">					 Metal Type					</dt>
-                    <dd class="odd"><ol>
-<li rel="Antique Gold"><a class="amshopby-attr" href="https://eluvy.com/sale-items.html?metaltype=9">Antique Gold</a></li><li rel="Antique Silver"><a class="amshopby-attr" href="https://eluvy.com/sale-items.html?metaltype=4">Antique Silver</a></li><li rel="Gold"><a class="amshopby-attr" href="https://eluvy.com/sale-items.html?metaltype=6">Gold</a></li></ol></dd>
-                                                                    <dt class="even">					 Sale Items					</dt>
-                    <dd class="even">						   <ol>
-						   <li class="amshopby-cat level0"><a href="https://eluvy.com/sale-items/personalized-style.html">Personalized Style</a></li><li class="amshopby-cat level0"><a href="https://eluvy.com/sale-items/the-x-ring.html">The X Ring</a></li><li class="amshopby-cat level0"><a href="https://eluvy.com/sale-items/beaded-tassels.html">Beaded Tassels</a></li><li class="amshopby-cat level0"><a href="https://eluvy.com/sale-items/shop-the-whole-must-list.html">Shop The Whole Must List</a></li><li class="amshopby-cat level0"><a href="https://eluvy.com/sale-items/statement-earrings.html">Statement Earrings</a></li>							</ol>
-							</dd>
+                                       <dl id="narrow-by-list">
+                                           <dt class="odd"> Metal Type</dt>
+                                            <dd class="odd">
+										      <ol>
+                                                <li rel="Antique Gold"><a class="amshopby-attr" href="">Antique Gold</a></li>
+												<li rel="Antique Silver"><a class="amshopby-attr" href="">Antique Silver</a></li>
+												<li rel="Gold"><a class="amshopby-attr" href="">Gold</a></li>
+											  </ol>
+											</dd>
+                                      <dt class="even">Sale Items</dt>
+                                         <dd class="even">
+										   <ol>
+						                   <li class="amshopby-cat level0"><a href="">Personalized Style</a></li>
+										   <li class="amshopby-cat level0"><a href="">The X Ring</a></li>
+										   <li class="amshopby-cat level0"><a href="">Beaded Tassels</a></li>
+										   <li class="amshopby-cat level0"><a href="">Shop The Whole Must List</a></li>
+										   <li class="amshopby-cat level0"><a href="">Statement Earrings</a></li>	
+										  </ol>
+							             </dd>
                                                                                                     <dt class="odd">					 Color					</dt>
-                    <dd class="odd"><ol>
-<li rel="Black"><a class="amshopby-attr" href="https://eluvy.com/sale-items.html?color=13">Black</a></li><li rel="Blue"><a class="amshopby-attr" href="https://eluvy.com/sale-items.html?color=15">Blue</a></li><li rel="Clear"><a class="amshopby-attr" href="https://eluvy.com/sale-items.html?color=20">Clear</a></li><li rel="Turquoise"><a class="amshopby-attr" href="https://eluvy.com/sale-items.html?color=26">Turquoise</a></li><li rel="Yellow"><a class="amshopby-attr" href="https://eluvy.com/sale-items.html?color=22">Yellow</a></li></ol></dd>
-                                                                    <dt class="last even">					 Price					</dt>
-                    <dd class="last even"><ol>
-            <li>
-                        <a class="amshopby-price" href="https://eluvy.com/sale-items.html?price=-"><span class="price">$0.00</span> and above</a>
-                                    (15)
-                    </li>
-    
-    <input type="hidden" size="2" value="From" id="amshopby-price-from"> 
-    <input type="hidden" size="2" value="To" id="amshopby-price-to">
-<li style="display:none">
-<input type="hidden" id="amshopby-price-url" value="https://eluvy.com/sale-items.html?price=amshopby-price-from-amshopby-price-to">
-</li>
-</ol></dd>
-                                            </dl>
+                                       <dd class="odd">
+									      <ol>
+                                            <li rel="Black"><a class="amshopby-attr" href="">Black</a></li>
+											<li rel="Blue"><a class="amshopby-attr" href="">Blue</a></li>
+											<li rel="Clear"><a class="amshopby-attr" href="">Clear</a></li>
+											<li rel="Turquoise"><a class="amshopby-attr" href="">Turquoise</a></li>
+											<li rel="Yellow"><a class="amshopby-attr" href="">Yellow</a></li>
+											</ol>
+									   </dd>
+                             <dt class="last even">Price</dt>
+                             <dd class="last even">
+							   <ol>
+                                <li><a class="amshopby-price" href=""><span class="price">$0.00</span> and above</a>(15)</li>
+                                </ol>
+							  </dd>
+                           </dl>
            
-            </div>
+                       </div>
                                 </ul>
                             </div>
                         

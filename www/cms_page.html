@@ -11,7 +11,18 @@
         <link href="css/bootstrap.min.css" rel="stylesheet">
 		<script type="text/javascript" src="js/header.js"></script>
         <script type="text/javascript" src="js/mofluid_slider.js"></script>
-        	
+    
+
+
+     <script>
+	 
+	    function onDeviceReady() {
+            		
+			setfourBox();
+			getcartitem();
+        }
+	 
+    </script>	 
 	<script>
 	
 	
@@ -621,7 +632,7 @@ function removeItem(index) {
 	
 
     </head>
-    <body class="ltr page product listing ">
+    <body class="ltr page product listing " onLoad="onDeviceReady()">
         <body onLoad="onDeviceReady()">
             <div data-role="page" id="mainpage" >
                 
