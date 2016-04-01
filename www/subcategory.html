@@ -2187,9 +2187,7 @@ function removeItem(index) {
                     	
                         <div role="presentation" class="dropdown">
                                 <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                                    <div class="shopby"> Shop By
-                                    <i class="fa fa-caret-down"></i>
-                                    </div>
+                                    <div class="shopby"> Shop By<i class="fa fa-caret-down"></i></div>
                                 </a>
                                 <ul id="menu1" class="dropdown-menu list-unstyled msg_list animated fadeInDown" role="menu">
                                     <div class="block-content toggle-content">
@@ -2365,6 +2363,24 @@ function removeItem(index) {
 							
 							
                           
+						</script>
+						
+						<script>
+						
+						 jQuery('.shopby').click(function(){
+						 
+						
+						 if (jQuery('#menu1').css('display') == 'none' ){
+						 
+						         jQuery('#menu1').show();
+								
+							}else
+							{
+						      jQuery('#menu1').hide();
+						     }
+						 
+						 })
+						
 						</script>
   
                 </div>
