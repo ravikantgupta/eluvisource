@@ -612,6 +612,22 @@
 			   }
 			    text +='</ol></dd>'; 
 				
+				
+			var opt=response.opt;
+             var subopt;	
+             var y;				 
+			
+			   for (x in opt) {
+				text +='<dt class="odd">'+x+'</dt><dd class="odd"><ol>' ;
+			        subopt= response.opt+'.'+x;
+			       for (y in childopt) {
+				     text +='<li rel="Antique Gold"><a class="amshopby-attr" href="'+y+'">'+childopt[y]+'</a></li>' ;
+			      }
+				  
+				  text +='</ol></dd>' ;
+			   
+			   }
+			   
 				alert(text);
 				
 			/**End Left navigation***/
