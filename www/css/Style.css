@@ -3247,7 +3247,6 @@ padding: 0px 15px; font-size:14px;}
 .logo .small{width:94px; height:auto; padding:8px 0 0 0;}
 .childpagelis{width:100%; margin: 0 auto; border-top: 5px solid #000;}
 .childpagelis ul {
-    border-bottom: 1px solid #e5e5e5;
     display: inline-block;
     width: 100%;
     height: auto;
@@ -3270,6 +3269,7 @@ padding: 0px 15px; font-size:14px;}
     border-bottom: 4px solid #ddf942;
     /* background: url(https://eluvy.com/skin/frontend/rwd/eluvy/images/tab-page-icon-caret-lime.png) center left no-repeat; */
 }
+.childpagelis ul .active a{border-bottom:0;}
 .active .caret {
     display: block;
     margin: 0 auto;
@@ -3285,7 +3285,7 @@ padding: 0px 15px; font-size:14px;}
     letter-spacing: .035rem;
     color: #575757;
     text-transform: uppercase;
-    display: block;
+    display: block; border-bottom:1px solid #f2f2f2;
 }
 .main-container {
     width: 100%; position: relative; margin:0; padding:0;
@@ -3477,7 +3477,7 @@ margin:0 0 1.5em 0; padding:0;
 .block-content a.amshopby-attr-selected {
     font-weight: bold;
     padding-left: 15px;
-    background: transparent url(https://eluvy.com/skin/frontend/base/default/images/amshopby-cb1.gif) no-repeat left center;
+    background: transparent url(https://eluvy.com/skin/frontend/base/default/images/amshopby-cb2.gif) no-repeat left center;
 }
 .block-content ol, ul{margin:0; padding:0; list-style:none;}
 .block-content li{padding:5px 0;}
@@ -3494,11 +3494,158 @@ margin:0 0 1.5em 0; padding:0;
     min-height: 200px;
     width: 100% !important;
 }
-.married-first-name{width:100%; float:left; margin:0; padding:0;}
-.married-first-name .ui-shadow-inset{width:100% !important; float:left; margin:0; padding:0;}
-.married-first-name .ui-shadow-inset .field{width:100%; float:left; border:1px solid #ccc;}
-.married-first-name label{width:100% !important; float:left;}
+.getting-married .ui-shadow-inset{width:100% !important; float:left; margin:0; padding:0;}
+.getting-married .ui-shadow-inset .field{width:100%; float:left; border:1px solid #ccc;}
+.getting-married label{width:100% !important; float:left; margin:10px 0 5px 0;}
+.married-last-name label{width:100% !important; float:left; margin:10px 0 5px 0;}
+.married-last-name .ui-shadow-inset{width:100% !important; float:left; margin:0; padding:0;}
+.married-last-name .ui-shadow-inset .field{width:100%; float:left; border:1px solid #ccc;}
+.married-last-name textarea field{width:100%; float:left; border:1px solid #ccc; border-radius:0 !important;}
+.married-email{width:100%; float:left; margin:0; padding:0;}
+.getting-married textarea{border-radius:0 !important; height:100px !important; padding:.4em !important;}
+.married-email label{margin:10px 0 5px 0;}
+.married-email .ui-shadow-inset{width:100% !important; float:left; margin:0; padding:0;}
+.married-email .ui-shadow-inset .field{width:100%; float:left; border:1px solid #ccc;}
+.blc-btn{padding: 6px 20px !important;
+    background: #000 !important;
+    border-radius: 0 !important;
+    color: #fff !important;
+    text-transform: uppercase;
+    font-size: 12px  !important; width:auto !important; float:left;}
 
+
+#advice-validate-email-married-consulation-email, #advice-required-entry-married-consulation-last-name, #advice-required-entry-married-consulation-help{display:none;}
+.faq{text-align:center;}
+.std .columns {
+    text-align: center;
+}
+.column.small-centered, .columns.small-centered {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    margin-bottom: 55px;
+}
+.small-8 h1 {
+    margin-bottom: 0 !important;
+    font-family: open sans-serif;
+    text-transform: initial;
+    font-size: 32px;
+}
+.help_subheader__h3 {
+    display: block;
+    padding: 1.875rem 0 0 !important;
+    text-transform: uppercase;
+    color: #000 !important;
+    font-size: 16px !important;
+    border-bottom: 1px solid #e5e5e5;
+    margin-left: .625rem !important;
+    margin-right: .625rem !important; margin-top:0; margin-bottom:10px; line-height:26px;
+}
+.std p {
+    margin: 0 0 1.5em;
+}
+.medium-6 .h3 {
+    font-weight: bold;
+    color: #333; margin:0; padding:0;
+}
+.international-orders{}
+.column.small-centered, .columns.small-centered {
+    margin-left: auto;
+    margin-right: auto;
+    float: none;
+    margin-bottom: 55px;
+}
+.small-8 h1 {
+    margin: 0 ;
+    font-family: open sans-serif;
+    text-transform: initial;
+    font-size: 32px;
+}
+.small-8 h4 {    text-transform: initial;
+    font-weight: normal;
+	    margin: 0;
+    margin-bottom: 10px;
+    color: #636363;
+    font-size: 14px;
+    font-style: normal;
+    line-height: 1.4;
+    text-rendering: optimizeSpeed;
+}
+.shipping-and-handling .small-12 h3 {
+    font-weight: bold;
+    color: #000;
+    font-size: 16px;
+    margin: 0;
+    padding-left: .625rem;
+    padding-right: .625rem;
+}
+.medium-6 h4 {
+    color: #000;
+    font-size: 14px;
+    margin-bottom: 0; margin:0;
+}
+#us_expedited {
+    margin-bottom: 20px;
+    font-family: 'avalon';
+    font-size: 15px;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000; line-height:1.5;
+}
+#us_expedited td, #us_expedited th {
+    text-transform: uppercase;
+    text-align: center;
+    border: 0;
+    padding: .625rem .25rem;
+}
+.medium-6 h4 {
+    color: #000;
+    font-size: 14px;
+    margin: 0;
+	font-weight: bold;
+    font-style: normal;
+    line-height: 1.4;
+    text-rendering: optimizeSpeed;
+    text-transform: uppercase;
+}
+#us_expedited {
+    margin-bottom: 20px;
+    font-family: 'avalon';
+    font-size: 15px;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000;
+}
+#us_expedited th.order {
+    color: #fff;
+    background-color: #000;
+}
+#us_expedited th.shipping {
+    background-color: #ddf942;
+    font-weight: bold;
+}
+#us_expedited td.overnight {
+    background-color: #ff2dff;
+}
+#us_expedited td.day2 {
+    background-color: #ff93ff;
+}
+#us_expedited td.day3 {
+    background-color: #ffe0ff;
+}
+#us_expedited td.order_by_day {
+    background: #b7b7b7;
+}
+#us_expedited td, #us_expedited th {
+    text-transform: uppercase;
+    text-align: center;
+    padding: .625rem .25rem;
+}
+#us_expedited td {
+    background-color: #eaeaea;
+}
 
 
 
