@@ -620,8 +620,8 @@
 			   for (x in opt) {
 				text +='<dt class="odd">'+x+'</dt><dd class="odd"><ol>' ;
 			        subopt= response.opt+'.'+x;
-			       for (y in childopt) {
-				     text +='<li rel="Antique Gold"><a class="amshopby-attr" href="'+y+'">'+childopt[y]+'</a></li>' ;
+			       for (y in subopt) {
+				     text +='<li rel="Antique Gold"><a class="amshopby-attr" href="'+y+'">'+subopt[y]+'</a></li>' ;
 			      }
 				  
 				  text +='</ol></dd>' ;
