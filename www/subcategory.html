@@ -614,22 +614,9 @@
 				
 				
 			var opt=response.opt;
-             var subopt;	
-             var y;				 
-			
-			   for (x in opt) {
-				text +='<dt class="odd">'+x+'</dt><dd class="odd"><ol>' ;
-			        subopt= response.opt+'.'+x;
-			       for (y in subopt) {
-				     text +='<li rel="Antique Gold"><a class="amshopby-attr" href="'+y+'">'+subopt[y]+'</a></li>' ;
-			      }
-				  
-				  text +='</ol></dd>' ;
+           
 			   
-			   }
-			   
-			   
-			   jQuery('#narrow-by-list').html(text);
+			   jQuery('#narrow-by-list').html(opt);
 			   
 				
 			/**End Left navigation***/
