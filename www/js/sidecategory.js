@@ -26,6 +26,7 @@
          cms_api_data["store"] = config.data[0].storeid;
          cms_api_data["pageId"] = id;
          $.mobile.loading('show');
+		 alert(config.data[0].baseurl);
          $.ajax({
                 url: config.data[0].baseurl,
                 type: "GET",
