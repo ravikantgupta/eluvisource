@@ -54,7 +54,7 @@
                 params["result"] = result;
                
                 
-                      alert(JSON.stringify(result));
+                   //   alert(JSON.stringify(result));
                 Page.redirectWithParams('cms_page.html', 'slide', 'left', params);
                 }
                 }

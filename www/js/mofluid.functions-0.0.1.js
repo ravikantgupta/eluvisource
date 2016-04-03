@@ -41,6 +41,9 @@ var Page = new function() {
     var page_data;
     try {
       page_data = JSON.parse(Base64.decode(localStorage.getItem(config.data[0].storage_key+"_params")));
+	  
+	  alert('ram');
+	  alert(page_data);
     }
     catch(err) {
       console.error(err.message);
