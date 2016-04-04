@@ -592,6 +592,8 @@
             if(!total_available_listed_product) {
                 total_available_listed_product =  response.total;
             }
+			
+			alert('ram:'+results);
             var productList = '';
             
 			/**Categories banner**/
@@ -627,6 +629,8 @@
                 return;
             }
             else{
+			
+			
                 $(".ui-loader").hide();
                 loading = true;
                 if (results.length <= 0 || results == null) {
@@ -1720,7 +1724,9 @@ function removeItem(index) {
 							if(response.total > 0)
 							{
 							localStorage.setItem('productslistlocal', JSON.stringify(response));
-							printResponse(JSON.stringify(response));
+							
+							alert(JSON.stringify(response));
+							  printResponse(JSON.stringify(response));
 							}
 						   else
 						   {
