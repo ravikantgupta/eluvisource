@@ -638,7 +638,8 @@
                 }
                 else {
                     var i = 0;
-                    
+                    alert('tot='+total_listed_product);
+					alert('restot='+response.total );
                     while (i < results.length && total_listed_product<response.total ) {
                         total_listed_product++;
                         //Cache the Results on Local Storage
@@ -1693,7 +1694,8 @@ function removeItem(index) {
 				       
 					  var noofview= jQuery('#totalpage').val();
 				
-				    
+				      total_listed_product = 0;
+					  
 					 var CategoryId = getParameterByName('parent');
 			
 			    $(".ui-loader").show();
