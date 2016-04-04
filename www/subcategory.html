@@ -1688,14 +1688,14 @@ function removeItem(index) {
 				
 				       
 					  var noofview= jQuery('#totalpage').val();
-				alert(noofview);
+				
 				    
 					 var CategoryId = getParameterByName('parent');
 			
 			    $(".ui-loader").show();
 						alert(+ BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=products&currentpage="+page+"&pagesize="+noofview+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code+"&filteropt="+fltr);
 		         $.ajax({
-							url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=products&currentpage="+page+"&pagesize="+noofview+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code+"&filteropt="+fltr,
+							url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=filterproducts&currentpage="+page+"&pagesize="+noofview+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code+"&filteropt="+fltr,
 							type: 'GET',
 							contentType: 'application/json',
 							dataType: 'json',
