@@ -593,7 +593,7 @@
                 total_available_listed_product =  response.total;
             }
 			
-			alert('ram:'+results);
+			
             var productList = '';
             
 			/**Categories banner**/
@@ -638,8 +638,7 @@
                 }
                 else {
                     var i = 0;
-                    alert('tot='+total_listed_product);
-					alert('restot='+response.total );
+                   
                     while (i < results.length && total_listed_product<response.total ) {
                         total_listed_product++;
                         //Cache the Results on Local Storage
@@ -1725,9 +1724,8 @@ function removeItem(index) {
 							 
 							if(response.total > 0)
 							{
-							localStorage.setItem('productslistlocal', JSON.stringify(response));
-							
-							alert(JSON.stringify(response));
+							  localStorage.setItem('productslistlocal', JSON.stringify(response));
+									
 							  printResponse(JSON.stringify(response));
 							}
 						   else
@@ -1737,6 +1735,8 @@ function removeItem(index) {
 						   loading = false;
 						   $(".ui-loader").hide();
 						   }
+						   
+						   jQuery('#menu1').hide();
 						}
 							});//Ajax call end
                                              
