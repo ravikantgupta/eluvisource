@@ -735,7 +735,7 @@
                 }
             }
             $("#loader_div").hide();
-            alert(productList);
+          
             localStorage.setItem(config.data[0].storage_key+'_productlist',productList);
             
                         if(page<=1 && productList !="") {
@@ -1697,9 +1697,9 @@ function removeItem(index) {
 					  
 					 var CategoryId = getParameterByName('parent');
 			
-			    $(".ui-loader").show();
-						alert(+ BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=products&currentpage="+page+"&pagesize="+noofview+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code+"&filteropt="+fltr);
-		         $.ajax({
+			             $(".ui-loader").show();
+				
+					       $.ajax({
 							url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=filterproducts&currentpage="+page+"&pagesize="+noofview+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code+"&filteropt="+fltr,
 							type: 'GET',
 							contentType: 'application/json',
