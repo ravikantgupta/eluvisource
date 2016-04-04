@@ -529,6 +529,9 @@
         
         function productview(noofview)
 		{
+		
+		
+		   jQuery('#totalpage').val(noofview);
 		    var CategoryId = getParameterByName('parent');
 			
 			    $(".ui-loader").show();
@@ -1681,9 +1684,55 @@ function removeItem(index) {
 			 function fltratribute(fltr)
 			 {
 			 
-				alert('shreeram');
-				alert('shreeram');
-				alert(fltr);
+				
+				
+				       
+					  var noofview= jQuery('#totalpage').val();
+				alert(noofview);
+				    
+					 var CategoryId = getParameterByName('parent');
+			
+			    $(".ui-loader").show();
+						alert(+ BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=products&currentpage="+page+"&pagesize="+noofview+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code+"&filteropt="+fltr);
+		         $.ajax({
+							url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&categoryid=" + CategoryId + "&service=products&currentpage="+page+"&pagesize="+noofview+"&sorttype="+sorttype+"&sortorder="+sortorder+"&currency="+app_curr_code+"&filteropt="+fltr,
+							type: 'GET',
+							contentType: 'application/json',
+							dataType: 'json',
+							async: false,
+							error: function(jqXHR, textStatus, errorThrown) {
+							console.log("Cant load homepage webservice data");
+							console.log(textStatus);
+							console.log(errorThrown);
+							alert("Internal server Error! \n please try after some time.")
+							},
+							success: function(response) {
+							
+							//Data inserted in table
+							db.transaction(function(tx) {
+										   tx.executeSql("INSERT INTO mofluid_cache (key,data,timestamp) VALUES (?,?,?)", ["" + key + "", "" + JSON.stringify(response) + "", "" + current_time + ""], function(tx, res) {}, function(e) {
+														 console.log("ERROR in insert product: " + e);
+														 });
+										   
+										   });
+							//End Data inserted in table
+							 
+							if(response.total > 0)
+							{
+							localStorage.setItem('productslistlocal', JSON.stringify(response));
+							printResponse(JSON.stringify(response));
+							}
+						   else
+						   {
+						   $("#category").html("<div style='padding-top:80px; padding-left:20px;'>"+locale.message.text["no_search_result_found"]+"</div>");
+						   $("#sorting_div").hide();
+						   loading = false;
+						   $(".ui-loader").hide();
+						   }
+						}
+							});//Ajax call end
+                                             
+				
 			 }
 						
 		</script>
@@ -2187,7 +2236,7 @@ function removeItem(index) {
 			    <div class="toolbar">
 			<div class="count-container">
 								  
-					
+					<input type="hidden" value="20" name="totalpage" id="totalpage">
 					<div class="limiter">
 						<label>View</label>
 						<ul>
