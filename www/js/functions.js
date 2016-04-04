@@ -41,6 +41,9 @@ function dirname(path) {
                           
 //------------------------------------------Product detail page------------------------------------------------
 function getProDetail(proid,stk_stat,type) {
+	
+	alert(proid);
+	alert(type);
 
 $(".ui-loader").show();
 //var product_val=queryValue();
@@ -101,6 +104,8 @@ else{
 //var Simple_product_detail_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&service=productdetail&productid="+PRODUCT_ID+"&currency="+app_curr_code;
 var Simple_product_detail_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&service=productdetaildescription&productid="+PRODUCT_ID+"&currency="+app_curr_code;
    console.log(Simple_product_detail_webservice);
+   
+   alert(Simple_product_detail_webservice);
 $.ajax({
      url:Simple_product_detail_webservice,
      type: 'GET',
@@ -123,7 +128,7 @@ $.ajax({
        params["stock_status"] = stock_status;
        params["ptype"] = results["type"];
        
-       //alert(JSON.stringify(results));
+       alert(JSON.stringify(results));
        if(results["type"] == "configurable"){
        getProDetail(PRODUCT_ID,stock_status,results["type"]);
        }
