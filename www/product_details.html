@@ -6,9 +6,7 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
         <meta name="msapplication-tap-highlight" content="no" />
         <title>Eluvy</title>
-          <style>
-
-        </style>
+          <link rel="stylesheet" type="text/css" href="https://eluvy.com//skin/frontend/rwd/eluvy/css/font-awesome.min.css" media="all" />
         <script type="text/javascript" src="js/header.js"></script>
 		  <script type="text/javascript" src="js/mofluid_slider.js"></script>
 		 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -50,7 +48,7 @@
            
 		   alert('ram');
            setfourBox();
-			//getcartitem();
+			getcartitem();
             alert('ram0');
            if(parseInt(localStorage[config.data[0].storage_key+'tax_flag'])==1)
             {
@@ -77,7 +75,7 @@
 					 
 					
 				
-				  alert('ram:'+locale.message.text["products"] + locale.message.text["name"]);
+				  
 	        $("#product_description").html(locale.message.text["product_description"]);
             $("#product_name").html(locale.message.text["products"] + locale.message.text["name"]);
             $("#item_code").html(locale.message.text["item"]);
@@ -453,7 +451,7 @@
    
 	 var storage_key='Eluvyeccc3';
 	var storedNames = JSON.parse(localStorage['Eluvyeccc3'+'_pNames']);
-	
+	 alert('ram01');
 	
 			  try{
                     var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div><div class="empty_text">"' + locale.message.text["cart_empty_text"] + '"</div></div>';
@@ -462,6 +460,7 @@
                    // $("#cartbtn2").hide();
                     //$("#couponcode").hide();
                     try{
+					 alert('ram010');
                         cartItems = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']).length;
                     }
                     catch(Ex){
