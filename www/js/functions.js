@@ -3869,10 +3869,10 @@ var PRODUCT_ID=idd;
 var BASE_URL  = config.data[0].baseurl;
 var STORE = config.data[0].storeid;
 
- alert('ram:'+idd);
+ 
 var Simple_product_image_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&service=productdetailimage&productid="+PRODUCT_ID+"&currency="+app_curr_code;
 
- alert(Simple_product_image_webservice);
+ 
 	$.ajax({
        url:Simple_product_image_webservice,
        type: 'GET',
@@ -3900,7 +3900,7 @@ var Simple_product_image_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&s
        $("#product_image_slider").append('<div class="item"><img src="images/product_default_image.png" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
        }
        else {
-		   alert('slide');
+		   
        for(i=0; i<image_len; i++) {
        
        $("#product_image_slider").append('<div class="item"><img src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
@@ -3928,7 +3928,7 @@ function configurable_product_images_function(idd){
 var PRODUCT_ID=idd;
 var BASE_URL  = config.data[0].baseurl;
 var STORE = config.data[0].storeid;
-alert('conf:'+idd);
+
 var Configurable_product_image_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&service=get_configurable_product_details_image&productid="+PRODUCT_ID+"&currency="+app_curr_code;
 
 console.log(Configurable_product_image_webservice);

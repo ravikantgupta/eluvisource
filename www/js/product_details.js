@@ -240,12 +240,12 @@ function addTocartDetail(){
                 
                 
                 
+                var qty=$("#qty").val();
                 
                 
                 
                 
-                
-                addToCart(global_results_configurable.id, pSKU, pPrice, pShipp, imageURL,pName,selectSize,selectColor, selected_option_array, customoptions,1,new_pro_data);
+                addToCart(global_results_configurable.id, pSKU, pPrice, pShipp, imageURL,pName,selectSize,selectColor, selected_option_array, customoptions,qty,new_pro_data);
                     
                //Sumit code commented
              //   addToCart(new_product_id,stock_status,product_updated_sku,pPrice,pShipp,imageURL,pName,selectSize,selectColor, selected_option_array, customoptions,product_choice,product_custom_price);
