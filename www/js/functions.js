@@ -4081,10 +4081,10 @@ $("#pImage5").attr("src", imageURL5);
                 
                 }
                 function back_click_new() {
-                
-                localStorage.setItem('foo', 1);
-               
-                Page.redirect(history.back(), 'slide', 'right');
+                   alert('shreeram');
+                  localStorage.setItem('foo', 1);
+                    alert(history.back());
+                 Page.redirect(history.back(), 'slide', 'right');
                 }
 
 
