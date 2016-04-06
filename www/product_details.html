@@ -105,7 +105,7 @@
           if(localStorage.getItem('foo') == 1){
            
              try{
-			 
+			         alert('new-ram');
                   var params = JSON.parse(localStorage.getItem('productDetailslocal'));
                   pType = params.ptype;
                   pId = params.pid;
@@ -126,7 +126,7 @@
                   getgroupproductdetail(pId);
               }
               else{
-                 
+                 alert(localStorage.getItem('productDetailslocal'));
                   product_det_from_page.simple_product_info(localStorage.getItem('productDetailslocal'));
               }
           }
