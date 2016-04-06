@@ -3872,8 +3872,8 @@ var STORE = config.data[0].storeid;
  alert('ram:'+idd);
 var Simple_product_image_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&service=productdetailimage&productid="+PRODUCT_ID+"&currency="+app_curr_code;
 
-console.log(Simple_product_image_webservice);
-$.ajax({
+ alert(Simple_product_image_webservice);
+	$.ajax({
        url:Simple_product_image_webservice,
        type: 'GET',
        contentType: 'application/json',
@@ -3900,6 +3900,7 @@ $.ajax({
        $("#product_image_slider").append('<div class="item"><img src="images/product_default_image.png" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
        }
        else {
+		   alert('slide');
        for(i=0; i<image_len; i++) {
        
        $("#product_image_slider").append('<div class="item"><img src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
