@@ -46,10 +46,10 @@
          */
         function onLoad() {
            
-		   alert('ram');
-           setfourBox();
+		 
+            setfourBox();
 			getcartitem();
-            alert('ram0');
+           
            if(parseInt(localStorage[config.data[0].storage_key+'tax_flag'])==1)
             {
                 $("#tax_type").show();
@@ -146,7 +146,7 @@
                   console.log("error");
               }
               if(pType == "configurable"){
-			   alert('siyaram2');
+			  
                   product_det_from_page.configurable_product_function(JSON.stringify(params));
               }
               else if(pType=="grouped"){
