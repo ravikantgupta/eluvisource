@@ -3868,6 +3868,8 @@ function simple_product_info_images(idd){
 var PRODUCT_ID=idd;
 var BASE_URL  = config.data[0].baseurl;
 var STORE = config.data[0].storeid;
+
+ alert('ram:'+idd);
 var Simple_product_image_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&service=productdetailimage&productid="+PRODUCT_ID+"&currency="+app_curr_code;
 
 console.log(Simple_product_image_webservice);
@@ -3925,6 +3927,7 @@ function configurable_product_images_function(idd){
 var PRODUCT_ID=idd;
 var BASE_URL  = config.data[0].baseurl;
 var STORE = config.data[0].storeid;
+alert('conf:'+idd);
 var Configurable_product_image_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&service=get_configurable_product_details_image&productid="+PRODUCT_ID+"&currency="+app_curr_code;
 
 console.log(Configurable_product_image_webservice);
