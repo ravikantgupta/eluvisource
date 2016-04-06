@@ -62,7 +62,8 @@
             }*/
             
 			
-			alert('tt:'+localStorage.getItem('foo'));		 
+			alert('tt:'+localStorage.getItem('foo'));
+          if(localStorage.getItem('foo') == 0){			
 			 var params1 = Page.getParams();
                     var sizeandmaterial = params1.sizeandmaterial;
                     var deliveryreturns = params1.deliveryreturns;
@@ -73,7 +74,7 @@
 				    $("#cprice").html(app_curr_symbol+params1.result.price);
 				    $("#rewardpoint").html(params1.result.rewardpoint);
 					 
-					
+				}	
 				
 				  
 	        $("#product_description").html(locale.message.text["product_description"]);
