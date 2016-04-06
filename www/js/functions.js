@@ -4084,7 +4084,7 @@ $("#pImage5").attr("src", imageURL5);
                    alert('shreeram');
                   localStorage.setItem('foo', 1);
                     alert(history.back());
-                 Page.redirect(history.back(), 'slide', 'right');
+                 Page.redirect('product_details.html', 'slide', 'right');
                 }
 
 
