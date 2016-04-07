@@ -266,11 +266,13 @@ function setfourBox() {
 function addtowishlist(productid)
 {
 	 
-	 alert(customerid);
+	 alert(productid);
+	 
+	 alert(localStorage[config.data[0].storage_key+'_Session']);
 	 
 	 checkLoginStatus();
-	     var Session = JSON.parse(localStorage[config.data[0].storage_key+'_Session']);
-         var customerid = Session["customer_id"];
+	     //var Session = JSON.parse(localStorage[config.data[0].storage_key+'_Session']);
+         var customerid = 33;
 		 
 		 alert(customerid);
 				
