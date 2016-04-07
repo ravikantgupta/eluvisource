@@ -138,7 +138,7 @@ function feature_product_list(results){
 					<div class="cartactions">\
 					 <button  class="button btn-cart" title="Add to Cart" type="button" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')" ><span><span>View</span></span></button>\
 					   <ul class="wish-add-to-links">\
-						 <li><a class="link-wishlist" title="Wishlist" ><i class="fa fa-heart"></i></a></li>\
+						 <li><a class="link-wishlist" onclick="addtowishlist('+pid+')"  title="Wishlist" ><i class="fa fa-heart"></i></a></li>\
 						 <li><a class="link-compare" title="Compare" ><i class="fa fa-exchange"></i></a></li>\
 						 </ul>\
 								</div>\
@@ -259,6 +259,47 @@ function setfourBox() {
                                         }
                                         });
 	
+	
+}
+
+
+function addtowishlist(productid)
+{
+	 
+	 alert(customerid);
+	 
+	 checkLoginStatus();
+	     var Session = JSON.parse(localStorage[config.data[0].storage_key+'_Session']);
+         var customerid = Session["customer_id"];
+		 
+		 alert(customerid);
+				
+	    $.ajax({
+					url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=whishlistproducts&productid="+productid+"&customerid="++"&currency=" + app_curr_code,
+					type: 'GET',
+					contentType: 'application/json',
+					dataType: 'json',
+					async: false,
+					error: function(jqXHR, textStatus, errorThrown) {
+					console.log("Internal server Error! \n please try after some time.")
+					},
+					success: function(response) {
+				   
+					  var resdata=JSON.stringify(response);
+					  var response = JSON.parse(resdata);
+															
+						 $("#buttombox").html(response.four_boxes.content);
+						 $("#ready_revamp").html(response.ready_revamp.content);
+						 $("#secondstaticbanner").html(response.second_static_banner.content);
+						 
+						 
+						  $("#footer_link_block").html(response.footer_link_block.content);
+						  
+						  $("#footer_coptright").html(response.footer_coptright.content);
+						 
+						
+					}
+           });
 	
 }
 
@@ -404,7 +445,7 @@ function new_product_list(results){
 					<div class="cartactions">\
 					 <button  class="button btn-cart" title="Add to Cart" type="button" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')"><span><span>View</span></span></button>\
 					   <ul class="wish-add-to-links">\
-						 <li><a class="link-wishlist" title="Wishlist" ><i class="fa fa-heart"></i></a></li>\
+						 <li><a class="link-wishlist" onclick="addtowishlist('+pid+')" title="Wishlist" ><i class="fa fa-heart"></i></a></li>\
 						 <li><a class="link-compare" title="Compare" ><i class="fa fa-exchange"></i></a></li>\
 						 </ul>\
 								</div>\
