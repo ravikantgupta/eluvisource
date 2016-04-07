@@ -268,6 +268,13 @@ function addtowishlist(productid)
 	 
 	 alert(productid);
 	 
+	   if (localStorage[config.data[0].storage_key+'_Session'] == null) {
+		   
+	      alert('Logint First');
+		  
+		  return false;
+	   
+	   }
 	 alert(localStorage[config.data[0].storage_key+'_Session']);
 	 
 	 checkLoginStatus();
