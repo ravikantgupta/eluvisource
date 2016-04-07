@@ -275,7 +275,7 @@ function addtowishlist(productid)
 		 alert(customerid);
 				
 	    $.ajax({
-					url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=whishlistproducts&productid="+productid+"&customerid="++"&currency=" + app_curr_code,
+					url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=whishlistproducts&productid="+productid+ "&customerid=" +customerid+ "&currency=" + app_curr_code,
 					type: 'GET',
 					contentType: 'application/json',
 					dataType: 'json',
