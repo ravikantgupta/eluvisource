@@ -47,6 +47,8 @@ var Service = {
  *@return
  */
 function checkLoginStatus() {
+	
+	alert('login:ram');
    localStorage.setItem('m_flag',0); 
     var login_status = "Deactive";
     if (localStorage[config.data[0].storage_key+'_Session'] == null) {
