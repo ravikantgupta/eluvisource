@@ -266,7 +266,7 @@ function setfourBox() {
 function addtowishlist(productid)
 {
 	 
-	 alert(productid);
+	
 	 
 	   if (localStorage[config.data[0].storage_key+'_Session'] == null) {
 		   
@@ -275,13 +275,16 @@ function addtowishlist(productid)
 		  return false;
 	   
 	   }
-	 alert(localStorage[config.data[0].storage_key+'_Session']);
 	 
-	 checkLoginStatus();
-	     //var Session = JSON.parse(localStorage[config.data[0].storage_key+'_Session']);
-         var customerid = 33;
+	 
+	
+	     var Session = JSON.parse(localStorage[config.data[0].storage_key+'_Session']);
+         var customerid = Session["customer_id"];
 		 
 		 alert(customerid);
+		 
+		  alert("" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=whishlistproducts&productid="+productid+ "&customerid=" +customerid+ "&currency=" + app_curr_code);
+		  
 				
 	    $.ajax({
 					url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=whishlistproducts&productid="+productid+ "&customerid=" +customerid+ "&currency=" + app_curr_code,
