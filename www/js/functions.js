@@ -3484,7 +3484,7 @@ var product_det_from_page = new function() {
                 $("#custom_options_collapsible").css("display","none");
                 }
                 
-                validate_input(pName,pCat,pColor,pSize,description,deliveryreturns,sizeandmaterial,rewardpoint,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_len, custom_attr_data);
+                validate_input(pId,pName,pCat,pColor,pSize,description,deliveryreturns,sizeandmaterial,rewardpoint,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_len, custom_attr_data);
                 $(".ui-loader").hide();
                 simple_product_info_images(results["id"]);
                 checkLoginStatus();
@@ -3744,7 +3744,7 @@ select_option_id.add(option);
 }
 }
 
-function validate_input(pName,pCat,pColor,pSize,description,deliveryreturns,sizeandmaterial,rewardpoint,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_total, custom_attr_data,validate_input){
+function validate_input(pId,pName,pCat,pColor,pSize,description,deliveryreturns,sizeandmaterial,rewardpoint,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_total, custom_attr_data,validate_input){
 	
 	           
                 $(".ui-loader").hide();
@@ -3834,16 +3834,27 @@ function validate_input(pName,pCat,pColor,pSize,description,deliveryreturns,size
                 $("#pSKU").html(pSKU);
                 $("#pColor").html(pColor);
                 //alert(pTotalQuant);
-                //alert(pStock);
+                 alert('rmmmm:-'pId);
                 $("#pStock").html(pStock);
                 //$("#pPrice").html(pPrice);
                 //$("#pCross").html(pCross);
                 
-				   alert('siyarammmmm:'+description);
+				   
+				   
 				    $("#descdesc").html(description);
 				    $("#descdlrt").html(deliveryreturns);
 				    $("#descszmt").html(sizeandmaterial);
 				    $("#rewardpoint").html(rewardpoint);
+					
+					var addtolinkhtml='<li class=""><a onclick="addtowishlist('+pId+')" class="link-wishlist "><i class="fa fa-heart"></i>Add to Wishlist</a></li><li><a onclick="addtocompare('+pId+')" class="link-compare"><i class="fa fa-exchange"></i>Add to Compare</a></li>';
+					
+					
+					 $("#addtolink").html(addtolinkhtml);
+					
+					
+					
+					
+					
 					
                 if(pCross==0)
                 {
