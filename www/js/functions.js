@@ -3739,6 +3739,8 @@ select_option_id.add(option);
 }
 }
 function validate_input(pName,pCat,pColor,pSize,description,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_total, custom_attr_data,validate_input){
+	
+	            alert('siyarammmmm');
                 $(".ui-loader").hide();
                 if(!pName)
                 pName = "N/A";
