@@ -3746,7 +3746,7 @@ select_option_id.add(option);
 
 function validate_input(pName,pCat,pColor,pSize,description,deliveryreturns,sizeandmaterial,rewardpoint,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_total, custom_attr_data,validate_input){
 	
-	            alert('siyarammmmm');
+	           
                 $(".ui-loader").hide();
                 if(!pName)
                 pName = "N/A";
@@ -3839,6 +3839,7 @@ function validate_input(pName,pCat,pColor,pSize,description,deliveryreturns,size
                 //$("#pPrice").html(pPrice);
                 //$("#pCross").html(pCross);
                 
+				   alert('siyarammmmm:'+description);
 				    $("#descdesc").html(description);
 				    $("#descdlrt").html(deliveryreturns);
 				    $("#descszmt").html(sizeandmaterial);
