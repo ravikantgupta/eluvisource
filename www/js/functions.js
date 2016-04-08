@@ -42,10 +42,8 @@ function dirname(path) {
 //------------------------------------------Product detail page------------------------------------------------
 function getProDetail(proid,stk_stat,type) {
 	
-	alert(proid);
-	alert(type);
-
-$(".ui-loader").show();
+	
+   $(".ui-loader").show();
 //var product_val=queryValue();
 //var PRODUCT_IDD =product_val.split("stock_status");
 var PRODUCT_ID=proid;

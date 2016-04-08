@@ -285,7 +285,7 @@ function addtowishlist(productid)
 		 
 		  alert("" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=whishlistproducts&productid="+productid+ "&customerid=" +customerid+ "&currency=" + app_curr_code);
 		  
-				
+		   $(".ui-loader").show();		
 	    $.ajax({
 					url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=whishlistproducts&productid="+productid+ "&customerid=" +customerid+ "&currency=" + app_curr_code,
 					type: 'GET',
@@ -300,8 +300,10 @@ function addtowishlist(productid)
 					  var resdata=JSON.stringify(response);
 					  var response = JSON.parse(resdata);
 															
-											 
-						alert(response);
+							$(".ui-loader").hide();				 
+						alert(response.msg);
+						
+						
 					}
            });
 	
