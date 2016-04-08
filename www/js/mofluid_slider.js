@@ -139,7 +139,7 @@ function feature_product_list(results){
 					 <button  class="button btn-cart" title="Add to Cart" type="button" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')" ><span><span>View</span></span></button>\
 					   <ul class="wish-add-to-links">\
 						 <li><a class="link-wishlist" onclick="addtowishlist('+pid+')"  title="Wishlist" ><i class="fa fa-heart"></i></a></li>\
-						 <li><a class="link-compare" title="Compare" ><i class="fa fa-exchange"></i></a></li>\
+						 <li><a class="link-compare" onclick="addtocompare('+pid+')" title="Compare" ><i class="fa fa-exchange"></i></a></li>\
 						 </ul>\
 								</div>\
 								  </div>\
@@ -459,7 +459,7 @@ function new_product_list(results){
 					 <button  class="button btn-cart" title="Add to Cart" type="button" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')"><span><span>View</span></span></button>\
 					   <ul class="wish-add-to-links">\
 						 <li><a class="link-wishlist" onclick="addtowishlist('+pid+')" title="Wishlist" ><i class="fa fa-heart"></i></a></li>\
-						 <li><a class="link-compare" title="Compare" ><i class="fa fa-exchange"></i></a></li>\
+						 <li><a class="link-compare" onclick="addtocompare('+pid+')" title="Compare" ><i class="fa fa-exchange"></i></a></li>\
 						 </ul>\
 								</div>\
 								  </div>\
