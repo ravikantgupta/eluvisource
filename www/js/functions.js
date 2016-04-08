@@ -3838,6 +3838,8 @@ function validate_input(pName,pCat,pColor,pSize,description,shortdes,pPriceSpl,p
                 $("#finalprice").html('Price ('+app_curr_symbol+pPrice+')');
                 $("#price_symbol").html(config.data[0].app_curr_symbol);
                 $("#pPrice").html(pPrice);
+				 $("#cprice").html(pPrice);
+				
                 
                 }
                 else
@@ -3847,6 +3849,7 @@ function validate_input(pName,pCat,pColor,pSize,description,shortdes,pPriceSpl,p
                 {
                 $("#price_symbol").html(config.data[0].app_curr_symbol);
                 $("#pPrice").html(pPrice);
+				  $("#cprice").html(pPrice);
                 $("#pCross").html(pCross);
                 }
                 else
@@ -3854,6 +3857,7 @@ function validate_input(pName,pCat,pColor,pSize,description,shortdes,pPriceSpl,p
                 $("#price_symbol").html(config.data[0].app_curr_symbol);
                 $("#pPrice").html(pCross);
                 $("#pCross").html(pPrice);
+				   $("#cprice").html(pPrice);
                 }
                 }
                 $("#price_symbol").html(config.data[0].app_curr_symbol);
