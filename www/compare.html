@@ -24,11 +24,7 @@
 					   alert('rr:'+productids);
 				
 				setfourBox();
-				
-				
-				
-				   alert("" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getcomparetproducts&productid="+productids+ "&currency=" + app_curr_code);
-					   
+							  					   
 					   
 				   $.ajax({
 						url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getcomparetproducts&productid="+productids+ "&currency=" + app_curr_code,
@@ -41,9 +37,9 @@
 						},
 						success: function(response) {
 					   
-						  		 
-							alert(response);
-							
+					              alert(response.data);
+						  		 jQuery('#cmpproduct').html(response.data);
+													
 							
 						}
                 });
@@ -1156,59 +1152,11 @@ function removeItem(index) {
                 
                             
                             <div id="cms-page-detail1">
-								<div class="list-main compare">
-                                	<div class="sep">
-                                        <div class="left1">&nbsp;</div>
-                                        <div class="left2">
-                                            <h1>FESTIVE BRACELET</h1>
-                                            <img src="https://eluvy.com/media/catalog/product/cache/1/small_image/230x235/17f82f742ffe127f42dca9de82fb58b1/3/8/38.jpg">
-                                        </div>
-                                        <div class="left2">
-                                            <h1>FESTIVE BRACELET</h1>
-                                            <img src="https://eluvy.com/media/catalog/product/cache/1/small_image/230x235/17f82f742ffe127f42dca9de82fb58b1/3/8/38.jpg">
-                                        </div>
-                                        <div class="left2">
-                                            <h1>FESTIVE BRACELET</h1>
-                                            <img src="https://eluvy.com/media/catalog/product/cache/1/small_image/230x235/17f82f742ffe127f42dca9de82fb58b1/3/8/38.jpg">
-                                        </div>
-                                	</div>
-                                    <div class="sep">
-                                        <div class="left1">Price</div>
-                                        <div class="left2">
-                                            <div class="price">S$50.00</div>
-                                        </div>
-                                        <div class="left2">
-                                            <div class="price">S$50.00</div>
-                                        </div>
-                                        <div class="left2">
-                                            <div class="price">S$50.00</div>
-                                        </div>
-                                	</div>
-                                    <div class="sep">
-                                        <div class="left1">Warranty</div>
-                                        <div class="left2">
-                                            <div class="detail">with 1 year manufacturer warranty for Phone and 6 months warranty for in the box accessories Samsung India Warranty and Free Transit Insurance.</div>
-                                        </div>
-                                        <div class="left2">
-                                            <div class="detail">with 1 year manufacturer warranty for Phone and 6 months warranty for in the box accessories Samsung India Warranty and Free Transit Insurance.</div>
-                                        </div>
-                                        <div class="left2">
-                                            <div class="detail">with 1 year manufacturer warranty for Phone and 6 months warranty for in the box accessories Samsung India Warranty and Free Transit Insurance.</div>
-                                        </div>
-                                	</div>
-                                    <div class="sep">
-                                        <div class="left1">In the box</div>
-                                        <div class="left2">
-                                            <div class="detail">S$50.00</div>
-                                        </div>
-                                        <div class="left2">
-                                            <div class="detail">S$50.00</div>
-                                        </div>
-                                        <div class="left2">
-                                            <div class="detail">S$50.00DS</div>
-                                        </div>
-                                	</div>
-                                </div>
+								<div id="cmpproduct" class="list-main compare">
+								  <div  align="center" id="hideit" value="1" >
+								 <img src="images/spin.gif">
+								</div>
+								</div>
                             </div>
               
               				<!-- footer start-->
