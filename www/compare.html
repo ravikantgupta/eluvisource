@@ -16,7 +16,7 @@
 	 
 			function onDeviceReady() {
 			
-			            alert('rmanew');
+			           
 						
 				       var params1 = Page.getParams();
                        var productids = params1.productids;
@@ -27,11 +27,11 @@
 				getcartitem();
 				
 				
-				    alert('rmanew1'); 
+				   alert("" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getcomparetproducts&productid="+productids+ "&currency=" + app_curr_code);
 					   
 					   
 				   $.ajax({
-						url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getcomparetproducts&productids="+productids+ "&currency=" + app_curr_code,
+						url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getcomparetproducts&productid="+productids+ "&currency=" + app_curr_code,
 						type: 'GET',
 						contentType: 'application/json',
 						dataType: 'json',
