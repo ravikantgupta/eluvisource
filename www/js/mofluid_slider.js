@@ -312,11 +312,16 @@ function addtowishlist(productid)
 function addtocompare(productid)
 {
     
-       alert(localStorage[config.data[0].storage_key+"_compare"]);
+     
+    	 if (localStorage[config.data[0].storage_key+"_compare"] != null) {
+			 
+		     alert(localStorage[config.data[0].storage_key+"_compare"]);
+	       
+		   }		   
 	 
-		localStorage[config.data[0].storage_key+"_compare"]=productid;
+	 	localStorage[config.data[0].storage_key+"_compare"]=productid;
 		
-		alert(localStorage[config.data[0].storage_key+"_compare"]);
+		
 		
 }
 
