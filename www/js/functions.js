@@ -3335,6 +3335,11 @@ var product_det_from_page = new function() {
                 pShipp = results["shipping"];
                 pTotalQuant = results["quantity"];
                 pSize  = results["pSize"];
+				
+				
+				var  deliveryreturns  = results["deliveryreturns"];
+				var sizeandmaterial  = results["sizeandmaterial"];
+				var rewardpoint  = results["rewardpoint"];  
                 
                 
                 //Stock data
@@ -3479,7 +3484,7 @@ var product_det_from_page = new function() {
                 $("#custom_options_collapsible").css("display","none");
                 }
                 
-                validate_input(pName,pCat,pColor,pSize,description,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_len, custom_attr_data);
+                validate_input(pName,pCat,pColor,pSize,description,deliveryreturns,sizeandmaterial,rewardpoint,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_len, custom_attr_data);
                 $(".ui-loader").hide();
                 simple_product_info_images(results["id"]);
                 checkLoginStatus();
@@ -3738,7 +3743,8 @@ option.setAttribute("price", select_option_1_price[i]);
 select_option_id.add(option);
 }
 }
-function validate_input(pName,pCat,pColor,pSize,description,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_total, custom_attr_data,validate_input){
+
+function validate_input(pName,pCat,pColor,pSize,description,deliveryreturns,sizeandmaterial,rewardpoint,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_total, custom_attr_data,validate_input){
 	
 	            alert('siyarammmmm');
                 $(".ui-loader").hide();
@@ -3833,6 +3839,11 @@ function validate_input(pName,pCat,pColor,pSize,description,shortdes,pPriceSpl,p
                 //$("#pPrice").html(pPrice);
                 //$("#pCross").html(pCross);
                 
+				    $("#descdesc").html(description);
+				    $("#descdlrt").html(deliveryreturns);
+				    $("#descszmt").html(sizeandmaterial);
+				    $("#rewardpoint").html(rewardpoint);
+					
                 if(pCross==0)
                 {
                 $("#finalprice").html('Price ('+app_curr_symbol+pPrice+')');
