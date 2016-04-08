@@ -3834,7 +3834,7 @@ function validate_input(pId,pName,pCat,pColor,pSize,description,deliveryreturns,
                 $("#pSKU").html(pSKU);
                 $("#pColor").html(pColor);
                 //alert(pTotalQuant);
-                 alert('rmmmm:-'+pId);
+                 
                 $("#pStock").html(pStock);
                 //$("#pPrice").html(pPrice);
                 //$("#pCross").html(pCross);
@@ -3861,7 +3861,7 @@ function validate_input(pId,pName,pCat,pColor,pSize,description,deliveryreturns,
                 $("#finalprice").html('Price ('+app_curr_symbol+pPrice+')');
                 $("#price_symbol").html(config.data[0].app_curr_symbol);
                 $("#pPrice").html(pPrice);
-				 $("#cprice").html(pPrice);
+				 $("#cprice").html(config.data[0].app_curr_symbol+pPrice);
 				
                 
                 }
@@ -3872,7 +3872,7 @@ function validate_input(pId,pName,pCat,pColor,pSize,description,deliveryreturns,
                 {
                 $("#price_symbol").html(config.data[0].app_curr_symbol);
                 $("#pPrice").html(pPrice);
-				  $("#cprice").html(pPrice);
+				  $("#cprice").html(config.data[0].app_curr_symbol+pPrice);
                 $("#pCross").html(pCross);
                 }
                 else
@@ -3880,7 +3880,7 @@ function validate_input(pId,pName,pCat,pColor,pSize,description,deliveryreturns,
                 $("#price_symbol").html(config.data[0].app_curr_symbol);
                 $("#pPrice").html(pCross);
                 $("#pCross").html(pPrice);
-				   $("#cprice").html(pPrice);
+				   $("#cprice").html(config.data[0].app_curr_symbol+pPrice);
                 }
                 }
                 $("#price_symbol").html(config.data[0].app_curr_symbol);
