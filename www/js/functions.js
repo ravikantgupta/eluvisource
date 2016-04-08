@@ -3834,7 +3834,7 @@ function validate_input(pId,pName,pCat,pColor,pSize,description,deliveryreturns,
                 $("#pSKU").html(pSKU);
                 $("#pColor").html(pColor);
                 //alert(pTotalQuant);
-                 alert('rmmmm:-'pId);
+                 alert('rmmmm:-'+pId);
                 $("#pStock").html(pStock);
                 //$("#pPrice").html(pPrice);
                 //$("#pCross").html(pCross);
