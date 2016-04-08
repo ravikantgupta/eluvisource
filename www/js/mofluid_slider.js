@@ -309,7 +309,14 @@ function addtowishlist(productid)
 	
 }
 
-
+function addtocompare(productid)
+{
+    
+        alert(config.data[0].storage_key+"_compare");
+	 
+		localStorage[config.data[0].storage_key+"_compare"]=productid;
+		
+}
 
 //------------------------------------------------New product list----------------------------------------
 function optional_products_slide(){
