@@ -315,7 +315,7 @@ function addtocompare(productid)
      
     	 if (localStorage[config.data[0].storage_key+"_compare"] != null) {
 			 
-		     alert(localStorage[config.data[0].storage_key+"_compare"]);
+		     alert('ram:'+localStorage[config.data[0].storage_key+"_compare"]);
 	       
 		   }		   
 	 
