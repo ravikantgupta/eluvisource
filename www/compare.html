@@ -21,9 +21,9 @@
 				       var params1 = Page.getParams();
                        var productids = params1.productids;
 					   
-					   alert('rr:'+productids);
+					  
 				
-				setfourBox();
+				   setfourBox();
 							  					   
 					   
 				   $.ajax({
@@ -37,7 +37,7 @@
 						},
 						success: function(response) {
 					   
-					              alert(response.data);
+					            
 						  		 jQuery('#cmpproduct').html(response.data);
 													
 							
