@@ -331,6 +331,14 @@ function addtocompare(productid)
 		
 }
 
+function getcompare()
+{
+	           var params = new Object();
+                params["page"] = 'compare';
+                params["productids"] = localStorage[config.data[0].storage_key+"_compare"];
+	
+               Page.redirectWithParams('compare.html', 'slide', 'left', params);
+}
 //------------------------------------------------New product list----------------------------------------
 function optional_products_slide(){
     var db = dbConnection();
