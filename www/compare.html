@@ -21,10 +21,10 @@
 				       var params1 = Page.getParams();
                        var productids = params1.productids;
 					   
-					   alert(productids);
+					   alert('rr:'+productids);
 				
 				setfourBox();
-				getcartitem();
+				
 				
 				
 				   alert("" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getcomparetproducts&productid="+productids+ "&currency=" + app_curr_code);
@@ -49,7 +49,7 @@
                 });
 				
 				
-				
+				getcartitem();
 				
 			}
 	 
