@@ -22,8 +22,7 @@
 			var Session = JSON.parse(localStorage[config.data[0].storage_key+'_Session']);
              var customerid = Session["customer_id"];
 			 
-			 alert(BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getcrewaerdpoint&customerid="+customerid+ "&currency=" + app_curr_code);
-			   
+			  
 				   $.ajax({
 						url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getcrewaerdpoint&customerid="+customerid+ "&currency=" + app_curr_code,
 						type: 'GET',
