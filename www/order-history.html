@@ -783,8 +783,8 @@ jQuery(document).ready(function() {
     </div>
     <div class="block-content no-display">
         <ul>
-                                                                                                    <li class="current"><a href="https://eluvy.com/customer/account/"><strong>Account Dashboard</strong></a></li>
-                                                                                <li><a href="https://eluvy.com/sales/order/history/">My Orders</a></li>
+                                                                                                    <li class="current"><a href="https://eluvy.com/customer/account/">Account Dashboard</a></li>
+                                                                                <li><a href="https://eluvy.com/sales/order/history/"><strong>My Orders</strong></a></li>
                                                                                 <li><a href="https://eluvy.com/wishlist/">My Wishlist</a></li>
                                                                                 <li><a href="https://eluvy.com/rewards/account/">My Reward Points</a></li>
                                     </ul>
@@ -793,6 +793,108 @@ jQuery(document).ready(function() {
 </div>
 										
 				</div>
+                
+                		<div class="col-main">
+                                        
+<div class="my-account"><div class="page-title">
+    <h1>My Orders</h1>
+</div>
+
+        <div class="pager pager-no-toolbar">
+    
+        <div class="count-container">
+                                <p class="amount amount--no-pages">
+                <strong>2 Item(s)</strong>
+            </p>
+                    
+                <div class="limiter">
+            <label>Show</label>
+            <select onchange="setLocation(this.value)" title="Results per page">
+                            <option value="https://eluvy.com/sales/order/history/?limit=10" selected="selected">
+                    10                </option>
+                            <option value="https://eluvy.com/sales/order/history/?limit=20">
+                    20                </option>
+                            <option value="https://eluvy.com/sales/order/history/?limit=50">
+                    50                </option>
+                        </select>
+        </div>
+            </div>
+    
+    
+        </div>
+    
+<table class="data-table orders" id="my-orders-table">
+    <colgroup><col width="1">
+    <col width="1">
+    <col>
+    <col width="1">
+    <col width="1">
+    <col width="1">
+    </colgroup><thead>
+        <tr class="first last">
+            <th class="number">Order # </th>
+            <th class="date">Date</th>
+            <th class="ship">Ship To</th>
+            <th class="total"><span class="nobr">Order Total</span></th>
+            <th class="status"><span class="nobr">Order Status</span></th>
+            <th class="view">&nbsp;</th>
+        </tr>
+    </thead>
+    <tbody>
+                        <tr class="first odd">
+            <td class="number">100000036</td>
+            <td class="date"><span class="nobr">12/31/2015</span></td>
+            <td class="ship">RAVI gupta</td>
+            <td class="total"><span class="price">$50.00</span></td>
+            <td class="status"><em>Pending</em></td>
+            <td class="a-center view last">
+                <span class="nobr"><a href="https://eluvy.com/sales/order/view/order_id/35/">View Order</a>
+                                                            <span class="separator">|</span> <a href="https://eluvy.com/sales/order/reorder/order_id/35/" class="link-reorder">Reorder</a>
+                                </span>
+            </td>
+        </tr>
+                <tr class="last even">
+            <td class="number">100000035</td>
+            <td class="date"><span class="nobr">12/31/2015</span></td>
+            <td class="ship">RAVI gupta</td>
+            <td class="total"><span class="price">$50.00</span></td>
+            <td class="status"><em>Pending</em></td>
+            <td class="a-center view last">
+                <span class="nobr"><a href="https://eluvy.com/sales/order/view/order_id/34/">View Order</a>
+                                                            <span class="separator">|</span> <a href="https://eluvy.com/sales/order/reorder/order_id/34/" class="link-reorder">Reorder</a>
+                                </span>
+            </td>
+        </tr>
+            </tbody>
+</table>
+<script type="text/javascript">decorateTable('my-orders-table');</script>
+
+        <div class="pager pager-no-toolbar">
+    
+        <div class="count-container">
+                                <p class="amount amount--no-pages">
+                <strong>2 Item(s)</strong>
+            </p>
+                    
+                <div class="limiter">
+            <label>Show</label>
+            <select onchange="setLocation(this.value)" title="Results per page">
+                            <option value="https://eluvy.com/sales/order/history/?limit=10" selected="selected">
+                    10                </option>
+                            <option value="https://eluvy.com/sales/order/history/?limit=20">
+                    20                </option>
+                            <option value="https://eluvy.com/sales/order/history/?limit=50">
+                    50                </option>
+                        </select>
+        </div>
+            </div>
+    
+    
+        </div>
+    
+<div class="buttons-set">
+    <p class="back-link"><a href="https://eluvy.com/rewards/account/"><small>« </small>Back</a></p>
+</div></div>                </div>
                     </div>
                 </div>
               

@@ -4152,21 +4152,21 @@ margin: 0;
 .profile-page .leftcontainer {
     width: 100%;
 	padding: 0;
-    clear: left; position:relative;
+    clear: left; position:relative; 
 }
 .leftcontainer .col-left {
     width: 100%;
     float: inherit;
 }
 .sidebar .block:last-of-type {
-    border-bottom: 1px solid #cccccc;
+    border-bottom: 1px solid #cccccc; 
 }
 .sidebar .block:not(.block-layered-nav) .block-title {
     padding: 0;
     margin-top: 0;
     border-bottom: none;
     border-top: none;
-    margin-bottom: 0; background:#000; color:#fff; 
+    margin-bottom: 0; background:#000; color:#fff; width:100%;
 }
 .block-title {
     position: relative;
@@ -4207,6 +4207,139 @@ margin: 0;
     padding: 0 30px 0 0;
 	    color: #fff !important;
     font-size: 14px;
+}
+.sidebar .block:not(.block-layered-nav) .block-title > strong:after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 0;
+    display: block;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-left: 4px solid #3399cc;
+    border-right: none;
+    left: 10px;
+    top: 50%;
+    margin-top: -3px;
+}
+.sidebar .block:not(.block-layered-nav) .block-content {
+border: 1px solid #cccccc;
+width: 99%;
+margin: 5px 0 0 2px; background:#f2f2f2; padding:0;
+}
+.profile-page .pro-head .block-content li {border-bottom:1px solid #ccc; padding:5px 8px;}
+
+.profile-page .col-main {
+    width: 100%;
+    float: left;
+    margin: 10px 0 0 0;
+}
+.profile-page .my-account {
+    border: 1px solid #ccc;
+box-shadow: 0px 0px 13px #ccc;
+width: 99%;
+margin: 0 0 0 2px; display:inline-block;
+}
+.my-account .page-title h1 {
+    text-align: center;
+	    background: #000;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 7px 10px; margin:0; text-transform:uppercase;
+}
+.profile-page .pager, .col2-right-layout .pager, .col3-layout .pager {
+    float: left;
+    clear: both;     color: #636363;
+    line-height: 30px;
+    font-size: 12px; width:100%;     padding-left: 0;
+    margin: 20px 0;
+    text-align: center;
+    list-style: none;
+}
+.profile-page .pager .amount, .pager .limiter, .pager .pages {
+    margin-bottom: 5px;
+}
+.profile-page .pager .amount {
+    float: left;
+    white-space: nowrap;
+    margin: 0 15px 0 0;
+}
+.pager .limiter {
+    float: left;
+    height: 30px;
+    line-height: 30px;
+}
+.limiter {
+    margin: 0 10px;
+    width: 100%;
+}
+.limiter label {
+    display: inline-block; padding-right: 5px;
+}
+.pager .limiter .ui-select{width:30px; display:inline-block; vertical-align:middle;}
+.profile-page .data-table {
+    margin-top: 5px; font-size:13px;
+}
+.data-table {
+    width: 100%;
+}
+.data-table thead th, .data-table tbody td {
+    border-bottom: 1px solid silver;
+}
+.data-table th {
+    background: #f4f4f4;
+    text-transform: uppercase;
+    line-height: 1.4;
+    white-space: nowrap;
+}
+.data-table td, .data-table th {
+    padding: 10px;
+    vertical-align: top;
+}
+.data-table.orders .link-reorder, .data-table.orders .date {
+    display: none;
+}
+.data-table.orders th.ship, body.customer-account .data-table.orders td.ship {
+    display: none;
+}
+.data-table span.nobr {
+    white-space: normal;
+}
+.data-table.orders .link-reorder, .data-table.orders .date {
+    display: none;
+}
+.data-table.orders td.ship {
+    display: none;
+}
+.orders td.status {
+    display: none;
+}
+.data-table.orders th.status {
+    display: none;
+}
+.data-table.orders td.view {
+    text-align: right;
+}
+.data-table .separator {
+    display: none;
+}
+.buttons-set .back-link {
+    display: none;
+}
+.box-account {
+    margin: 0 10px;
+}
+.box-head h2 {
+    font-size: 17px;
+    font-weight: bold;
+	margin: 0;
+    margin-bottom: 0.5em;
+    color: #636363;
+    font-style: normal;
+    line-height: 1.2;
+    text-rendering: optimizeLegibility;
+    text-transform: uppercase;
 }
 
 
