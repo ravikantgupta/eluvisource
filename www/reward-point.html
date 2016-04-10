@@ -18,6 +18,31 @@
 	    function onLoad() {
             		
 			setfourBox();
+			
+			var Session = JSON.parse(localStorage[config.data[0].storage_key+'_Session']);
+             var customerid = Session["customer_id"];
+			 
+			 alert(BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getcrewaerdpoint&customerid="+customerid+ "&currency=" + app_curr_code);
+			   
+				   $.ajax({
+						url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getcrewaerdpoint&customerid="+customerid+ "&currency=" + app_curr_code,
+						type: 'GET',
+						contentType: 'application/json',
+						dataType: 'json',
+						async: false,
+						error: function(jqXHR, textStatus, errorThrown) {
+						console.log("Internal server Error! \n please try after some time.")
+						},
+						success: function(response) {
+					   
+					            
+						  		 jQuery('#cmpproduct').html(response.data);
+													
+							
+						}
+                });
+			
+			
 			getcartitem();
         }
 	 
