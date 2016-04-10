@@ -292,7 +292,7 @@ function getFormatTime(date) {
      *@return
      */
 function redirectTopage(pagename) {
-	  $(".ui-loader").show();	
+	 	
     var dirPath = dirname(location.href);
     var fullPath = dirPath + "/" + pagename;
     if(pagename=='index.html')

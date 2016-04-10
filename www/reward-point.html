@@ -36,7 +36,7 @@
 						success: function(response) {
 					   
 					            
-						  		 jQuery('#cmpproduct').html(response.data);
+						  		 jQuery('#rewardpointinfo').html(response.data);
 													
 							
 						}
@@ -1165,20 +1165,9 @@ function removeItem(index) {
                                    
                 		<div class="col-main">
                                         
-								<div class="my-account"><div class="page-title">
-									<h1>My Reward Points</h1>
-								</div>
-
-										<div class="box-account box-info">
-									<div class="box-head">
-										<h2>Points Summary</h2>
-									</div>
-
-								<p>You have <b>0 Reward Points</b> in your account.</p>
-								<p></p>
-								</div>
-
-								<div class="norecord">There are no Transactions</div>
+								<div id="rewardpointinfo" class="my-account">
+							
+							           <center><img src="images/spin.gif" id="new_hide" ></center>
 									
 								</div>                
 					  </div>
