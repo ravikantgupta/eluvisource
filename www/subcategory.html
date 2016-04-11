@@ -73,14 +73,14 @@
                 
                 if(show_pro == 1){
                     categoryfound = 0;
-					 alert('ram01');
+					
                   //  localStorage.setItem(config.data[0].storage_key+'_cat_flag',1);
                    // printProducts(page);
                 }
                 else{
 				   
                     if(localStorage.getItem('foo') == 1){
-					    alert('ram03');
+					   
                         categoryfound = 0;
                         
                         // $("#Showpro").hide();
@@ -199,7 +199,7 @@
                                          
          if (resdata.rows.length > 0) {//If table is empty
          
-		  alert('ram001');
+		 
          var diff=current_time - resdata.rows.item(0).timestamp;
          if (diff > cache_time) { //If time is expire
                                                   //delete the old row of storedetails data if cache time expire
