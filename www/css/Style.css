@@ -4369,7 +4369,7 @@ margin: 0 0 0 2px; display:inline-block;
 .content_inner .ui-textinput-autogrow{border-radius:0; border:1px solid #ccc;}
 .content_inner label{width:100% !important; float:left; margin:10px 0 0 0;}
 .content_inner .login_box5{width:100%; float:left; margin:0;}
-.content_inner .login_box5 .ui-btn{margin-top:-8px !important; width:100% !important; float:left; position:relative;}
+.content_inner .login_box5 .ui-btn{display: inline-block; margin: -10px 0 0 0;}
 .content_inner #normal_shipping_div{width:100%; float:left;}
 .buyForm #normal_shipping_div{width:100%; float:left;}
 .buyForm #shippingDetail{width:100%; float:left;}
