@@ -1301,6 +1301,34 @@ function removeItem(index) {
 						 
 						 })
 						
+						
+						
+				function removeWishlistItem(url,item){
+				
+				
+				 jQuery.ajax(
+									{
+										url : url,
+										type: "POST",
+										data :  {'urldata':'1'},
+										beforeSend: function(){	 $(".ui-loader").show();},
+										success:function(data, textStatus, jqXHR) 
+										{
+											
+											 $(".ui-loader").hide();
+                                           jQuery('#item'+item).remove();											 
+											
+										},
+										error: function(jqXHR, textStatus, errorThrown) 
+										{
+											//if fails      
+										}
+									});
+				
+				
+				
+				}		
+						
 						</script>
   
                 </div>

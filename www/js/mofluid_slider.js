@@ -281,10 +281,7 @@ function addtowishlist(productid)
 	     var Session = JSON.parse(localStorage[config.data[0].storage_key+'_Session']);
          var customerid = Session["customer_id"];
 		 
-		 alert(customerid);
 		 
-		  alert("" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=whishlistproducts&productid="+productid+ "&customerid=" +customerid+ "&currency=" + app_curr_code);
-		  
 		   $(".ui-loader").show();		
 	    $.ajax({
 					url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=whishlistproducts&productid="+productid+ "&customerid=" +customerid+ "&currency=" + app_curr_code,
