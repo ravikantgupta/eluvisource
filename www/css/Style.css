@@ -4355,7 +4355,7 @@ margin: 0 0 0 2px; display:inline-block;
 .buyForm #state_textfield{width:100%; float:left;}
 .buyForm #state_dropdown{width:100%; float:left;}
 
-.buyForm .content-secondry{display:inline-block; width:100%;}
+.buyForm .content-secondry{width:100%; float:left;}
 .buyForm .ui-radio{display:inline-block;}
 
 .myprofile .ui-input-text{width:100% !important; float:left; margin:0; padding:0;}
@@ -4369,9 +4369,10 @@ margin: 0 0 0 2px; display:inline-block;
 .content_inner .ui-textinput-autogrow{border-radius:0; border:1px solid #ccc;}
 .content_inner label{width:100% !important; float:left; margin:10px 0 0 0;}
 .content_inner .login_box5{width:100%; float:left; margin:0;}
-.content_inner .login_box5 .ui-btn{margin-top:-7px;}
+.content_inner .login_box5 .ui-btn{margin-top:-8px !important;}
 .content_inner #normal_shipping_div{width:100%; float:left;}
 .buyForm #normal_shipping_div{width:100%; float:left;}
+.buyForm #shippingDetail{width:100%; float:left;}
 .content_inner #loginbutton_div{width:100%; float:left;}
 .content_inner .space{width:100%; float:left;}
 .content_inner .login_box6{width:100%; float:left;}
