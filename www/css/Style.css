@@ -4344,7 +4344,7 @@ margin: 0 0 0 2px; display:inline-block;
 
 .default_shipaddress .ui-input-text{width:100% !important; float:left; margin:0; padding:0;}
 .default_shipaddress .ui-input-text input[type=text]{border:1px solid #ccc;}
-.default_shipaddress .ui-textinput-autogrow{border-radius:0; border:1px solid #ccc;}
+.default_shipaddress .ui-textinput-autogrow{border-radius:0; border:1px solid #ccc; padding:0 5px;}
 .default_shipaddress label{width:100% !important; float:left; margin:10px 0 0 0;}
 
 .buyForm .ui-input-text{width:100% !important; float:left; margin:0; padding:0;}
@@ -4365,7 +4365,11 @@ margin: 0 0 0 2px; display:inline-block;
 .content_inner .ui-input-text input[type=text]{border:1px solid #ccc;}
 .content_inner .ui-textinput-autogrow{border-radius:0; border:1px solid #ccc;}
 .content_inner label{width:100% !important; float:left; margin:10px 0 0 0;}
-.content_inner .ui-checkbox{display:inline-block;}
+.content_inner .login_box5{width:100%; float:left;}
+.content_inner #loginbutton_div{width:100%; float:left;}
+.content_inner .space{width:100%; float:left;}
+.content_inner .login_box6{width:100%; float:left;}
+
 
 
 @media all and (max-width: 414px) {
