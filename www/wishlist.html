@@ -42,6 +42,617 @@
         }
 	 
       </script>	
+	  	
+	<script>
+	
+	
+	
+	   function submitform() {
+            var username = $("#username").val();
+            var password = $("#password").val();
+            if(username == "") {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    //navigator.notification.alert(locale.message.alert["username_validation_for_blank"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+               
+			      jQuery('.err-wronglogin').html(locale.message.alert["username_validation_for_blank"]);
+				  
+				   jQuery('.err-wronglogin').show();
+
+			   }
+                else
+                {
+                    //alert(locale.message.alert["username_validation_for_blank"]);
+					
+					
+					 jQuery('.err-wronglogin').html(locale.message.alert["username_validation_for_blank"]);
+				  
+				   jQuery('.err-wronglogin').show();
+                }
+            }
+            else if(!checkEmail(username)) {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                   // navigator.notification.alert(locale.message.alert["username_validation_for_wrong_attempt"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+					
+					
+					  jQuery('.err-wronglogin').html(locale.message.alert["username_validation_for_wrong_attempt"]);
+				  
+				       jQuery('.err-wronglogin').show();
+					
+                }
+                else {
+                    alert(locale.message.alert["username_validation_for_wrong_attempt"]);
+					
+					  jQuery('.err-wronglogin').html(locale.message.alert["username_validation_for_wrong_attempt"]);
+				  
+				       jQuery('.err-wronglogin').show();
+                }
+            }
+            else if(password.length<6) {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                   // navigator.notification.alert(locale.message.alert["password_validation_for_minimum_length"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+               
+			      jQuery('.err-longpassword').html(locale.message.alert["password_validation_for_minimum_length"]);
+				  
+				       jQuery('.err-longpassword').show();	
+
+			   }
+                else {
+                    //alert(locale.message.alert["password_validation_for_minimum_length"]);
+					
+					  jQuery('.err-longpassword').html(locale.message.alert["password_validation_for_minimum_length"]);
+				  
+				       jQuery('.err-longpassword').show();		 				
+					
+                }
+            }
+            else {
+                 $(".youama-ajaxlogin-button").html('<center><img src="images/spin.gif"></center>');
+                var BASE_URL  = config.data[0].baseurl;
+                var STORE = config.data[0].storeid;
+                $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=verifylogin"+"&username="+username+"&password="+Base64.encode(password),
+                          function (response) {
+                          if(response["login_status"] == "0") {
+                          if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                          navigator.notification.alert(locale.message.alert["invalid_username__password_message"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+                          }
+                          else {
+                            alert(locale.message.alert["invalid_username__password_message"]);
+                          }
+                          $(".youama-ajaxlogin-button").html('<span><span>Login</span></span>');
+                          //$("#loginbutton_div").trigger('create');
+                          }
+                          else if(response["login_status"] == "1") {
+                          localStorage[config.data[0].storage_key+"_Loginemail"]=username;
+                          loginStart(response["id"], response["firstname"], response["lastname"], response["username"], response["password"]);
+                          if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                          //navigator.notification.alert(locale.message.alert["login_success_message"] + response["firstname"],function () {}, config.data[0].app_name, locale.message.button["close"]);
+                          navigator.notification.alert(locale.message.alert["login_success_message"].replace("{{username}}",response["firstname"]),function () {}, config.data[0].app_name, locale.message.button["close"]);
+                          //locale.message.alert["login_success_message"].replace("{{username}}",response["firstname"])
+                          }
+                          else
+                          {
+                          alert(locale.message.alert["login_success_message"].replace("{{username}}",response["firstname"]));
+                          }
+                          if(localStorage[config.data[0].storage_key+"_nextpage"] == null || localStorage[config.data[0].storage_key+"_nextpage"] == "null") {
+                          redirectTopage('index.html');
+                          }
+                          else {
+                          var dirPath = dirname(location.href);
+                          var fullPath = dirPath +"/"+localStorage[config.data[0].storage_key+"_nextpage"];
+                          localStorage[config.data[0].storage_key+"_nextpage"] = null;
+                          window.location=fullPath;
+                          }
+						    
+							jQuery('#loginbtn').click();
+							
+
+					  
+					     jQuery('.myact').html('<a class="skip-link skip-account ui-link" id="logoutbtn" onclick="logOut()" href="javascript:void(0)"><span class="label">Log Out</span></a>');
+                        
+						}
+                          else {
+                          if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                          navigator.notification.alert(locale.message.alert["server_not_responding"] ,function () {}, config.data[0].app_name, locale.message.button["close"]);
+                          }
+                          else {
+                          alert(locale.message.alert["server_not_responding"]);
+                          }
+                          }
+                          });
+            }
+        }
+		
+		
+		function logOut() {
+			localStorage[config.data[0].storage_key+'_Session'] = null;
+			
+			if (config.data[0].platform == 'ios' || config.data[0].platform == 'android') {
+				navigator.notification.alert(locale.message.alert["sign_out_message"], function() {}, config.data[0].app_name, locale.message.button["close"]);
+			} else {
+				alert(locale.message.alert["sign_out_message"]);
+			}
+			//redirectTopage('index.html');
+			
+			
+         
+		     jQuery('.myact').html('<a class="skip-link skip-account ui-link" id="loginbtn" href="javascript:void(0)"><span class="label">Login</span></a>');
+                       
+		 
+		 
+		 }
+		 
+		 function regsubmitform() {
+            var password, email, full_name, first_name, last_name;
+           
+			full_name = $("#fullname").val();
+			full_name = full_name.replace(/\s{2,}/g, ' ');
+			var fullnameval = full_name.split(" ");
+			var i = 0;
+			var firstnameval = [];
+			for(i = 0; i < (fullnameval.length-1); i++){
+			firstnameval[i] = fullnameval[i];
+			}
+			first_name = firstnameval.toString().replace(/\,/g, ' ');
+			
+			last_name = fullnameval[fullnameval.length-1];
+			if(fullnameval.length == 1)
+				last_name = first_name = fullnameval.toString();
+            email = $("#email").val();
+            password = $("#rpassword").val();
+			
+			var cpassword = $("#cpassword").val();
+			
+             if(fullnameval.length < 2 || fullnameval[1]=='' || fullnameval[1]=='undefined')
+            {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["full_name_message"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                }
+                else{
+                    alert(locale.message.alert["full_name_message"]);
+                }
+                return false;
+            }
+            if(first_name == "") {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["firstname_blank"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                }
+                else{
+                    alert(locale.message.alert["firstname_blank"]);
+                }
+            }
+            else if(!isValidName(first_name)) {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["firstname_invalid"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                }
+                else{
+                    alert(locale.message.alert["firstname_invalid"]);
+                }
+            }
+            else if(email == "") {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["empty_email"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                }
+                else {
+                    alert(locale.message.alert["empty_email"]);
+                }
+            }
+            else if(!checkEmail(email)) {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["invalid_email"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                }
+                else{
+                    alert(locale.message.alert["invalid_email"]);
+                }
+            }
+            else if(password.length < 6) {
+                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+                    navigator.notification.alert(locale.message.alert["password_validation_for_minimum_length"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                }
+                else{
+                    alert(locale.message.alert["password_validation_for_minimum_length"]);
+                }
+            }else if(password!=cpassword) {
+			  
+			     alert('Confirm password not matched');
+			
+			}
+            else {
+                $("#rgsbtn").html('<center><img src="images/spin.gif"></center>');
+                var customerid;
+                var STORE = config.data[0].storeid;
+                var BASE_URL  = config.data[0].baseurl;
+               // alert(BASE_URL+"?callback=?"+"&store="+STORE+"&service=createuser&firstname="+first_name+"&lastname="+last_name+"&email="+email+"&password="+Base64.encode(password));
+                $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=createuser&firstname="+first_name+"&lastname="+last_name+"&email="+email+"&password="+Base64.encode(password)+"",
+                          function (response) {
+							  try {
+								  var status = response["status"];
+								  if(status!=0 ) {
+									customerid = response["id"];
+								  }
+								  else {
+									customerid = -1;
+								  }
+							  }
+							  catch(ex) {
+								customerid = -1;
+							  }
+							  if(customerid<=0) {
+								  if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+									navigator.notification.alert(locale.message.alert["email_already_registered"],function () {},config.data[0].app_name, locale.message.button["close"]);
+								  }
+								  else{
+									alert(locale.message.alert["email_already_registered"]);
+								  }
+								  $("#email").val("");
+								  $("#password").val("");
+								  $("#cpassword").val("");
+								  //$("#registerbutton_div").html('<input type="submit" data-role="button" data-theme="b" id="registerbutton" name="registerbutton" value="'+ locale.message.button["sign_up_now"] +'" />');
+								  $("#rgsbtn").html('<span><span>Register</span></span>');
+								 // $("#registerbutton_div").trigger('create');
+							  }
+							  else {
+								  localStorage[config.data[0].storage_key+"_Loginemail"]=email;
+								  loginStart(customerid, first_name, last_name, email, password);
+								  if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
+									  navigator.notification.alert(locale.message.alert["register_successfully_message"],function () {},config.data[0].app_name, locale.message.button["close"]);
+								  }
+								  else{
+									  alert(locale.message.alert["register_successfully_message"]);
+								  }
+								  if(localStorage[config.data[0].storage_key+"_nextpage"] == null || localStorage[config.data[0].storage_key+"_nextpage"] == "null") {
+									  visitHomePage();
+								  }
+								  else {
+									  var dirPath = dirname(location.href);
+									  var fullPath = dirPath +"/"+localStorage[config.data[0].storage_key+"_nextpage"];
+									  localStorage[config.data[0].storage_key+"_nextpage"] = null;
+									  window.location=fullPath;
+									  
+									  jQuery('#loginbtn').click();
+								  }
+							  }
+                          });
+            }
+        }
+		
+               
+ function getcartitem()
+ {
+   
+	 var storage_key='Eluvyeccc3';
+	var storedNames = JSON.parse(localStorage['Eluvyeccc3'+'_pNames']);
+	
+	
+			  try{
+                    var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div><div class="empty_text">"' + locale.message.text["cart_empty_text"] + '"</div></div>';
+                    var cartItems=0;
+                   // $("#cartProductslist").html(emptyText);
+                   // $("#cartbtn2").hide();
+                    //$("#couponcode").hide();
+                    try{
+                        cartItems = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']).length;
+                    }
+                    catch(Ex){
+                        cartItems=0;
+                    }
+                   
+                    if(cartItems<=0){
+                        
+                    }
+                      storedNames = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']);
+					  
+					  jQuery('#totalcount').html(storedNames.length);
+	
+                     var storedPrices = JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']);
+                     var  storedImages = JSON.parse(localStorage[config.data[0].storage_key+'_pImages']);
+                    try {
+                       var  storedSizes = JSON.parse(localStorage[config.data[0].storage_key+'_pSizes']);
+                        var storedColor = JSON.parse(localStorage[config.data[0].storage_key+'_pColor']);
+                    }
+                    catch(rr) {
+                        var storedSizes = '';
+                        var storedColor = '';
+                    }
+					
+                   var  storedQuantities = JSON.parse(localStorage[config.data[0].storage_key+'_pQuantities']);
+				   
+                    var cart_val=storedQuantities.reduce(function(prev, cur) {
+                                    return parseInt(prev) + parseInt(cur);
+                                 });
+                    var storedTitles = JSON.parse(localStorage[config.data[0].storage_key+'_pTitles']);
+                     try {
+                        var storedShipping = JSON.parse(localStorage[config.data[0].storage_key+'_pShippCharge']);
+                     }
+                     catch(rr) {
+                        var storedShipping = '';
+                     }
+                     var storedIds = JSON.parse(localStorage[config.data[0].storage_key+'_pIds']);
+                     
+                     
+                     var parent_pro_data = JSON.parse(localStorage[config.data[0].storage_key+'_pnew_pro_data']);
+                     
+                     
+                     
+                     var CouponDetail =new Object();
+                     var discount_amount,apply_to_shipping,simple_action,discount_qty,shipmyidonly;
+                    
+                    // $("#cartProductslist").html('<center><img src="images/spin.gif" /></center>');
+                     var parray = new Object();
+                     for(var i=0;i<storedIds.length;i++){
+                         parray[i] = storedIds[i];
+                     }
+                     var productid=JSON.stringify(parray);
+                     var BASE_URL  = config.data[0].baseurl;
+                     var STORE = config.data[0].storeid;
+                     //---Fetch Store Details from Mofluid Magento Web Service
+                     $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=productQuantity&product="+productid, function (response) {
+                        var productquan_response=response;
+                               
+                        var i=0, productList = '<div class="minicart-wrapper"><p class="block-subtitle">Recently added item(s)<a class="close skip-link-close" href="#" title="Close">×</a></p><div><ul id="cart-sidebar" class="mini-products-list">';
+                         
+
+						 if(storedNames.length==""){
+                              
+                        
+                           // $("#couponcode").hide();
+                        }
+                        else if(!(storedNames.length)) {
+                            var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div class="empty_text"><div>'+locale.message.text["cart_empty_text"]+'</div></div>';
+                       
+                         //   $("#couponcode").hide();
+                        }
+                        else {
+						
+						
+                            while(i<storedNames.length) {
+                              
+                              
+                                var pName = storedNames[i],pSize = storedSizes[i],pColor=storedColor[i];
+                                pName = "'"+pName+"'", pSize = "'"+pSize+"'",pColor = "'"+pColor+"'";
+                                var pship = "'"+storedShipping[i]+"'";
+                                if(!storedSizes[i]) {
+                                    storedSizes[i] = '';
+                                }
+                             
+                       
+                               
+                                productList += '<li class="item odd" >\n\
+								                <a onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')"  class="product-image">\n\
+                                                   <img  src="'+storedImages[i]+'" onerror="bad_image(this);" width="50" height="50"></a>\n\
+												    <div class="product-details"><p class="product-name"><a onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')">'+ storedTitles[i] +'</a></p>\n\
+													<table class="info-wrapper">\n\
+													<tbody><tr><td><span>Price:</span><span class="price">'+app_curr_symbol+ parseFloat(storedPrices[i]).toFixed(2) +'</span> </td></tr>\n\
+															<tr class="qty-wrapper"><td><span>Qty:</span><input id="qinput-348" class="qty cart-item-quantity" name="" value="'+storedQuantities[i]+'"></td></tr>\n\
+														</tbody>\n\
+													</table>\n\
+                                             	<div class="removeitem"><a  onclick="removeItem('+i+')" title="Remove This Item"  class="remove"><i class="fa fa-trash-o"></i></a></div> </div></li>';
+                               
+                               
+                               
+                               i++;
+                               
+                               
+                               
+                            }
+							
+							
+                         
+                            var ttlAmt = 0;
+                            var shipAmt=0;
+                            var ttlAll=0;
+                            var i = 0;
+                            while(i < cartItems) {
+                                ttlAmt = ttlAmt + (storedQuantities[i] * storedPrices[i] );
+                             
+                                i++;
+                            }
+							
+							 productList +='</ul> </div><div id="minicart-widgets"></div><div class="block-content"><p class="subtotal"><span class="label">Cart Subtotal:</span> <span class="price">$'+ttlAmt+'</span></p>\n\
+									</div> <div class="minicart-actions"><a class="cart-link" onclick="goTopage()">View Shopping Cart</a>\n\
+											<ul class="checkout-types minicart"><li><a title="Checkout" class="button checkout-button" onClick="proceedcheck();">Checkout</a></li></ul></div></div>';
+							jQuery('#minicart').html(productList);
+                         
+                         
+                            
+                           
+                        }
+                    });
+                } catch(err2) {
+                    console.log(err2);
+					
+					alert(err2);
+                }
+			  
+	
+	
+	   
+
+
+
+						
+  						
+            }
+
+			
+			function proceed() {
+                try {
+                    var Session = JSON.parse(localStorage[config.data[0].storage_key+'_Session']);
+                }
+                catch(err) {
+                    console.log(err.message);
+                    var dirPath = dirname(location.href);
+                    var fullPath = dirPath + "/guestcheckout.html";
+                    window.location = fullPath;
+                }
+                var isValidQuantity = 1;
+                $('#cartProductslist input[type=number]').each(function() {
+                    if(/^\+?(0|[1-9]\d*)$/.test($(this).val())) {
+                        console.log("Valid Quantity");
+                    }
+                    else {
+                        isValidQuantity = 0;
+                        return false;
+                    }
+                });
+                if(isValidQuantity) {
+                    if(Session == null) {
+                        var dirPath = dirname(location.href);
+                        localStorage[config.data[0].storage_key+"_nextpage"] = "buy_now.html?amount=" + localStorage[config.data[0].storage_key+'_subtotal']+"";
+                        var fullPath = dirPath + "/guestcheckout.html";
+                        window.location=fullPath;
+                    }
+                    else {
+                        $('#buyNow2').button ("disable");
+                        var fullPath = "buy_now.html?amount=" + localStorage[config.data[0].storage_key+'_subtotal']+"";
+                        window.location=fullPath;
+                    }
+                }
+                else {
+                   console.error("Inalid Quantity");
+                   if (config.data[0].platform=='ios' || config.data[0].platform=='android') {
+                       
+                       navigator.notification.alert(locale.message.text["invalid_quantity"],function () {},config.data[0].app_name, locale.message.button["close"]);
+                   }
+                   else{
+                       alert(locale.message.text["invalid_quantity"]);
+                   }
+                }
+            }
+            
+            /*
+             *Function call to check cart item quantity
+             *@param
+             *@return
+             */
+            
+            function proceedcheck(){
+                var flag;
+                storedIds = JSON.parse(localStorage[config.data[0].storage_key+'_pIds']);
+                var product_name_array = JSON.parse(localStorage[config.data[0].storage_key+'_pTitles']);
+                var parray = new Object();
+                for(var i=0;i<storedIds.length;i++){
+                    parray[i] = storedIds[i];
+                }
+                productid=JSON.stringify(parray);
+                var BASE_URL  = config.data[0].baseurl;
+                var STORE = config.data[0].storeid;
+                $.mobile.loading("show");
+                //---Fetch Store Details from Mofluid Magento Web Service
+                $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=productQuantity&product="+productid, function (response) {
+                          $.mobile.loading("hide");
+                    flag=0;
+                    productquan_response=response;
+                    for (var i=0;i<storedIds.length;i++){
+                        if(productquan_response[storedIds[i]]==0){
+                          
+                            if (config.data[0].platform=='ios' || config.data[0].platform=='android') {
+                                navigator.notification.alert(locale.message.alert["item_remove_message"] +"-"+ product_name_array[i],function (){},config.data[0].app_name, locale.message.button["close"]);
+                            }
+                            else{
+                                alert(locale.message.alert["item_remove_message"] +"-"+ product_name_array[i]);
+                            }
+                            flag=1;
+                        }
+                    }
+                    if(flag==0){
+                        proceed();
+                    }
+                });
+            }
+			
+	  function goTopage()
+            {	  
+			   redirectTopage('cart.html');
+             } 
+
+function removeItem(index) {
+    var nameArray = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']);
+    var priceArray = JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']);
+    var imageArray = JSON.parse(localStorage[config.data[0].storage_key+'_pImages']);
+    var title = JSON.parse(localStorage[config.data[0].storage_key+'_pTitles']);
+    try {
+        var sizes=JSON.parse(localStorage[config.data[0].storage_key+'_pSizes']);
+        var colors=JSON.parse(localStorage[config.data[0].storage_key+'_pColor']);
+    }
+    catch(ee) {
+        var sizes='';
+        var colors='';
+    }
+    var pIds=JSON.parse(localStorage[config.data[0].storage_key+'_pIds']);
+    if(localStorage.getItem(config.data[0].storage_key+"_pQuantities") === null) {
+        var quantityArray = [];
+    }
+    else
+        var quantityArray = JSON.parse(localStorage[config.data[0].storage_key+'_pQuantities']);
+    var pnew_pro_dataArray = JSON.parse(localStorage[config.data[0].storage_key+'_pnew_pro_data']);
+    var pcustomoptionsArray = JSON.parse(localStorage[config.data[0].storage_key+'_pcustom_options']);
+    
+    
+    var pname1=title[index];
+    nameArray.splice(index, 1);
+    priceArray.splice(index, 1);
+    imageArray.splice(index, 1);
+    quantityArray.splice(index, 1);
+    title.splice(index, 1);
+    try {
+        sizes.splice(index,1);
+        colors.splice(index,1);
+    }
+    catch(ee) {
+        var sizes='';
+        var colors='';
+    }
+    pIds.splice(index,1);
+    pnew_pro_dataArray.splice(index, 1);
+    pcustomoptionsArray.splice(index, 1);
+    localStorage[config.data[0].storage_key+'_pNames'] = JSON.stringify(nameArray);
+    localStorage[config.data[0].storage_key+'_pPrices'] = JSON.stringify(priceArray);
+    localStorage[config.data[0].storage_key+'_pImages'] = JSON.stringify(imageArray);
+    localStorage[config.data[0].storage_key+'_pQuantities'] = JSON.stringify(quantityArray);
+    localStorage[config.data[0].storage_key+'_pTitles'] = JSON.stringify(title);
+    try {
+        localStorage[config.data[0].storage_key+'_pSizes'] = JSON.stringify(sizes);
+        localStorage[config.data[0].storage_key+'_pColor'] = JSON.stringify(colors);
+    }
+    catch(err) {
+        localStorage[config.data[0].storage_key+'_pSizes'] = '';
+        localStorage[config.data[0].storage_key+'_pColor'] = '';
+    }
+    localStorage[config.data[0].storage_key+'_pIds'] = JSON.stringify(pIds);
+    localStorage[config.data[0].storage_key+'_pnew_pro_data'] = JSON.stringify(pnew_pro_dataArray);
+    localStorage[config.data[0].storage_key+'_pcustom_options'] = JSON.stringify(pcustomoptionsArray);
+    
+    if (config.data[0].platform=='ios' || config.data[0].platform=='android') {
+        navigator.notification.alert(locale.message.alert["when_a_product_removed_from_cart"].replace("{{product}}", pname1),function (){},config.data[0].app_name, locale.message.button["close"]);
+    }
+    else{
+        alert(locale.message.alert["when_a_product_removed_from_cart"].replace("{{product}}", pname1));
+    }
+    var totalShip = total=0,total_with_shipping;
+    for(i=0;i<priceArray.length;i++) {
+        total = total + (Number(priceArray[i])*Number(quantityArray[i]));
+    }
+    for(i=0;i<priceArray.length;i++) {
+        //  totalShip = totalShip + (Number(shippingArray[i])*Number(quantityArray[i]));
+    }
+    total_with_shipping = total + totalShip ;
+    localStorage[config.data[0].storage_key+'_totalAmount'] = total_with_shipping;
+    localStorage[config.data[0].storage_key+'_TotalShipp'] = totalShip;
+    total = parseFloat(total).toFixed(2);
+    totalShip = parseFloat(totalShip).toFixed(2);
+    total_with_shipping = parseFloat(total_with_shipping).toFixed(2);
+    $("#totalAmount").html(app_curr_symbol+total+'');
+    $("#shipping_detail").html(app_curr_symbol+totalShip+'');
+    $("#total_with_shipping").html(app_curr_symbol+total_with_shipping+'');
+    location.reload();
+}
+	   
+	
+	</script>
+	
+
+	  
+	  
     </head>
     <body class="ltr page product listing ">
         <body onLoad="onDeviceReady()">
@@ -544,41 +1155,13 @@
 					
 					<div id="wishlistitem">
 					  <center><img src="images/spin.gif" id="new_hide" ></center>
+					  
+					  
 					</div>
 
-        <form id="wishlist-allcart-form" action="https://eluvy.com/wishlist/index/allcart/" method="post">
-            <input name="form_key" type="hidden" value="4uXVSQIm19CSoKab">
-            <div class="no-display">
-                <input type="hidden" name="wishlist_id" id="wishlist_id" value="5">
-                <input type="hidden" name="qty" id="qty" value="">
-            </div>
-        </form>
-
-        <script type="text/javascript">
-        //<![CDATA[
-            var wishlistForm = new Validation($('wishlist-view-form'));
-            var wishlistAllCartForm = new Validation($('wishlist-allcart-form'));
-
-            function calculateQty() {
-                var itemQtys = new Array();
-                $$('#wishlist-view-form .qty').each(
-                    function (input, index) {
-                        var idxStr = input.name;
-                        var idx = idxStr.replace( /[^\d.]/g, '' );
-                        itemQtys[idx] = input.value;
-                    }
-                );
-
-                $$('#qty')[0].value = JSON.stringify(itemQtys);
-            }
-
-            function addAllWItemsToCart() {
-                calculateQty();
-                wishlistAllCartForm.form.submit();
-            }
-        //]]>
-        </script>
-        </div>
+      
+        
+		</div>
     </div>
                                     
                                     

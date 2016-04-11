@@ -1717,7 +1717,7 @@ table.preshipTable td {
 }
 #Sstate_textfield > div,
 #state_textfield > div {
-    margin: 10px 0px;
+    margin: 0px;
 }
 .div_floatright,
 .div_floatleft,
@@ -4341,6 +4341,31 @@ margin: 0 0 0 2px; display:inline-block;
     text-rendering: optimizeLegibility;
     text-transform: uppercase;
 }
+
+.default_shipaddress .ui-input-text{width:100% !important; float:left; margin:0; padding:0;}
+.default_shipaddress .ui-input-text input[type=text]{border:1px solid #ccc;}
+.default_shipaddress .ui-textinput-autogrow{border-radius:0; border:1px solid #ccc;}
+.default_shipaddress label{width:100% !important; float:left; margin:10px 0 0 0;}
+
+.buyForm .ui-input-text{width:100% !important; float:left; margin:0; padding:0;}
+.buyForm .ui-input-text input[type=text]{border:1px solid #ccc;}
+.buyForm .ui-textinput-autogrow{border-radius:0; border:1px solid #ccc;}
+.buyForm label{width:100% !important; float:left; margin:10px 0 0 0;}
+.buyForm .ui-select{display:inline-block; width:100%;}
+.buyForm .content-secondry{display:inline-block; width:100%;}
+.buyForm .ui-radio{display:inline-block;}
+
+.myprofile .ui-input-text{width:100% !important; float:left; margin:0; padding:0;}
+.myprofile .ui-input-text input[type=text]{border:1px solid #ccc;}
+.myprofile .ui-textinput-autogrow{border-radius:0; border:1px solid #ccc;}
+.myprofile label{width:100% !important; float:left; margin:10px 0 0 0;}
+.myprofile .ui-input-btn{display:inline-block; width:100%;}
+
+.content_inner .ui-input-text{width:100% !important; float:left; margin:0 0 10px 0 !important; padding:0;}
+.content_inner .ui-input-text input[type=text]{border:1px solid #ccc;}
+.content_inner .ui-textinput-autogrow{border-radius:0; border:1px solid #ccc;}
+.content_inner label{width:100% !important; float:left; margin:10px 0 0 0;}
+.content_inner .ui-checkbox{display:inline-block;}
 
 
 @media all and (max-width: 414px) {
