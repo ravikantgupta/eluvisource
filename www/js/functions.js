@@ -103,7 +103,7 @@ else{
 var Simple_product_detail_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&service=productdetaildescription&productid="+PRODUCT_ID+"&currency="+app_curr_code;
    console.log(Simple_product_detail_webservice);
    
-   alert(Simple_product_detail_webservice);
+  
 $.ajax({
      url:Simple_product_detail_webservice,
      type: 'GET',
@@ -126,7 +126,7 @@ $.ajax({
        params["stock_status"] = stock_status;
        params["ptype"] = results["type"];
        
-       alert(JSON.stringify(results));
+       
        if(results["type"] == "configurable"){
        getProDetail(PRODUCT_ID,stock_status,results["type"]);
        }
@@ -4064,7 +4064,7 @@ $("#pImage5").attr("src", imageURL5);
                 
                 function getFooter() {
                
-                var footerText = '<fieldset class="ui-grid-c" style="text-align: center;background: orange;width:100%;height:100%;"><div class="ui-block-b css_footer"><a href="#" class="fa fa-home fa" onclick=\'Page.redirect("index.html", "slide", "down");\'></a></div><div class="ui-block-b css_footer"><a href="javascript:void(0);" onclick="new_search_btn()" id="new_search_btn"class="fa fa-search fa"></a></div><div class="ui-block-b css_footer"><a href="#" class="fa fa-user fa" onclick="footer_login()"></a></div><div class="ui-block-b css_footer"><a href="#" class="fa fa-shopping-cart fa" onclick=\'Page.redirect("cart.html", "slide", "down");\'> <div class="cartamount" style="display:block !important;"><div class="cartNew" id="cartProducts">0</div></div></a></div></fieldset>';
+                var footerText = '<fieldset class="ui-grid-c" style="text-align: center;background: orange;width:100%;height:100%;"><div class="ui-block-b css_footer"><a href="#" class="fa fa-home fa" onclick=\'Page.redirect("index.html", "slide", "down");\'></a></div><div class="ui-block-b css_footer"><a href="javascript:void(0);" onclick="new_search_btn()" id="new_search_btn"class="fa fa-search fa"></a></div><div class="ui-block-b css_footer"><a href="#" class="fa fa-user fa" onclick="footer_login()"></a></div></fieldset>';
                 $(".footer").html(footerText);
                 updateCartQty();
                 }
@@ -4109,9 +4109,9 @@ $("#pImage5").attr("src", imageURL5);
                 
                 }
                 function back_click_new() {
-                   alert('shreeram');
+                  
                   localStorage.setItem('foo', 1);
-                    alert(history.back());
+                   
                  Page.redirect('product_details.html', 'slide', 'right');
                 }
 
