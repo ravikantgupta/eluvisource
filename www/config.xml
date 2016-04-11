@@ -74,6 +74,7 @@
                 <preference name="orientation" value="portrait" />
                 <preference name="target-device" value="universal" />
                 <preference name="DisallowOverscroll" value="true" />
+				 <preference name="SplashScreenDelay" value="3000" />
           	<preference name="webviewbounce" value="false" />
 
         
