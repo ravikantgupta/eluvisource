@@ -15,6 +15,29 @@
 	    function onDeviceReady() {
             		
 			setfourBox();
+			
+			 var Session = JSON.parse(localStorage[config.data[0].storage_key+'_Session']);
+             var customerid = Session["customer_id"];
+			 			
+				   $.ajax({
+						url: "" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=getwishlist&customerid="+customerid+ "&currency=" + app_curr_code,
+						type: 'GET',
+						contentType: 'application/json',
+						dataType: 'json',
+						async: false,
+						error: function(jqXHR, textStatus, errorThrown) {
+						console.log("Internal server Error! \n please try after some time.")
+						},
+						success: function(response) {
+					   
+					            
+						  		 jQuery('#wishlistitem').html(response.data);
+													
+							
+						}
+                });
+			
+			   
 			getcartitem();
         }
 	 
@@ -467,21 +490,7 @@
                         </a>
                     </div>
                     
-                    <!--<div class="cart_search_container">
-                        <div class="navigation_cart">
-                            <a href="javascript:void(0);" onclick="redirectTopage('cart.html')">
-                                <img  class="cart_icon navigation_icon" src="images/themeicons/cart_32x32.png" onerror="this.onerror=null;this.src='images/cart.png'" />
-                                <div class="cartamount">
-                                    <div class="cartNew" id="cartProducts">0</div>
-                                </div>
-                            </a>
-                        </div>
-                        
-                        
-                        <div class="navigation_search">
-                            <a href="javascript:void(0);" id="search_btn"> <img src="images/search.png" class="navigation_icon"></a>
-                        </div>
-                    </div>-->
+                    
                     
                     
                     <div class="clear"></div>
@@ -514,228 +523,28 @@
                                 	
                                     <div class="my-wishlist">
         							<div class="pro-head">
-                                    <div class="leftcontainer">
-										<div class="col-left sidebar col-left-first"><div class="block block-account">
-    <div class="block-title">
-        <strong><span>My Account</span></strong>
-    </div>
-				<div class="block-content no-display">
-						  <ul>
-						    <li><a onclick="redirectTopage('myorder.html')">My Orders</a></li>
-							<li><a onclick="redirectTopage('wishlist.html')">My Wishlist</a></li>
-							<li><a onclick="redirectTopage('reward-point.html')">My Reward Points</a></li>
-						</ul>
-				</div>
-</div>
-</div>
+                               <div class="leftcontainer">
+								   <div class="col-left sidebar col-left-first">
+										<div class="block block-account">
+											<div class="block-title">
+												<strong><span>My Account</span></strong>
+											</div>
+														<div class="block-content no-display">
+																  <ul>
+																	<li><a onclick="redirectTopage('myorder.html')">My Orders</a></li>
+																	<li><a onclick="redirectTopage('wishlist.html')">My Wishlist</a></li>
+																	<li><a onclick="redirectTopage('reward-point.html')">My Reward Points</a></li>
+																</ul>
+														</div>
+										</div>
+                                   </div>
 										
-				</div>
+				             </div>
                                             
-        <form id="wishlist-view-form" action="https://eluvy.com/wishlist/index/update/wishlist_id/5/" method="post">
-                        <div class="fieldset">
-                                        <input name="form_key" type="hidden" value="4uXVSQIm19CSoKab">
-                                                <table class="clean-table linearize-table" id="wishlist-table">
-    <thead>
-        <tr class="first last">
-                            <th class="customer-wishlist-item-image"></th>
-                            <th class="customer-wishlist-item-info"></th>
-                            <th class="customer-wishlist-item-quantity">Quantity</th>
-                            <th class="customer-wishlist-item-price">Price</th>
-                            <th class="customer-wishlist-item-cart"></th>
-                            <th class="customer-wishlist-item-remove"></th>
-                    </tr>
-    </thead>
-    <tbody>
-                                    <tr id="item_24" class="first odd">
-                                            <td class="wishlist-cell0 customer-wishlist-item-image"><a class="product-image" href="https://eluvy.com/test-festive-bracelet1.html" title="Mesh Bangle (TK)">
-    <img src="https://eluvy.com/media/catalog/product/cache/1/small_image/113x113/9df78eab33525d08d6e5fb8d27136e95/d/s/dsc_3212_copy.jpg" width="113" height="113" alt="Mesh Bangle (TK)">
-</a>
-</td>
-                                            <td class="wishlist-cell1 customer-wishlist-item-info"><h3 class="product-name">
-    <a href="https://eluvy.com/test-festive-bracelet1.html" title="Mesh Bangle (TK)">Mesh Bangle (TK)</a>
-</h3>
-
-<div class="wishlist-sku">
-    <span>SKU EV01B-RG</span>
-</div>
-
-<!-- <div class="description std">
-    <div class="inner"> -->
-        <!--     </div>
-</div> -->
-
-<textarea name="description[24]" rows="3" cols="5" title="Comment" placeholder="Please, enter your comments..."></textarea>
-
-    <div class="item-manage">
-            
-    <button type="submit" name="do" title="Update Wishlist" class="button btn-update button-secondary"><span><span>Update Wishlist</span></span></button>
-        </div>
-</td>
-                                            <td class="wishlist-cell2 customer-wishlist-item-quantity" data-rwd-label="Quantity"><div class="cart-cell">
-    <div class="add-to-cart-alt">
-            <input type="text" pattern="\d*" class="input-text qty validate-not-negative-number" name="qty[24]" value="1">
-        </div>
-</div>
-</td>
-                                            <td class="wishlist-cell3 customer-wishlist-item-price" data-rwd-label="Price"><div class="cart-cell">
-    
-
-                        
-    <div class="price-box">
-                                            
-                    <p class="old-price">
-                <span class="price-label">Regular Price:</span>
-                <span class="price" id="old-price-19">
-                    S$39.00                </span>
-            </p>
-
-                            <p class="special-price">
-                    <span class="price-label">Special Price</span>
-                <span class="price" id="product-price-19">
-                    S$31.20                </span>
-                </p>
-                    
-    
-        </div>
-
-</div>
-</td>
-                                            <td class="wishlist-cell4 customer-wishlist-item-cart"><div class="cart-cell">
-    <button type="button" title="Add to Cart" onClick="addWItemToCart(24);" class="button btn-cart"><span><span>Add to Cart</span></span></button>
-</div>
-    <p><a class="link-edit button button-secondary" href="https://eluvy.com/wishlist/index/configure/id/24/">Edit</a></p>
-    
-
-</td>
-                                            <td class="wishlist-cell5 customer-wishlist-item-remove last"><a href="https://eluvy.com/wishlist/index/remove/item/24/" onClick="return confirmRemoveWishlistItem();" title="Remove Item" class="btn-remove btn-remove2">Remove item</a>
-</td>
-                                    </tr>
-                            <tr id="item_26" class="last even">
-                                            <td class="wishlist-cell0 customer-wishlist-item-image"><a class="product-image" href="https://eluvy.com/stone-earing.html" title="STONE EARRING">
-    <img src="https://eluvy.com/media/catalog/product/cache/1/small_image/113x113/9df78eab33525d08d6e5fb8d27136e95/e/a/earing1_1.jpg" width="113" height="113" alt="STONE EARRING">
-</a>
-</td>
-                                            <td class="wishlist-cell1 customer-wishlist-item-info"><h3 class="product-name">
-    <a href="https://eluvy.com/stone-earing.html" title="STONE EARRING">STONE EARRING</a>
-</h3>
-
-<div class="wishlist-sku">
-    <span>SKU E09</span>
-</div>
-
-<!-- <div class="description std">
-    <div class="inner"> -->
-        <!--     </div>
-</div> -->
-
-<textarea name="description[26]" rows="3" cols="5" title="Comment" placeholder="Please, enter your comments..."></textarea>
-
-    <div class="item-manage">
-            
-    <button type="submit" name="do" title="Update Wishlist" class="button btn-update button-secondary"><span><span>Update Wishlist</span></span></button>
-        </div>
-</td>
-                                            <td class="wishlist-cell2 customer-wishlist-item-quantity" data-rwd-label="Quantity"><div class="cart-cell">
-    <div class="add-to-cart-alt">
-            <input type="text" pattern="\d*" class="input-text qty validate-not-negative-number" name="qty[26]" value="1" id="_ispbxi_">
-        </div>
-</div>
-</td>
-                                            <td class="wishlist-cell3 customer-wishlist-item-price" data-rwd-label="Price"><div class="cart-cell">
-    
-
-                        
-    <div class="price-box">
-                                                                <span class="regular-price" id="product-price-9">
-                                            <span class="price">S$50.00</span>                                    </span>
-                        
-        </div>
-
-</div>
-</td>
-                                            <td class="wishlist-cell4 customer-wishlist-item-cart"><div class="cart-cell">
-    <button type="button" title="Add to Cart" onClick="addWItemToCart(26);" class="button btn-cart"><span><span>Add to Cart</span></span></button>
-</div>
-    <p><a class="link-edit button button-secondary" href="https://eluvy.com/wishlist/index/configure/id/26/">Edit</a></p>
-    
-
-</td>
-                                            <td class="wishlist-cell5 customer-wishlist-item-remove last"><a href="https://eluvy.com/wishlist/index/remove/item/26/" onClick="return confirmRemoveWishlistItem();" title="Remove Item" class="btn-remove btn-remove2">Remove item</a>
-</td>
-                                    </tr>
-                        </tbody>
-</table>
-                        <script type="text/javascript">
-//<![CDATA[
-    decorateTable('wishlist-table');
-
-        
-        function focusComment(obj) {
-            if( obj.value == 'Please, enter your comments...' ) {
-                obj.value = '';
-            } else if( obj.value == '' ) {
-                obj.value = 'Please, enter your comments...';
-            }
-        }
-            
-            function addWItemToCart(itemId) {
-                var url = 'https://eluvy.com/wishlist/index/cart/item/%item%/uenc/aHR0cHM6Ly9lbHV2eS5jb20vd2lzaGxpc3Qv/form_key/4uXVSQIm19CSoKab/';
-                url = url.gsub('%item%', itemId);
-                var form = $('wishlist-view-form');
-                if (form) {
-                    var input = form['qty[' + itemId + ']'];
-                    if (input) {
-                        var separator = (url.indexOf('?') >= 0) ? '&' : '?';
-                        url += separator + input.name + '=' + encodeURIComponent(input.value);
-                    }
-                }
-                setLocation(url);
-            }
-            
-            function addWItemToCart(itemId) {
-                var url = 'https://eluvy.com/wishlist/index/cart/item/%item%/uenc/aHR0cHM6Ly9lbHV2eS5jb20vd2lzaGxpc3Qv/form_key/4uXVSQIm19CSoKab/';
-                url = url.gsub('%item%', itemId);
-                var form = $('wishlist-view-form');
-                if (form) {
-                    var input = form['qty[' + itemId + ']'];
-                    if (input) {
-                        var separator = (url.indexOf('?') >= 0) ? '&' : '?';
-                        url += separator + input.name + '=' + encodeURIComponent(input.value);
-                    }
-                }
-                setLocation(url);
-            }
-            
-            function addWItemToCart(itemId) {
-                var url = 'https://eluvy.com/wishlist/index/cart/item/%item%/uenc/aHR0cHM6Ly9lbHV2eS5jb20vd2lzaGxpc3Qv/form_key/4uXVSQIm19CSoKab/';
-                url = url.gsub('%item%', itemId);
-                var form = $('wishlist-view-form');
-                if (form) {
-                    var input = form['qty[' + itemId + ']'];
-                    if (input) {
-                        var separator = (url.indexOf('?') >= 0) ? '&' : '?';
-                        url += separator + input.name + '=' + encodeURIComponent(input.value);
-                    }
-                }
-                setLocation(url);
-            }
-            
-        function confirmRemoveWishlistItem() {
-            return confirm('Are you sure you want to remove this product from your wishlist?');
-        }
-        //]]>
-</script>
-                        <script type="text/javascript">decorateTable('wishlist-table')</script>
-                                <div class="buttons-set buttons-set2">
-                    
-    <button type="submit" name="save_and_share" title="Share Wishlist" class="button btn-share"><span><span>Share Wishlist</span></span></button>
-
-    <button type="button" title="Add All to Cart" onClick="addAllWItemsToCart()" class="button btn-add"><span><span>Add All to Cart</span></span></button>
-
-    <button type="submit" name="do" title="Update Wishlist" class="button btn-update button-secondary"><span><span>Update Wishlist</span></span></button>
-                </div>
-            </div>
-        </form>
+					
+					<div id="wishlistitem">
+					  <center><img src="images/spin.gif" id="new_hide" ></center>
+					</div>
 
         <form id="wishlist-allcart-form" action="https://eluvy.com/wishlist/index/allcart/" method="post">
             <input name="form_key" type="hidden" value="4uXVSQIm19CSoKab">
