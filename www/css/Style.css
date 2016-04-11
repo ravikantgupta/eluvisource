@@ -4370,6 +4370,8 @@ margin: 0 0 0 2px; display:inline-block;
 .content_inner label{width:100% !important; float:left; margin:10px 0 0 0;}
 .content_inner .login_box5{width:100%; float:left; margin:0;}
 .content_inner .login_box5 .ui-btn{margin-top:-7px;}
+.content_inner #normal_shipping_div{width:100%; float:left;}
+.buyForm #normal_shipping_div{width:100%; float:left;}
 .content_inner #loginbutton_div{width:100%; float:left;}
 .content_inner .space{width:100%; float:left;}
 .content_inner .login_box6{width:100%; float:left;}
