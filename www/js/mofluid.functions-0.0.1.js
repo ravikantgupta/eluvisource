@@ -51,6 +51,7 @@ var Page = new function() {
   };
   this.redirectWithParams = function(page, transition, direction, params) {
     try {
+		alert('ram1:'+JSON.stringify(params));
       localStorage.setItem(config.data[0].storage_key+"_params", Base64.encode(JSON.stringify(params)));
        
     }

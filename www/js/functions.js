@@ -175,7 +175,7 @@ function isValidalphanumeric(name) {
                           
     function getCMSB(id)
     {
-             $(".ui-loader").show();              
+                        
         Widget.getCmsPages(id);
     }
                           

@@ -26,7 +26,7 @@
          cms_api_data["store"] = config.data[0].storeid;
          cms_api_data["pageId"] = id;
          $.mobile.loading('show');
-		 alert(config.data[0].baseurl);
+		 
          $.ajax({
                 url: config.data[0].baseurl,
                 type: "GET",
@@ -54,7 +54,7 @@
                 params["result"] = result;
                
                 
-                   //   alert(JSON.stringify(result));
+                     alert('rrrrr:'+JSON.stringify(result));
                 Page.redirectWithParams('cms_page.html', 'slide', 'left', params);
                 }
                 }
