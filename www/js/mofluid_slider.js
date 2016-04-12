@@ -337,7 +337,7 @@ function addtocompare(productid)
 			 
 			 productid=localStorage[config.data[0].storage_key+"_compare"]+','+productid;
 			 
-			 alert(localStorage[config.data[0].storage_key+"_compare"]);
+			 
 	       
 		   }		   
 	 
