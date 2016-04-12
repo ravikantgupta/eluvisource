@@ -278,7 +278,10 @@ function setfourBox() {
                 
                     //Page.redirect("login.html", "slide", "down");
                 }
-                }	
+                }
+
+                 $('.youama-forgot-password').html('<a  onclick="redirectTopage('forgotpassword.html');">Forgot Password</a>');
+         				
 	
 	
 }
