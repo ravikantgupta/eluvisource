@@ -52,12 +52,7 @@ var Page = new function() {
   this.redirectWithParams = function(page, transition, direction, params) {
     try {
 		
-		alert('ttt:'+JSON.stringify(params));
-		
-		//alert('ttt1:'+ JSON.parse(params['result']);
-		
-		
-		
+				
       localStorage.setItem(config.data[0].storage_key+"_params", Base64.encode(JSON.stringify(params)));
 	  
 	  if(jQuery('#currentpage').val()==1)
@@ -67,9 +62,9 @@ var Page = new function() {
 		   
 		    var data = page_data.result;
 			
-			alert('sreee'+data.content);
 			
-		  //$("#cms-page-detail").html(params['result']);
+			
+		  $("#cms-page-detail").html(data.content);
 		}
        
     }
