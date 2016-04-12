@@ -48,6 +48,8 @@ var Page = new function() {
     };
     this.redirectWithParams = function(page, transition, direction, params) {
         try {
+			
+			  alert('ram:'+JSON.stringify(params));
             localStorage.setItem(config.app.storage_key+"_params", Base64.encode(JSON.stringify(params)));
             
         }
