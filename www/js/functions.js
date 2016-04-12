@@ -4100,7 +4100,7 @@ $("#pImage5").attr("src", imageURL5);
                 
                 
                 function footer_login() {
-					 $(".ui-loader").show();
+					
                 if (localStorage[config.data[0].storage_key + "_Session"] == null) {
                    //Page.redirect("login.html", "slide", "down");
 				   $('#loginbtn').click();
