@@ -52,7 +52,7 @@
                 var params = new Object();
                 params["id"] = id;
                 params["result"] = result;
-               
+               localStorage.setItem("cmsparams",result);
                 
                      window.location.href ="cms_page.html";
 					 
