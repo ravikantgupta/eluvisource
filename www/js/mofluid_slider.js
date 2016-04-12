@@ -258,6 +258,28 @@ function setfourBox() {
 											
                                         }
                                         });
+										
+										
+										
+	/*check Session*/
+
+    
+
+          if (localStorage[config.data[0].storage_key + "_Session"] == null) {
+                //Page.redirect("login.html", "slide", "down");
+                } else {
+                var e = JSON.parse(localStorage[config.data[0].storage_key + "_Session"]);
+                if (e != null && e.login_status == "Active") {
+					
+					var acnthtml='<ul><li class="first"><a onchange="footer_login()">My Account</a></li><li ><a onclick="logOut()">LOGOUT</a></li></ul>';
+					
+					 jQuery('#header-account').html(acnthtml); 
+                
+                } else {
+                
+                    //Page.redirect("login.html", "slide", "down");
+                }
+                }	
 	
 	
 }
