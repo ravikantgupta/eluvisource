@@ -54,7 +54,7 @@
                 params["result"] = result;
                
                 
-                     redirectTopage('wishlist.html');
+                     redirectTopage('cms_page.html');
 					 
                 //Page.redirectWithParams('cms_page.html', 'slide', 'left', params);
                 }
