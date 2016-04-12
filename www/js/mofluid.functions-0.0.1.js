@@ -55,19 +55,7 @@ var Page = new function() {
 				
       localStorage.setItem(config.data[0].storage_key+"_params", Base64.encode(JSON.stringify(params)));
 	  
-	  if(jQuery('#currentpage').val()==1)
-		{
-		  
-		   var page_data = JSON.parse(Base64.decode(localStorage.getItem(config.data[0].storage_key+"_params")));
-		   
-		    var data = page_data.result;
-			
-			
-			
-		  //$("#cms-page-detail").html(data.content);
-		  
-		 alert(data.content);
-		}
+	  
        
     }
     catch(err) {

@@ -54,8 +54,9 @@
                 params["result"] = result;
                
                 
-                     
-                Page.redirectWithParams('cms_page.html', 'slide', 'left', params);
+                     redirectTopage('wishlist.html');
+					 
+                //Page.redirectWithParams('cms_page.html', 'slide', 'left', params);
                 }
                 }
                 });
