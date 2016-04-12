@@ -64,7 +64,9 @@ var Page = new function() {
 			
 			
 			
-		  $("#cms-page-detail").html(data.content);
+		  //$("#cms-page-detail").html(data.content);
+		  
+		 alert(data.content);
 		}
        
     }
