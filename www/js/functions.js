@@ -175,7 +175,7 @@ function isValidalphanumeric(name) {
                           
     function getCMSB(id)
     {
-                          
+             $(".ui-loader").show();              
         Widget.getCmsPages(id);
     }
                           
@@ -296,7 +296,7 @@ function redirectTopage(pagename) {
 	
 	 $(".ui-loader").show();	
 	 
-	 alert('rammmmm');
+	
 	 	
     var dirPath = dirname(location.href);
     var fullPath = dirPath + "/" + pagename;
@@ -4100,6 +4100,7 @@ $("#pImage5").attr("src", imageURL5);
                 
                 
                 function footer_login() {
+					 $(".ui-loader").show();
                 if (localStorage[config.data[0].storage_key + "_Session"] == null) {
                 Page.redirect("login.html", "slide", "down");
                 } else {
