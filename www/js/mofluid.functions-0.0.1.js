@@ -52,12 +52,14 @@ var Page = new function() {
   this.redirectWithParams = function(page, transition, direction, params) {
     try {
 		
-		  alert('ram1:'+params['result']->content);
+		var pagedata=JSON.parse(JSON.stringify(params));
+		  var pagedata1 = pagedata.result;
+		  alert('ram1:'+pagedata1->content);
 		if(jQuery('#currentpage').val()==1)
 		{
 		  
 		  
-		  $("#cms-page-detail").html(params['result']->content);
+		  $("#cms-page-detail").html(pagedata1->content);
 		}
       localStorage.setItem(config.data[0].storage_key+"_params", Base64.encode(JSON.stringify(params)));
        
