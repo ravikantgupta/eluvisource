@@ -54,7 +54,7 @@ var Page = new function() {
 		
 		alert('ttt:'+JSON.stringify(params));
 		
-		alert('ttt1:'+ JSON.parse(params['result']);
+		//alert('ttt1:'+ JSON.parse(params['result']);
 		
 		
 		if(jQuery('#currentpage').val()==1)
