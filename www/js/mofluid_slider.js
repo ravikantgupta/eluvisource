@@ -272,7 +272,7 @@ function setfourBox() {
                 if (e != null && e.login_status == "Active") {
 						 
 					 
-					  jQuery('.myact').html('<a class="skip-link skip-account ui-link" id="logoutbtn" onclick="logOut()" href="javascript:void(0)"><span class="label">Log Out</span></a>');
+					  jQuery('.myact').html('<a class="skip-link skip-account ui-link" id="logoutbtn" onclick="logOut()" href="javascript:void(0)"><span class="label">LOG OUT</span></a>');
                 
                 } else {
                 
