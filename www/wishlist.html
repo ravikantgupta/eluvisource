@@ -1327,9 +1327,51 @@ function removeItem(index) {
 				
 				
 				
-				}		
+				}
+
+
+
+                 				
 						
 						</script>
+						
+						
+						
+						<script>
+						
+						function updatewishlist()
+						{
+							
+															 
+							 
+							 jQuery.ajax(
+									{
+										url : $('#wishlist-view-form').attr("action"),
+										type: "POST",
+										data :  $('#wishlist-view-form').serialize(),
+										beforeSend: function(){	$(".ui-loader").show();},
+										success:function(data, textStatus, jqXHR) 
+										{
+											
+												$(".ui-loader").hide();								
+											
+											
+										},
+										error: function(jqXHR, textStatus, errorThrown) 
+										{
+											 
+										}
+									});
+						
+						
+							
+						}
+						 
+							
+							
+                          
+						</script>
+  
   
                 </div>
                  <div class="clearfix"></div>
