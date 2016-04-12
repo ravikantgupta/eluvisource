@@ -24,8 +24,40 @@
 			
 			
 			
-			var QueryString = getRequests();
-					  alert('nnn:'+QueryString["pageid"]);
+		            	var QueryString = getRequests();
+		 			    var cms_api_data = new Object();
+						 cms_api_data["service"] = "getallCMSPages";
+						 cms_api_data["store"] = config.data[0].storeid;
+						 cms_api_data["pageId"] = QueryString["pageid"];
+         
+		 
+         $.ajax({
+                url: config.data[0].baseurl,
+                type: "GET",
+                contentType : "application/json; charset=utf-8",
+                data: cms_api_data,
+                dataType: "jsonp",
+                async: false,
+                beforeSend: function(){
+                console.log("Before Login Webservice");
+                },
+                error: function(error){
+                $.mobile.loading('hide');
+                console.log(error);
+                },
+                complete: function(){
+                console.log("Complete Webservice");
+                },
+                success: function(result){
+                  
+                
+                
+                if(result.title != "" ) {
+                	
+				  alert(result.content);
+                }
+                }
+                });
 														
 			getcartitem();
         }
