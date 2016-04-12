@@ -18,15 +18,11 @@
 	 
 	    function onDeviceReady() {
 		
-		
-            		
+		            		
 			setfourBox();
 			
-			jQuery('.widget widget-cms-link').click(function(){
+			jQuery('#currentpage').val(1);
 			
-			setcms();
-			
-			});
 			getcartitem();
         }
 	 
@@ -1297,18 +1293,14 @@ function removeItem(index) {
                  </nav>
                  <!-- Site Overlay -->
                  <div class="site-overlay"></div>
-
+                <input type="hidden" id="currentpage" value="0">
             </div>
                 <script type="text/javascript" src="js/footer.js"></script>
         </body>
        
         <script>
 		
-		function setcms()
-		{
-		  	alert('rmehfdghfdgh');
-		}
-            $("#searchFilter").attr("placeholder",locale.message.text["search"]);
+		   $("#searchFilter").attr("placeholder",locale.message.text["search"]);
             Widget.show();
             checkLoginStatus();
             getFooter();
