@@ -292,6 +292,11 @@ function getFormatTime(date) {
      *@return
      */
 function redirectTopage(pagename) {
+	
+	
+	 $(".ui-loader").show();	
+	 
+	 alert('rammmmm');
 	 	
     var dirPath = dirname(location.href);
     var fullPath = dirPath + "/" + pagename;
