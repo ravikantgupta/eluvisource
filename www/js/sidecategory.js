@@ -53,9 +53,8 @@
                 params["id"] = id;
                 params["result"] = result;
                
-                
-                     redirectTopage('cms_page.html');
-					 
+                localStorage.setItem(config.app.storage_key+"_cmsparams", result);
+                     redirectTopage('cms_page.html')
                 //Page.redirectWithParams('cms_page.html', 'slide', 'left', params);
                 }
                 }
