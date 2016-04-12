@@ -18,9 +18,15 @@
 	 
 	    function onDeviceReady() {
 		
-		alert('hfdghfdgh');
+		
             		
 			setfourBox();
+			
+			jQuery('.widget widget-cms-link').click(function(){
+			
+			setcms();
+			
+			});
 			getcartitem();
         }
 	 
@@ -1297,6 +1303,11 @@ function removeItem(index) {
         </body>
        
         <script>
+		
+		function setcms()
+		{
+		  	alert('rmehfdghfdgh');
+		}
             $("#searchFilter").attr("placeholder",locale.message.text["search"]);
             Widget.show();
             checkLoginStatus();
@@ -1304,6 +1315,6 @@ function removeItem(index) {
            
         localStorage.setItem('foo', 0);
 		
-		alert('hfdghfdgh');
+	
             </script>
 </html>
