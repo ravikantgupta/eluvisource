@@ -22,7 +22,12 @@
 			setfourBox();
 			
 			
-			alert('nnn:'+localStorage.getItem("cmsparams"));
+			
+			
+			var resdata=JSON.stringify(localStorage.getItem("cmsparams"));
+					  var response = JSON.parse(resdata);
+					  alert('nnn:'+response.content);
+														
 			getcartitem();
         }
 	 
