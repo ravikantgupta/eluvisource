@@ -270,10 +270,9 @@ function setfourBox() {
                 } else {
                 var e = JSON.parse(localStorage[config.data[0].storage_key + "_Session"]);
                 if (e != null && e.login_status == "Active") {
-					
-					var acnthtml='<ul><li class="first"><a onchange="footer_login()">My Account</a></li><li ><a onclick="logOut()">LOGOUT</a></li></ul>';
-					
-					 jQuery('#header-account').html(acnthtml); 
+						 
+					 
+					  jQuery('.myact').html('<a class="skip-link skip-account ui-link" id="logoutbtn" onclick="logOut()" href="javascript:void(0)"><span class="label">Log Out</span></a>');
                 
                 } else {
                 
