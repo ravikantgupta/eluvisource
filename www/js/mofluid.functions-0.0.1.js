@@ -57,13 +57,20 @@ var Page = new function() {
 		//alert('ttt1:'+ JSON.parse(params['result']);
 		
 		
-		if(jQuery('#currentpage').val()==1)
+		
+      localStorage.setItem(config.data[0].storage_key+"_params", Base64.encode(JSON.stringify(params)));
+	  
+	  if(jQuery('#currentpage').val()==1)
 		{
 		  
-		  
-		  $("#cms-page-detail").html(params['result']);
+		   var page_data = JSON.parse(Base64.decode(localStorage.getItem(config.data[0].storage_key+"_params")));
+		   
+		    var data = page_data.result;
+			
+			alert('sreee'+data.content);
+			
+		  //$("#cms-page-detail").html(params['result']);
 		}
-      localStorage.setItem(config.data[0].storage_key+"_params", Base64.encode(JSON.stringify(params)));
        
     }
     catch(err) {
