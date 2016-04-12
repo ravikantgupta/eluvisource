@@ -52,11 +52,11 @@
                 var params = new Object();
                 params["id"] = id;
                 params["result"] = result;
-               localStorage.setItem("cmsparams",result);
+               
                 
-                     window.location.href ="cms_page.html?pageid="+id;
-					 
-                //Page.redirectWithParams('cms_page.html', 'slide', 'left', params);
+                   //  window.location.href ="cms_page.html?pageid="+id;
+					 $('#cms-page-detail').html(result.content)
+                Page.redirectWithParams('cms_page.html', 'slide', 'left', params);
 				
 				
                 }
