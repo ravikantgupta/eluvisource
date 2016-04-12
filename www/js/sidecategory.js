@@ -54,7 +54,7 @@
                 params["result"] = result;
                localStorage.setItem("cmsparams",result);
                 
-                     window.location.href ="cms_page.html";
+                     window.location.href ="cms_page.html?pageid="+id;
 					 
                 //Page.redirectWithParams('cms_page.html', 'slide', 'left', params);
 				
