@@ -1382,12 +1382,12 @@ function mynewfun()
 					<div class="modal-body">
 			<form id="helptalkfrm" method="post" action="https://eluvy.com/reviewimage/index/talkrequestmobile">
 					<div class="form-group">
-					<input type="text" onkeyup="mynewfun()" name="fname" placeholder="Name" class="form-control required-entry" id="username-talk">
+					<input type="text" onkeyup="mynewfun()" name="fname" placeholder="Name" class="form-control required-entryhelptalkfrm" id="username-talk">
 					<div id="nameerror" style="color:red;display:none;">
 					</div>
 					</div>
-					<div class="form-group"><input name="email" placeholder="Email" class="form-control required-entry validate-email" id="emailid-talk"></div>
-					<div class="form-group"><input type="number" name="phone" placeholder="Phone" class="form-control required-entry" id="phone-talk"></div>
+					<div class="form-group"><input name="email" placeholder="Email" class="form-control required-entryhelptalkfrm validate-email" id="emailid-talk"></div>
+					<div class="form-group"><input type="number" name="phone" placeholder="Phone" class="form-control required-entryhelptalkfrm" id="phone-talk"></div>
 					<div class="form-group"><input type="text" name="orderno" placeholder="Order Number (optional)" class="form-control" id="oder-talk"></div>
 					<textarea name="message" placeholder="How can we help you?" class="form-control col-md-12 required-entry"></textarea> 
 					<button type="button" class="contacting-box-btn-popup in" onClick="subform('helptalkfrm')" id="talk-layout-btn">Submit</button>
@@ -1412,11 +1412,11 @@ function mynewfun()
 						<div class="modal-body">
 					<form id="helpfrm" method="post" action="https://eluvy.com/reviewimage/index/emailrequestmobile">
 						<div class="form-group">
-						<input type="text" onkeyup="mynewfun1()" name="fname" placeholder="Name" class="form-control required-entry" id="username-email"></div>
+						<input type="text" onkeyup="mynewfun1()" name="fname" placeholder="Name" class="form-control required-entryhelpfrm" id="username-email"></div>
 						<div id="nameerror1" style="color:red;display:none;">
 						</div>
-						<div class="form-group"><input name="email" placeholder="Email" class="form-control required-entry validate-email" id="emailid-email"></div>
-						<div class="form-group"><input type="text" name="subject" placeholder="Subject" class="form-control required-entry" id="oder-email"></div>
+						<div class="form-group"><input name="email" placeholder="Email" class="form-control required-entryhelpfrm validate-email" id="emailid-email"></div>
+						<div class="form-group"><input type="text" name="subject" placeholder="Subject" class="form-control required-entryhelpfrm" id="oder-email"></div>
 						<textarea name="message" placeholder="How can we help you?" class="form-control col-md-12 required-entry"></textarea> 
 						<button type="button" onClick="subform('helpfrm')" class="contacting-box-btn-popup" id="email-layout-btn">Submit</button>
 						</form></div>
@@ -1431,7 +1431,7 @@ function mynewfun()
 		 
 		             var flag=0;
 		                     
-							  $("#"+formid+' .required-entry').each(function(){
+							  $('.required-entry'+formid).each(function(){
 								
 								if($(this).val()=='')
 								{
@@ -1439,6 +1439,7 @@ function mynewfun()
 								 alert('Please enter '+$(this).attr('placeholder'));
 								 
 								 flag=1;
+								 break;
 								}
 								
 								
