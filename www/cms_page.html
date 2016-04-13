@@ -1459,8 +1459,10 @@ function mynewfun()
 										success:function(data, textStatus, jqXHR) 
 										{
 											
-										 jQuery('.'+formid+'loader').hide();
+										    jQuery('.'+formid+'loader').hide();
 											jQuery('.success'+formid).show();
+											
+											alert(data);
 											
 											
 										},
