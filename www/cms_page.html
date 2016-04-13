@@ -644,13 +644,61 @@ function removeItem(index) {
 <script>
 
  function showpop(val){
-    alert(val);
+   
 	
 	jQuery('#'+val).show();
 
 }
+
+ function closepopup(val)
+ {
+ 
+   jQuery('#'+val).hide();
+ 
+ }
+</script>
+<script type="text/javascript">
+
+function mynewfun1()
+{
+	var firstName = jQuery('#username-email').val();
+	
+	
+			var filter = /^[a-zA-Z ]*$/;
+			if (!filter.test(firstName)) {
+			
+				
+				jQuery('#nameerror1').css('display','block').html('Please use only alphabet and space in your name');
+				
+            }
+			else
+			{
+			jQuery('#nameerror1').css('display','none');	
+			}
+}
 </script>
 
+
+<script type="text/javascript">
+
+function mynewfun()
+{
+	var firstName = jQuery('#username-talk').val();
+	
+	
+			var filter = /^[a-zA-Z ]*$/;
+			if (!filter.test(firstName)) {
+			
+				
+				jQuery('#nameerror').css('display','block').html('Please use only alphabet and space in your name');
+				
+            }
+			else
+			{
+			jQuery('#nameerror').css('display','none');	
+			}
+}
+</script>
 
     </head>
     <body class="ltr page product listing " onLoad="onDeviceReady()">
@@ -1320,11 +1368,19 @@ function removeItem(index) {
 			<div class="modal fade contacting-box-popup in" id="talkboxlayout">
 					<div class="modal-dialog">
 					<div class="modal-content">
-					<div class="modal-header"><button data-dismiss="modal" type="button" class="close"><span>×</span></button>
+					<div class="modal-header">
+					<button data-dismiss="modal" onClick="closepopup('talkboxlayout')" type="button" class="close"><span>×</span></button>
 					<h4 class="modal-title" id="myModalLabel">Talk to Us</h4>
+					
+					 <div style="display:none" class="helptalkfrmloader">
+							<img alt="Please wait..." src="https://eluvy.com/media/custimg/medium.gif">
+							<p class="h3">Please wait . . .</p>
+					     </div>
+						 
+						 <div class="successhelptalkfrm" style="display:none;">Successfully send.</div> 
 					</div>
 					<div class="modal-body">
-					<form id="helptalkfrm" method="post" action="https://eluvy.com/reviewimage/index/talkrequest">
+			<form id="helptalkfrm" method="post" action="https://eluvy.com/reviewimage/index/talkrequestmobile">
 					<div class="form-group">
 					<input type="text" onkeyup="mynewfun()" name="fname" placeholder="Name" class="form-control required-entry" id="username-talk">
 					<div id="nameerror" style="color:red;display:none;">
@@ -1334,7 +1390,8 @@ function removeItem(index) {
 					<div class="form-group"><input type="number" name="phone" placeholder="Phone" class="form-control required-entry" id="phone-talk"></div>
 					<div class="form-group"><input type="text" name="orderno" placeholder="Order Number (optional)" class="form-control" id="oder-talk"></div>
 					<textarea name="message" placeholder="How can we help you?" class="form-control col-md-12 required-entry"></textarea> 
-					<button type="submit" class="contacting-box-btn-popup in" id="talk-layout-btn">Submit</button></form></div>
+					<button type="button" class="contacting-box-btn-popup in" onClick="subform('helptalkfrm')" id="talk-layout-btn">Submit</button>
+					</form></div>
 					</div>
 					</div>
                </div>
@@ -1342,11 +1399,18 @@ function removeItem(index) {
 				<div class="modal fade contacting-box-popup in" id="emailboxlayout" >
 						<div class="modal-dialog">
 						<div class="modal-content">
-						<div class="modal-header"><button data-dismiss="modal" type="button" class="close"><span>×</span></button>
+						<div class="modal-header">
+						<button data-dismiss="modal" type="button" onClick="closepopup('emailboxlayout')" class="close"><span>×</span></button>
 						<h4 class="modal-title" id="myModalLabel">Email Us</h4>
+						
+						 <div style="display:none" class="helpfrmloader">
+							<img alt="Please wait..." src="https://eluvy.com/media/custimg/medium.gif">
+							<p class="h3">Please wait . . .</p>
+					     </div>
+						 <div class="successhelpfrm" style="display:none;">Successfully send.</div>
 						</div>
 						<div class="modal-body">
-						<form id="helpfrm" method="post" action="https://eluvy.com/reviewimage/index/emailrequest">
+					<form id="helpfrm" method="post" action="https://eluvy.com/reviewimage/index/emailrequestmobile">
 						<div class="form-group">
 						<input type="text" onkeyup="mynewfun1()" name="fname" placeholder="Name" class="form-control required-entry" id="username-email"></div>
 						<div id="nameerror1" style="color:red;display:none;">
@@ -1354,7 +1418,7 @@ function removeItem(index) {
 						<div class="form-group"><input name="email" placeholder="Email" class="form-control required-entry validate-email" id="emailid-email"></div>
 						<div class="form-group"><input type="text" name="subject" placeholder="Subject" class="form-control required-entry" id="oder-email"></div>
 						<textarea name="message" placeholder="How can we help you?" class="form-control col-md-12 required-entry"></textarea> 
-						<button type="submit" class="contacting-box-btn-popup" id="email-layout-btn">Submit</button>
+						<button type="button" onClick="subform('helpfrm')" class="contacting-box-btn-popup" id="email-layout-btn">Submit</button>
 						</form></div>
 						</div>
 						</div>
@@ -1362,7 +1426,38 @@ function removeItem(index) {
 
                 <script type="text/javascript" src="js/footer.js"></script>
         </body>
-       
+       <script>
+	     function subform(formid){
+		 
+		                      jQuery('.'+formid+'loader').show();
+		                        jQuery.ajax(
+									{
+										url : $('#'+formid).attr('action'),
+										type: "json",
+										 crossDomain: true,
+										data : JSON.stringify( $('#'+formid).serialize()),
+										
+										success:function(data, textStatus, jqXHR) 
+										{
+											
+										 jQuery('.'+formid+'loader').hide();
+											jQuery('.success'+formid).show();
+											
+											
+										},
+										error: function(jqXHR, textStatus, errorThrown) 
+										{
+											 jQuery('.'+formid+'loader').hide();    
+										}
+									});
+									
+									 jQuery('.'+formid+'loader').hide();
+									jQuery('.success'+formid).show();
+		 
+		 
+		 
+		 }
+	   </script>
         <script>
 		
 		   $("#searchFilter").attr("placeholder",locale.message.text["search"]);
