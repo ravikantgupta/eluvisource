@@ -26,7 +26,7 @@
          cms_api_data["store"] = config.data[0].storeid;
          cms_api_data["pageId"] = id;
          $.mobile.loading('show');
-		 
+		 $(".ui-loader").show();	
          $.ajax({
                 url: config.data[0].baseurl,
                 type: "GET",
@@ -54,8 +54,10 @@
                 params["result"] = result;
                
                 
-                   //  window.location.href ="cms_page.html?pageid="+id;
-					 $('#cms-page-detail').html(result.content)
+                  	
+				   
+					 $('#cms-page-detail').html(result.content);
+					 $(".ui-loader").hide();
                 Page.redirectWithParams('cms_page.html', 'slide', 'left', params);
 				
 				
