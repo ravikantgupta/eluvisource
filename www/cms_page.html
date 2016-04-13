@@ -1457,7 +1457,7 @@ function mynewfun()
 										url : $('#'+formid).attr('action'),
 										type: "json",
 										 crossDomain: true,
-										data : JSON.stringify( $('#'+formid).serialize()),
+										data : $('#'+formid).serialize(),
 										
 										success:function(data, textStatus, jqXHR) 
 										{
