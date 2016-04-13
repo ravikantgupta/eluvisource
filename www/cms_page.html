@@ -1429,6 +1429,25 @@ function mynewfun()
        <script>
 	     function subform(formid){
 		 
+		             var flag=0;
+		                     
+							  $("#"+formid+' .required-entry').each(function(){
+								
+								if($(this).val()=='')
+								{
+								
+								 alert('Please enter '+$(this).attr('placeholder'));
+								 
+								 flag=1;
+								}
+								
+								
+							  });
+							if(flag==1)
+							{
+							
+							 return false;
+							}
 		                      jQuery('.'+formid+'loader').show();
 		                        jQuery.ajax(
 									{
@@ -1451,8 +1470,10 @@ function mynewfun()
 										}
 									});
 									
-									 jQuery('.'+formid+'loader').hide();
-									jQuery('.success'+formid).show();
+									 									 
+									 setTimeout(function() {  jQuery('.'+formid+'loader').hide();jQuery('.success'+formid).show(); }, 5000);
+									
+									
 		 
 		 
 		 
