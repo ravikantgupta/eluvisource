@@ -235,7 +235,7 @@ function new_sub_cat(id, parentid,cat_name){
             }
             else{
 				 $("#"+id).html('');
-				 alert('ram2');
+				
                 for(var key in sub_menu_data) {
                     if (sub_menu_data.hasOwnProperty(key)) {
                         var total_child = 0;
@@ -300,7 +300,7 @@ function new_sub_cat(id, parentid,cat_name){
         else{
 			
 			$("#"+id).html('');
-			alert('ram1');
+			
             for(var key in sub_menu_data) {
                 if (sub_menu_data.hasOwnProperty(key)) {
                     var total_child = 0;
