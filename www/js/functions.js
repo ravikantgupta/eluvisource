@@ -3930,13 +3930,13 @@ var Simple_product_image_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&s
        var i = 0;
        
        if(image_len <= 0 || image_len == null || image_len == "") {
-       $("#product_image_slider").append('<div class="item"><img src="images/product_default_image.png" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
+       $("#product_image_slider").append('<div class="item"><img src="images/product_default_image.png" alt="" onerror="images/product_default_image.png" ></div>');
        }
        else {
 		   
        for(i=0; i<image_len; i++) {
        
-       $("#product_image_slider").append('<div class="item"><img src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
+       $("#product_image_slider").append('<div class="item"><img src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" ></div>');
        }
        }
        $( "#hideit1" ).hide();
