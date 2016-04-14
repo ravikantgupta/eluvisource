@@ -19,7 +19,7 @@ var config =  {
 					  "storage_key" :  "Eluvyeccc3",
 					  "default_store" : "1",
 					  "default_currency" : "USD",
-					  "app_curr_symbol" : "$", 
+					  "app_curr_symbol" : "S$", 
 					  "app_currency" : "USD",
 					  "display_category_image" : "1",
 					  "display_custom_attribute" : "0",
