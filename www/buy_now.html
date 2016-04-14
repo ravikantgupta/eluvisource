@@ -227,7 +227,7 @@
              *@param
              *@return
              */
-            function submitForm(){
+            function submitForms(){
                 var qStr = window.location.search.substr(1).split("=");
                 var amount = qStr[1];
                 var error=1;
@@ -1679,7 +1679,7 @@ function removeItem(index) {
 				 <div class="list-main">
                 <div id="loginbox" class="loginbox" align="center">
                     <div id="myprofile_content" class="myprofile " style="border:2px solid #e5e5e5;background-color:transparent;padding:7px">
-                        <form name="buyForm" id="buyForm" action="javascript:submitForm()" method="post">
+                        <form name="buyForm" id="buyForm" action="javascript:submitForms()" method="post">
                             <div class="buyForm" style="text-align:left"><span id="form_heading"></span><br><br>
                                 <h3 class="edit_heading" id="billing_address"></h3> 
                                 <label for="name" id="first_name"> </label>
