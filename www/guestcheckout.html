@@ -95,11 +95,14 @@
                         break;
 					case "checkout_register":
 						localStorage[config.data[0].storage_key+"_nextpage"] = "buy_now.html";
-						redirectTopage('register.html');
+						
+						jQuery('#loginbtn').click();
+						//redirectTopage('register.html');
                         break;
 					case "checkout_login":
 						localStorage[config.data[0].storage_key+"_nextpage"] = "buy_now.html";
-						redirectTopage('login.html');
+						//redirectTopage('login.html');
+						jQuery('#loginbtn').click();
                         break;
 					default:
                         if (config.data[0].platform == 'ios' || config.data[0].platform == 'android') {

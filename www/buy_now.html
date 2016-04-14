@@ -231,7 +231,7 @@
                 var qStr = window.location.search.substr(1).split("=");
                 var amount = qStr[1];
                 var error=1;
-                var email_check = $("#email").val();
+                var email_check = $("#buyForm #email").val();
                // var email_check_ship = $("#email_ship").val();
                 if ($("#name").val() == "") {
                     if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
