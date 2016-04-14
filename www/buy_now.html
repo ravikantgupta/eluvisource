@@ -232,6 +232,8 @@
                 var amount = qStr[1];
                 var error=1;
                 var email_check = $("#buyForm #email").val();
+				
+				alert(email_check);
                // var email_check_ship = $("#email_ship").val();
                 if ($("#name").val() == "") {
                     if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
