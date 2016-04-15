@@ -520,12 +520,29 @@
 			} else {
 				alert(locale.message.alert["sign_out_message"]);
 			}
-			//redirectTopage('index.html');
+			redirectTopage('index.html');
 			
 			
          
 		     jQuery('.myact').html('<a class="skip-link skip-account ui-link" id="loginbtn" href="javascript:void(0)"><span class="label">Login</span></a>');
-                       
+			 
+			 
+                       jQuery('.skip-account').click(function(){
+		  					 jQuery('#header-cart').hide();	
+								  jQuery('.slide').hide();	
+								
+									if(jQuery('#header-account').css('display') == 'none')
+										{
+										
+											jQuery('#header-account').slideDown(1000);	
+
+										}else{
+										
+											 jQuery('#header-account').slideUp(1000);	
+										}			
+		 
+	                           });
+	 
 		 
 		 
 		 }

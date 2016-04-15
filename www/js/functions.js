@@ -4110,7 +4110,8 @@ $("#pImage5").attr("src", imageURL5);
                 Page.redirect("profile.html", "slide", "down");
                 } else {
                 
-                    Page.redirect("login.html", "slide", "down");
+                    //Page.redirect("login.html", "slide", "down");
+					 $('#loginbtn').click();
                 }
                 }
                 
