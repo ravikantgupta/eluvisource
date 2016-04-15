@@ -131,7 +131,7 @@
                           //---Fetch Store Details from Mofluid Magento Web Service
                         $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=myprofile&customerid="+customerid,
                             function (response) {
-                                    $("#email").val(response["CustomerInfo"]["email"]);
+                                    $("#buyForm #email").val(response["CustomerInfo"]["email"]);
                                     if(response["BillingAddress"]==null||response["BillingAddress"]==""){
                                     $("#country").val(countryresponse["mofluid_default_country"]["country_id"]);
                                     $("#country").selectmenu('refresh',true);
