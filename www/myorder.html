@@ -5,7 +5,7 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height" />
         <meta name="msapplication-tap-highlight" content="no" />
-        <title>Mofluid</title>
+        <title>Eluvy</title>
         <script type="text/javascript" src="js/header.js"></script>
 		 <script type="text/javascript" src="js/mofluid_slider.js"></script>
         <script type="text/javascript">
@@ -665,6 +665,8 @@
 
 					  
 					     jQuery('.myact').html('<a class="skip-link skip-account ui-link" id="logoutbtn" onclick="logOut()" href="javascript:void(0)"><span class="label">Log Out</span></a>');
+						 
+						  $(".ui-loader").hide();
                         
 						}
                           else {
@@ -682,13 +684,13 @@
 		
 		function logOut() {
 			localStorage[config.data[0].storage_key+'_Session'] = null;
-			
+			 $(".ui-loader").show();
 			if (config.data[0].platform == 'ios' || config.data[0].platform == 'android') {
 				navigator.notification.alert(locale.message.alert["sign_out_message"], function() {}, config.data[0].app_name, locale.message.button["close"]);
 			} else {
 				alert(locale.message.alert["sign_out_message"]);
 			}
-			//redirectTopage('index.html');
+			 redirectTopage('index.html');
 			
 			
          

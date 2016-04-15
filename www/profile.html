@@ -305,7 +305,7 @@ localStorage.setItem('foo', 0);
 
 					  
 					     jQuery('.myact').html('<a class="skip-link skip-account ui-link" id="logoutbtn" onclick="logOut()" href="javascript:void(0)"><span class="label">Log Out</span></a>');
-                        
+                          $(".ui-loader").hide();
 						}
                           else {
                           if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
@@ -328,7 +328,7 @@ localStorage.setItem('foo', 0);
 			} else {
 				alert(locale.message.alert["sign_out_message"]);
 			}
-			//redirectTopage('index.html');
+			 redirectTopage('index.html');
 			
 			
          

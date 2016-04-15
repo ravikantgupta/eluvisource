@@ -400,6 +400,8 @@
 
 					  
 					     jQuery('.myact').html('<a class="skip-link skip-account ui-link" id="logoutbtn" onclick="logOut()" href="javascript:void(0)"><span class="label">Log Out</span></a>');
+						 
+						 $(".ui-loader").hide();
                         
 						}
                           else {
@@ -423,7 +425,7 @@
 			} else {
 				alert(locale.message.alert["sign_out_message"]);
 			}
-			//redirectTopage('index.html');
+			 redirectTopage('index.html');
 			
 			
          
