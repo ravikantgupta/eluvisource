@@ -290,7 +290,7 @@ function setfourBox() {
 function addtowishlist(productid)
 {
 	 
-	
+	alert(localStorage[config.data[0].storage_key+'_Session']);
 	 
 	   if (localStorage[config.data[0].storage_key+'_Session'] == null) {
 		   
