@@ -15,6 +15,8 @@
         <script type="text/javascript" langauge="javascript">
             function onLoad(){
               //  localStorage.clear();
+			  
+			   navigator.splashscreen.hide();
                 
                 if(localStorage.getItem('foo') == 1){
                      //   $("#hideit").hide();
@@ -24,14 +26,14 @@
 				
 				
                 document.addEventListener("deviceready", onDeviceReady, false);
-				
+				setfourBox();
+				getcartitem();
 				
             }
         
             function onDeviceReady(){
 			
-			setfourBox();
-				getcartitem();
+			
                
                 // fetchStoredetail();
                 if(localStorage.getItem('foo') == 1){
@@ -1488,7 +1490,7 @@ function removeItem(index) {
                 </div>
                 
 					<!-- new code vipin start-->
-				<div class="cat-banner" style="display:none;">
+				<div class="cat-banner" >
 				<section class="customermsg">
 				<div class="customer-message" id="ready_revamp">
 				
@@ -1507,7 +1509,7 @@ function removeItem(index) {
                 
                 <!-- Slider for Feature Products -->
 				
-                   <div class="main-pro" style="display:none;">
+                   <div class="main-pro" >
                    
                     
                     <div class="featuredproduct">
@@ -1531,7 +1533,7 @@ function removeItem(index) {
                     <div class="heading_text" id="new_products_inner_div"></div>
                 </div>
                 <div id="new_owl1" style="display:none;">
-                	<center><img src="images/spin.gif" id="new_hide" style="display:none;"></center>
+                	<center><img src="images/spin.gif" id="new_hide" ></center>
                     
                     
 						<div class="featuredproduct">
@@ -1552,7 +1554,7 @@ function removeItem(index) {
                   </div>
                 
                 <!-- three box start-->
-			 <div id="buttombox" class="forboxes" style="display:none">
+			 <div id="buttombox" class="forboxes" >
 			 
 				 <div class="item hideit" align="center" id="hideit" value="1"><img src="images/spin.gif"></div>
 				 
