@@ -96,9 +96,10 @@
                        */
                       
                       // localStorage['catIds'] this localstorage for n lavae category for back button smooth functionality , useing this in
+					  alert('eeee:'+JSON.parse(localStorage['catIds']).length);
                       if(JSON.parse(localStorage['catIds']).length)
                       {
-                          localStorage.setItem(config.data[0].storage_key+'_cat_flag' , 1)
+                          localStorage.setItem(config.data[0].storage_key+'_cat_flag' , 1);
                       }
                       
                      alert(localStorage.getItem(config.data[0].storage_key+'_pro_flag'));
