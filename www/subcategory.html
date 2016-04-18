@@ -1728,7 +1728,7 @@ function removeItem(index) {
 					  
 					 var CategoryId = getParameterByName('parent');
 					 
-					 alert(CategoryId);
+					
 			
 			             $(".ui-loader").show();
 				
@@ -1747,11 +1747,11 @@ function removeItem(index) {
 							success: function(response) {
 							
 						
-							   alert('rrrrmmmm');
+							   
 							if(response.total > 0)
 							{
 							  localStorage.setItem('productslistlocal', JSON.stringify(response));
-							alert(JSON.stringify(response));		
+									
 							  printResponse(JSON.stringify(response));
 							  
 							  
@@ -2212,7 +2212,7 @@ function removeItem(index) {
                     </a>
                 </div>
                 
-                <div class="navigation_logo" style="display:none;" align="center">
+                <div class="navigation_logo"  align="center">
                     <a href="javascript:void(0);">
                         <img  class="logo_icon" src="images/spin.gif" style="width:30px;height:30px;"/>
                     </a>
