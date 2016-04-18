@@ -1746,15 +1746,8 @@ function removeItem(index) {
 							},
 							success: function(response) {
 							
-							//Data inserted in table
-							db.transaction(function(tx) {
-										   tx.executeSql("INSERT INTO mofluid_cache (key,data,timestamp) VALUES (?,?,?)", ["" + key + "", "" + JSON.stringify(response) + "", "" + current_time + ""], function(tx, res) {}, function(e) {
-														 console.log("ERROR in insert product: " + e);
-														 });
-										   
-										   });
-							//End Data inserted in table
-							 
+						
+							   alert('rrrrmmmm');
 							if(response.total > 0)
 							{
 							  localStorage.setItem('productslistlocal', JSON.stringify(response));
@@ -2219,7 +2212,7 @@ function removeItem(index) {
                     </a>
                 </div>
                 
-                <div class="navigation_logo" align="center">
+                <div class="navigation_logo" style="display:none;" align="center">
                     <a href="javascript:void(0);">
                         <img  class="logo_icon" src="images/spin.gif" style="width:30px;height:30px;"/>
                     </a>
