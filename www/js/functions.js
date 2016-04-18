@@ -4121,7 +4121,8 @@ $("#pImage5").attr("src", imageURL5);
                   localStorage.setItem('foo', 1);
                    
                 // Page.redirect('product_details.html', 'slide', 'right');
-				navigator.app.backHistory();
+				alert(navigator.app.backHistory());
+				//navigator.app.backHistory();
                 }
 
 
