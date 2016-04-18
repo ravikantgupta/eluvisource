@@ -5,40 +5,28 @@
         <meta name="format-detection" content="telephone=no" />
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height"/>
         <meta name="msapplication-tap-highlight" content="no" />
-        <title>Eluvy</title>
-		
-      
-        <link rel="stylesheet" type="text/css" href="https://eluvy.com//skin/frontend/rwd/eluvy/css/font-awesome.min.css" media="all" />
-         <script type="text/javascript" src="js/header.js"></script>
-		  <script type="text/javascript" src="js/mofluid_slider.js"></script>
-		           
+        <title>Mofluid</title>
+        
+        <script type="text/javascript" src="js/header.js"></script>
+        <script type="text/javascript" src="js/mofluid_slider.js"></script>
+        
+        
         <script type="text/javascript" langauge="javascript">
             function onLoad(){
               //  localStorage.clear();
-			  
-			   setTimeout(function(){  navigator.splashscreen.hide();  document.addEventListener("deviceready", onDeviceReady, false);
-				setfourBox();
-				getcartitem(); }, 1000);
                 
                 if(localStorage.getItem('foo') == 1){
                      //   $("#hideit").hide();
                       //  $("#new_hide").hide();
                         
                 }
-				
-				
-               
-				
+                document.addEventListener("deviceready", onDeviceReady, false);
             }
         
             function onDeviceReady(){
-			
-			
                
                 // fetchStoredetail();
                 if(localStorage.getItem('foo') == 1){
-				
-				//it work on top back
                    //$("#hideit").remove();
                  var banner_image_slider=localStorage.getItem(config.data[0].storage_key+'_banner_image_slider');
                  $("#banner_slider").html(banner_image_slider);
@@ -52,142 +40,38 @@
                                         navigation : false,
                                         pagination: true
                                         });
-                 $('#feature_products_inner_div1').html(locale.message.text.featured_products);
+                 $('#feature_products_inner_div').html(locale.message.text.featured_products);
                   var featured_products_html=localStorage.getItem(config.data[0].storage_key+'_featured_products_html');
-                  $("#feature_products_outer_div1").show();
-				  
-				   setfourBox();
-				   
-                  $("#fproductslide").html(featured_products_html);
-                 jQuery('#fproductslide').owlSlider({
-   
-							            items:4,
-							            margin:0,
-						                responsiveClass:true,
-
-								   responsive:{
-										   0:{
-											items:1
-										   },
-						   
-									   320:{
-										items:1
-									   },
-
-									   360:{
-										items:1,
-										margin:0
-									   },
-						   
-									   375:{
-										items:1
-									   },
-						   
-									   414:{
-										items:1
-									   },
-						   
-									   480:{
-										items:2
-									   },
-
-
-									   768:{
-										items:3,
-										center:true
-									   },
-
-									   960:{
-										items:4,
-										margin:20,
-										center:false
-
-									   },
-
-									   1200:{
-										items:4,
-										loop:false,
-										margin: 30,
-											  }
-							      },
-							     stagePadding:0,
-								 autoplay:false,
-								 autoplayTimeout:0,
-								 nav:true,
-								 navText:['<','>'],
-								 smartSpeed:450,
-								 loop:true,
-								 autoplayHoverPause:true,
-		                         dots:true});
-								 
+                  $("#feature_products_outer_div").show();
+                  $("#featured_owl").html(featured_products_html);
+                /*  var owl_featured = $("#featured_owl");
+                  owl_featured.featureowlCarousel({
+                                           items : 3, //10 items above 1000px browser width
+                                           itemsDesktop : [1000,3], //5 items between 1000px and 901px
+                                           itemsDesktopSmall : [900,4], // betweem 900px and 601px
+                                           itemsTablet: [600,3], //2 items between 600 and 0
+                                           itemsMobile : false,  // itemsMobile disabled - inherit from itemsTablet option
+                                           navigation : false,
+                                           pagination: false,
+                                           autoPlay:false
+                                           });
+*/
                  var new_products_html=localStorage.getItem(config.data[0].storage_key+'_new_products_html');
                  $("#new_products_inner_div").html(locale.message.text.new_products);
-                 $("#new_products_outer_div").hide();
-                 $("#fproductslide1").html(new_products_html);
-				 
-				
-				 
-             jQuery('#fproductslide1').owlSlider({
-   
-							            items:4,
-							            margin:0,
-						                responsiveClass:true,
-
-								   responsive:{
-										   0:{
-											items:1
-										   },
-						   
-									   320:{
-										items:1
-									   },
-
-									   360:{
-										items:1,
-										margin:0
-									   },
-						   
-									   375:{
-										items:1
-									   },
-						   
-									   414:{
-										items:1
-									   },
-						   
-									   480:{
-										items:2
-									   },
-
-
-									   768:{
-										items:3,
-										center:true
-									   },
-
-									   960:{
-										items:4,
-										margin:20,
-										center:false
-
-									   },
-
-									   1200:{
-										items:4,
-										loop:false,
-										margin: 30,
-											  }
-							      },
-							     stagePadding:0,
-								 autoplay:false,
-								 autoplayTimeout:0,
-								 nav:true,
-								 navText:['<','>'],
-								 smartSpeed:450,
-								 loop:true,
-								 autoplayHoverPause:true,
-		                         dots:true});
-								 
+                 $("#new_products_outer_div").show();
+                 $("#new_owl").html(new_products_html);
+             /*    var owl_new = $("#new_owl");
+                owl_new.featureowlCarousel({
+                                    items : 2, //10 items above 1000px browser width
+                                    itemsDesktop : [1000,3], //5 items between 1000px and 901px
+                                    itemsDesktopSmall : [900,4], // betweem 900px and 601px
+                                    itemsTablet: [600,3], //2 items between 600 and 0
+                                    itemsMobile : false,  // itemsMobile disabled - inherit from itemsTablet option
+                                    navigation : false,
+                                    pagination: false,
+                                    autoPlay:false
+                                    });
+              */
                                        $("#hideit").hide();
                                       $("#new_hide").hide();
                                     
@@ -197,10 +81,7 @@
                   
                 }
               else{
-                  
-				  //it work on home button and mobile back button
-				 
-				  $("#new_hide").hide();
+                  $("#new_hide").hide();
                       // return false;
                   
                   var db = dbConnection();
@@ -262,9 +143,7 @@
                                                       localStorage.setItem(config.data[0].storage_key+'return_privacy_policy', response.store.return_privacy_policy);
                                                       localStorage.setItem(config.data[0].storage_key+'tax_flag', response.store.tax_flag);
                                                       setApplicationLogoBanner(JSON.stringify(response));
-													  
-													   setfourBox();
-                                                       fetchFeaturesProduct();
+                                                      fetchFeaturesProduct();
                                                       optional_products_slide();
                                                       
                                                       }
@@ -276,10 +155,7 @@
                                                var response = JSON.parse(resdata.rows.item(0).data);
                                                localStorage.setItem(config.data[0].storage_key+'_logoban', resdata.rows.item(0).data);
                                                setApplicationLogoBanner(resdata.rows.item(0).data);
-                                              
-											  
-											   setfourBox();
-											   fetchFeaturesProduct();
+                                               fetchFeaturesProduct();
                                                optional_products_slide();
                                                
                                                //   printRootCategory(response.categories);
@@ -288,8 +164,7 @@
                                                else
                                                {
                                                var store_webservice = config.data[0].baseurl + "?callback=?" + "&store=" + config.data[0].storeid + "&service=storedetails&currency="+app_curr_code+"&theme="+config.data[0].theme;
-                                            
-											 $.ajax({
+                                               $.ajax({
                                                       url: store_webservice,
                                                       type: "get",
                                                       dataType: "jsonp",
@@ -334,10 +209,6 @@
                                                       //setGoogleAnalytics(response.analytics);
                                                       //setApplicationFooter(response.store);
                                                       setApplicationLogoBanner(JSON.stringify(response));
-													  
-													 
-													  setfourBox();
-													 
                                                       fetchFeaturesProduct();
                                                       optional_products_slide();
                                                       
@@ -396,1061 +267,11 @@
                 }
                 getFooter();
             }
-			
-			
-	 function submitform() {
-            var username = $("#username").val();
-            var password = $("#password").val();
-            if(username == "") {
-                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                    //navigator.notification.alert(locale.message.alert["username_validation_for_blank"],function () {}, config.data[0].app_name, locale.message.button["close"]);
-               
-			      jQuery('.err-wronglogin').html(locale.message.alert["username_validation_for_blank"]);
-				  
-				   jQuery('.err-wronglogin').show();
-
-			   }
-                else
-                {
-                    //alert(locale.message.alert["username_validation_for_blank"]);
-					
-					
-					 jQuery('.err-wronglogin').html(locale.message.alert["username_validation_for_blank"]);
-				  
-				   jQuery('.err-wronglogin').show();
-                }
-            }
-            else if(!checkEmail(username)) {
-                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                   // navigator.notification.alert(locale.message.alert["username_validation_for_wrong_attempt"],function () {}, config.data[0].app_name, locale.message.button["close"]);
-					
-					
-					  jQuery('.err-wronglogin').html(locale.message.alert["username_validation_for_wrong_attempt"]);
-				  
-				       jQuery('.err-wronglogin').show();
-					
-                }
-                else {
-                    alert(locale.message.alert["username_validation_for_wrong_attempt"]);
-					
-					  jQuery('.err-wronglogin').html(locale.message.alert["username_validation_for_wrong_attempt"]);
-				  
-				       jQuery('.err-wronglogin').show();
-                }
-            }
-            else if(password.length<6) {
-                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                   // navigator.notification.alert(locale.message.alert["password_validation_for_minimum_length"],function () {}, config.data[0].app_name, locale.message.button["close"]);
-               
-			      jQuery('.err-longpassword').html(locale.message.alert["password_validation_for_minimum_length"]);
-				  
-				       jQuery('.err-longpassword').show();	
-
-			   }
-                else {
-                    //alert(locale.message.alert["password_validation_for_minimum_length"]);
-					
-					  jQuery('.err-longpassword').html(locale.message.alert["password_validation_for_minimum_length"]);
-				  
-				       jQuery('.err-longpassword').show();		 				
-					
-                }
-            }
-            else {
-                 $(".youama-ajaxlogin-button").html('<center><img src="images/spin.gif"></center>');
-                var BASE_URL  = config.data[0].baseurl;
-                var STORE = config.data[0].storeid;
-                $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=verifylogin"+"&username="+username+"&password="+Base64.encode(password),
-                          function (response) {
-                          if(response["login_status"] == "0") {
-                          if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                          navigator.notification.alert(locale.message.alert["invalid_username__password_message"],function () {}, config.data[0].app_name, locale.message.button["close"]);
-                          }
-                          else {
-                            alert(locale.message.alert["invalid_username__password_message"]);
-                          }
-                          $(".youama-ajaxlogin-button").html('<span><span>Login</span></span>');
-                          //$("#loginbutton_div").trigger('create');
-                          }
-                          else if(response["login_status"] == "1") {
-                          localStorage[config.data[0].storage_key+"_Loginemail"]=username;
-                          loginStart(response["id"], response["firstname"], response["lastname"], response["username"], response["password"]);
-                          if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                          //navigator.notification.alert(locale.message.alert["login_success_message"] + response["firstname"],function () {}, config.data[0].app_name, locale.message.button["close"]);
-                          navigator.notification.alert(locale.message.alert["login_success_message"].replace("{{username}}",response["firstname"]),function () {}, config.data[0].app_name, locale.message.button["close"]);
-                          //locale.message.alert["login_success_message"].replace("{{username}}",response["firstname"])
-                          }
-                          else
-                          {
-                          alert(locale.message.alert["login_success_message"].replace("{{username}}",response["firstname"]));
-                          }
-                          if(localStorage[config.data[0].storage_key+"_nextpage"] == null || localStorage[config.data[0].storage_key+"_nextpage"] == "null") {
-                          redirectTopage('index.html');
-                          }
-                          else {
-                          var dirPath = dirname(location.href);
-                          var fullPath = dirPath +"/"+localStorage[config.data[0].storage_key+"_nextpage"];
-                          localStorage[config.data[0].storage_key+"_nextpage"] = null;
-                          window.location=fullPath;
-                          }
-						    
-							jQuery('#loginbtn').click();
-							
-
-					  
-					     jQuery('.myact').html('<a class="skip-link skip-account ui-link" id="logoutbtn" onclick="logOut()" href="javascript:void(0)"><span class="label">Log Out</span></a>');
-						 
-						 $(".ui-loader").hide();
-                        
-						}
-                          else {
-                          if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                          navigator.notification.alert(locale.message.alert["server_not_responding"] ,function () {}, config.data[0].app_name, locale.message.button["close"]);
-                          }
-                          else {
-                          alert(locale.message.alert["server_not_responding"]);
-                          }
-                          }
-                          });
-            }
-        }
-		
-		
-		function logOut() {
-			localStorage[config.data[0].storage_key+'_Session'] = null;
-			
-			if (config.data[0].platform == 'ios' || config.data[0].platform == 'android') {
-				navigator.notification.alert(locale.message.alert["sign_out_message"], function() {}, config.data[0].app_name, locale.message.button["close"]);
-			} else {
-				alert(locale.message.alert["sign_out_message"]);
-			}
-			redirectTopage('index.html');
-			
-			
-         
-		     jQuery('.myact').html('<a class="skip-link skip-account ui-link" id="loginbtn" href="javascript:void(0)"><span class="label">Login</span></a>');
-			 
-			  $(".youama-ajaxlogin-button").html('<span><span>Login</span></span>');
-                       jQuery('.skip-account').click(function(){
-		  					 jQuery('#header-cart').hide();	
-								  jQuery('.slide').hide();	
-								
-									if(jQuery('#header-account').css('display') == 'none')
-										{
-										
-											jQuery('#header-account').slideDown(1000);	
-
-										}else{
-										
-											 jQuery('#header-account').slideUp(1000);	
-										}			
-		 
-	                           });
-							   
-							$(".ui-loader").hide();   
-	 
-		 
-		 
-		 }
-		 
-		 function regsubmitform() {
-            var password, email, full_name, first_name, last_name;
-           
-			full_name = $("#fullname").val();
-			full_name = full_name.replace(/\s{2,}/g, ' ');
-			var fullnameval = full_name.split(" ");
-			var i = 0;
-			var firstnameval = [];
-			for(i = 0; i < (fullnameval.length-1); i++){
-			firstnameval[i] = fullnameval[i];
-			}
-			first_name = firstnameval.toString().replace(/\,/g, ' ');
-			
-			last_name = fullnameval[fullnameval.length-1];
-			if(fullnameval.length == 1)
-				last_name = first_name = fullnameval.toString();
-            email = $("#email").val();
-            password = $("#rpassword").val();
-			
-			var cpassword = $("#cpassword").val();
-			
-             if(fullnameval.length < 2 || fullnameval[1]=='' || fullnameval[1]=='undefined')
-            {
-                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                    navigator.notification.alert(locale.message.alert["full_name_message"],function () {},config.data[0].app_name, locale.message.button["close"]);
-                }
-                else{
-                    alert(locale.message.alert["full_name_message"]);
-                }
-                return false;
-            }
-            if(first_name == "") {
-                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                    navigator.notification.alert(locale.message.alert["firstname_blank"],function () {},config.data[0].app_name, locale.message.button["close"]);
-                }
-                else{
-                    alert(locale.message.alert["firstname_blank"]);
-                }
-            }
-            else if(!isValidName(first_name)) {
-                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                    navigator.notification.alert(locale.message.alert["firstname_invalid"],function () {},config.data[0].app_name, locale.message.button["close"]);
-                }
-                else{
-                    alert(locale.message.alert["firstname_invalid"]);
-                }
-            }
-            else if(email == "") {
-                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                    navigator.notification.alert(locale.message.alert["empty_email"],function () {},config.data[0].app_name, locale.message.button["close"]);
-                }
-                else {
-                    alert(locale.message.alert["empty_email"]);
-                }
-            }
-            else if(!checkEmail(email)) {
-                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                    navigator.notification.alert(locale.message.alert["invalid_email"],function () {},config.data[0].app_name, locale.message.button["close"]);
-                }
-                else{
-                    alert(locale.message.alert["invalid_email"]);
-                }
-            }
-            else if(password.length < 6) {
-                if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-                    navigator.notification.alert(locale.message.alert["password_validation_for_minimum_length"],function () {},config.data[0].app_name, locale.message.button["close"]);
-                }
-                else{
-                    alert(locale.message.alert["password_validation_for_minimum_length"]);
-                }
-            }else if(password!=cpassword) {
-			  
-			     alert('Confirm password not matched');
-			
-			}
-            else {
-                $("#rgsbtn").html('<center><img src="images/spin.gif"></center>');
-                var customerid;
-                var STORE = config.data[0].storeid;
-                var BASE_URL  = config.data[0].baseurl;
-               // alert(BASE_URL+"?callback=?"+"&store="+STORE+"&service=createuser&firstname="+first_name+"&lastname="+last_name+"&email="+email+"&password="+Base64.encode(password));
-                $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=createuser&firstname="+first_name+"&lastname="+last_name+"&email="+email+"&password="+Base64.encode(password)+"",
-                          function (response) {
-							  try {
-								  var status = response["status"];
-								  if(status!=0 ) {
-									customerid = response["id"];
-								  }
-								  else {
-									customerid = -1;
-								  }
-							  }
-							  catch(ex) {
-								customerid = -1;
-							  }
-							  if(customerid<=0) {
-								  if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-									navigator.notification.alert(locale.message.alert["email_already_registered"],function () {},config.data[0].app_name, locale.message.button["close"]);
-								  }
-								  else{
-									alert(locale.message.alert["email_already_registered"]);
-								  }
-								  $("#email").val("");
-								  $("#password").val("");
-								  $("#cpassword").val("");
-								  //$("#registerbutton_div").html('<input type="submit" data-role="button" data-theme="b" id="registerbutton" name="registerbutton" value="'+ locale.message.button["sign_up_now"] +'" />');
-								  $("#rgsbtn").html('<span><span>Register</span></span>');
-								 // $("#registerbutton_div").trigger('create');
-							  }
-							  else {
-								  localStorage[config.data[0].storage_key+"_Loginemail"]=email;
-								  loginStart(customerid, first_name, last_name, email, password);
-								  if (config.data[0].platform=='ios' || config.data[0].platform=='android'){
-									  navigator.notification.alert(locale.message.alert["register_successfully_message"],function () {},config.data[0].app_name, locale.message.button["close"]);
-								  }
-								  else{
-									  alert(locale.message.alert["register_successfully_message"]);
-								  }
-								  if(localStorage[config.data[0].storage_key+"_nextpage"] == null || localStorage[config.data[0].storage_key+"_nextpage"] == "null") {
-									  visitHomePage();
-								  }
-								  else {
-									  var dirPath = dirname(location.href);
-									  var fullPath = dirPath +"/"+localStorage[config.data[0].storage_key+"_nextpage"];
-									  localStorage[config.data[0].storage_key+"_nextpage"] = null;
-									  window.location=fullPath;
-									  
-									  jQuery('#loginbtn').click();
-								  }
-							  }
-                          });
-            }
-        }
-		
-               
- function getcartitem()
- {
-   
-	 var storage_key='Eluvyeccc3';
-	var storedNames = JSON.parse(localStorage['Eluvyeccc3'+'_pNames']);
-	
-	
-			  try{
-                    var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div><div class="empty_text">"' + locale.message.text["cart_empty_text"] + '"</div></div>';
-                    var cartItems=0;
-                   // $("#cartProductslist").html(emptyText);
-                   // $("#cartbtn2").hide();
-                    //$("#couponcode").hide();
-                    try{
-                        cartItems = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']).length;
-                    }
-                    catch(Ex){
-                        cartItems=0;
-                    }
-                   
-                    if(cartItems<=0){
-                        
-                    }
-                      storedNames = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']);
-					  
-					  jQuery('#totalcount').html(storedNames.length);
-	
-                     var storedPrices = JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']);
-                     var  storedImages = JSON.parse(localStorage[config.data[0].storage_key+'_pImages']);
-                    try {
-                       var  storedSizes = JSON.parse(localStorage[config.data[0].storage_key+'_pSizes']);
-                        var storedColor = JSON.parse(localStorage[config.data[0].storage_key+'_pColor']);
-                    }
-                    catch(rr) {
-                        var storedSizes = '';
-                        var storedColor = '';
-                    }
-					
-                   var  storedQuantities = JSON.parse(localStorage[config.data[0].storage_key+'_pQuantities']);
-				   
-                    var cart_val=storedQuantities.reduce(function(prev, cur) {
-                                    return parseInt(prev) + parseInt(cur);
-                                 });
-                    var storedTitles = JSON.parse(localStorage[config.data[0].storage_key+'_pTitles']);
-                     try {
-                        var storedShipping = JSON.parse(localStorage[config.data[0].storage_key+'_pShippCharge']);
-                     }
-                     catch(rr) {
-                        var storedShipping = '';
-                     }
-                     var storedIds = JSON.parse(localStorage[config.data[0].storage_key+'_pIds']);
-                     
-                     
-                     var parent_pro_data = JSON.parse(localStorage[config.data[0].storage_key+'_pnew_pro_data']);
-                     
-                     
-                     
-                     var CouponDetail =new Object();
-                     var discount_amount,apply_to_shipping,simple_action,discount_qty,shipmyidonly;
-                    
-                    // $("#cartProductslist").html('<center><img src="images/spin.gif" /></center>');
-                     var parray = new Object();
-                     for(var i=0;i<storedIds.length;i++){
-                         parray[i] = storedIds[i];
-                     }
-                     var productid=JSON.stringify(parray);
-                     var BASE_URL  = config.data[0].baseurl;
-                     var STORE = config.data[0].storeid;
-                     //---Fetch Store Details from Mofluid Magento Web Service
-                     $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=productQuantity&product="+productid, function (response) {
-                        var productquan_response=response;
-                               
-                        var i=0, productList = '<div class="minicart-wrapper"><p class="block-subtitle">Recently added item(s)<a class="close skip-link-close" href="#" title="Close">×</a></p><div><ul id="cart-sidebar" class="mini-products-list">';
-                         
-
-						 if(storedNames.length==""){
-                              
-                        
-                           // $("#couponcode").hide();
-                        }
-                        else if(!(storedNames.length)) {
-                            var emptyText = '<div align="center"><div><img src="images/themeicons/cart_empty_150x150.png" width="150"></div class="empty_text"><div>'+locale.message.text["cart_empty_text"]+'</div></div>';
-                       
-                         //   $("#couponcode").hide();
-                        }
-                        else {
-						
-						
-                            while(i<storedNames.length) {
-                              
-                              
-                                var pName = storedNames[i],pSize = storedSizes[i],pColor=storedColor[i];
-                                pName = "'"+pName+"'", pSize = "'"+pSize+"'",pColor = "'"+pColor+"'";
-                                var pship = "'"+storedShipping[i]+"'";
-                                if(!storedSizes[i]) {
-                                    storedSizes[i] = '';
-                                }
-                             
-                       
-                               
-                                productList += '<li class="item odd" >\n\
-								                <a onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')"  class="product-image">\n\
-                                                   <img  src="'+storedImages[i]+'" onerror="bad_image(this);" width="50" height="50"></a>\n\
-												    <div class="product-details"><p class="product-name"><a onclick="getProDetail('+parent_pro_data[i].parent_id+',1,\''+parent_pro_data[i].pro_type+'\')">'+ storedTitles[i] +'</a></p>\n\
-													<table class="info-wrapper">\n\
-													<tbody><tr><td><span>Price:</span><span class="price">'+app_curr_symbol+ parseFloat(storedPrices[i]).toFixed(2) +'</span> </td></tr>\n\
-															<tr class="qty-wrapper"><td><span>Qty:</span><input id="qinput-348" class="qty cart-item-quantity" name="" value="'+storedQuantities[i]+'"></td></tr>\n\
-														</tbody>\n\
-													</table>\n\
-                                             	<div class="removeitem"><a  onclick="removeItem('+i+')" title="Remove This Item"  class="remove"><i class="fa fa-trash-o"></i></a></div> </div></li>';
-                               
-                               
-                               
-                               i++;
-                               
-                               
-                               
-                            }
-							
-							
-                         
-                            var ttlAmt = 0;
-                            var shipAmt=0;
-                            var ttlAll=0;
-                            var i = 0;
-                            while(i < cartItems) {
-                                ttlAmt = ttlAmt + (storedQuantities[i] * storedPrices[i] );
-                             
-                                i++;
-                            }
-							
-							 productList +='</ul> </div><div id="minicart-widgets"></div><div class="block-content"><p class="subtotal"><span class="label">Cart Subtotal:</span> <span class="price">$'+ttlAmt+'</span></p>\n\
-									</div> <div class="minicart-actions"><a class="cart-link" onclick="goTopage()">View Shopping Cart</a>\n\
-											<ul class="checkout-types minicart"><li><a title="Checkout" class="button checkout-button" onClick="proceedcheck();">Checkout</a></li></ul></div></div>';
-							jQuery('#minicart').html(productList);
-                         
-                         
-                            
-                           
-                        }
-                    });
-                } catch(err2) {
-                    console.log(err2);
-					
-					alert(err2);
-                }
-			  
-	
-	
-	   
-
-
-
-						
-  						
-            }
-
-			
-			function proceed() {
-                try {
-                    var Session = JSON.parse(localStorage[config.data[0].storage_key+'_Session']);
-                }
-                catch(err) {
-                    console.log(err.message);
-                    var dirPath = dirname(location.href);
-                    var fullPath = dirPath + "/guestcheckout.html";
-                    window.location = fullPath;
-                }
-                var isValidQuantity = 1;
-                $('#cartProductslist input[type=number]').each(function() {
-                    if(/^\+?(0|[1-9]\d*)$/.test($(this).val())) {
-                        console.log("Valid Quantity");
-                    }
-                    else {
-                        isValidQuantity = 0;
-                        return false;
-                    }
-                });
-                if(isValidQuantity) {
-                    if(Session == null) {
-                        var dirPath = dirname(location.href);
-                        localStorage[config.data[0].storage_key+"_nextpage"] = "buy_now.html?amount=" + localStorage[config.data[0].storage_key+'_subtotal']+"";
-                        var fullPath = dirPath + "/guestcheckout.html";
-                        window.location=fullPath;
-                    }
-                    else {
-                        $('#buyNow2').button ("disable");
-                        var fullPath = "buy_now.html?amount=" + localStorage[config.data[0].storage_key+'_subtotal']+"";
-                        window.location=fullPath;
-                    }
-                }
-                else {
-                   console.error("Inalid Quantity");
-                   if (config.data[0].platform=='ios' || config.data[0].platform=='android') {
-                       
-                       navigator.notification.alert(locale.message.text["invalid_quantity"],function () {},config.data[0].app_name, locale.message.button["close"]);
-                   }
-                   else{
-                       alert(locale.message.text["invalid_quantity"]);
-                   }
-                }
-            }
-            
-            /*
-             *Function call to check cart item quantity
-             *@param
-             *@return
-             */
-            
-            function proceedcheck(){
-                var flag;
-                storedIds = JSON.parse(localStorage[config.data[0].storage_key+'_pIds']);
-                var product_name_array = JSON.parse(localStorage[config.data[0].storage_key+'_pTitles']);
-                var parray = new Object();
-                for(var i=0;i<storedIds.length;i++){
-                    parray[i] = storedIds[i];
-                }
-                productid=JSON.stringify(parray);
-                var BASE_URL  = config.data[0].baseurl;
-                var STORE = config.data[0].storeid;
-                $.mobile.loading("show");
-                //---Fetch Store Details from Mofluid Magento Web Service
-                $.getJSON(""+BASE_URL+"?callback=?"+"&store="+STORE+"&service=productQuantity&product="+productid, function (response) {
-                          $.mobile.loading("hide");
-                    flag=0;
-                    productquan_response=response;
-                    for (var i=0;i<storedIds.length;i++){
-                        if(productquan_response[storedIds[i]]==0){
-                          
-                            if (config.data[0].platform=='ios' || config.data[0].platform=='android') {
-                                navigator.notification.alert(locale.message.alert["item_remove_message"] +"-"+ product_name_array[i],function (){},config.data[0].app_name, locale.message.button["close"]);
-                            }
-                            else{
-                                alert(locale.message.alert["item_remove_message"] +"-"+ product_name_array[i]);
-                            }
-                            flag=1;
-                        }
-                    }
-                    if(flag==0){
-                        proceed();
-                    }
-                });
-            }
-			
-	  function goTopage()
-            {	  
-			   redirectTopage('cart.html');
-             } 
-
-function removeItem(index) {
-    var nameArray = JSON.parse(localStorage[config.data[0].storage_key+'_pNames']);
-    var priceArray = JSON.parse(localStorage[config.data[0].storage_key+'_pPrices']);
-    var imageArray = JSON.parse(localStorage[config.data[0].storage_key+'_pImages']);
-    var title = JSON.parse(localStorage[config.data[0].storage_key+'_pTitles']);
-    try {
-        var sizes=JSON.parse(localStorage[config.data[0].storage_key+'_pSizes']);
-        var colors=JSON.parse(localStorage[config.data[0].storage_key+'_pColor']);
-    }
-    catch(ee) {
-        var sizes='';
-        var colors='';
-    }
-    var pIds=JSON.parse(localStorage[config.data[0].storage_key+'_pIds']);
-    if(localStorage.getItem(config.data[0].storage_key+"_pQuantities") === null) {
-        var quantityArray = [];
-    }
-    else
-        var quantityArray = JSON.parse(localStorage[config.data[0].storage_key+'_pQuantities']);
-    var pnew_pro_dataArray = JSON.parse(localStorage[config.data[0].storage_key+'_pnew_pro_data']);
-    var pcustomoptionsArray = JSON.parse(localStorage[config.data[0].storage_key+'_pcustom_options']);
-    
-    
-    var pname1=title[index];
-    nameArray.splice(index, 1);
-    priceArray.splice(index, 1);
-    imageArray.splice(index, 1);
-    quantityArray.splice(index, 1);
-    title.splice(index, 1);
-    try {
-        sizes.splice(index,1);
-        colors.splice(index,1);
-    }
-    catch(ee) {
-        var sizes='';
-        var colors='';
-    }
-    pIds.splice(index,1);
-    pnew_pro_dataArray.splice(index, 1);
-    pcustomoptionsArray.splice(index, 1);
-    localStorage[config.data[0].storage_key+'_pNames'] = JSON.stringify(nameArray);
-    localStorage[config.data[0].storage_key+'_pPrices'] = JSON.stringify(priceArray);
-    localStorage[config.data[0].storage_key+'_pImages'] = JSON.stringify(imageArray);
-    localStorage[config.data[0].storage_key+'_pQuantities'] = JSON.stringify(quantityArray);
-    localStorage[config.data[0].storage_key+'_pTitles'] = JSON.stringify(title);
-    try {
-        localStorage[config.data[0].storage_key+'_pSizes'] = JSON.stringify(sizes);
-        localStorage[config.data[0].storage_key+'_pColor'] = JSON.stringify(colors);
-    }
-    catch(err) {
-        localStorage[config.data[0].storage_key+'_pSizes'] = '';
-        localStorage[config.data[0].storage_key+'_pColor'] = '';
-    }
-    localStorage[config.data[0].storage_key+'_pIds'] = JSON.stringify(pIds);
-    localStorage[config.data[0].storage_key+'_pnew_pro_data'] = JSON.stringify(pnew_pro_dataArray);
-    localStorage[config.data[0].storage_key+'_pcustom_options'] = JSON.stringify(pcustomoptionsArray);
-    
-    if (config.data[0].platform=='ios' || config.data[0].platform=='android') {
-        navigator.notification.alert(locale.message.alert["when_a_product_removed_from_cart"].replace("{{product}}", pname1),function (){},config.data[0].app_name, locale.message.button["close"]);
-    }
-    else{
-        alert(locale.message.alert["when_a_product_removed_from_cart"].replace("{{product}}", pname1));
-    }
-    var totalShip = total=0,total_with_shipping;
-    for(i=0;i<priceArray.length;i++) {
-        total = total + (Number(priceArray[i])*Number(quantityArray[i]));
-    }
-    for(i=0;i<priceArray.length;i++) {
-        //  totalShip = totalShip + (Number(shippingArray[i])*Number(quantityArray[i]));
-    }
-    total_with_shipping = total + totalShip ;
-    localStorage[config.data[0].storage_key+'_totalAmount'] = total_with_shipping;
-    localStorage[config.data[0].storage_key+'_TotalShipp'] = totalShip;
-    total = parseFloat(total).toFixed(2);
-    totalShip = parseFloat(totalShip).toFixed(2);
-    total_with_shipping = parseFloat(total_with_shipping).toFixed(2);
-    $("#totalAmount").html(app_curr_symbol+total+'');
-    $("#shipping_detail").html(app_curr_symbol+totalShip+'');
-    $("#total_with_shipping").html(app_curr_symbol+total_with_shipping+'');
-    location.reload();
-}			 
-			   </script>
-                   
-                   
-
-                   
+                   </script>
     </head>
     <body onLoad="onLoad()">
         <div data-role="page" data-dom-cache="true" id="mainpage" class="pushnotification">
-     
-
-<!-- new code vipin start-->
-            <div class="header-language-background fixed">
-                 <div class="header-language-container">
-	  
-	         <div class="logoheader" style="display:none;">
-            	<div class="freeshipping">
-				  
-						<p><a href="javascript:void(0)">Free shipping to Singapore on Orders of $150 or More</a></p>			   
-			   </div>
             
-				 <form id="srcfrm" name="serachForms" action="javascript:custom_search();">
-					<div class="input-box">
-						
-						
-						 <input id="searchFilter" type="serach" data-type="search" placeholder="Search entire store here..." data-theme="a" />
-						
-					
-					     <ul id="suggestions" data-role="listview" data-inset="true" data-theme="a">
-                                
-                            </ul>
-					</div>
-
-
-				</form>
-				
-				
-				
-         </div>
-        <!--<div class="store-language-container">
-                    </div>-->
-
-        
-       <!-- <p class="welcome-msg">Default welcome msg! </p>-->
-		
-		     		 
-		   <div class="skip-links">
-		   
-		   		  <div class="myact">
-				       <a href="javascript:void(0)" id="loginbtn" class="skip-link skip-account">
-					
-					      <span class="label">LOGIN</span>
-				      </a>
-			
-			          </div>
-					
-							<div id="header-account" style="display:none;" class="skip-content loginuser skip-active"><div class="caret"></div><div class="youama-login-window" style="display: block;">
-								<div class="youama-window-outside">
-								  
-									<div class="youama-window-inside">
-										<div class="youama-window-title">
-											<h3>
-												Sign In                    </h3>
-										</div>
-										
-										<div class="youama-window-box first">
-											<div class="youama-window-content">
-												<div class="input-fly youama-showhideme">
-													<label for="youama-email">Email <!--<span>*</span>--></label>
-													<input type="text" id="username" name="username" value="">
-													<div class="youama-ajaxlogin-error err-email err-noemail err-wrongemail err-wronglogin" style="display: none;"></div>
-												</div>
-												<div class="input-fly youama-showhideme">
-													<label for="youama-password">Password <!--<span>*</span>--></label>
-													<input type="password" id="password" name="password" value="">
-													<div class="youama-ajaxlogin-error err-password err-dirtypassword err-nopassword err-longpassword" style="display: none;"></div>
-												</div>
-											</div>
-										</div>
-										
-										<div class="youama-window-box last">
-											<div class="youama-window-content box-contents box-contents-button youama-showhideme">
-												<span class="youama-forgot-password">
-													<a href="#">Forgot Password</a>
-												</span>
-												<button type="button" onclick="submitform()" class="button btn-proceed-checkout btn-checkout youama-ajaxlogin-button">
-													<span>
-														<span>Login</span>
-													</span>
-												</button>
-											  
-											</div>
-										</div>
-										
-									</div>
-								</div>
-    </div><div class="youama-register-window" style="display: block;">
-        <div class="youama-window-outside">
-            <span class="close">×</span>
-
-            <div class="youama-window-inside">
-                <div class="youama-window-title">
-                    <h3>
-                        Create an Account                    </h3>
-                </div>
-
-                <div class="youama-window-box first">
-                   
-                    <div class="youama-window-content">
-                        <div class="input-fly youama-showhideme">
-                            <label for="youama-firstname">Name <!--<span>*</span>--></label>
-                            <input type="text" id="fullname" name="fullname" value="">
-                            <div class="youama-ajaxlogin-error err-firstname err-nofirstname err-dirtyfirstname" style="display: none;"></div>
-                        </div>
-                        
-                    </div>
-                </div>
-
-                <div class="youama-window-box second">
-                  
-                    <div class="youama-window-content">
-                        <div class="input-fly youama-showhideme">
-                            <label for="youama-email">Email <!--<span>*</span>--></label>
-                            <input type="text" id="email" name="email" value="">
-                            <div class="youama-ajaxlogin-error err-email err-noemail err-wrongemail err-emailisexist" style="display: none;"></div>
-                        </div>
-                        <div class="input-fly youama-showhideme">
-                            <label for="youama-password">Password <!--<span>*</span>--></label>
-                            <input type="password" id="rpassword" name="rpassword" value="">
-                            <div class="youama-ajaxlogin-error err-password err-dirtypassword err-nopassword err-shortpassword err-longpassword" style="display: none;"></div>
-                        </div>
-                        <div class="input-fly youama-showhideme">
-                            <label for="youama-passwordsecond">Confirm Password <!--<span>*</span>--></label>
-                            <input type="password" id="cpassword" name="cpassword" value="">
-                            <div class="youama-ajaxlogin-error err-passwordsecond err-nopasswordsecond err-notsamepasswords" style="display: none;"></div>
-                        </div>
-						
-						<div class="input-fly youama-showhideme">
-                            <label for="youama-invitationcode">Invitation Code (optional) <!--<span>*</span>--></label>
-                            <input type="text" id="youama-invitationcode" name="youama-invitationcode" value="" autocomplete="OfF" autocorrect="off" autocapitalize="off">
-                           
-                        </div>
-                       
-                    </div>
-                </div>
-
-                <div class="youama-window-box last">
-                    <div class="youama-window-content box-contents youama-showhideme">
-                        <button id="rgsbtn" onclick="regsubmitform()" type="button" class="button btn-proceed-checkout btn-checkout youama-ajaxlogin-button">
-                            <span><span>Register</span></span>
-                        </button>
-                       <!-- <p id="y-to-login" class="yoauam-switch-window">
-                                                    </p>-->
-                    </div>
-					 <div class="input-fly input-fly-checkbox youama-showhideme">
-                           <span style="display:none;"> <input type="checkbox" id="youama-licence" name="youama-licence" checked="checked" value="ok"></span>
-                            <label for="youama-licence">By creating an account you agree to the <a href="https://eluvy.com/term-condition" target="_blank">Terms and Coditions</a></label>
-                            <div class="youama-ajaxlogin-error err-nolicence" style="display: none;"></div>
-                     </div>
-                </div>
-
-            </div>
-        </div>
-    </div><div class="youama-ajaxlogin-loader">
-    </div>
-	
-	</div>   
-						
-		  
-			
-			<div class="contactus">
-			  <span class="label"><a onclick="getCMSB(25)" href="javascript:void(0);">CONTACT US</a></span>
-			</div>
-			<div class="get20off">
-			  <span class="label"><a class="slide-link" href="javascript:void(0)">Get 20% Off</a></span>
-			  
-			      <div class="mask" style="display:none;"></div>
-			      <div class="slide email-signup row" id="email-signup" style="display: none;">
-				     <div class="caret"></div>
-						<div class="shell email-drawer-content">
-						
-						<div style="display:none" class="loader">
-						<img alt="Please wait..." src="https://eluvy.com/media/custimg/medium.gif">
-						<p class="h3">Please wait . . .</p>
-						</div>
-						<div style="display:none" class="success">
-						<p>You're all signed up!</p>
-						<p>(and your inbox just got a dose of sparkle)</p>
-						<p>You'll be the first to hear about promotions, specials and the latest new arrivals.</p>
-						<div class="load_on_success">
-						
-						</div>
-						</div>
-						<div>
-						
-						  <div class="closecontainer"><a href="javascript:void(0)" class="close">×</a></div>
-						  	
-						<h2>Want to <em>score 20% off</em> your first purchase?</h2>
-						<h3>Simply enter your email below and check your inbox for the promo code.</h3>
-						  <div  id="newsletter-validate-detail" >
-									   
-           
-                           <input type="email" class="input-text required-entry validate-email" title="Sign up for our newsletter" id="newsletteremail" name="email" spellcheck="false" placeholder="enter your email address" autocorrect="off" autocapitalize="off">
-           
-                          <button class="button" title="Subscribe" id="nwsbtn" type="button"><span><span>Sign Up</span></span></button>
-                             <p><a title="No Thanks" type="reset" href="javascript:void(0)" class="exit-link">No Thanks</a></p>
-                          </div>
-					
-					
-						
-						<p>Offer valid on full-price items and for first time customers only. See email for restrictions. By entering your email address, you will receive emails from Eluvy. You can unsubscribe at any time.</p>
-						<div style="display:none" class="error">
-						<p>We're sorry, there's been a problem with your request. Please try again.</p>
-						</div>
-						
-						</div>
-						<a class="exit-btn" href="#"><i class="fa fa-times"></i></a>
-						</div>
-                     </div>
-			  
-			</div>
-			 <div class="header-minicart">
-                
-
-				<a href="javascript:void(0)" class="skip-link skip-cart  no-count">
-				   
-					<span class="label">Shopping Bag</span>
-					  <span class="icon"></span>
-					<span id="totalcount" class="count">0</span>
-				</a>
-			  
-			<div id="header-cart" class="block block-cart skip-content" style="display:none;">
-			      <div class="caret"></div>
-				
-			      <div id="minicart-error-message" class="minicart-message"></div>
-			      <div id="minicart-success-message" class="minicart-message"></div>
-
-				      <div id="minicart">
-						  <div class="minicart-wrapper" >
-
-							<p class="block-subtitle">
-								Recently added item(s)     
-								<a class="close skip-link-close" href="#" title="Close">×</a>
-							</p>
-
-						    <p class="empty">You have no items in your shopping cart.</p>
-
-					       </div>
-				
-			
-			         </div>
-			
-			
-			</div>
-
-
-            </div>
-			</div>
-
-    </div>
-	
-	
-	<script>
-	
-	 jQuery('.slide-link').click(function(){
-	   
-	     jQuery('#header-cart').hide();	
-		  jQuery('#header-account').hide();	
-		  
-		 
-		 if(jQuery('.slide').css('display') == 'none')
-			{
-						
-                jQuery('.slide').slideDown(1000);
-			     jQuery('.mask').show();
-				 
-			}else
-			{
-			     jQuery('.slide').slideUp(1000);	
-				 jQuery('.mask').hide();
-			}
-		 
-	 });
-	 
-	  jQuery('.exit-link, .close').click(function(){
-		  
-		     
-		          jQuery('.slide').hide();	
-				 jQuery('.mask').hide();
-		 
-	 });
-	 
-	 jQuery('.skip-account').click(function(){
-		  
-		     
-			 
-			 jQuery('#header-cart').hide();	
-			  jQuery('.slide').hide();	
-		  	
-                if(jQuery('#header-account').css('display') == 'none')
-					{
-					
-					    jQuery('#header-account').slideDown(1000);	
-
-					}else{
-					
-					     jQuery('#header-account').slideUp(1000);	
-					}			
-		 
-	 });
-	 
-	  jQuery('.close').click(function(){
-		  
-		    jQuery('#header-account').slideUp(1000);				 
-		 
-	 });
-	 
-	 	 jQuery('.skip-cart').click(function(){
-		 
-		  jQuery('#header-account').hide();	
-		   jQuery('.slide').hide();	
-		 
-		    if(jQuery('#header-cart').css('display') == 'none')
-					{
-					
-					  jQuery('#header-cart').slideDown(1000);	
-
-					}else{
-					
-					     jQuery('#header-cart').slideUp(1000);	
-					}
-		  
-		     			 
-		 
-	       });
-	 
-	
-	
-	
-	</script>
-	
-	<script>
-	
-	jQuery('#nwsbtn').click(function(){
-		
-		jQuery('.success').hide();
-		 if(jQuery('#newsletteremail').val()=='')
-		 {
-			 
-			   jQuery('.success').show();
-				
-				jQuery('.success').html('<div class="error">Please Enter Email Id.</div>');
-				
-				return false;
-				
-		 }else
-		 {
-			 
-			 if(!validatesEmail(jQuery('#newsletteremail').val()))
-			 {
-				 
-				  jQuery('.success').show();
-				
-				 jQuery('.success').html('<div class="error">Please Enter Valid Email Id.</div>');
-				
-				 return false;
-			 }
-		 }
-		 
-		 jQuery.ajax(
-				{
-					url : 'https://eluvy.com/newsletter/subscriber/newajax/',
-					type: "POST",
-					data :  {'email':jQuery('#newsletteremail').val()},
-					beforeSend: function(){	jQuery('.loader').show();},
-					success:function(data, textStatus, jqXHR) 
-					{
-						
-						jQuery('.loader').hide();
-						
-					
-						var msg='';
-						
-						if(data.errorMsg!='')
-						{
-							
-							msg='<div class="error">'+data.errorMsg+'</div>';
-						}
-						if(data.successMsg!='')
-						{
-							
-							msg='<div class="success">'+data.successMsg+'</div>';
-						}
-						
-						jQuery('.success').show();
-						
-						jQuery('.success').html(msg);
-						
-						
-						
-					},
-					error: function(jqXHR, textStatus, errorThrown) 
-					{
-						//if fails      
-					}
-				});
-	
-	
-		
-	});
-	   function validatesEmail(emailAddress) {
-            var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-
-            if (filter.test(emailAddress)) {
-                return true;
-            } else {
-                return false;
-            }
-        }
-		
-		
-		jQuery('#searchFilter').click(function(){
-		
-		  $("#searchFilter").focus();
-		
-		});
-		
-		
-		
-	</script>
-	
-</div>
-<!--  new code vipin end-->
-
             <div data-role="header" id="mainheader" class="mainheader" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="header">
                 
                 <div class="navigation_menu_button1 navigation_menu_button menu-btn">
@@ -1460,7 +281,7 @@ function removeItem(index) {
                 </div>
                 
                 <div class="navigation_logo1 navigation_logo" align="center">
-                   <a href="javascript:void(0);">
+                    <a href="javascript:void(0);">
                         <img  class="logo_icon" src="images/spin.gif" style="height:30px;width:30px;"/>
                     </a>
                 </div>
@@ -1476,261 +297,54 @@ function removeItem(index) {
             
             <div data-role="content" class="home_content">
                 
-               
+                <div id="searchBox" class="searchbox" style="display:none;">
+                   <form name="serachForm" action="javascript:custom_search();">
+                        <div>
+                            <input id="searchFilter" type="serach" data-type="search" placeholder="" data-theme="a" />
+                            <ul id="suggestions" data-role="listview" data-inset="true" data-theme="a">
+                                
+                            </ul>
+                        </div>
+                    </form>
+                </div>
                 
                 
                 <div>
-                    <div class="item hideit" align="center" id="hideit" value="1" >
-					 <img src="images/spin.gif">
-					</div>
-                    <div id="banner_slider" class="slider-contaner hslider" style="text-align:center;width:100%; margin:72px 0 0 0;">
-					
-					 	
+                    <div class="item hideit" align="center" id="hideit" value="1"><img src="images/spin.gif"></div>
+                    <div id="banner_slider" class="slider-contaner hslider" style="text-align:center;width:100%">
                     </div>
                 </div>
                 
-					<!-- new code vipin start-->
-				<div class="cat-banner" >
-				<section class="customermsg">
-				<div class="customer-message" id="ready_revamp">
-				
-				 </div>
-				</section>
-
-				<section class="secondbanner">	
-							<div class="staticbanner" id="secondstaticbanner">
-									
-							</div>
-				</section>
-				</div>
-
-				<!-- new code vipin end-->
-
-                
                 <!-- Slider for Feature Products -->
-				
-                   <div class="main-pro" >
-                   
-                    
-                    <div class="featuredproduct">
-                         <h3 class="stylish-border" id="feature_products_inner_div1">FEATURED PRODUCTS</h3>
-                     </div>
-                    
-                      <ul class="banner-slider wl-carousel" id="fproductslide">
-						
-
-					   </ul>
-                    
-                   
-                    
-                    
-                   </div>
+                <div class="category_list" style = "display:none" id="feature_products_outer_div">
+                    <div class="heading_text" id="feature_products_inner_div"></div>
+                </div>
+                <div id="featured_owl"  class="parent" data-role="none">
+                	
+                </div>
                 
                 <!-- Slider for Optional Products -->
-				
-				
                 <div class="category_list" style="display:none" id="new_products_outer_div">
                     <div class="heading_text" id="new_products_inner_div"></div>
                 </div>
-                <div id="new_owl1" style="display:none;">
-                	<center><img src="images/spin.gif" id="new_hide" ></center>
-                    
-                    
-						<div class="featuredproduct">
-							 <h3 class="stylish-border">WE ALSO RECOMMEND</h3>
-						</div>
-                    
-					  <div class="main-pro">
-						<ul class="banner-slider wl-carousel" id="fproductslide1">
-						
-						
-					   </ul>
-						
-					  </div>
-						
-						
-                    
-                    
-                  </div>
-                
-                <!-- three box start-->
-			 <div id="buttombox" class="forboxes" >
-			 
-				 <div class="item hideit" align="center" id="hideit" value="1"><img src="images/spin.gif"></div>
-				 
-
-			</div>
-                <!-- three box end-->
-                
-                 <!-- footer start-->
-           <div class="footer-container">
-             <div class="footer1">
-	           <div class="footer-newsletter">
-     	
-		        <div class="block block-subscribe">
-                      <div style="display:none" class="loader">
-							<img alt="Please wait..." src="https://eluvy.com/media/custimg/medium.gif">
-							<p class="h3">Please wait . . .</p>
-					   </div>
-						<div style="display:none" class="success">
-							<p>You're all signed up!</p>
-							<p>(and your inbox just got a dose of sparkle)</p>
-							<p>You'll be the first to hear about promotions, specials and the latest new arrivals.</p>
-							<div class="load_on_success">
-							
-							</div>
-						</div>
-						<form action="https://eluvy.com//newsletter/subscriber/new/" method="post" id="newsletter-validate-detail">
-							<div class="block-content">
-								<div class="form-subscribe-header">
-									<label for="newsletter">Sign Up for Our Newsletter:</label>
-								</div>
-								<div class="input-box">
-								   <input type="email" autocapitalize="off" autocorrect="off" placeholder="enter your email address" spellcheck="false" name="email" id="newslettere" title="Sign up for our newsletter" class="input-text required-entry validate-email">
-								</div>
-								<div class="actions">
-									<button type="button" title="Subscribe" id="newsbtn" class="button"><span><span>Sign Up</span></span></button>
-								</div>
-							</div>
-                        </form>
-	                   <div style="display:none" class="error">
-						<p>We're sorry, there's been a problem with your request. Please try again.</p>
-					    </div>
-						<script>
-						
-						jQuery('#newsbtn').click(function(){
-							
-							jQuery('.success').hide();
-							 if(jQuery('#newslettere').val()=='')
-							 {
-								 
-								   jQuery('.success').show();
-									
-									jQuery('.success').html('<div class="error">Please Enter Email Id.</div>');
-									
-									return false;
-									
-							 }else
-							 {
-								 
-								 if(!validatesEmail(jQuery('#newslettere').val()))
-								 {
-									 
-									  jQuery('.success').show();
-									
-									 jQuery('.success').html('<div class="error">Please Enter Valid Email Id.</div>');
-									
-									 return false;
-								 }
-							 }
-							 
-							 jQuery.ajax(
-									{
-										url : 'https://eluvy.com/newsletter/subscriber/newajax/',
-										type: "POST",
-										data :  {'email':jQuery('#newslettere').val()},
-										beforeSend: function(){	jQuery('.loader').show();},
-										success:function(data, textStatus, jqXHR) 
-										{
-											
-											jQuery('.loader').hide();
-											
-										
-											var msg='';
-											
-											if(data.errorMsg!='')
-											{
-												
-												msg='<div class="error">'+data.errorMsg+'</div>';
-											}
-											if(data.successMsg!='')
-											{
-												
-												msg='<div class="success">'+data.successMsg+'</div>';
-											}
-											
-											jQuery('.success').show();
-											
-											jQuery('.success').html(msg);
-											
-											
-											
-										},
-										error: function(jqXHR, textStatus, errorThrown) 
-										{
-											//if fails      
-										}
-									});
-						
-						
-							
-						});
-						   function validatesEmail(emailAddress) {
-								var filter = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
-
-								if (filter.test(emailAddress)) {
-									return true;
-								} else {
-									return false;
-								}
-							}
-							
-							
-                          
-						</script>
-  
+                <div id="new_owl" class="parent" data-role="none">
+                	<center><img src="images/spin.gif" id="new_hide" style="display:none;"></center>
                 </div>
-                 <div class="clearfix"></div>
-             </div><!--footer-newsletter-->
-	 
-	       <div class="footer-link-block" id="footer_link_block">
-					
-           </div>       
-                <div class="clearfix"></div>
-			<div class="footer-copyright" id="footer_coptright">
-			
-			
-			</div><!--footer-copyright-->
-       </div>
-     </div>
-                 <!-- footer end-->
                 
-    </div>
+            </div>
             
             <div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="footer">
             </div>
             
-		
             <nav class="pushy pushy-left">
                 <div id="Cate_slide">
-               
-				   <div class="new_cate_panel_div">What New</div>
-				   <div class="new_cate_panel_div">Sale Items</div>
-				   <div class="new_cate_panel_div">Necklaces</div>
-				   <div class="new_cate_panel_div">Earrings</div>
-				  <div class="new_cate_panel_div">Bracelets</div>
-				   <div class="new_cate_panel_div">Rings</div>
-				  
-				
-			  
+                <center style="margin-top:100px;"><img src="images/spin.gif"></center>
                 </div>
             </nav>
             <!-- Site Overlay -->
             <div class="site-overlay"></div>
-			
-	   
         </div>
         <script type="text/javascript" src="js/footer.js"></script>
-		
-		<style>
-		
-		.youama-ajaxlogin-error.err-email.err-noemail.err-wrongemail.err-wronglogin {
-			color: red;
-		}
-		.youama-ajaxlogin-error err-password err-dirtypassword err-nopassword err-longpassword{
-		   color: red;
-		}
-		</style>
     </body>
     
     <script>
@@ -1761,12 +375,9 @@ function removeItem(index) {
                       if (obj.id != 'new_search_btn')
                       {
                         $("#searchBox").slideUp('slow').removeClass('myclass');
-                       // $("#searchFilter").blur();
+                        $("#searchFilter").blur();
                         return false;
                       }
-					  
-					   
-						
                       });
    
    /*
@@ -1792,5 +403,4 @@ function removeItem(index) {
     });
 */
     </script>
-  
 </html>
