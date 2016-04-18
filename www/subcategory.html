@@ -1756,8 +1756,10 @@ function removeItem(index) {
 							if(response.total > 0)
 							{
 							  localStorage.setItem('productslistlocal', JSON.stringify(response));
-									
+							alert(JSON.stringify(response));		
 							  printResponse(JSON.stringify(response));
+							  
+							  
 							}
 						   else
 						   {
