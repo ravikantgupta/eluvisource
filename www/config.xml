@@ -70,12 +70,12 @@
 		<gap:splash src="resource/splash/1280x720.png" gap:platform="android" width="1280" height="720" />
 		
     
-	         <preference name="phonegap-version" value="3.7.0" /> -->
+	         <preference name="phonegap-version" value="3.7.0" /> 
                 <preference name="orientation" value="portrait" />
                 <preference name="target-device" value="universal" />
                 <preference name="DisallowOverscroll" value="true" />
-				 <preference name="SplashScreenDelay" value="3000" />
-          	<preference name="webviewbounce" value="false" />
+				 <preference name="SplashScreenDelay" value="5000" />
+          	     <preference name="webviewbounce" value="false" />
 
         
 
