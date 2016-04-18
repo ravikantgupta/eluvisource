@@ -764,6 +764,7 @@
             localStorage.setItem(config.data[0].storage_key+'_productlist',productList);
             
                         if(page<=1 && productList !="") {
+						localStorage.getItem(config.data[0].storage_key+'_pro_flag')=1;
                 $("#category").html(productList);
             }
             else {
