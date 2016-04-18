@@ -82,6 +82,8 @@
                     if(localStorage.getItem('foo') == 1){
 					   
                         categoryfound = 0;
+						
+						alert('ram');
                         
                         // $("#Showpro").hide();
                       //  $("#banner_slider").hide();
@@ -106,7 +108,7 @@
                      
                      if(localStorage.getItem(config.data[0].storage_key+'_pro_flag')==1 && localStorage.getItem(config.data[0].storage_key+'_cat_flag')==1 && localStorage.getItem(config.data[0].storage_key+'_pro_detail_flag')==0)
                       {
-                          
+                          alert('ram0');
                           JSON.parse(localStorage['catIds']).pop();
                           
                           //alert("in cat");
@@ -137,6 +139,8 @@
                       }
                       else if(localStorage.getItem(config.data[0].storage_key+'_pro_flag')==1)
                       {
+					  
+					  alert('ram1');
                           var productlist=localStorage.getItem(config.data[0].storage_key+'_productlist');
                           $("#category").html(productlist);
                           localStorage.setItem(config.data[0].storage_key+'_pro_detail_flag',0);
@@ -2299,7 +2303,7 @@ function removeItem(index) {
 				   
 				   </select>  
 				
-                	<a href="https://eluvy.com/sale-items.html?dir=desc&amp;metaltype=4&amp;order=name" class="sort-by-switcher sort-by-switcher--asc" title="Set Descending Direction">Set Descending Direction</a>
+                	<a class="sort-by-switcher sort-by-switcher--asc" title="Set Descending Direction">Set Descending Direction</a>
                     
                     <div class="list-rgt">
                     	
