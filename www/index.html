@@ -16,7 +16,9 @@
             function onLoad(){
               //  localStorage.clear();
 			  
-			   navigator.splashscreen.hide();
+			   setTimeout(function(){  navigator.splashscreen.hide();  document.addEventListener("deviceready", onDeviceReady, false);
+				setfourBox();
+				getcartitem(); }, 1000);
                 
                 if(localStorage.getItem('foo') == 1){
                      //   $("#hideit").hide();
@@ -25,9 +27,7 @@
                 }
 				
 				
-                document.addEventListener("deviceready", onDeviceReady, false);
-				setfourBox();
-				getcartitem();
+               
 				
             }
         
