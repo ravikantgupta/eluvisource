@@ -3013,7 +3013,13 @@ function addDirectToCart(PRODUCT_ID, stock_status) {
             } else {
                   
 				  alert(PRODUCT_ID + "stock_status" + stock_status);
-                addToCart(PRODUCT_ID + "stock_status" + stock_status, pSKU, pPrice, pShipp, imageURL, pName, pSize, pColor);
+				  var selected_option_array='';
+				  var customoptions='';
+				  var new_pro_data='';
+              //  addToCart(PRODUCT_ID + "stock_status" + stock_status, pSKU, pPrice, pShipp, imageURL, pName, pSize, pColor);
+			  
+			  
+			    addToCart(PRODUCT_ID , pSKU, pPrice, pShipp, imageURL, pName, pSize, pColor, selected_option_array, customoptions,1,new_pro_data);
 				
 				
 				
