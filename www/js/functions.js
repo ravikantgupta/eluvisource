@@ -2949,7 +2949,7 @@ function addDirectToCart(PRODUCT_ID, stock_status) {
     var STORE = config.data[0].storeid;
 	
 		
-                          
+            localStorage.setItem(config.data[0].storage_key+"_pro_detail_flag",1);              
     //---- Fetch Product Details from Magento Store via Mofluid Magento Webservice
     $.getJSON("" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=productdetail&productid=" + PRODUCT_ID,
         function(results) {
