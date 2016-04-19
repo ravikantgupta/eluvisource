@@ -41,9 +41,8 @@ function dirname(path) {
                           
 //------------------------------------------Product detail page------------------------------------------------
 function getProDetail(proid,stk_stat,type) {
-	
-	
-   $(".ui-loader").show();
+
+$(".ui-loader").show();
 //var product_val=queryValue();
 //var PRODUCT_IDD =product_val.split("stock_status");
 var PRODUCT_ID=proid;
@@ -102,8 +101,6 @@ else{
 //var Simple_product_detail_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&service=productdetail&productid="+PRODUCT_ID+"&currency="+app_curr_code;
 var Simple_product_detail_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&service=productdetaildescription&productid="+PRODUCT_ID+"&currency="+app_curr_code;
    console.log(Simple_product_detail_webservice);
-   
-  
 $.ajax({
      url:Simple_product_detail_webservice,
      type: 'GET',
@@ -126,7 +123,7 @@ $.ajax({
        params["stock_status"] = stock_status;
        params["ptype"] = results["type"];
        
-       
+       //alert(JSON.stringify(results));
        if(results["type"] == "configurable"){
        getProDetail(PRODUCT_ID,stock_status,results["type"]);
        }
@@ -175,7 +172,7 @@ function isValidalphanumeric(name) {
                           
     function getCMSB(id)
     {
-                        
+                          
         Widget.getCmsPages(id);
     }
                           
@@ -292,12 +289,6 @@ function getFormatTime(date) {
      *@return
      */
 function redirectTopage(pagename) {
-	
-	
-	 $(".ui-loader").show();	
-	 
-	
-	 	
     var dirPath = dirname(location.href);
     var fullPath = dirPath + "/" + pagename;
     if(pagename=='index.html')
@@ -634,15 +625,11 @@ function setApplicationFooter(store) {
         $("#storeadminname").html('&copy; ' + new Date().getFullYear() + " " + store.name);
 	}
      else {
-         //$("#footer_content").html(footer_content);
+         $("#footer_content").html(footer_content);
      }
       document.title = store.name;
       $("#storelabel").html(store.frontname);
       //$("#footer_content").show();
-	  
-	
-	  
-	 
 }
 
 
@@ -2942,19 +2929,13 @@ $(document).ready(function() {
 
 
 function addDirectToCart(PRODUCT_ID, stock_status) {
-	
-	
-	
     var BASE_URL = config.data[0].baseurl;
     var STORE = config.data[0].storeid;
-	
-		
-            localStorage.setItem(config.data[0].storage_key+"_pro_detail_flag",1);              
+                          
     //---- Fetch Product Details from Magento Store via Mofluid Magento Webservice
     $.getJSON("" + BASE_URL + "?callback=?" + "&store=" + STORE + "&service=productdetail&productid=" + PRODUCT_ID,
         function(results) {
-			 
-           
+            console.log(results);
             pSKU = results["sku"];
             pShipp = results["shipping"];
             pName = results["name"];
@@ -2997,32 +2978,17 @@ function addDirectToCart(PRODUCT_ID, stock_status) {
                 pStock = locale.message.text["out_of_stock"];
             else
                 pStock = locale.message.text["in_stock"];
-            
+
             if (pStock == locale.message.text["out_of_stock"]) {
-				
                 if (config.data[0].platform == 'ios' || config.data[0].platform == 'android') {
-					
-					
                     navigator.notification.alert(locale.message.text["out_of_stock"], function() {}, config.data[0].app_name, locale.message.button["close"]);
-                
-				} else {
-					
+                } else {
                     alert(locale.message.text["out_of_stock"]);
                 }
                 location.reload(true);
             } else {
-                  
-				
-				  var selected_option_array='';
-				  var customoptions='';
-				  var new_pro_data='';
-              //  addToCart(PRODUCT_ID + "stock_status" + stock_status, pSKU, pPrice, pShipp, imageURL, pName, pSize, pColor);
-			  
-			  
-			    addToCart(PRODUCT_ID , pSKU, pPrice, pShipp, imageURL, pName, pSize, pColor, selected_option_array, customoptions,1,new_pro_data);
-				
-				
-				
+
+                addToCart(PRODUCT_ID + "stock_status" + stock_status, pSKU, pPrice, pShipp, imageURL, pName, pSize, pColor);
             }
         });
 
@@ -3351,15 +3317,6 @@ var product_det_from_page = new function() {
                 pShipp = results["shipping"];
                 pTotalQuant = results["quantity"];
                 pSize  = results["pSize"];
-				
-				
-				var  deliveryreturns  = results["deliveryreturns"];
-				var sizeandmaterial  = results["sizeandmaterial"];
-				var rewardpoint  = results["rewardpoint"];  
-				
-				var rewardpoint  = results["rewardpoint"];  
-				
-				var reviewimages  = results["reviewimages"];  
                 
                 
                 //Stock data
@@ -3504,7 +3461,7 @@ var product_det_from_page = new function() {
                 $("#custom_options_collapsible").css("display","none");
                 }
                 
-                validate_input(pId,pName,pCat,pColor,pSize,description,deliveryreturns,sizeandmaterial,rewardpoint,reviewimages,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_len, custom_attr_data);
+                validate_input(pName,pCat,pColor,pSize,description,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_len, custom_attr_data);
                 $(".ui-loader").hide();
                 simple_product_info_images(results["id"]);
                 checkLoginStatus();
@@ -3763,10 +3720,7 @@ option.setAttribute("price", select_option_1_price[i]);
 select_option_id.add(option);
 }
 }
-
-function validate_input(pId,pName,pCat,pColor,pSize,description,deliveryreturns,sizeandmaterial,rewardpoint,reviewimages,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_total, custom_attr_data,validate_input){
-	
-	           
+function validate_input(pName,pCat,pColor,pSize,description,shortdes,pPriceSpl,pPriceDis,pPriceReal,pMaterial,pStyle,pShipp,pTotalQuant,custom_attr_total, custom_attr_data,validate_input){
                 $(".ui-loader").hide();
                 if(!pName)
                 pName = "N/A";
@@ -3854,101 +3808,16 @@ function validate_input(pId,pName,pCat,pColor,pSize,description,deliveryreturns,
                 $("#pSKU").html(pSKU);
                 $("#pColor").html(pColor);
                 //alert(pTotalQuant);
-                 
+                //alert(pStock);
                 $("#pStock").html(pStock);
                 //$("#pPrice").html(pPrice);
                 //$("#pCross").html(pCross);
                 
-				   
-				   
-				    $("#descdesc").html(description);
-				    $("#descdlrt").html(deliveryreturns);
-				    $("#descszmt").html(sizeandmaterial);
-				    $("#rewardpoint").html(rewardpoint);
-					
-					$("#owl-example").html(reviewimages);
-					
-					
-					
-					if(reviewimages!='')
-					{
-						jQuery('#owl-example').owlSlider({
-									responsive:{
-											0:{
-												items:1
-											},
-											
-											320:{
-												items:1
-											},
-
-											360:{
-												items:1,
-												margin:0
-											},
-											
-											375:{
-												items:1
-											},
-											
-											414:{
-												items:1
-											},
-											
-											480:{
-												items:2
-											},
-
-
-											768:{
-												items:3,
-												center:true
-											},
-
-											960:{
-												items:4,
-												margin:20,
-												center:false
-
-											},
-
-											1200:{
-												items:4,
-												loop:false,
-												margin: 30,
-											}
-											},
-									margin:0,
-									stagePadding:0,
-								 autoplay:false,
-								 autoplayTimeout:0,
-								 nav:true,
-								 navText:['<','>'],
-								 smartSpeed:450,
-								 loop:true,
-								 autoplayHoverPause:true,
-								 dots:false});
-						
-						
-					}
-					
-					var addtolinkhtml='<li class=""><a onclick="addtowishlist('+pId+')" class="link-wishlist "><i class="fa fa-heart"></i>Add to Wishlist</a></li><li><a onclick="addtocompare('+pId+')" class="link-compare"><i class="fa fa-exchange"></i>Add to Compare</a></li>';
-					
-					
-					 $("#addtolink").html(addtolinkhtml);
-					
-					
-					
-					
-					
-					
                 if(pCross==0)
                 {
                 $("#finalprice").html('Price ('+app_curr_symbol+pPrice+')');
                 $("#price_symbol").html(config.data[0].app_curr_symbol);
                 $("#pPrice").html(pPrice);
-				 $("#cprice").html(config.data[0].app_curr_symbol+pPrice);
-				
                 
                 }
                 else
@@ -3958,7 +3827,6 @@ function validate_input(pId,pName,pCat,pColor,pSize,description,deliveryreturns,
                 {
                 $("#price_symbol").html(config.data[0].app_curr_symbol);
                 $("#pPrice").html(pPrice);
-				  $("#cprice").html(config.data[0].app_curr_symbol+pPrice);
                 $("#pCross").html(pCross);
                 }
                 else
@@ -3966,7 +3834,6 @@ function validate_input(pId,pName,pCat,pColor,pSize,description,deliveryreturns,
                 $("#price_symbol").html(config.data[0].app_curr_symbol);
                 $("#pPrice").html(pCross);
                 $("#pCross").html(pPrice);
-				   $("#cprice").html(config.data[0].app_curr_symbol+pPrice);
                 }
                 }
                 $("#price_symbol").html(config.data[0].app_curr_symbol);
@@ -3981,12 +3848,10 @@ function simple_product_info_images(idd){
 var PRODUCT_ID=idd;
 var BASE_URL  = config.data[0].baseurl;
 var STORE = config.data[0].storeid;
-
- 
 var Simple_product_image_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&service=productdetailimage&productid="+PRODUCT_ID+"&currency="+app_curr_code;
 
- 
-	$.ajax({
+console.log(Simple_product_image_webservice);
+$.ajax({
        url:Simple_product_image_webservice,
        type: 'GET',
        contentType: 'application/json',
@@ -4010,13 +3875,12 @@ var Simple_product_image_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&s
        var i = 0;
        
        if(image_len <= 0 || image_len == null || image_len == "") {
-       $("#product_image_slider").append('<div class="item"><img src="images/product_default_image.png" alt="" onerror="images/product_default_image.png" ></div>');
+       $("#product_image_slider").append('<div class="item"><img src="images/product_default_image.png" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
        }
        else {
-		   
        for(i=0; i<image_len; i++) {
        
-       $("#product_image_slider").append('<div class="item"><img src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" ></div>');
+       $("#product_image_slider").append('<div class="item"><img src="'+hasImage[i]+'" alt="" onerror="images/product_default_image.png" onclick="display_img_preview(this);"></div>');
        }
        }
        $( "#hideit1" ).hide();
@@ -4041,7 +3905,6 @@ function configurable_product_images_function(idd){
 var PRODUCT_ID=idd;
 var BASE_URL  = config.data[0].baseurl;
 var STORE = config.data[0].storeid;
-
 var Configurable_product_image_webservice = BASE_URL+"?callback=?"+"&store="+STORE+"&service=get_configurable_product_details_image&productid="+PRODUCT_ID+"&currency="+app_curr_code;
 
 console.log(Configurable_product_image_webservice);
@@ -4149,7 +4012,7 @@ $("#pImage5").attr("src", imageURL5);
                 
                 function getFooter() {
                
-                var footerText = '<fieldset class="ui-grid-c" style="text-align: center;background: orange;width:100%;height:100%;"><div class="ui-block-b css_footer"><a href="#" class="fa fa-home fa" onclick=\'Page.redirect("index.html", "slide", "down");\'></a></div><div class="ui-block-b css_footer"><a href="javascript:void(0);" onclick="new_search_btn()" id="new_search_btn"class="fa fa-search fa"></a></div><div class="ui-block-b css_footer"><a href="#" class="fa fa-user fa" onclick="footer_login()"></a></div></fieldset>';
+                var footerText = '<fieldset class="ui-grid-c" style="text-align: center;background: orange;width:100%;height:100%;"><div class="ui-block-b css_footer"><a href="#" class="fa fa-home fa" onclick=\'Page.redirect("index.html", "slide", "down");\'></a></div><div class="ui-block-b css_footer"><a href="javascript:void(0);" onclick="new_search_btn()" id="new_search_btn"class="fa fa-search fa"></a></div><div class="ui-block-b css_footer"><a href="#" class="fa fa-user fa" onclick="footer_login()"></a></div><div class="ui-block-b css_footer"><a href="#" class="fa fa-shopping-cart fa" onclick=\'Page.redirect("cart.html", "slide", "down");\'> <div class="cartamount" style="display:block !important;"><div class="cartNew" id="cartProducts">0</div></div></a></div></fieldset>';
                 $(".footer").html(footerText);
                 updateCartQty();
                 }
@@ -4180,29 +4043,24 @@ $("#pImage5").attr("src", imageURL5);
                 
                 
                 function footer_login() {
-					
                 if (localStorage[config.data[0].storage_key + "_Session"] == null) {
-                   //Page.redirect("login.html", "slide", "down");
-				   $('#loginbtn').click();
+                Page.redirect("login.html", "slide", "down");
                 } else {
                 var e = JSON.parse(localStorage[config.data[0].storage_key + "_Session"]);
                 if (e != null && e.login_status == "Active") {
                 Page.redirect("profile.html", "slide", "down");
                 } else {
                 
-                    //Page.redirect("login.html", "slide", "down");
-					 $('#loginbtn').click();
+                    Page.redirect("login.html", "slide", "down");
                 }
                 }
                 
                 }
                 function back_click_new() {
-                  
-                  localStorage.setItem('foo', 1);
-                   
-                // Page.redirect('product_details.html', 'slide', 'right');
-				
-				  navigator.app.backHistory();
+                
+                localStorage.setItem('foo', 1);
+               
+                Page.redirect(history.back(), 'slide', 'right');
                 }
 
 
