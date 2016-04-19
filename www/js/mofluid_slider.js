@@ -126,8 +126,11 @@ function feature_product_list(results){
                 }
                 price_html += '<h4 class="producth4 product_price_color">' + app_curr_symbol + parseFloat(response.products_list[i].price.replace(",", "")).toFixed(2) + '</h4>';
             }
+			
+			 if(ptype=="configurable")
+			 {
             
-            featured_pro += '<li class="item">\
+                 featured_pro += '<li class="item">\
                 <a class="product-image" title="" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
 				  <img src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" />\
 				<span class="productimghover"></span></a>\
@@ -144,7 +147,38 @@ function feature_product_list(results){
 								</div>\
 								  </div>\
 						          </li>';
+								  
+								  
+		      }				  
             
+			
+			 if(ptype=="simple")
+			      {
+            
+                  featured_pro += '<li class="item">\
+                  <a class="product-image" title="" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
+				  <img src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" />\
+				<span class="productimghover"></span></a>\
+				 <div class="sku">' + response.products_list[i].sku + '</div>\
+		         <h3 class="product-name"><a title="PEARL EARRING" >' + response.products_list[i].name + '</a></h3>\
+				  <div class="shortdesc"><a onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">Detail</a></div>\
+				  <div class="hover-action">\
+					<div class="cartactions">\
+					 <button  class="button btn-cart" title="Add to Cart" type="button" onclick="addDirectToCart('+pid+','+stock_status+')" ><span><span>Add to Cart</span></span></button>\
+					   <ul class="wish-add-to-links">\
+						 <li><a class="link-wishlist" onclick="addtowishlist('+pid+')"  title="Wishlist" ><i class="fa fa-heart"></i></a></li>\
+						 <li><a class="link-compare" onclick="addtocompare('+pid+')" title="Compare" ><i class="fa fa-exchange"></i></a></li>\
+						 </ul>\
+								</div>\
+								  </div>\
+						          </li>';
+								  
+								  
+		      }
+			
+			
+			
+			
           //  featured_pro +='<div class="child" >child '+i+'</div>';
             i++;
         }
@@ -489,6 +523,11 @@ function new_product_list(results){
                 }
                 price_html += '<h4 class="producth4 product_price_color">' + app_curr_symbol + parseFloat(response.products_list[i].price.replace(",", "")).toFixed(2) + '</h4>';
             }
+			
+			
+			 if(ptype=="configurable")
+			 {
+            
               featured_pro += '<li class="item">\
                 <a class="product-image" title="" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
 				  <img src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" />\
@@ -506,6 +545,34 @@ function new_product_list(results){
 								</div>\
 								  </div>\
 						          </li>';
+			 }
+
+
+			 if(ptype=="simple")
+			      {
+					  
+					  
+					  
+					   featured_pro += '<li class="item">\
+                <a class="product-image" title="" onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">\
+				  <img src="' + response.products_list[i].image + '" onerror="this.src=\'images/product_default_image.png\'" />\
+				<span class="productimghover"></span></a>\
+				 <div class="sku">' + response.products_list[i].sku + '</div>\
+		         <h3 class="product-name"><a title="PEARL EARRING" >' + response.products_list[i].name + '</a></h3>\
+				  <div class="shortdesc"><a onclick="getProDetail('+pid+','+stock_status+',\''+ptype+'\')">Detail</a></div>\
+				  <div class="hover-action">\
+					<div class="cartactions">\
+					 <button  class="button btn-cart" title="Add to Cart" type="button" onclick="addDirectToCart('+pid+','+stock_status+')"><span><span>Add to Cart</span></span></button>\
+					   <ul class="wish-add-to-links">\
+						 <li><a class="link-wishlist" onclick="addtowishlist('+pid+')" title="Wishlist" ><i class="fa fa-heart"></i></a></li>\
+						 <li><a class="link-compare" onclick="addtocompare('+pid+')" title="Compare" ><i class="fa fa-exchange"></i></a></li>\
+						 </ul>\
+								</div>\
+								  </div>\
+						          </li>';
+					  
+					  
+				  }					  
             
             i++;
         }
