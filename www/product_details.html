@@ -1480,51 +1480,55 @@ function removeItem(index) {
 			   
 			   <div class="submit-pc">
 
-    <div id="curalate-fan-reel-wrapper">
-        <div id="curalate-header">
-           Show off your best <span>#ELUVY</span> style on
-           <i class="fa fa-twitter"></i>
-<i class="fa fa-instagram"></i>
-            <div id="curalate-header-buttons">
-                <a href="https://eluvy.com/reviewimages/?id=33" id="curalate-header-view">VIEW ALL</a> 
-               <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" id="subpic">Submit a picture</button>
+        <div id="curalate-fan-reel-wrapper">
+				<div id="curalate-header">
+				   Show off your best <span>#ELUVY</span> style on
+				   <i class="fa fa-twitter"></i>
+		             <i class="fa fa-instagram"></i>
+					<div id="curalate-header-buttons">
+						<a href="https://eluvy.com/reviewimages/?id=33" id="curalate-header-view">VIEW ALL</a> 
+					   <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" id="subpic">Submit a picture</button>
+					</div>
+					
+				</div>
+         
+          <div id="owl-example" class="owl-carousel owl-theme owl-loaded">
+      
+		       <div class="item" >
+			      <div data-toggle="modal" data-target="#myModa" onclick="mynewwfun('http://eluvy.com/sociallib/uploadimages/145147397413.jpg',1)" id="1">
+ 			      <img src="http://eluvy.com/sociallib/uploadimages/145147397413.jpg" style="height:200px;width:200px;"></div>
+				</div>
+				 <div class="item" >
+				   <div data-toggle="modal" data-target="#myModa" onclick="mynewwfun('http://eluvy.com/sociallib/uploadimages/145147492215.jpg',2)" id="2">
+				   <img src="http://eluvy.com/sociallib/uploadimages/145147492215.jpg">
+				   </div>
+				 </div>
+			
+
+          </div>
+           <input type="hidden" value="3" id="lastreview">
+            <div class="modal fade" id="myModa" role="dialog">
+			   <div class="modal-dialog">
+				
+				  <!-- Modal content-->
+				  <div class="modal-content">
+					<div class="modal-header">
+					  
+					</div>
+					
+					<div class="modal-body" id="imagepopsh">
+			 
+					</div>
+					
+					<div id="slidcontrols">
+				 
+					</div>
+				  </div>
+				  
+				</div>
             </div>
-            
+
         </div>
-        
-
-
-  
-    <div id="owl-example" class="owl-carousel owl-theme owl-loaded">
-      
-
-    
-
-    
-<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 525px;"><div class="owl-item active" style="width: 232.5px;"><div data-toggle="modal" data-target="#myModa" onclick="mynewwfun('http://eluvy.com/sociallib/uploadimages/145147397413.jpg',1)" id="1"> <img src="http://eluvy.com/sociallib/uploadimages/145147397413.jpg" style="height:200px;width:200px;"></div></div><div class="owl-item active" style="width: 232.5px;"><div data-toggle="modal" data-target="#myModa" onclick="mynewwfun('http://eluvy.com/sociallib/uploadimages/145147492215.jpg',2)" id="2"> <img src="http://eluvy.com/sociallib/uploadimages/145147492215.jpg" style="height:200px;width:200px;"></div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style="">&lt;</div><div class="owl-next" style="">&gt;</div></div><div class="owl-dots" style=""><div class="owl-dot active"><span></span></div></div></div></div>
-<input type="hidden" value="3" id="lastreview">
-<div class="modal fade" id="myModa" role="dialog">
-<div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          
-        </div>
-        
-        <div class="modal-body" id="imagepopsh">
- 
-        </div>
-        
-        <div id="slidcontrols">
-     
-        </div>
-      </div>
-      
-    </div>
-</div>
-
-    </div>
       <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
@@ -1550,12 +1554,12 @@ function removeItem(index) {
         <div class="tab-content">
         <div class="tab-pane active " id="tab1">
        <form action="https://eluvy.com/reviewimage/index/submitreviewimage" method="post" enctype="multipart/form-data" id="UploadForm">
-<div class="desktop">
-  <p><i class="fa fa-cloud-upload"></i></p>
-    <div class="choose-file">Choose File<input name="ImageFile" type="file" id="desktopfile"></div>
-    <p><input type="submit" id="SubmitButton" value="Upload"></p>
-</div>
-</form>
+			<div class="desktop">
+			  <p><i class="fa fa-cloud-upload"></i></p>
+				<div class="choose-file">Choose File<input name="ImageFile" type="file" id="desktopfile"></div>
+				<p><input type="submit" id="SubmitButton" value="Upload"></p>
+			</div>
+      </form>
         <div id="progressbox"><div id="progressbar"></div><div id="statustxt">0%</div></div>
         </div>
         <div class="tab-pane " id="tab2">
