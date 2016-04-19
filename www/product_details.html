@@ -1473,128 +1473,599 @@ function removeItem(index) {
 				 });
 				 
 				</script>
-                
-                </div>
-           
-               <!----Code for Submit Pic----->
+				
+				
+				  
+				   <!----Code for Submit Pic----->
 			   
-			   
-			      
-			 <div id="curalate-fan-reel-wrapper">
-						<div id="curalate-header">
-						   Show off your best <span>#ELUVY</span> style on
-						   <i class="fa fa-twitter"></i>
-				            <i class="fa fa-instagram"></i>
-							<div style="float:right" id="curalate-header-buttons">
-								<a id="curalate-header-view" >VIEW ALL</a> 
-							   <button id="subpic" data-target="#myModal" data-toggle="modal" class="btn btn-info btn-sm" type="button">Submit a picture</button>
-							</div>
-							
-						</div>
+			   <div class="submit-pc">
+
+    <div id="curalate-fan-reel-wrapper">
+        <div id="curalate-header">
+           Show off your best <span>#ELUVY</span> style on
+           <i class="fa fa-twitter"></i>
+<i class="fa fa-instagram"></i>
+            <div id="curalate-header-buttons">
+                <a href="https://eluvy.com/reviewimages/?id=33" id="curalate-header-view">VIEW ALL</a> 
+               <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#myModal" id="subpic">Submit a picture</button>
+            </div>
+            
+        </div>
         
 
 
   
-				   <div class="owl-carousel owl-theme owl-loaded" id="owl-example">
-			  
-				   <div class="owl-item" >
-					 <div id="1" onclick="mynewwfun('http://eluvy.com/sociallib/uploadimages/145147397413.jpg',1)" data-target="#myModa" data-toggle="modal"> 
-				<img style="height:200px;width:200px;" src="http://eluvy.com/sociallib/uploadimages/145147397413.jpg">
-					</div>
-					</div>
-					<div class="owl-item">
-					   <div id="2" onclick="mynewwfun('http://eluvy.com/sociallib/uploadimages/145147492215.jpg',2)" data-target="#myModa" data-toggle="modal"> 
-					   <img style="height:200px;width:200px;" src="http://eluvy.com/sociallib/uploadimages/145147492215.jpg"></div>
-					 </div>
-					  
-				   </div>
-                   <input type="hidden" id="lastreview" value="3">
-				<div role="dialog" id="myModa" class="modal fade">
-					<div class="modal-dialog">
-						
-						  <!-- Modal content-->
-						  <div class="modal-content">
-							<div class="modal-header">
-							  
-							</div>
-							
-							<div id="imagepopsh" class="modal-body">
+    <div id="owl-example" class="owl-carousel owl-theme owl-loaded">
+      
+
+    
+
+    
+<div class="owl-stage-outer"><div class="owl-stage" style="transform: translate3d(0px, 0px, 0px); transition: 0s; width: 525px;"><div class="owl-item active" style="width: 232.5px;"><div data-toggle="modal" data-target="#myModa" onclick="mynewwfun('http://eluvy.com/sociallib/uploadimages/145147397413.jpg',1)" id="1"> <img src="http://eluvy.com/sociallib/uploadimages/145147397413.jpg" style="height:200px;width:200px;"></div></div><div class="owl-item active" style="width: 232.5px;"><div data-toggle="modal" data-target="#myModa" onclick="mynewwfun('http://eluvy.com/sociallib/uploadimages/145147492215.jpg',2)" id="2"> <img src="http://eluvy.com/sociallib/uploadimages/145147492215.jpg" style="height:200px;width:200px;"></div></div></div></div><div class="owl-controls"><div class="owl-nav"><div class="owl-prev" style="">&lt;</div><div class="owl-next" style="">&gt;</div></div><div class="owl-dots" style=""><div class="owl-dot active"><span></span></div></div></div></div>
+<input type="hidden" value="3" id="lastreview">
+<div class="modal fade" id="myModa" role="dialog">
+<div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+        </div>
+        
+        <div class="modal-body" id="imagepopsh">
+ 
+        </div>
+        
+        <div id="slidcontrols">
+     
+        </div>
+      </div>
+      
+    </div>
+</div>
+
+    </div>
+      <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h4 class="modal-title">Select your picture</h4>
+          <p>Choose from the location given below.</p>
+        </div>
+        <div class="modal-body">
+        <div class="row">
+        <div class="col-md-9" id="mainshow">
+          <div class="tabbable"> 
+        <ul class="nav nav-tabs">
+        <li class="active"><a href="#tab1" data-toggle="tab">Desktop</a></li>
+       
+        <li><a href="#tab2" data-toggle="tab">Facebook</a></li>
+        
+         <li><a href="#tab3" data-toggle="tab">Instagram</a></li>
+        </ul>
+        <div class="tab-content">
+        <div class="tab-pane active " id="tab1">
+       <form action="https://eluvy.com/reviewimage/index/submitreviewimage" method="post" enctype="multipart/form-data" id="UploadForm">
+<div class="desktop">
+  <p><i class="fa fa-cloud-upload"></i></p>
+    <div class="choose-file">Choose File<input name="ImageFile" type="file" id="desktopfile"></div>
+    <p><input type="submit" id="SubmitButton" value="Upload"></p>
+</div>
+</form>
+        <div id="progressbox"><div id="progressbar"></div><div id="statustxt">0%</div></div>
+        </div>
+        <div class="tab-pane " id="tab2">
+               <a class="login" href="https://www.facebook.com/dialog/oauth?client_id=983462101715400&amp;redirect_uri=https%3A%2F%2Feluvy.com%2Fbracelets%2Fbracelet-stacks%2Fgrayscale-cuff.html&amp;state=ad4227d8d4a13a428dc0fe8999ea1f67&amp;scope=email%2Cuser_photos&amp;display=popup"><button name="loginwithfacebook"><img src="https://eluvy.com/skin/frontend/base/default/images/fb-connect.png"></button></a>
+               </div>
+        <div class="tab-pane " id="tab3">
+     <div class="row">   
+       <a class="" href="https://api.instagram.com/oauth/authorize?client_id=8f43b99ec5e4437fb729aa921d80cab2&amp;redirect_uri=https://eluvy.com/reviewimage/index/instasuccess/&amp;scope=basic&amp;response_type=code"><img src="https://eluvy.com/skin/frontend/base/default/images/insta-connect.png"></a>
+	
+  </div>    
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="col-md-3" id="fullshow">
+        <p class="fullshowhead">Selected Media</p>
+      <form action="https://eluvy.com/reviewimage/index/submitimagedata" method="post" id="submitalldata">
+        <div id="selected">
+        </div>
+        <div id="userdetail" style="display:none">
+        <div class="form-inline">
+            <div class="form-group">
+                <label for="exampleInputName2">Name</label>
+        <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe" name="username" value="">
+            <input type="hidden" value="33" name="product_id">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail2">Email</label>
+           <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com" name="useremail" value="">
+              </div>
+          </div>
+        <!--<label>Name:</label><input type="text"  placeholder="name" name="username"/>
+        <label>Email Address:</label><input type="email"  placeholder="email" name="useremail"/>-->
+        <!--<button id="savetodata" >submit images</button>-->
+        <div class="checkbox-fullshow">
+            <input type="checkbox" name="terms" id="terms">
+            <label for="terms">
+              I agree to the
+              <a class="terms-link" href="#" target="_blank">
+                Terms &amp; Conditions
+              </a>
+            </label>
+           
+          </div>
+        <div class="checkbox-fullshow">
+            <input type="checkbox" name="email_opt_in" id="email_opt_in">
+            <label for="email_opt_in">
+            I want to receive email updates from Eluvy
+              
+            </label>
+           
+          </div>
+        </div>
+       
+        <a href="javascript:void(0)" id="removeall" style="display:none;"> Remove all </a>
+        </form></div>
+        </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-default" id="backtoshow">Back</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="closepop">Cancel</button>
+           <button type="button" class="btn btn-default" id="newshow">Next</button>
+            <button type="button" class="btn btn-default" id="savetodata" onclick="return submitshow()" style="display:none">Submit</button>
+        </div>
+         
+      </div>
+      
+    </div>
+  </div>
+  <script type="text/javascript" src="https://eluvy.com/sociallib/js/jquery.form.js"></script>
+  <script type="text/javascript">
+  
+  jQuery('#backtoshow').click(
+  function ()
+  {
+	  if(jQuery('#fullshow').html("You have successfully submited your image"))
+	  {
+	 jQuery('#fullshow').html("");	  
+	  }
+	  jQuery('#newshow').show();
+    jQuery('#savetodata').hide();
+	 jQuery('#mainshow').show();
+    jQuery('#fullshow').removeClass('col-md-12').addClass('col-md-3');
+	jQuery('#userdetail').hide();
+  }
+  
+  
+  );
+  jQuery('#newshow').click(
+
+function()
+  {
+	   var contet = jQuery('#selected').height();
+   //alert(contet);
+   
+   
+   if(contet===0)
+	{
+	alert('Please select atleast one image');
+	return false;
+	}
+	jQuery('#newshow').hide();
+    jQuery('#savetodata').css('display','inline-block');
+    jQuery('#mainshow').hide();
+    jQuery('#fullshow').removeClass('col-md-3').addClass('col-md-12 fullshowafter');
+	jQuery('#userdetail').show();
+    
+  }
+
+);
+  jQuery('#sendid').change(
+  function ()
+  {
+	 var albumid = jQuery('#sendid').val();
+	 var frm = jQuery('#facebookalb');
+	   jQuery('#facebook_show').hide();
+	  jQuery('#loader').show();
+	 jQuery.ajax(
+	 {
+		 data : {albumid:albumid},
+		 type: frm.attr('method'),
+		 url : frm.attr('action'),
+		 success: function(data)
+		 {
+			 jQuery('#loader').hide();
+			  jQuery('#facebook_show').show();
+			 jQuery('#facebook_show').html(data);
+			 myfun();
+			 
+		 }
+	 }
+	 
+	 );
+	 
+  }
+  
+  );
+  </script>
+    
+  <script type="text/javascript">
+function mynewwfun (title,id)
+{
+var next = id+1;
+var prev = id-1;
+var img = title;
+jQuery('#imagepopsh').html('<img src="'+title+'" height="200px;" width="200px">');
+jQuery('#slidcontrols').html('<i class="fa fa-angle-right" onclick="mynextimg('+next+')"></i><i class="fa fa-angle-left" onclick="myprevimg('+prev+')"></i>');
+
+}
+function mynextimg(id)
+{
+var last = jQuery('#lastreview').val();
+var prev;
+var next;
+if(id==last)
+{
+id = 1;
+prev = last;
+}
+else
+{
+	prev = id-1;
+}
+next = id+1;
+
+var title = jQuery('#'+id).find('img').attr('src');
+jQuery('#imagepopsh').html('<img src="'+title+'" height="200px;" width="200px">');
+jQuery('#slidcontrols').html('<i class="fa fa-angle-right" onclick="mynextimg('+next+')"></i><i class="fa fa-angle-left" onclick="myprevimg('+prev+')"></i>');
+
+}
+function myprevimg(id)
+{
+var last = jQuery('#lastreview').val();
+var prev;
+var next;
+if(id==0)
+{
+	
+	id = last-1;
+	//alert(id);
+	prev = id-1;
+	next = 1;
+}
+next = id+1;
+prev = id-1;
+var title = jQuery('#'+id).find('img').attr('src');
+//alert(title);
+jQuery('#imagepopsh').html('<img src="'+title+'" height="200px;" width="200px">');
+jQuery('#slidcontrols').html('<i class="fa fa-angle-right" onclick="mynextimg('+next+')"></i><i class="fa fa-angle-left" onclick="myprevimg('+prev+')"></i>');
+}
+jQuery('#removeall').click(
+
+function ()
+  {
+    
+    jQuery('#selected').html("");
+    jQuery(this).css('display','none');
+  }
+
+);
+function removeimg()
+{
+	
+	jQuery('.selectimgbox').click(
+
+function ()
+  {
+    
+	//alert(contet);
+	
+	
+  // jQuery(this).remove(); 
+  jQuery(this).parent().remove();
+   var contet = jQuery('#selected').height();
+   //alert(contet);
+   
+   
+   if(contet===0)
+	{
+	jQuery('#removeall').css('display','none');	
+	}
+    
+  }
+
+
+);
+}
+
+function myfun()
+{
+
+jQuery('.facebookshow').click(
+
+function()
+  {
+    
+    var src = jQuery(this).attr('src');
+	var title = jQuery(this).attr('title');
+	if(title=="")
+	{
+	title = "caption here";	
+	}
+	if(jQuery('#removeall').css('display')=='none')
+	{
+	jQuery('#removeall').css('display','block');
+	}
+  jQuery('#selected').append('<div class="selectshow"><div class="selectimgbox"><img src="'+src+'" height="50px" width="50px;" class="selectimg"><p class="selectimgremove">×</p></div><input type ="hidden" value="'+src+'" name="selectedImage[]"><textarea name="selected_des[]">'+title+'</textarea></div>');
+  
+  removeimg();
+  
+  //jQuery(this).unbind('click');
+    
+  }
+
+
+
+);
+  
+}
+function instafun(id)
+{
+
+
+
+
+    	
+    var src = jQuery('#instashow'+id).attr('src');
+	var title = jQuery('#instashow'+id).attr('title');
+	if(title=="")
+	{
+	title = "caption here";	
+	}
+	if(jQuery('#removeall').css('display')=='none')
+	{
+	jQuery('#removeall').css('display','block');
+	}
+  jQuery('#selected').append('<div class="selectshow"><div class="selectimgbox"><img src="'+src+'" height="50px" width="50px;" class="selectimg"><p class="selectimgremove">×</p></div><input type ="hidden" value="'+src+'" name="selectedImage[]"><textarea name="selected_des[]">'+title+'</textarea></div>');
+  removeimg();
+  
+  //jQuery(this).unbind('click');
+    
+
+  
+}
+</script>
+<script type="text/javascript">
+		function submitshow()
+			{
+				var errorflag = 0;
+				if(jQuery('#exampleInputEmail2').val()=='')
+{
+jQuery('#exampleInputEmail2').css('border', '1px solid red');
+ jQuery('#exampleInputEmail2').attr('placeholder','Please fill a value');
+ errorflag++;
+}
+else if(!(chkEmail('exampleInputEmail2')))
+{
+jQuery('#exampleInputEmail2').css('border', '1px solid red');
+ jQuery('#exampleInputEmail2').attr('placeholder','Please fill correct value');
+  submitFlag++;	
+}
+if(jQuery('#exampleInputName2').val()=='')
+{
+jQuery('#exampleInputName2').css('border', '1px solid red');
+ jQuery('#exampleInputName2').attr('placeholder','Please fill a value');
+ errorflag++;
+}
+if (!jQuery("#terms").is(":checked")) {
+        alert("Please agree with our terms and condtion");
+        errorflag++;
+    }
+	function chkEmail(idEle){
+		
+		var expr = /^([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 					 
-							</div>
-							
-							<div id="slidcontrols">
-						 
-							</div>
-						  </div>
-						  
-						</div>
-				</div>
+		var is_email=expr.test(jQuery('#'+idEle).val());
+		if(is_email){
+		    return true;
+		}else{
+		     return false;
+		}
+		
+	}
+				
+	
+     var myform = jQuery('#submitalldata');
+	 if(errorflag==0)
+	 {
+	 jQuery.ajax(
+	 {
+	type: myform.attr('method'),
+	data : myform.serialize(),
+	url:myform.attr('action'),
+	success: function()
+	{
+		  jQuery('#fullshow').html('');
+		jQuery('#fullshow').html('You have successfully submited your image');
+	}
+		 
+	 }
+	 
+	 
+	 );
+			}
 
-           </div>
+			}
+
+jQuery(document).ready(function () {
+	
+	
+        //elements
+        var progressbox     = jQuery('#progressbox');
+        var progressbar     = jQuery('#progressbar');
+        var statustxt       = jQuery('#statustxt');
+        var submitbutton    = jQuery("#SubmitButton");
+        var myform          = jQuery("#UploadForm");
+        var output          = jQuery("#selected");
+        var completed       = '0%';
+                jQuery(myform).ajaxForm({
+					
+                    beforeSend: function(e) { //brfore sending form
+                        submitbutton.attr('disabled', ''); // disable upload button
+                        statustxt.empty();
+                        progressbox.slideDown(); //show progressbar
+                        progressbar.width(completed); //initial value 0% of progressbar
+                        statustxt.html(completed); //set status text
+                        statustxt.css('color','#000');//initial color of status text
+				var desk = jQuery('#desktopfile').val();
+				
+				if(desk=="")
+				{
+					
+			alert ('Please select an image first');
+			 myform.resetForm();  // reset form
+                        submitbutton.removeAttr('disabled'); //enable submit button
+                        progressbox.slideUp();
+            e.preventDefault();
+				}
+                    },
+                    uploadProgress: function(event, position, total, percentComplete) { //on progress
+					
+                        progressbar.width(percentComplete + '%') //update progressbar percent complete
+                        statustxt.html(percentComplete + '%'); //update status text
+                        if(percentComplete>50)
+                            {
+                                statustxt.css('color','#fff'); //change status text to white after 50%
+                            }
+				
+					},
+                    complete: function(response) {
+						 output.append('<div class="selectshow"><div class="selectimgbox">'+response.responseText+'<p class="selectimgremove">×</p></div><textarea name="selected_des[]">caption here</textarea><div class="clearfix"></div></div>');
+						jQuery('#removeall').css('display','block');
+						 // on complete
+						 //alert(response.responseText);
+                        //output.append(response.responseText); //update element with received data
+                        myform.resetForm();  // reset form
+                        submitbutton.removeAttr('disabled'); //enable submit button
+                        progressbox.slideUp(); // hide progressbar
+						removeimg();
+                    }
+            });
+	
+			
+           
+jQuery('#owl-example').owlSlider({
+   	responsive:{
+            0:{
+                items:1
+            },
+            
+            320:{
+                items:1
+            },
+
+            360:{
+                items:1,
+                margin:0
+            },
+            
+            375:{
+                items:1
+            },
+            
+            414:{
+                items:1
+            },
+            
+            480:{
+                items:2
+            },
+
+
+            768:{
+                items:3,
+                center:true
+            },
+
+            960:{
+                items:4,
+                margin:20,
+                center:false
+
+            },
+
+            1200:{
+                items:4,
+                loop:false,
+                margin: 30,
+			}
+			},
+    margin:0,
+    stagePadding:0,
+ autoplay:false,
+ autoplayTimeout:0,
+ nav:true,
+ navText:['<','>'],
+ smartSpeed:450,
+ loop:true,
+ autoplayHoverPause:true,
+ dots:true});
+});
+</script>
+   
+   </div>
+                
+                <script>
+				
+				
+				 
+				 jQuery('.descrip').click(function(){
+					 
+					  var curid=jQuery(this).attr("id");
+					
+				 
+					if(jQuery("#"+curid).hasClass( "active" ))
+					  {
+					  
+						jQuery("#"+curid).removeClass('active');
+						jQuery("#desc"+curid).slideUp();
+						
+						
+						
+					
+					}else
+					 {
+					  
+					  jQuery("#"+curid).addClass('active');
+					  jQuery("#desc"+curid).slideDown();
+					 }
 				  
+				 });
+				 
+				</script>	  
 				  
-			   <script>
 			   
-			     jQuery('#owl-example').owlSlider({
-						responsive:{
-								0:{
-									items:1
-								},
-								
-								320:{
-									items:1
-								},
-
-								360:{
-									items:1,
-									margin:0
-								},
-								
-								375:{
-									items:1
-								},
-								
-								414:{
-									items:1
-								},
-								
-								480:{
-									items:2
-								},
-
-
-								768:{
-									items:3,
-									center:true
-								},
-
-								960:{
-									items:4,
-									margin:20,
-									center:false
-
-								},
-
-								1200:{
-									items:4,
-									loop:false,
-									margin: 30,
-								}
-								},
-						margin:0,
-						stagePadding:0,
-					 autoplay:false,
-					 autoplayTimeout:0,
-					 nav:true,
-					 navText:['&lt;','&gt;'],
-					 smartSpeed:450,
-					 loop:true,
-					 autoplayHoverPause:true,
-					 dots:false});
-					});
-				</script>
 			   
 			   <!----End Code for Submit Pic----->
+			   
+			   
+				
+				
+				
+				
+                
+                </div>
+           
+              
+			   
+			   
+			   
 				<div style="display:none;">
                         <h3 class="edit_heading" style="clear:both;margin-top:10px" id="product_description"></h3>
                         <div id="fulldescription" class="" style="padding-bottom: 15px"></div>
