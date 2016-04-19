@@ -244,7 +244,7 @@ function addTocartDetail(){
                 
                 
                 
-                
+                alert(global_results_configurable.id);
                 addToCart(global_results_configurable.id, pSKU, pPrice, pShipp, imageURL,pName,selectSize,selectColor, selected_option_array, customoptions,qty,new_pro_data);
                     
                //Sumit code commented

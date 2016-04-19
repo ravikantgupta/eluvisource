@@ -3012,7 +3012,11 @@ function addDirectToCart(PRODUCT_ID, stock_status) {
                 location.reload(true);
             } else {
                   
+				  alert(PRODUCT_ID + "stock_status" + stock_status);
                 addToCart(PRODUCT_ID + "stock_status" + stock_status, pSKU, pPrice, pShipp, imageURL, pName, pSize, pColor);
+				
+				
+				
             }
         });
 
