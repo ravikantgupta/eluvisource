@@ -1476,7 +1476,125 @@ function removeItem(index) {
                 
                 </div>
            
+               <!----Code for Submit Pic----->
+			   
+			   
+			      
+			 <div id="curalate-fan-reel-wrapper">
+						<div id="curalate-header">
+						   Show off your best <span>#ELUVY</span> style on
+						   <i class="fa fa-twitter"></i>
+				            <i class="fa fa-instagram"></i>
+							<div style="float:right" id="curalate-header-buttons">
+								<a id="curalate-header-view" >VIEW ALL</a> 
+							   <button id="subpic" data-target="#myModal" data-toggle="modal" class="btn btn-info btn-sm" type="button">Submit a picture</button>
+							</div>
+							
+						</div>
+        
 
+
+  
+				   <div class="owl-carousel owl-theme owl-loaded" id="owl-example">
+			  
+				   <div class="owl-item" >
+					 <div id="1" onclick="mynewwfun('http://eluvy.com/sociallib/uploadimages/145147397413.jpg',1)" data-target="#myModa" data-toggle="modal"> 
+				<img style="height:200px;width:200px;" src="http://eluvy.com/sociallib/uploadimages/145147397413.jpg">
+					</div>
+					</div>
+					<div class="owl-item">
+					   <div id="2" onclick="mynewwfun('http://eluvy.com/sociallib/uploadimages/145147492215.jpg',2)" data-target="#myModa" data-toggle="modal"> 
+					   <img style="height:200px;width:200px;" src="http://eluvy.com/sociallib/uploadimages/145147492215.jpg"></div>
+					 </div>
+					  
+				   </div>
+                   <input type="hidden" id="lastreview" value="3">
+				<div role="dialog" id="myModa" class="modal fade">
+					<div class="modal-dialog">
+						
+						  <!-- Modal content-->
+						  <div class="modal-content">
+							<div class="modal-header">
+							  
+							</div>
+							
+							<div id="imagepopsh" class="modal-body">
+					 
+							</div>
+							
+							<div id="slidcontrols">
+						 
+							</div>
+						  </div>
+						  
+						</div>
+				</div>
+
+           </div>
+				  
+				  
+			   <script>
+			   
+			     jQuery('#owl-example').owlSlider({
+						responsive:{
+								0:{
+									items:1
+								},
+								
+								320:{
+									items:1
+								},
+
+								360:{
+									items:1,
+									margin:0
+								},
+								
+								375:{
+									items:1
+								},
+								
+								414:{
+									items:1
+								},
+								
+								480:{
+									items:2
+								},
+
+
+								768:{
+									items:3,
+									center:true
+								},
+
+								960:{
+									items:4,
+									margin:20,
+									center:false
+
+								},
+
+								1200:{
+									items:4,
+									loop:false,
+									margin: 30,
+								}
+								},
+						margin:0,
+						stagePadding:0,
+					 autoplay:false,
+					 autoplayTimeout:0,
+					 nav:true,
+					 navText:['&lt;','&gt;'],
+					 smartSpeed:450,
+					 loop:true,
+					 autoplayHoverPause:true,
+					 dots:false});
+					});
+				</script>
+			   
+			   <!----End Code for Submit Pic----->
 				<div style="display:none;">
                         <h3 class="edit_heading" style="clear:both;margin-top:10px" id="product_description"></h3>
                         <div id="fulldescription" class="" style="padding-bottom: 15px"></div>
