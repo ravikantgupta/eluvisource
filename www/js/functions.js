@@ -929,8 +929,8 @@ function setApplicationLogoBanner(results) {
                           var store_response = response.store;
                           var banner_data = theme.banner;
                           var logo_data = theme.logo;
-						  alert(logo_data.image[0].mofluid_image_value);
-                          var storeLogo = "<a href='javascript:void(0);' onclick=redirectTopage('index.html')><img src="+logo_data.image[0].mofluid_image_value+" onerror ='this.src=\'images/" + config.data[0].logo + "\'' alt='" + config.data[0].logo + "' class='logo_icon'/></a>";
+						 
+                          var storeLogo = "<a href='javascript:void(0);' onclick=redirectTopage('index.html')><img src="+logo_data.image[0].mofluid_image_value+" style='width:120px;' onerror ='this.src=\'images/" + config.data[0].logo + "\'' alt='" + config.data[0].logo + "' class='logo_icon'/></a>";
                           $(".navigation_logo").html(storeLogo);
                           
                           
