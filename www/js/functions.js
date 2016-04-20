@@ -671,6 +671,7 @@ function setApplicationLogoBanner_preview(response) {
     banner_image_slider += '<div class="item hauto"><img src="images/' + config.data[0].banner +'" alt=""  onerror="this.src=\'images/banner.png\'"></div>';
     }
     $("#banner_slider").html(banner_image_slider);
+	alert(logo_data.image[0].mofluid_image_value);
     var storeLogo = "<a href='javascript:void(0);'><img  src="+logo_data.image[0].mofluid_image_value+" onerror ='this.src=\'images/" + config.data[0].logo + "\'' alt='" + config.data[0].logo + "' class='logo_icon'/></a>";
     $(".navigation_logo").html(storeLogo);
     var store_data = {};
