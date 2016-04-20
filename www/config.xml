@@ -25,7 +25,7 @@
         <gap:plugin name="com.danielcwilson.plugins.googleanalytics"/>
     	<gap:plugin name="nl.x-services.plugins.socialsharing"/>
     	<gap:plugin name="com.telerik.plugins.nativepagetransitions"/>
-		<plugin name="com.phonegap.plugins.facebookconnect" spec="0.4.0">
+		<gap:plugin name="com.phonegap.plugins.facebookconnect" spec="0.4.0">
         <param name="APP_ID" value="1776350525926519" />
         <param name="APP_NAME" value="eluvy" />
          </gap:plugin>
