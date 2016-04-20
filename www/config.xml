@@ -25,7 +25,10 @@
         <gap:plugin name="com.danielcwilson.plugins.googleanalytics"/>
     	<gap:plugin name="nl.x-services.plugins.socialsharing"/>
     	<gap:plugin name="com.telerik.plugins.nativepagetransitions"/>
-		<gap:plugin name="com.phonegap.plugins.facebookconnect"/>
+		<plugin name="com.phonegap.plugins.facebookconnect" spec="0.4.0">
+        <param name="APP_ID" value="1776350525926519" />
+        <param name="APP_NAME" value="eluvy" />
+         </gap:plugin>
   	<!--	<gap:plugin name="nl.x-services.plugins.googleplus" source="plugins.cordova.io"/> -->
   		
     	<!--Icons and Splash Screens Configuration for Mofluid Apps-->
