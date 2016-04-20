@@ -2206,7 +2206,7 @@ jQuery(document).ready(function () {
             </div>
             <div data-role="footer" class="footer" data-position="fixed" data-tap-toggle="false" data-transition="none" data-id="footer">
             </div>
-			<div style="display:none;">
+			
             <nav class="pushy pushy-left">
             
                 <div id="Cate_slide">
@@ -2214,56 +2214,10 @@ jQuery(document).ready(function () {
             </nav>
             <!-- Site Overlay -->
             <div class="site-overlay"></div>
-           </div>
+           
         </div>
         
-       <!-- Facebook connect--->
-	   
-	   
-	       <script type="text/javascript" src="js/facebookConnectPlugin.js"></script>
-        <script type="text/javascript">
-            var login = function () {
-			
-			  alert('gggg');
-               
-                    var appId = prompt("1776350525926519", "");
-                    facebookConnectPlugin.browserInit(appId);
-               
-                facebookConnectPlugin.login( ["email"], 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            }
-            
-            var showDialog = function () { 
-                facebookConnectPlugin.showDialog( { method: "feed" }, 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            }
-            
-            var apiTest = function () { 
-                facebookConnectPlugin.api( "me/?fields=id,email", ["user_birthday"],
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) }); 
-            }
-            var getAccessToken = function () { 
-                facebookConnectPlugin.getAccessToken( 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            }
-            
-            var getStatus = function () { 
-                facebookConnectPlugin.getLoginStatus( 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            }
-            var logout = function () { 
-                facebookConnectPlugin.logout( 
-                    function (response) { alert(JSON.stringify(response)) },
-                    function (response) { alert(JSON.stringify(response)) });
-            }
-        </script>
-	   
-	   <!--End Facebook Connect------>
+	     
          <script type="text/javascript" src="js/groupproduct.js"></script>
         <script type="text/javascript" src="lib/owl-carousel/mofluid_slider.js"></script>
         <script type="text/javascript" src="js/product_details.js"></script>
