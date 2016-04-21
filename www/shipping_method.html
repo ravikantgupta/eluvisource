@@ -301,6 +301,7 @@
                     shipAmt = 0;
                     //grandAmt = getDiscountAmount(totalamt,shipAmt);
                     grandAmt = parseFloat(totalamt).toFixed(2);
+					alert('rrrr:'+ app_curr_symbol + grandAmt);
                     $("#grandAmount").html('&nbsp;' + app_curr_symbol + grandAmt);
                     $("#tax_row").css("display", "none", "important");
                     $("#coupon_row").css("display", "none", "important");
@@ -328,6 +329,7 @@
                     shipAmt = parseFloat(shipAmt).toFixed(2);
                     var totgrandamt = parseFloat(grandAmt) + parseFloat(shipAmt);
                     $("#shippingAmount").html("&nbsp;" + app_curr_symbol + shipAmt);
+					alert('rrr:'+app_curr_symbol + totgrandamt.toFixed(2));
                     $("#grandAmount").html("&nbsp;" + app_curr_symbol + totgrandamt.toFixed(2));
                     var products = Base64.encode(JSON.stringify(parseProductData(JSON.parse(pid))));
                     var prepare_quote_url = BASE_URL + '?callback=?' + '&store=' + STORE + '&service=preparequote&customerid=' + customerid + '&products=' + products + '&address=' + address + '&couponCode=' + coupon_code + '&currency=' + app_curr_code + '&is_create_quote=0&theme=modern&shipmethod=' + $('option:selected').val();
@@ -360,6 +362,7 @@
                                 $("#tax_row").css("display", "none", "important");
                                 $("#tax_row").trigger("create");
                             }
+							alert('rr:'+app_curr_symbol + cart["total_amount"]);
                             $("#grandAmount").html("&nbsp;" + app_curr_symbol + cart["total_amount"]);
                             if (coupon_code == "") {
                                 $("#cancelcoupon").css("display", "none");
