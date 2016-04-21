@@ -15,19 +15,21 @@
 		
 		
 		  <content src="index.html" />
-		    <preference name="phonegap-version" value="3.7.0" />  -->
+		  <preference name="permissions" value="none" />
+		    <preference name="phonegap-version" value="3.7.0" /> 
                 <preference name="orientation" value="default" />
                 <preference name="target-device" value="universal" />
-				<preference name="exit-on-suspend" value="false"/>
-				<preference name="SplashScreen" value="splash" />
-				<preference name="show-splash-screen-spinner" value="true"/>
-                <preference name="auto-hide-splash-screen" value="true"/>
-				<preference name="SplashScreenDelay" value="5000" />
-				<preference name="disable-cursor" value="false"/>
+				  <preference name="fullscreen" value="true" />
+				
+				<preference name="SplashScreen" value="screen"/>
+				<preference name="SplashScreenDelay" value="10000" />
+               <preference name="android-minSdkVersion" value="7" />
 	            <preference name="DisallowOverscroll" value="true" />
 				
+							
           	<preference name="webviewbounce" value="false" />
-		 
+			
+			 
         <gap:plugin name="com.paypal.cordova.mobilesdk" />
     	<gap:plugin name="org.apache.cordova.console" />
     	<gap:plugin name="org.apache.cordova.device" />
