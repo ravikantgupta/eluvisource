@@ -18,7 +18,7 @@
     	<gap:plugin name="org.apache.cordova.dialogs" />
     	<gap:plugin name="org.apache.cordova.network-information" />
     	<gap:plugin name="org.apache.cordova.inappbrowser" />
-    	<gap:plugin name="org.apache.cordova.splashscreen" />
+    	<gap:plugin name="org.apache.cordova.splashscreen" source="npm" version="3.2.1" />
     	<gap:plugin name="com.phonegap.plugins.pushplugin" />
     	<gap:plugin name="org.apache.cordova.statusbar" />
         <gap:plugin name="com.millerjames01.sqlite-plugin" version="1.0.1" />
@@ -74,10 +74,13 @@
 	         <preference name="phonegap-version" value="3.7.0" />
                 <preference name="orientation" value="portrait" />
                 <preference name="target-device" value="universal" />
-				<preference name="SplashScreen" value="screen" />
-				 <preference name="auto-hide-splash-screen" value="true"/>
-				<preference name="SplashScreenDelay" value="6000" />
-					 
+				<preference name="AutoHideSplashScreen" value="false" />
+<preference name="FadeSplashScreen" value="true" />
+<preference name="FadeSplashScreenDuration" value="500" />
+<preference name="ShowSplashScreenSpinner" value="false"/>
+<preference name="SplashMaintainAspectRatio" value="true" />
+<preference name="SplashScreen" value="screen" />
+<preference name="SplashScreenDelay" value="10000" />
                 <preference name="DisallowOverscroll" value="true" />
 				
           	<preference name="webviewbounce" value="false" />
