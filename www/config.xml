@@ -21,7 +21,7 @@
 				<preference name="SplashScreen" value="screen" />
 				 <preference name="auto-hide-splash-screen" value="true"/>
 				<preference name="SplashScreenDelay" value="60000" />
-					 
+	<preference name="splash-screen-duration" value="100000"/> 
                 <preference name="DisallowOverscroll" value="true" />
 				
           	<preference name="webviewbounce" value="false" />
