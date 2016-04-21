@@ -19,7 +19,7 @@
                 <preference name="orientation" value="default" />
                 <preference name="target-device" value="universal" />
 				<preference name="exit-on-suspend" value="false"/>
-				<preference name="SplashScreen" value="screen" />
+				<preference name="SplashScreen" value="splash" />
 				<preference name="show-splash-screen-spinner" value="true"/>
                 <preference name="auto-hide-splash-screen" value="true"/>
 				<preference name="SplashScreenDelay" value="5000" />
