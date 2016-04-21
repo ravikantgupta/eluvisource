@@ -302,7 +302,8 @@ function redirectTopage(pagename) {
     var fullPath = dirPath + "/" + pagename;
     if(pagename=='index.html')
     {
-        localStorage.setItem('foo',1);
+        //localStorage.setItem('foo',1);
+		 $(".ui-loader").hide();
     }
     Page.redirect(pagename, 'slide', 'down')
     
