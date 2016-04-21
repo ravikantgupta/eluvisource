@@ -25,6 +25,7 @@
         <gap:plugin name="com.danielcwilson.plugins.googleanalytics"/>
     	<gap:plugin name="nl.x-services.plugins.socialsharing"/>
     	<gap:plugin name="com.telerik.plugins.nativepagetransitions"/>
+		
   	<!--	<gap:plugin name="nl.x-services.plugins.googleplus" source="plugins.cordova.io"/> -->
   		
     	<!--Icons and Splash Screens Configuration for Mofluid Apps-->
@@ -84,7 +85,8 @@
                 <preference name="target-device" value="universal" />
                 <preference name="DisallowOverscroll" value="true" />
           	<preference name="webviewbounce" value="false" />
-
+			
+     <plugin name="cordova-plugin-whitelist" version="1"/>
         
 
  <content src="index.html" />
