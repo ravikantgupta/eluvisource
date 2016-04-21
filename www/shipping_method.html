@@ -335,6 +335,7 @@
                     var prepare_quote_url = BASE_URL + '?callback=?' + '&store=' + STORE + '&service=preparequote&customerid=' + customerid + '&products=' + products + '&address=' + address + '&couponCode=' + coupon_code + '&currency=' + app_curr_code + '&is_create_quote=0&theme=modern&shipmethod=' + $('option:selected').val();
                     console.log("Quote Prepare URL " + prepare_quote_url);
                     $(".ui-loader").show();
+					alert(prepare_quote_url);
                     $.getJSON(prepare_quote_url, function(response) {
                         console.log(response);
                         $(".ui-loader").hide();
