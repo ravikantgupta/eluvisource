@@ -15,7 +15,7 @@
 		
 		
 		  <content src="index.html" />
-		    
+		   
                 <preference name="orientation" value="portrait" />
                 <preference name="target-device" value="universal" />
 				<preference name="SplashScreen" value="screen" />
@@ -48,6 +48,7 @@
 		<!-- Icons -->
 		<icon src="resource/icon/96x96px_2.png" />
 		<!-- Splash Screens -->
+		<gap:splash src="resource/splash/480x800.png" />
 		
 		<!-- ====================== -->
 		<!-- iOS Configuration      -->
