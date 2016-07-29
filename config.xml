@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
     <widget xmlns:gap="http://phonegap.com/ns/1.0" 
     xmlns="http://www.w3.org/ns/widgets" 
-    id="com.eluvy.eluvy" 
+    id="com.eluvy.myapp" 
     version="3.1.2">
 
         <name>Eluvy</name>
@@ -10,7 +10,7 @@
         </description>
         <author email="rvgupta444@gmail.com"
         href="http://cordova.io">
-            Mofluid Team
+            Eluvy Team
         </author>
      <gap:plugin name="com.paypal.cordova.mobilesdk" />
     	<gap:plugin name="org.apache.cordova.console" />
