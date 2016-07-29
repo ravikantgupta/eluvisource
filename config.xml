@@ -51,6 +51,14 @@
 		<icon src="resource/icon/36x36px_1.png" gap:platform="android" width="36" height="36" />
 		<icon src="resource/icon/96x96px_3.png" gap:platform="android" width="96" height="96" />
 		
+		<icon src="resource/icon/36x36px_1.png" gap:platform="ios" width="36" height="36" />
+		<icon src="resource/icon/72x72px_1.png" gap:platform="ios" width="72" height="72" />
+		<icon src="resource/icon/48x48px_1.png" gap:platform="ios" width="48" height="48" />
+	
+		
+		
+		
+		
 		<!--
 		<icon src="{{android-icon-small-2x}}" gap:platform="android" width="58" height="58" />
 		<icon src="{{android-icon-40-2x}}" gap:platform="android" width="80" height="80" />
