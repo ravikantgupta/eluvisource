@@ -45,6 +45,9 @@
 		<!-- Splash Screens -->
 		<gap:splash src="resource/splash/480x800.png" />
 		<gap:splash src="resource/splash/320X480.png" />
+		<gap:splash src="Default.png" gap:platform="ios" width="320" height="480" />
+        <gap:splash src="Default@2x.png" gap:platform="ios" width="640" height="960" />
+        <gap:splash src="Default-568h@2x.png" gap:platform="ios" width="640" height="1136" />
 		<gap:splash src="splash.png" />
 		<gap:splash src="resource/splash/splash.png" />
 		<gap:splash src="Default-568h@2x.png" />
