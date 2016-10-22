@@ -4382,6 +4382,9 @@ margin: 0 0 0 2px; display:inline-block;
 @media all and (max-width: 414px) {
 #search_mini_form .search-button{top:2px;}
 #mainheader {
-    border-bottom: 2px solid #aaaaaa; margin:72px 0 0 0;
+    border-bottom: 2px solid #aaaaaa; /*margin:72px 0 0 0;*/margin:85px 0 0 0 !important;
+}
+#srcfrm .input-box {
+    margin-top: 15px;
 }
 }
